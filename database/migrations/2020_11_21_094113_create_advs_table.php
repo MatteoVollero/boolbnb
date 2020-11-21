@@ -15,6 +15,13 @@ class CreateAdvsTable extends Migration
     {
         Schema::create('advs', function (Blueprint $table) {
             $table->id();
+
+            $table->float('price',4,2);
+
+            $table->tinyInteger('hours');
+
+            $table->string('label',20);
+            
             $table->timestamps();
         });
     }

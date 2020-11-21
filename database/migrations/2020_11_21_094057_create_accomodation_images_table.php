@@ -14,8 +14,17 @@ class CreateAccomodationImagesTable extends Migration
     public function up()
     {
         Schema::create('accomodation_images', function (Blueprint $table) {
-            $table->id();
+
+            $table->unsignedBigInteger('accomodation_id');
+
+            $table->string('image');
+
+            $table->boolean('principal')->default(false);
+
             $table->timestamps();
+
+            // Istruzioni per cancellazione chiave esterna
+            $table->foreign('accomodation_id')->references('id')->on('accomodations')->onDelete('cascade');
         });
     }
 

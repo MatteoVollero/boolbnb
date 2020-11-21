@@ -14,8 +14,18 @@ class CreateAccomodationAdvsTable extends Migration
     public function up()
     {
         Schema::create('accomodation_advs', function (Blueprint $table) {
-            $table->id();
+
+            $table->unsignedBigInteger('accomodation_id');
+            $table->unsignedBigInteger('adv_id');
+
+            $table->date('start_adv');
+            $table->date('end_adv');
+
             $table->timestamps();
+
+            // Istruzioni per cancellazione chiave esterna
+            $table->foreign('accomodation_id')->references('id')->on('accomodations')->onDelete('cascade');
+            $table->foreign('adv_id')->references('id')->on('advs')->onDelete('cascade');
         });
     }
 
