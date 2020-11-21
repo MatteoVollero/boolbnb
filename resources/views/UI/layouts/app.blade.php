@@ -9,11 +9,13 @@
     <title>@yield('title')</title>
   </head>
   <body>
-    @include('Partials.header')
+    @include('UI.Partials.header')
      <main>
-      @yield('main_content')
+      <div class="ciao">
+        @yield('main_content')
+      </div>
      </main>
-    @include('Partials.footer')
+    @include('UI.Partials.footer')
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="{{asset('/js/app.js')}}"></script>

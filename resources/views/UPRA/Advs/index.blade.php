@@ -1,5 +1,5 @@
 {{-- // List of all advertising of the UPRA --}}
-@extends('layouts.app')
+@extends('UPRA.layouts.app')
 @section('title')
-    Advertising
+    Advertisments
 @endsection

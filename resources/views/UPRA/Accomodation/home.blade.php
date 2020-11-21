@@ -1,5 +1,5 @@
 {{-- // homepage Upra --}}
-@extends('layouts.app')
+@extends('UPRA.layouts.app')
 @section('title')
     Homepage
 @endsection

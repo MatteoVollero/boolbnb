@@ -1,5 +1,5 @@
 {{-- // List of all messages of the UPRA --}}
-@extends('layouts.app')
+@extends('UPRA.layouts.app')
 @section('title')
     Messages
 @endsection

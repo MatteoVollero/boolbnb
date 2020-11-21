@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('UI.Accomodations.home');
 });
+
+Route::get('/show', function () {
+    return view('UI.Accomodations.show');
+});
+
+
 
 Auth::routes();
 

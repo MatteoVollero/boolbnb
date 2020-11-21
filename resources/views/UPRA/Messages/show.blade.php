@@ -1,5 +1,5 @@
 {{-- // showing the single message for the UI --}}
-@extends('layouts.app')
+@extends('UPRA.layouts.app')
 @section('title')
     Message
 @endsection

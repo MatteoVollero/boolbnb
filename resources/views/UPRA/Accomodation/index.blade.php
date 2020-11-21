@@ -1,5 +1,5 @@
 {{-- // List of all accomodations of the UPRA --}}
-@extends('layouts.app')
+@extends('UPRA.layouts.app')
 @section('title')
     Accomodations
 @endsection

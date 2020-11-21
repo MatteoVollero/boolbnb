@@ -1,5 +1,7 @@
 {{-- // Searching accomodations page for the UI --}}
-@extends('layouts.app')
+@extends('UI.layouts.app')
 @section('title')
     Accomodations
+@endsection
+@section('main_content')
 @endsection
