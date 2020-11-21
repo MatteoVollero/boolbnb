@@ -1,8 +1,19 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap');
 
-// Variables
-@import 'variables';
+// Partials
+@import 'Partials/variables.scss';
+@import 'Partials/mixins.scss';
+@import 'Partials/common.scss';
+@import 'Partials/header.scss';
+@import 'Partials/jumbotron.scss';
+@import 'Partials/main.scss';
+@import 'Partials/footer.scss';
+@import 'Partials/btns.scss';
+
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
