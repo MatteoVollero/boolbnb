@@ -1,3 +1,11 @@
-.ciao {
-    color: red;
+.wrapper {
+    display: flex;
+    justify-content: center;
+    
+    .square {
+        width: 20%;
+        height: 200px;
+        background-color: red;
+        border: 1px solid #000;
+    }
 }
