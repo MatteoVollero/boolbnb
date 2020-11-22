@@ -16,9 +16,9 @@ class CreateAdvsTable extends Migration
         Schema::create('advs', function (Blueprint $table) {
             $table->id();
 
-            $table->float('price',4,2);
+            $table->unsignedDecimal('price',4,2);
 
-            $table->tinyInteger('hours');
+            $table->unsignedTinyInteger('hours');
 
             $table->string('label',20);
             
