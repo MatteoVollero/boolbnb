@@ -10,11 +10,9 @@
   </head>
   <body>
     @include('UI.Partials.header')
-     <main>
-      <div class="ciao">
-        @yield('main_content')
-      </div>
-     </main>
+    <main>
+      @yield('main_content')
+    </main>
     @include('UI.Partials.footer')
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

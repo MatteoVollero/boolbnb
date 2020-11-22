@@ -1,0 +1,20 @@
+// btns
+.home_search_btn {
+    min-width: 200px;
+    min-height: 30px;
+    padding-left: 10px;
+    background-color:$firstMainSection;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+    &:hover::placeholder {
+        color: #000;
+        font-weight: bold;
+    }
+    &:hover  {
+        opacity: 0.8;
+        background-color: $btnColor;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}

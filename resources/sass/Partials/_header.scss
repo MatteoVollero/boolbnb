@@ -1,0 +1,18 @@
+// header
+.header_top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: $headerColor;
+    width: 100%;
+    height: 80px;
+    .header_nav {
+        @include GenericWrapper;
+        @include HeaderFlex;
+        .header_bnb_logo {
+            width: 10%;
+            height: 100%;
+        }
+    }
+}
