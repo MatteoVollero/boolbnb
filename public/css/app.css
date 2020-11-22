@@ -9,6 +9,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header_top {
   position: fixed;
   top: 0;
@@ -24,7 +28,7 @@ li {
   height: 100%;
   margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -33,14 +37,21 @@ li {
   height: 100%;
 }
 
-.hero {
+.header_top .header_nav .covid_info {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header_top .header_nav .covid_info a {
+  color: #000;
+}
+
+.jumbotron {
   width: 100%;
   height: 100%;
   position: relative;
-  overflow-y: hidden;
 }
 
-.intro_text_item {
+.text_item {
   position: absolute;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -49,6 +60,145 @@ li {
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.jumbotron_search_item {
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  width: 20%;
+  padding: 10px;
+  right: 3%;
+  top: 15%;
+}
+
+.jumbotron_search_item .btn_search {
+  margin: auto;
+  width: 30%;
+  height: 50px;
+}
+
+.jumbotron_search_item .btn_search button {
+  background-color: #E9F1F7;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #FC6C43;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.jumbotron_search_item .btn_search button .fa-search {
+  padding-left: 10px;
+}
+
+.jumbotron_search_item .btn_search button:hover {
+  opacity: 0.8;
+  background-color: #FC6C43;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.jumbotron_search_item .search_item {
+  position: relative;
+  margin: 5px 10px;
+  padding: 5px;
+  text-align: center;
+  border: 2px solid lightgoldenrodyellow;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: 0.3s;
+  height: 15%;
+  width: 95%;
+}
+
+.jumbotron_search_item .search_item .dropleft_menu {
+  background-color: #fff;
+  position: absolute;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  right: 100%;
+  padding: 20px 0px;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 1;
+  top: 0;
+}
+
+.jumbotron_search_item .search_item .dropleft_menu:hover {
+  background-color: #E9F1F7;
+  cursor: pointer;
+}
+
+.jumbotron_search_item .search_item:hover .dropleft_menu {
+  opacity: 1;
+}
+
+.jumbotron_search_item .search_item:hover {
+  background-color: #E9F1F7;
+  cursor: pointer;
+}
+
+.jumbotron_search_item .search_item label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+
+.jumbotron_search_item .search_item input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+  background-color: #E9F1F7;
+  border-radius: 10px;
+  border: none;
+  width: 80%;
+  height: 30px;
+  transition: 0.3s;
+}
+
+.jumbotron_search_item .search_item input:hover::-moz-placeholder {
+  color: #000;
+  width: 100%;
+}
+
+.jumbotron_search_item .search_item input:hover:-ms-input-placeholder {
+  color: #000;
+  width: 100%;
+}
+
+.jumbotron_search_item .search_item input:hover::placeholder {
+  color: #000;
+  width: 100%;
+}
+
+.jumbotron_search_item .search_item input:hover {
+  opacity: 0.8;
+  background-color: #FC6C43;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.jumbotron_search_item .search_item select {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  padding-left: 10px;
+  background-color: #E9F1F7;
+  border-radius: 10px;
+  border: none;
+  width: 80%;
+  height: 30px;
+  transition: 0.3s;
+}
+
+.jumbotron_search_item .search_item select:hover {
+  opacity: 0.8;
+  background-color: #FC6C43;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .home_search_btn {

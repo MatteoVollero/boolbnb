@@ -3,8 +3,32 @@
     height: 100%;
     margin: auto;
 }
-@mixin HeaderFlex {
+@mixin HeaderTopFlex {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin ColumnFlex {
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+@mixin HeroInputInfo {
+    font-family: $secondFont;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-left: 10px;
+    background-color:$firstMainSection;
+    border-radius: 10px;
+    border: none;
+    width: 80%;
+    height: 30px;
+    transition: 0.3s;
+}
+@mixin HeroItemHover {
+    opacity: 0.8;
+    background-color: $btnColor;
+    transform: scale(1.05);
+    cursor: pointer;
 }

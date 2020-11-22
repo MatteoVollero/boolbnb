@@ -9,10 +9,16 @@
     height: 80px;
     .header_nav {
         @include GenericWrapper;
-        @include HeaderFlex;
+        @include HeaderTopFlex;
         .header_bnb_logo {
             width: 10%;
             height: 100%;
+        }
+        .covid_info {
+            font-family: $secondFont;
+            a {
+                color:#000;
+            }
         }
     }
 }

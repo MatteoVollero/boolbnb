@@ -1,17 +1,102 @@
 // jumbotron
-.hero {
+.jumbotron {
     width: 100%;
     height: 100%;
     position: relative;
-    overflow-y: hidden;
 }
-.intro_text_item {
+.text_item {
     position: absolute;
     font-family: $secondFont;
     font-weight: bold;
     font-size:60px;
-    color: #fff;
+    color:#fff;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.jumbotron_search_item {
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    width: 20%;
+    padding: 10px;
+    right: 3%;
+    top: 15%;
+    .btn_search {
+        margin: auto;
+        width: 30%;
+        height: 50px;
+        button {
+            background-color:$firstMainSection;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $btnColor;
+            font-family: $secondFont;
+            font-size: 20px;
+            transition: 0.3s;
+            .fa-search {
+                padding-left: 10px;
+            }
+            &:hover {
+                @include HeroItemHover;
+            }
+        }
+    }
+    .search_item {
+        position: relative;
+        margin: 5px 10px;
+        padding: 5px;
+        text-align: center;
+        border: 2px solid lightgoldenrodyellow;
+        background-color:#fff;
+        border-radius: 10px;
+        transition: 0.3s;
+        height: 15%;
+        width: 95%;
+        .dropleft_menu {
+        background-color: #fff;
+        position: absolute;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        right: 100%;
+        padding: 20px 0px;
+        opacity: 0;
+        transition: 0.5s;
+        z-index: 1;
+        top: 0;
+        &:hover {
+            background-color: $firstMainSection;
+            cursor: pointer;
+        }
+    }
+        &:hover .dropleft_menu {
+            opacity: 1;
+        }
+        &:hover {
+            background-color: $firstMainSection;
+            cursor:pointer;
+        }
+        label {
+            font-family: $secondFont;
+            font-size: 20px;
+        }
+        input {
+            @include HeroInputInfo;
+            &:hover::placeholder {
+                color: #000;
+                width: 100%;
+            }
+            &:hover  {
+                @include HeroItemHover;
+            }
+        }
+        select {
+            @include HeroInputInfo;
+            &:hover {
+                @include HeroItemHover;
+            }
+        }
+    }
 }
