@@ -1,0 +1,47 @@
+footer {
+    // background-color: $violaHeroScuro;
+    background-image: linear-gradient(to right,  $violaHeroScuroModificato, $violaHeroScuro);
+    color:#fff;
+    width: 100%;
+    .wrapper-footer {
+        @include GenericWrapper;
+        .margin-top-100 {
+            padding-top: 40px;
+            .flex-box-footer-superiore {
+                display: flex;
+                justify-content: space-between;
+                .colonna-footer{
+                    width: 25%;
+                    .titoli-footer {
+                        color: $airBnB;
+                    }
+                    a {
+                        color: #fff;
+                    }
+                    .header-bnb-logo {
+                        width: 50%;
+                    }
+                }
+            }
+            .flex-box-footer-inferiore {
+                display: flex;
+                justify-content: flex-end;
+                .flex-box-footer-inferiore-nested {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: calc(100% / 2);
+                    .lista-icone-social li {
+                        display: inline;
+                        & a {
+                            color:#fff;
+                            font-size: 25px;
+                            &:hover{
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
