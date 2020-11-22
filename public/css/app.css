@@ -39,10 +39,31 @@ a {
 
 .header_top .header_nav .covid_info {
   font-family: "Montserrat", sans-serif;
+  padding: 10px 0px;
 }
 
 .header_top .header_nav .covid_info a {
   color: #000;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .header_bnb_logo {
+    min-width: 20%;
+  }
+
+  .covid_info {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1250px) {
+  .header_bnb_logo {
+    min-width: 15%;
+  }
+
+  .covid_info {
+    display: none;
+  }
 }
 
 .jumbotron {
@@ -102,7 +123,7 @@ a {
 
 .jumbotron_search_item .search_item {
   position: relative;
-  margin: 5px 10px;
+  margin: 5px 5px;
   padding: 5px;
   text-align: center;
   border: 2px solid lightgoldenrodyellow;
@@ -120,7 +141,7 @@ a {
   cursor: pointer;
   width: 100%;
   right: 100%;
-  padding: 20px 0px;
+  padding: 10px 0px;
   opacity: 0;
   transition: 0.5s;
   z-index: 1;
@@ -149,12 +170,12 @@ a {
 .jumbotron_search_item .search_item input {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  margin-top: 10px;
-  padding-left: 10px;
+  margin: 10px 0px;
+  padding: 20px 10px;
   background-color: #E9F1F7;
   border-radius: 10px;
   border: none;
-  width: 80%;
+  width: 90%;
   height: 30px;
   transition: 0.3s;
 }
@@ -184,12 +205,12 @@ a {
 .jumbotron_search_item .search_item select {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  margin-top: 10px;
-  padding-left: 10px;
+  margin: 10px 0px;
+  padding: 20px 10px;
   background-color: #E9F1F7;
   border-radius: 10px;
   border: none;
-  width: 80%;
+  width: 90%;
   height: 30px;
   transition: 0.3s;
 }
@@ -199,6 +220,18 @@ a {
   background-color: #FC6C43;
   transform: scale(1.05);
   cursor: pointer;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .covid_info {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1250px) {
+  .covid_info {
+    display: none;
+  }
 }
 
 .home_search_btn {

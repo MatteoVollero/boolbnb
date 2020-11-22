@@ -45,7 +45,7 @@
     }
     .search_item {
         position: relative;
-        margin: 5px 10px;
+        margin: 5px 5px;
         padding: 5px;
         text-align: center;
         border: 2px solid lightgoldenrodyellow;
@@ -61,7 +61,7 @@
         cursor: pointer;
         width: 100%;
         right: 100%;
-        padding: 20px 0px;
+        padding: 10px 0px;
         opacity: 0;
         transition: 0.5s;
         z-index: 1;
@@ -98,5 +98,17 @@
                 @include HeroItemHover;
             }
         }
+    }
+}
+// media breakpoint
+@media screen and (min-width: 0px) and (max-width:768px) {
+    .covid_info {
+      display: none
+    }
+}
+// media breakpoint
+@media screen and (min-width: 768px) and (max-width:1250px) {
+    .covid_info {
+      display: none
     }
 }

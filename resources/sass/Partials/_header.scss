@@ -14,11 +14,35 @@
             width: 10%;
             height: 100%;
         }
+            $breakpoint-tablet: 768px;
+            @media (min-width: $breakpoint-tablet) {
+  
+        }
         .covid_info {
             font-family: $secondFont;
+            padding: 10px 0px;
+            
             a {
                 color:#000;
             }
         }
+    }
+}
+// media breakpoint
+@media screen and (min-width: 0px) and (max-width:768px) {
+    .header_bnb_logo {
+        min-width: 20%;
+    }
+    .covid_info {
+      display: none
+    }
+}
+// media breakpoint
+@media screen and (min-width: 768px) and (max-width:1250px) {
+    .header_bnb_logo {
+        min-width: 15%;
+    }
+    .covid_info {
+      display: none
     }
 }

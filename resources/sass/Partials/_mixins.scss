@@ -17,12 +17,12 @@
 @mixin HeroInputInfo {
     font-family: $secondFont;
     font-size: 20px;
-    margin-top: 10px;
-    padding-left: 10px;
+    margin: 10px 0px;
+    padding: 20px 10px;
     background-color:$firstMainSection;
     border-radius: 10px;
     border: none;
-    width: 80%;
+    width: 90%;
     height: 30px;
     transition: 0.3s;
 }
