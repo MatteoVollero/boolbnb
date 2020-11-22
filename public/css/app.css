@@ -98,7 +98,7 @@ footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore {
 footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore .flex-box-footer-inferiore-nested {
   display: flex;
   justify-content: flex-end;
-  width: calc(100% / 2);
+  width: 50%;
 }
 
 footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore .flex-box-footer-inferiore-nested .lista-icone-social li {
@@ -112,6 +112,36 @@ footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore .flex-box-foot
 
 footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore .flex-box-footer-inferiore-nested .lista-icone-social li a:hover {
   text-decoration: none;
+}
+
+/* media  query */
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  footer .wrapper-footer {
+    width: 100%;
+  }
+
+  footer .wrapper-footer .margin-top-100 .flex-box-footer-superiore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .wrapper-footer .margin-top-100 .flex-box-footer-superiore .header-bnb-logo {
+    max-width: 150px;
+  }
+
+  footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore .flex-box-footer-inferiore-nested {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .home_search_btn {
