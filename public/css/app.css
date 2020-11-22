@@ -56,6 +56,7 @@ footer {
   background-image: linear-gradient(to right, #23102b, #531b5a);
   color: #fff;
   width: 100%;
+  border-top: 1px solid #23102b;
 }
 
 footer .wrapper-footer {

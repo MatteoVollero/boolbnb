@@ -1,8 +1,8 @@
 footer {
-    // background-color: $violaHeroScuro;
     background-image: linear-gradient(to right,  $violaHeroScuroModificato, $violaHeroScuro);
     color:#fff;
     width: 100%;
+    border-top: 1px solid $violaHeroScuroModificato;
     .wrapper-footer {
         @include GenericWrapper;
         .margin-top-100 {

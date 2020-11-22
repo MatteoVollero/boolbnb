@@ -5,10 +5,10 @@
                 <div class="colonna-footer">
                     <ul>
                         <li>
-                            <h4 class="titoli-footer">Informazioni</h4>
+                            <h4 class="titoli-footer">Information</h4>
                         </li>
                         <li>
-                            <a href="#">Come funziona BoolBnB</a>
+                            <a href="#">How does BoolBnB works?</a>
                         </li>
                         <li>
                             <a href="#">Newsroom</a>
@@ -27,32 +27,32 @@
                             <h4 class="titoli-footer">Community</h4>
                         </li>
                         <li>
-                            <a href="#">Diversit&#224; e appartenenza</a>
+                            <a href="#">Diversity and belonging</a>
                         </li>
                         <li>
-                            <a href="#">Accessibilit&#224;</a>
+                            <a href="#">Accessibility</a>
                         </li>
                         <li>
                             <a href="#">BoolBnB Associates</a>
                         </li>
                         <li>
-                            <a href="#">Invita gli amici</a>
+                            <a href="#">Invite friends</a>
                         </li>
                     </ul>
                 </div>
                 <div class="colonna-footer">
                     <ul>
                         <li>
-                            <h4 class="titoli-footer">Ospita</h4>
+                            <h4 class="titoli-footer">Host</h4>
                         </li>
                         <li>
-                            <a href="#">Diventa un host</a>
+                            <a href="#">Become a host</a>
                         </li>
                         <li>
-                            <a href="#">Offri un&#39;esperienza OnLine</a>
+                            <a href="#">Offer an online experience</a>
                         </li>
                         <li>
-                            <a href="#">Ospitare responsabilmente</a>
+                            <a href="#">Responsible hosting</a>
                         </li>
                         <li>
                             <a href="#">Open Homes</a>
@@ -62,19 +62,19 @@
                 <div class="colonna-footer">
                     <ul>
                         <li>
-                            <h4 class="titoli-footer">Assistenza</h4>
+                            <h4 class="titoli-footer">Assistance</h4>
                         </li>
                         <li>
-                            <a href="#">Centro Assistenza</a>
+                            <a href="#">Service center</a>
                         </li>
                         <li>
-                            <a href="#">Opzioni di cancellazione</a>
+                            <a href="#">Cancellation options</a>
                         </li>
                         <li>
-                            <a href="#">Servizio di supporto al vicinato</a>
+                            <a href="#">Neighborhood support service</a>
                         </li>
                         <li>
-                            <a href="#">Affidabilit&#224; e sicurezza</a>
+                            <a href="#">Reliability and safety</a>
                         </li>
                     </ul>
                     <img class="header-bnb-logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
