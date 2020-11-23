@@ -10,6 +10,7 @@
   </head>
   <body>
     @include('UI.Partials.header')
+    @include('UI.Partials.jumbotron')
     <main>
       @yield('main_content')
     </main>

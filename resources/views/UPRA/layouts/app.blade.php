@@ -10,6 +10,7 @@
   </head>
   <body>
     @include('UPRA.Partials.header')
+    @include('UPRA.Partials.jumbotron')
     <main>
       @yield('main_content')
     </main>

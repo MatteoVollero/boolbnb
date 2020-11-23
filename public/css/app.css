@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+input {
+  outline: none;
+}
+
 .header_top {
   position: fixed;
   top: 0;
@@ -33,7 +37,7 @@ a {
 }
 
 .header_top .header_nav .header_bnb_logo {
-  width: 10%;
+  width: 15%;
   height: 100%;
 }
 
@@ -48,7 +52,7 @@ a {
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
   .header_bnb_logo {
-    min-width: 20%;
+    min-width: 15%;
   }
 
   .covid_info {
@@ -56,7 +60,17 @@ a {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1250px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .header_bnb_logo {
+    min-width: 15%;
+  }
+
+  .covid_info {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
   .header_bnb_logo {
     min-width: 15%;
   }
@@ -78,7 +92,7 @@ a {
   font-weight: bold;
   font-size: 60px;
   color: #fff;
-  top: 20%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -223,14 +237,101 @@ a {
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .covid_info {
+  .jumbotron_text_item {
     display: none;
+  }
+
+  .jumbotron_search_item {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    padding-left: 100px;
+  }
+
+  .search_item {
+    position: relative;
+    margin: 5px 5px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid lightgoldenrodyellow;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+    height: 15%;
+    width: 95%;
+  }
+
+  .search_item .dropleft_menu {
+    background-color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    right: 100%;
+    padding: 10px 0px;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+  }
+
+  .search_item .dropleft_menu:hover {
+    background-color: #E9F1F7;
+    cursor: pointer;
+  }
+
+  .search_item:hover .dropleft_menu {
+    opacity: 1;
+  }
+
+  .search_item:hover {
+    background-color: #E9F1F7;
+    cursor: pointer;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1250px) {
-  .covid_info {
-    display: none;
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .jumbotron_text_item {
+    width: 50%;
+    font-size: 30px;
+    position: relative;
+  }
+
+  .jumbotron_text_item h2 {
+    position: absolute;
+    color: #000;
+    z-index: 1;
+    font-size: 30px;
+    transform: translate(-50%, 50%);
+  }
+
+  .jumbotron_search_item {
+    position: relative;
+    margin-left: auto;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .jumbotron_text_item {
+    width: 50%;
+    font-size: 30px;
+    position: relative;
+  }
+
+  .jumbotron_text_item h2 {
+    position: absolute;
+    color: #000;
+    z-index: 1;
+    font-size: 30px;
+    transform: translate(-50%, 50%);
+  }
+
+  .jumbotron_search_item {
+    position: relative;
+    margin-left: auto;
+    width: 50%;
   }
 }
 
