@@ -38,8 +38,24 @@ class Accomodation extends Model
 
     /* RELAZIONE DA VERIFICARE! */
     // relazione MtoM con advs
+    // public function advs()
+    // {
+    //     return $this->belongsToMany('App\Adv','accomodation_advs')->withPivot('start_adv', 'end_adv');
+    // }
+
+    // public function advs()
+    // {
+    //     return $this->belongsToMany('App\adv')->using('App\RoleUser');
+    // }
+
     public function advs()
     {
-        return $this->belongsToMany('App\Adv','accomodation_advs')->withPivot('start_adv', 'end_adv');
+        return $this->belongsToMany('App\Adv')
+                        ->using('App\AccomodationAdv')
+                        ->withPivot([
+                            'start_adv',
+                            'end_adv',
+                        ]);
     }
+
 }

@@ -18,8 +18,8 @@ class CreateAccomodationAdvsTable extends Migration
             $table->unsignedBigInteger('accomodation_id');
             $table->unsignedBigInteger('adv_id');
 
-            $table->date('start_adv');
-            $table->date('end_adv');
+            $table->dateTime('start_adv');
+            $table->dateTime('end_adv');
 
             $table->timestamps();
 

@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             AccomodationsTableSeeder::class,
             AdvsTableSeeder::class,
+            AccomodationAdvsTableSeeder::class,
+
             // UserInfosTableSeeder::class,
             // UserMessagesTableSeeder::class,
             // AccomodationViewsTableSeeder::class,
