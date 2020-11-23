@@ -16,7 +16,7 @@ class AccomodationAdvsTableSeeder extends Seeder
     public function run()
     {
 
-        $newAccomodation = Accomodation::inRandomOrder()->limit(5)->get();
+        $newAccomodation = Accomodation::inRandomOrder()->limit(30)->get();
 
         foreach ($newAccomodation as $accomodation) {
             $advRandom = Adv::inRandomOrder()->first();

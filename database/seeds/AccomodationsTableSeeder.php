@@ -15,14 +15,20 @@ class AccomodationsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i <10 ; $i++) {
+
+        // Creiamo array prototipo per i type
+        $protoType = ['accomodation','room','mansion','house','loft','hostel'];
+
+
+        for ($i=0; $i <50 ; $i++) {
             // Prendiamo un record casuale da user per estrapolare l'id
             $userTemp = User::inRandomOrder()->first();
             // Creiamo una nuova istanza di accomodation
             $newAccomodation = new Accomodation;
             // Riempiamo tutti i campi di Accomodation
             $newAccomodation->user_id = $userTemp->id;
-            $newAccomodation->type = $faker->word; // Eventuale sostituzione con tabella o array
+            // $newAccomodation->type = $faker->word; // Eventuale sostituzione con tabella o array
+            $newAccomodation->type = $protoType[$faker->numberBetween(0, count($protoType)-1)];
             $newAccomodation->title = $faker->text(15);
             $newAccomodation->description = $faker->paragraph(5);
             $newAccomodation->cover_image = $faker->imageUrl(800, 600, 'cover');
