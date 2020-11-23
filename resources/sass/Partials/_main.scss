@@ -1,0 +1,19 @@
+.first_main_section {
+    margin-top: -5px;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.main_section {
+    width: calc( 100% - 200px);
+    height: 100%;
+    background-color: $firstMainSection;
+}
+.aside_accomodations {
+    width: 20%;
+    height: 100%;
+    background-color: crimson;
+    overflow-y: scroll;
+}

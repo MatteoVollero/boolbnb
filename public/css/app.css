@@ -37,7 +37,7 @@ input {
 }
 
 .header_top .header_nav .header_bnb_logo {
-  width: 15%;
+  width: 10%;
   height: 100%;
 }
 
@@ -245,34 +245,11 @@ input {
     position: relative;
     margin: auto;
     width: 100%;
-    padding-left: 100px;
-  }
-
-  .search_item {
-    position: relative;
-    margin: 5px 5px;
-    padding: 5px;
-    text-align: center;
-    border: 2px solid lightgoldenrodyellow;
-    background-color: #fff;
-    border-radius: 10px;
-    transition: 0.3s;
-    height: 15%;
-    width: 95%;
+    padding-left: 60px;
   }
 
   .search_item .dropleft_menu {
-    background-color: #fff;
-    position: absolute;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    right: 100%;
-    padding: 10px 0px;
-    opacity: 0;
-    transition: 0.5s;
-    z-index: 1;
-    top: 100%;
+    top: 0;
     left: 0;
   }
 
@@ -333,6 +310,28 @@ input {
     margin-left: auto;
     width: 50%;
   }
+}
+
+.first_main_section {
+  margin-top: -5px;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.main_section {
+  width: calc( 100% - 200px);
+  height: 100%;
+  background-color: #E9F1F7;
+}
+
+.aside_accomodations {
+  width: 20%;
+  height: 100%;
+  background-color: crimson;
+  overflow-y: scroll;
 }
 
 .home_search_btn {
