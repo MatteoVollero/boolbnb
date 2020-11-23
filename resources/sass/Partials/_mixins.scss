@@ -3,17 +3,24 @@
     height: 100%;
     margin: auto;
 }
+@mixin GenericFlex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
 @mixin HeaderTopFlex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+// columnFlex
 @mixin ColumnFlex {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
+// hero input informations
 @mixin HeroInputInfo {
     font-family: $secondFont;
     font-size: 20px;
@@ -26,6 +33,7 @@
     height: 30px;
     transition: 0.3s;
 }
+// Hero item hover
 @mixin HeroItemHover {
     opacity: 0.8;
     background-color: $btnColor;

@@ -4,6 +4,7 @@
     height: 100%;
     position: relative;
 }
+// text item
 .text_item {
     position: absolute;
     font-family: $secondFont;
@@ -14,6 +15,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+// jumbo item
 .jumbotron_search_item {
     background-color: #fff;
     border-radius: 10px;
@@ -22,6 +24,7 @@
     padding: 10px;
     right: 3%;
     top: 15%;
+    // btn
     .btn_search {
         margin: auto;
         width: 30%;
@@ -43,6 +46,7 @@
             }
         }
     }
+    // search item
     .search_item {
         position: relative;
         margin: 5px 5px;
@@ -54,6 +58,7 @@
         transition: 0.3s;
         height: 15%;
         width: 95%;
+        // dropleft menu
         .dropleft_menu {
         background-color: #fff;
         position: absolute;
