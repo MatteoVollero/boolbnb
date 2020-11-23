@@ -20,12 +20,12 @@ class CreateAccomodationAdvsTable extends Migration
 
             $table->dateTime('start_adv');
             $table->dateTime('end_adv');
+            $table->unsignedDecimal('price_paid',4,2);
 
-            $table->timestamps();
+            // $table->timestamps();
 
             // Istruzioni per cancellazione chiave esterna
             $table->foreign('accomodation_id')->references('id')->on('accomodations')->onDelete('cascade');
-            $table->foreign('adv_id')->references('id')->on('advs')->onDelete('cascade');
         });
     }
 

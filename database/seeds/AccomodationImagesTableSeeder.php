@@ -14,11 +14,16 @@ class AccomodationImagesTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        // Prendiamo tutte le accomodation per ciclare e per estrapolare l'id
         $accomodations = Accomodation::all();
+
+        // Per ogni elemento presente in accomodations creiamo un record
         foreach ($accomodations as $accomodation) {
             // CARICA IN DB 10 IMMAGINI PER OGNI ACCOMODATION
-            for ($i=0; $i < 10; $i++) { 
+            for ($i=0; $i < 10; $i++) {
+                // Creiamo un'istanza di accomodationImage
                 $newImage = new AccomodationImage();
+                // Riempiamo tutti i campi
                 $newImage->accomodation_id = $accomodation->id;
                 $newImage->image = $faker->imageUrl(400, 250, 'detail');
                 // PRINCIPAL
@@ -27,6 +32,7 @@ class AccomodationImagesTableSeeder extends Seeder
                     // per tutte le altre prenderà false come default dal DB
                     $newImage->principal = true;
                 }
+                // Salviamo il tutto
                 $newImage->save();
             }
         }

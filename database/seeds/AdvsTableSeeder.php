@@ -13,10 +13,7 @@ class AdvsTableSeeder extends Seeder
      */
     public function run()
     {
-        $advHours = [24, 72, 144];
-        $advPrice = [2.99, 5.99, 9.99];
-        $advLabel = ['Bronze', 'Silver', 'Gold'];
-
+        // Lista di tutte le sponsorizzazione con tutte le info relative
         $advsList = [
             [
                 "price"=>2.99,
@@ -35,11 +32,15 @@ class AdvsTableSeeder extends Seeder
             ]
         ];
 
+        // Cicliamo per tutta la lunghezza della lista
         for ($i=0; $i < count($advsList); $i++) {
+            // Creiamo una nuova istanza di adv
             $newAdvs = new Adv;
+            // Inseriamo i valori della lista $advsList all'interno del record appena creato
             $newAdvs->price = $advsList[$i]['price'];
             $newAdvs->hours = $advsList[$i]['hours'];
             $newAdvs->label = $advsList[$i]['label'];
+            // Salviamo il tutto
             $newAdvs->save();
         }
 

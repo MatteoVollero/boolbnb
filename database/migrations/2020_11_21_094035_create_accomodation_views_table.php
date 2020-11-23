@@ -17,7 +17,7 @@ class CreateAccomodationViewsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('accomodation_id');
 
-            $table->date('date');
+            $table->dateTime('date');
             $table->string('user_ip',30);
 
             $table->timestamps();

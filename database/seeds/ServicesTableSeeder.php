@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 use App\Service;
 
 class ServicesTableSeeder extends Seeder
@@ -11,17 +10,21 @@ class ServicesTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        // Utilizziamo Faker per la popolazione della tabella services
-        for($i = 0 ; $i < 10; $i ++){
+
+        // Array con tutti i servizi richiesti
+        $services = ['wi-fi', 'parking', 'pool', 'reception', 'sauna', 'sea_view'];
+
+        // Utilizziamo $services per popolare la tabella
+        foreach($services as $service){
+          // Creiamo una nuova istanza di Service
           $newService = new Service;
+          
+          // Inseriamo elemento per elemento quello che si trova all'interno di $services
+          $newService->service_name = $service;
 
-
-          //Utilizzo una parola che sarà la descrizione del servizio
-          $newService->service_name = $faker->word;
-
-          //Salvo il nuovo record inserito
+          //Salviamo il nuovo record inserito
           $newService->save();
         }
 
