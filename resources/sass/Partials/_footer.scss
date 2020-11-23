@@ -20,6 +20,8 @@ footer {
                     }
                     .header-bnb-logo {
                         width: 50%;
+                        max-width: 150px;
+                        margin-top: 25px;
                     }
                 }
             }
@@ -47,12 +49,44 @@ footer {
 }
 
 /* media  query */
-@media screen and (min-width: 992px) and (max-width:1200px) {
-    //
-}
+
+// @media screen and (min-width: 992px) and (max-width:1200px) {
+//     //
+// }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    //
+    footer {
+        .wrapper-footer {
+            .margin-top-100 {
+                .flex-box-footer-superiore {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    .colonna-footer{
+                        width: 50%;
+                        .lista-icone-social {
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            .header-bnb-logo {
+                                width: 60%;                                
+                            }
+                        }
+                    }
+                }
+                .flex-box-footer-inferiore {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .flex-box-footer-inferiore-nested {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 0px) and (max-width:768px) {
@@ -64,8 +98,14 @@ footer {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    .header-bnb-logo {
-                        max-width: 150px;
+                    .lista-icone-social {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 100%;
+                        .header-bnb-logo {
+                            width: 60%;                                
+                        }
                     }
                 }
                 .flex-box-footer-inferiore {
