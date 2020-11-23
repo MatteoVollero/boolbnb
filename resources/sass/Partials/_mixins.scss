@@ -1,13 +1,16 @@
+// generic wrapper
 @mixin GenericWrapper {
     width: 80%;
     height: 100%;
     margin: auto;
 }
+// generic flex
 @mixin GenericFlex {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
+// header top flex
 @mixin HeaderTopFlex {
     display: flex;
     justify-content: space-between;
@@ -17,7 +20,7 @@
 @mixin ColumnFlex {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 // hero input informations
@@ -39,4 +42,49 @@
     background-color: $btnColor;
     transform: scale(1.05);
     cursor: pointer;
+}
+// cards orizzontal scroller
+@mixin XScroller {
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+    padding:0px 20px;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 10px;
+}
+// cards specific flex
+@mixin CardsFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+// card item
+@mixin CardItem {
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    margin: 15px 15px;
+}
+// Accomodation wrapper
+@mixin AccomodationsWrapper {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+// hover Card
+@mixin HoverCard {
+    transform: scale(1.03);
+    overflow: hidden;
+    opacity: 0.8;
+    cursor: pointer;
+}
+// flex Informations item 
+@mixin InformationsFlex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
 }
