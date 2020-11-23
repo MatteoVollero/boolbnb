@@ -15,6 +15,8 @@ class CreateAccomodationImagesTable extends Migration
     {
         Schema::create('accomodation_images', function (Blueprint $table) {
 
+            $table->id();
+
             $table->unsignedBigInteger('accomodation_id');
 
             $table->string('image');

@@ -1,6 +1,9 @@
 <?php
 
+use App\Accomodation;
+use App\AccomodationImage;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class AccomodationImagesTableSeeder extends Seeder
 {
@@ -9,8 +12,23 @@ class AccomodationImagesTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        $accomodations = Accomodation::all();
+        foreach ($accomodations as $accomodation) {
+            // CARICA IN DB 10 IMMAGINI PER OGNI ACCOMODATION
+            for ($i=0; $i < 10; $i++) { 
+                $newImage = new AccomodationImage();
+                $newImage->accomodation_id = $accomodation->id;
+                $newImage->image = $faker->imageUrl(400, 250, 'detail');
+                // PRINCIPAL
+                if ($i<4) {
+                    // imposta true per le prime 4 immagini caricate,
+                    // per tutte le altre prenderà false come default dal DB
+                    $newImage->principal = true;
+                }
+                $newImage->save();
+            }
+        }
     }
 }
