@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccomodationServicesTable extends Migration
+class CreateAccomodationServiceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAccomodationServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('accomodation_services', function (Blueprint $table) {
+        Schema::create('accomodation_service', function (Blueprint $table) {
 
             $table->unsignedBigInteger('accomodation_id');
             $table->unsignedBigInteger('service_id');

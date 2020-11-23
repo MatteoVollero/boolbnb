@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i <20 ; $i++) { 
+        for ($i=0; $i <20 ; $i++) {
             $newUser = new User;
             $newUser->name = $faker->userName;
             $newUser->email = $faker->email;

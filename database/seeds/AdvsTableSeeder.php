@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Generator\Faker as Faker;
 use App\Adv;
 
 class AdvsTableSeeder extends Seeder
@@ -34,13 +35,13 @@ class AdvsTableSeeder extends Seeder
             ]
         ];
 
-        for ($i=0; $i < count($advsList); $i++) { 
+        for ($i=0; $i < count($advsList); $i++) {
             $newAdvs = new Adv;
             $newAdvs->price = $advsList[$i]['price'];
             $newAdvs->hours = $advsList[$i]['hours'];
             $newAdvs->label = $advsList[$i]['label'];
             $newAdvs->save();
         }
-    
+
     }
 }

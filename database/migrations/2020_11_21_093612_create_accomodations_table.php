@@ -27,14 +27,15 @@ class CreateAccomodationsTable extends Migration
             $table->string('region',100);
             $table->string('city',100);
             $table->string('address',100);
+            $table->string('zip_code',15);
 
             $table->unsignedTinyInteger('beds');
             $table->unsignedTinyInteger('rooms');
             $table->unsignedTinyInteger('toilets');
-            $table->string('zip_code', 15);
             $table->unsignedSmallInteger('square_meters');
 
             $table->unsignedDecimal('price',6,2);
+
             $table->float('latitude',9,5);
             $table->float('longitude',9,5);
 

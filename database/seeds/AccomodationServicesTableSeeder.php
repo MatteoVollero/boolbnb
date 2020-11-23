@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Accomodation;
+use App\Service;
 
 class AccomodationServicesTableSeeder extends Seeder
 {
@@ -11,6 +13,11 @@ class AccomodationServicesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+      $newAccomodation = Accomodation::inRandomOrder()->limit(5)->get();
+
+       foreach ($newAccomodation as $accomodation) {
+           $serviceRandom = Service::inRandomOrder()->first();
+           $accomodation->services()->attach($serviceRandom);
+        }
     }
 }

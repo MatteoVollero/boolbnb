@@ -17,14 +17,13 @@ class DatabaseSeeder extends Seeder
             AccomodationsTableSeeder::class,
             AdvsTableSeeder::class,
             AccomodationAdvsTableSeeder::class,
-
-            // UserInfosTableSeeder::class,
-            // UserMessagesTableSeeder::class,
-            // AccomodationViewsTableSeeder::class,
-            // AccomodationImagesTableSeeder::class,
-            // AccomodationAdvsTableSeeder::class,
-            // ServicesTableSeeder::class,
-            // AccomodationServicesTableSeeder::class
+            ServicesTableSeeder::class,
+            AccomodationViewsTableSeeder::class,
+            AccomodationServicesTableSeeder::class,
+            UserInfosTableSeeder::class,
+            UserMessagesTableSeeder::class,
+            AccomodationImagesTableSeeder::class,
+            AccomodationAdvsTableSeeder::class,
           ]);
     }
 }
