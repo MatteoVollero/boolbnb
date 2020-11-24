@@ -396,4 +396,27 @@
     </div>
 </div>
 </section>
+<section class="second_main_section">
+    <div class="main_wrapper">
+        <div class="single_accomodation">
+            <div class="cover_image">
+
+            </div>
+            <div class="secondary_images">
+                <div class="image_item">
+
+                </div>
+                <div class="image_item">
+
+                </div>
+                <div class="image_item">
+
+                </div>
+                <div class="image_item">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

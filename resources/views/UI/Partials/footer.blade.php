@@ -3,7 +3,7 @@
         <div class="margin-top-100">
             <div class="flex-box-footer-superiore">
                 <div class="colonna-footer">
-                    <ul>
+                    <ul class="lista-icone-social">
                         <li>
                             <h4 class="titoli-footer">Information</h4>
                         </li>
@@ -22,7 +22,7 @@
                     </ul>
                 </div>
                 <div class="colonna-footer">
-                    <ul>
+                    <ul class="lista-icone-social">
                         <li>
                             <h4 class="titoli-footer">Community</h4>
                         </li>
@@ -41,7 +41,7 @@
                     </ul>
                 </div>
                 <div class="colonna-footer">
-                    <ul>
+                    <ul class="lista-icone-social">
                         <li>
                             <h4 class="titoli-footer">Host</h4>
                         </li>
@@ -60,7 +60,7 @@
                     </ul>
                 </div>
                 <div class="colonna-footer">
-                    <ul>
+                    <ul class="lista-icone-social">
                         <li>
                             <h4 class="titoli-footer">Assistance</h4>
                         </li>
@@ -76,8 +76,10 @@
                         <li>
                             <a href="#">Reliability and safety</a>
                         </li>
+                        <li>
+                            <img class="header-bnb-logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
+                        </li>
                     </ul>
-                    <img class="header-bnb-logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
                 </div>
             </div>
             <hr>
