@@ -26,7 +26,8 @@ footer {
                     a {
                         color: #fff;
                         &:hover {
-                            text-decoration: underline;
+                            text-decoration: none;
+                            font-weight: bold;
                         }
                     }
                     // header logo
@@ -71,10 +72,12 @@ footer {
 
 /* media  query */
 
-// @media screen and (min-width: 992px) and (max-width:1200px) {
-//     //
-// }
+// media breakpoint desktop
+@media screen and (min-width: 992px) and (max-width:1200px) {
+    //
+}
 
+// media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width: 992px) {
     footer {
         .wrapper-footer {
@@ -108,6 +111,7 @@ footer {
     }
 }
 
+// media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
     footer {
         // wrapper
@@ -144,12 +148,4 @@ footer {
             }
         }
     }
-}
-// media breakpoint tablet
-@media screen and (min-width: 769px) and (max-width: 992px) {
-    //
-}
-// media breakpoint desktop
-@media screen and (min-width: 992px) and (max-width:1200px) {
-    //
 }
