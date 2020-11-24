@@ -26,6 +26,7 @@ class CreateAccomodationAdvTable extends Migration
 
             // Istruzioni per cancellazione chiave esterna
             $table->foreign('accomodation_id')->references('id')->on('accomodations')->onDelete('cascade');
+            $table->foreign('adv_id')->references('id')->on('advs');
         });
     }
 
