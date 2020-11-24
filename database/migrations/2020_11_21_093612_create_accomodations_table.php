@@ -16,9 +16,8 @@ class CreateAccomodationsTable extends Migration
         Schema::create('accomodations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('type_id');
 
-
-            $table->string('type',50);
             $table->string('title',300);
             $table->string('description',800);
             $table->string('cover_image');
@@ -44,6 +43,8 @@ class CreateAccomodationsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('type_id')->references('id')->on('accomodation_types');
+
         });
     }
 

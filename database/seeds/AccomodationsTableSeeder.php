@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Accomodation;
+use App\AccomodationType;
 use App\User;
 use Faker\Generator as Faker;
 
@@ -15,11 +16,7 @@ class AccomodationsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-
-        // Creiamo array prototipo per i type
-        $protoType = ['accomodation','room','mansion','house','loft','hostel'];
-
-
+        // Creiamo 50 record in Accomodations
         for ($i=0; $i <50 ; $i++) {
             // Prendiamo un record casuale da user per estrapolare l'id
             $userTemp = User::inRandomOrder()->first();
@@ -27,8 +24,7 @@ class AccomodationsTableSeeder extends Seeder
             $newAccomodation = new Accomodation;
             // Riempiamo tutti i campi di Accomodation
             $newAccomodation->user_id = $userTemp->id;
-            // $newAccomodation->type = $faker->word; // Eventuale sostituzione con tabella o array
-            $newAccomodation->type = $protoType[$faker->numberBetween(0, count($protoType)-1)];
+            $newAccomodation->type_id = AccomodationType::inRandomOrder()->first()->id;
             $newAccomodation->title = $faker->text(15);
             $newAccomodation->description = $faker->paragraph(5);
             $newAccomodation->cover_image = $faker->imageUrl(800, 600, 'cover');
