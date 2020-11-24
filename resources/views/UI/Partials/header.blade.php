@@ -9,7 +9,7 @@
             </div>
         </nav>
     </section>
-    <section class="header_main">
+    {{-- <section class="header_main">
         <img class="hero" src="{{asset('images/Jumbotron_air_bnb.jpg')}}" alt="hero_air_bnb">
         <div class="header_main_item">
             <h2 class="intro_text_item">
@@ -19,5 +19,5 @@
         <div class="header_main_item"></div>
         <div class="header_main_item"></div>
         <div class="header_main_item"></div>
-    </section>
+    </section> --}}
 </header>

@@ -52,6 +52,42 @@ li {
   transform: translate(-50%, -50%);
 }
 
+.fake-main {
+  width: 100%;
+  height: 150px;
+}
+
+.Background-section-img {
+  background-color: #131B23;
+}
+
+.Background-section-img .container {
+  display: flex;
+  justify-content: center;
+}
+
+.Background-section-img .container .main-cover {
+  width: 500px;
+  height: 500px;
+  background-color: blue;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.Background-section-img .container .linea-img .linea-img-nested {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.Background-section-img .container .linea-img .linea-img-nested .immagini-esempio {
+  background-color: red;
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  margin: 5px;
+}
+
 footer {
   background-image: linear-gradient(to right, #23102b, #531b5a);
   color: #fff;
@@ -170,7 +206,11 @@ footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore .flex-box-foot
     width: 100%;
   }
 
-  footer .wrapper-footer .margin-top-100 .flex-box-footer-superiore .lista-icone-social .header-bnb-logo {
+  footer .wrapper-footer .margin-top-100 .flex-box-footer-superiore .lista-icone-social li {
+    text-align: center;
+  }
+
+  footer .wrapper-footer .margin-top-100 .flex-box-footer-superiore .lista-icone-social li .header-bnb-logo {
     width: 60%;
   }
 
