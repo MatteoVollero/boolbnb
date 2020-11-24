@@ -16,6 +16,10 @@ input {
   outline: none;
 }
 
+button {
+  outline: none;
+}
+
 .header_top {
   position: fixed;
   top: 0;
@@ -59,7 +63,7 @@ input {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 769px) and (max-width: 992px) {
   .header_bnb_logo {
     min-width: 15%;
   }
@@ -551,6 +555,51 @@ input {
   opacity: 0;
 }
 
+.second_main_section {
+  width: 100%;
+  height: 1000px;
+  background-color: #131B23;
+}
+
+.second_main_section .main_wrapper {
+  padding: 30px;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+
+.second_main_section .main_wrapper .single_accomodation {
+  background-color: lightblue;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.second_main_section .main_wrapper .single_accomodation .cover_image {
+  height: 100%;
+  width: 50%;
+}
+
+.second_main_section .main_wrapper .single_accomodation .secondary_images {
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  height: 100%;
+  width: 50%;
+}
+
+.second_main_section .main_wrapper .single_accomodation .secondary_images .image_item {
+  background-color: crimson;
+  border-radius: 10px;
+  margin: 10px;
+  height: 47%;
+  width: 47%;
+}
+
 footer {
   background-image: linear-gradient(to right, #23102b, #531b5a);
   color: #fff;
@@ -612,8 +661,6 @@ footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore .flex-box-foot
 footer .wrapper-footer .margin-top-100 .flex-box-footer-inferiore .flex-box-footer-inferiore-nested .lista-icone-social li a:hover {
   text-decoration: none;
 }
-
-/* media  query */
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
   footer .wrapper-footer {
