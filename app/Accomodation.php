@@ -39,7 +39,7 @@ class Accomodation extends Model
     // relazione MtoM con advs
     public function advs()
     {
-        return $this->belongsToMany('App\adv');
+        return $this->belongsToMany('App\Adv')->withPivot('start_adv','end_adv','price_paid');
     }
 
     // relazione inversa Mto1 con accomodation_types
