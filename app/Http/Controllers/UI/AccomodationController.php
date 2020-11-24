@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\UI;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Accomodation;
+use App\Adv;
+use App\Service;
+use Carbon\Carbon;
 
 class AccomodationController extends Controller
 {
@@ -13,7 +17,34 @@ class AccomodationController extends Controller
      */
     public function index()
     {
-        //
+        // Prendiamo tutti i record da accomodation
+        $Accomodations = Accomodation::all();
+
+        // Array che conterrà solo i record sponsorizzati di $Accomodations(contiene tutti i record della tabella accomodation)
+        $sponsoredAccomodations = [];
+
+        // Cicliamo per ogni record presente all'interno di $Accomodations
+        foreach($Accomodations as $accomodation){
+          // Questa flag ci serve per non inserire due volte lo stesso appartamento in $sponsoredAccomodations
+          $advFound = false;
+          // Cicliamo per un numero di volte pari al numero delle sponsorizzazioni fatte per quel appartamento
+          foreach ($accomodation->advs as $adv) {
+            // Controlliamo che la data di fine sponsorizzazione sia maggiore di quella odierna
+            if($advFound == false && $adv->pivot->end_adv > Carbon::now())
+            {
+              // Se si entra si aggiunge tutto il record a $sponsoredAccomodations
+              $sponsoredAccomodations[] = $accomodation;
+              // Settiamo la flag a true in modo da non inserire più volte lo stesso appartamento
+              $advFound = true;
+              // inseriamo il break per far terminare il ciclo perchè abbiamo trovato una sponsorizzata attiva
+              break;
+            }
+          }
+        }
+
+        dd($sponsoredAccomodations[21]->services[0]->service_name);
+
+        return view('UI.home');
     }
 
     /**
