@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
             $newUser->name = $faker->userName;
             $newUser->email = $faker->email;
             $newUser->email_verified_at = $faker->dateTime;
-            $newUser->password = $faker->password;
+            $newUser->password = '1234';
             // Salviamo il tutto
             $newUser->save();
         }
