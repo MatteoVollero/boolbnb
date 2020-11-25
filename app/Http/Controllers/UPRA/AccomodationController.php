@@ -3,9 +3,20 @@
 namespace App\Http\Controllers\UPRA;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Accomodation;
+use App\AccomodationType;
+use App\Service;
+use Carbon\Carbon;
 
 class AccomodationController extends Controller
 {
+
+    // Trasforma una stringa in slug
+    function slugify($string){
+      return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string), '-'));
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -79,7 +90,7 @@ class AccomodationController extends Controller
             }
         }
 
-        return view('UI.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+        return view('UPRA.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
     }
 
     /**
@@ -89,7 +100,10 @@ class AccomodationController extends Controller
      */
     public function create()
     {
-        //
+        // Recuperiamo tutti i services dal DB
+        $services = Service::all();
+        // Chiamiamo la view contenente il form di creazione dell'accomodation
+        return view('TEST.create', compact('services'));
     }
 
     /**
@@ -100,7 +114,64 @@ class AccomodationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Trasferiamo in $data tutto i dati che sono stati inseriti all'interno del form
+        $data = $request->all();
+
+        // Validazione dei dati ricevuti dal form con $request
+        $request->validate ([
+          'title'=>'required|max:300',
+          'description'=>'required|max:800',
+          'cover_image'=>'required|image',
+          'slug'=>'required|unique:accomodations,slug|max:300',
+          'country'=>'required|max:100',
+          'region'=>'required|max:100',
+          'city'=>'required|max:100',
+          'address'=>'required|max:100',
+          'zip_code'=>'required|max:15',
+          'beds'=>'required|integer|min:0|max:100',
+          'rooms'=>'required|integer|min:0|max:100',
+          'toilets'=>'required|integer|min:0',
+          'square_meters'=>'required|integer|min:9|max:1200',
+          'price'=>'required|between:0,9999.99',
+          'latitude'=>'required|between:-90.00,90.00',
+          'longitude'=>'required|between:-180.00,180.00',
+          'visible'=>'required|between:0,1',
+          'type_id'=>'required|integer|min:0',
+      ]);
+
+      // Creiamo una nuova istanza di accomodations    
+      $newAccomodation=new Accomodation;
+      // Riempiamo tutti i campi del nuovo record della tabella accomodations
+      $newAccomodation->user_id = $data['user_id'];
+      $newAccomodation->title = $data['title'];
+      $newAccomodation->description = $data['description'];
+      $newAccomodation->cover_image = $data['cover_image'];
+      $newAccomodation->slug = $data['slug'];
+      $newAccomodation->country = $data['country'];
+      $newAccomodation->region = $data['region'];
+      $newAccomodation->city = $data['city'];
+      $newAccomodation->address = $data['address'];
+      $newAccomodation->zip_code = $data['zip_code'];
+      $newAccomodation->beds = $data['beds'];
+      $newAccomodation->rooms = $data['rooms'];
+      $newAccomodation->toilets = $data['toilets'];
+      $newAccomodation->square_meters = $data['square_meters'];
+      $newAccomodation->price = $data['price'];
+      $newAccomodation->latitude = $data['latitude'];
+      $newAccomodation->longitude = $data['longitude'];
+      $newAccomodation->visible = $data['visible'];
+      $newAccomodation->type_id = $data['type_id'];
+      // Salviamo il nuovo record nella tabella accomodations
+      $newAccomodation->save();
+      // Prendiamo dalla tabella accomodations l'ultimo record appena inserito per recuperare l'id
+      $newAccomodation= Accomodation::all()->last();
+      
+      // Cicliamo su tutti i servizi che hai scelto l'utente
+      // foreach ($data['services'] as $service) {
+      foreach ($request->services as $service) {
+        // salva con attach nella tabella pivot accomodation_service gli id di services scelti dell'utente        
+        $newAccomodation->services()->attach($service);
+      }
     }
 
     /**
@@ -109,9 +180,12 @@ class AccomodationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+      // Troviamo in accomodations il record che ha slug uguale a quello passato in argomento
+      $accomodation = Accomodation::where('slug', $slug)->get();
+      // Chiamiamo la view show dell'UPRA, passandogli  compact il record trovato
+      return view('UPRA.show', compact('accomodation'));
     }
 
     /**
@@ -145,6 +219,11 @@ class AccomodationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Troviamo in accomodations il record con l'id passato come argomento $id
+        $accomodation = Accomodation::find($id);
+        // Cancelliamo dal DB  il record trovato
+        $accomodation->delete();
+        // Reindirizziamo alla route che visualizza la view home
+        return redirect()->route('UPRA.home');
     }
 }

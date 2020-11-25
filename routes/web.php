@@ -21,3 +21,6 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home','UI\AccomodationController@index');
+Route::get('/UPRA/create','UPRA\AccomodationController@create')->name('create');
+Route::post('/UPRA/store','UPRA\AccomodationController@store')->name('store');
+
