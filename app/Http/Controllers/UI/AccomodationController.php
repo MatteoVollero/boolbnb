@@ -18,7 +18,7 @@ class AccomodationController extends Controller
      */
     public function index()
     {
-        // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
+      // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
         $sponsoredAccomodationNumber = 10;
         $normalAccomodationNumber = 20;
 
