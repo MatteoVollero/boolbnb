@@ -139,7 +139,7 @@ class AccomodationController extends Controller
           'type_id'=>'required|integer|min:0',
       ]);
 
-      // Creiamo una nuova istanza di accomodations    
+      // Creiamo una nuova istanza di accomodations
       $newAccomodation=new Accomodation;
       // Riempiamo tutti i campi del nuovo record della tabella accomodations
       $newAccomodation->user_id = $data['user_id'];
@@ -164,12 +164,12 @@ class AccomodationController extends Controller
       // Salviamo il nuovo record nella tabella accomodations
       $newAccomodation->save();
       // Prendiamo dalla tabella accomodations l'ultimo record appena inserito per recuperare l'id
-      $newAccomodation= Accomodation::all()->last();
-      
+      $newAccomodation = Accomodation::all()->last();
+
       // Cicliamo su tutti i servizi che hai scelto l'utente
       // foreach ($data['services'] as $service) {
       foreach ($request->services as $service) {
-        // salva con attach nella tabella pivot accomodation_service gli id di services scelti dell'utente        
+        // salva con attach nella tabella pivot accomodation_service gli id di services scelti dell'utente
         $newAccomodation->services()->attach($service);
       }
     }
