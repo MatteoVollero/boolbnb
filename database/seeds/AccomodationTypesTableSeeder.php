@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\AccomodationType;
+use Faker\Generator as Faker;
 
 class AccomodationTypesTableSeeder extends Seeder
 {
@@ -10,7 +11,7 @@ class AccomodationTypesTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         // Creiamo array prototipo per i type
         $protoType = ['accomodation','room','mansion','house','loft','hostel'];
@@ -20,6 +21,7 @@ class AccomodationTypesTableSeeder extends Seeder
             $newType = new AccomodationType;
             // riempiamo il campo name con ogni elemento di $protoType
             $newType->name = $type;
+            $newType->image = $faker->imageUrl(800,600,'type:'.$type);
             // salviamo tutto
             $newType->save();
         }

@@ -5,11 +5,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Accomodation;
 use App\Adv;
-use App\Service;
+use App\AccomodationType;
 use Carbon\Carbon;
 
 class AccomodationController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -17,34 +18,75 @@ class AccomodationController extends Controller
      */
     public function index()
     {
+      // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
+        $sponsoredAccomodationNumber = 10;
+        $normalAccomodationNumber = 20;
+
         // Prendiamo tutti i record da accomodation
-        $Accomodations = Accomodation::all();
+        $Accomodations = Accomodation::inRandomOrder()->get();
+        // Array contenente tutti i record di type
+        $types = AccomodationType::all();
+
+        // foreach($Accomodations as $accomodation)
+        // {
+        //   foreach($accomodation->services as $service)
+        //     echo  'appartamento: '.$accomodation->id.'   servizio: '.$service->service_name;
+        // }
 
         // Array che conterrà solo i record sponsorizzati di $Accomodations(contiene tutti i record della tabella accomodation)
         $sponsoredAccomodations = [];
 
+        // Array di appartamenti non sponsorizzati
+        $normalAccomodationsScroll1 = [];
+        $normalAccomodationsScroll2 = [];
+
+
+
         // Cicliamo per ogni record presente all'interno di $Accomodations
-        foreach($Accomodations as $accomodation){
+        foreach($Accomodations as $accomodation)
+        {
           // Questa flag ci serve per non inserire due volte lo stesso appartamento in $sponsoredAccomodations
           $advFound = false;
-          // Cicliamo per un numero di volte pari al numero delle sponsorizzazioni fatte per quel appartamento
-          foreach ($accomodation->advs as $adv) {
-            // Controlliamo che la data di fine sponsorizzazione sia maggiore di quella odierna
-            if($advFound == false && $adv->pivot->end_adv > Carbon::now())
+
+          // Controlliamo quanti elementi ha $accomodation->advs se ne ha 0 è una non sponsorizzata
+          if(count($accomodation->advs) == 0)
+          {
+            // Controlliamo che il numero degli elementi  dell'array della scroll numero 1 sia inferiore a quello stabilito
+            if(count($normalAccomodationsScroll1) < $normalAccomodationNumber)
             {
-              // Se si entra si aggiunge tutto il record a $sponsoredAccomodations
-              $sponsoredAccomodations[] = $accomodation;
-              // Settiamo la flag a true in modo da non inserire più volte lo stesso appartamento
-              $advFound = true;
-              // inseriamo il break per far terminare il ciclo perchè abbiamo trovato una sponsorizzata attiva
-              break;
+              $normalAccomodationsScroll1[] = $accomodation;
+              // Controlliamo che il numero degli elementi  dell'array della scroll numero 2 sia inferiore a quello stabilito
+            } else if(count($normalAccomodationsScroll2) < $normalAccomodationNumber)
+              {
+                $normalAccomodationsScroll2[] = $accomodation;
+              }
+          } else
+            {
+              // Cicliamo per un numero di volte pari al numero delle sponsorizzazioni fatte per quel appartamento
+              foreach ($accomodation->advs as $adv)
+              {
+                // Controlliamo che l'array degli appartamenti sponsorizzati abbia raggiunto il numero di elementi prestabilito in $sponsoredAccomodationNumber
+                if(count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
+                {
+                  break;
+                }
+                // Controlliamo che la data di fine sponsorizzazione sia maggiore di quella odierna
+                if($advFound == false && $adv->pivot->end_adv > Carbon::now())
+                {
+                  // Se si entra si aggiunge tutto il record a $sponsoredAccomodations
+                  $sponsoredAccomodations[] = $accomodation;
+                  // Settiamo la flag a true in modo da non inserire più volte lo stesso appartamento
+                  $advFound = true;
+                  // inseriamo il break per far terminare il ciclo perchè abbiamo trovato una sponsorizzata attiva
+                  break;
+                }
+              }
             }
-          }
         }
 
-        dd($sponsoredAccomodations[21]->services[0]->service_name);
 
-        return view('UI.home');
+
+        return view('UI.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
     }
 
     /**
