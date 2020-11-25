@@ -16,8 +16,9 @@ class AccomodationsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        // Creiamo 50 record in Accomodations
-        for ($i=0; $i <50 ; $i++) {
+        $recordsNumber = 100;
+        // Creiamo $recordsNumber record in Accomodations
+        for ($i=0; $i < $recordsNumber ; $i++) {
             // Prendiamo un record casuale da user per estrapolare l'id
             $userTemp = User::inRandomOrder()->first();
             // Creiamo una nuova istanza di accomodation
