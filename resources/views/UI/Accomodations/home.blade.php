@@ -3,6 +3,7 @@
 @section('title')
     Homepage
 @endsection
+@include('UI.Partials.jumbotron')
 @section('main_content')
 {{-- // main section  --}}
 <section class="first_main_section">
