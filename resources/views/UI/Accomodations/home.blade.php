@@ -127,7 +127,7 @@
     {{-- cards section  --}}
     <div class="cards_section">
         {{-- first main section wrapper  --}}
-        <div class="first_main_section_wrapper">
+        <div class="first_main_wrapper">
             {{-- accomodations card --}}
             <div class="accomodation_cards">
                 {{-- upper cards controller  --}}
@@ -396,26 +396,53 @@
     </div>
 </div>
 </section>
+{{-- // second main section --}}
 <section class="second_main_section">
-    <div class="main_wrapper">
+    {{-- // second main section wrapper  --}}
+    <div class="second_main_wrapper">
+        {{-- // single accomodation  --}}
         <div class="single_accomodation">
+            {{-- cover image  --}}
             <div class="cover_image">
 
             </div>
+            {{-- // secondary images  --}}
             <div class="secondary_images">
+                {{-- image item  --}}
                 <div class="image_item">
-
                 </div>
+                {{-- image item  --}}
                 <div class="image_item">
-
                 </div>
+                {{-- image item  --}}
                 <div class="image_item">
-
                 </div>
+                {{-- image item  --}}
                 <div class="image_item">
-
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+{{-- third main section  --}}
+<section class="third_main_section">
+    {{-- third main wrapper  --}}
+    <div class="third_main_wrapper">
+        <div class="elm_item">
+            <h2>
+                Become an Host
+            </h2>
+        </div>
+        <div class="elm_item">
+            <h2>
+                Choice a type
+            </h2>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </div>
 </section>
