@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('UI.Accomodations.home');
+    return view('UI.Accomodations.search');
 });
 
 Route::get('/show', function () {

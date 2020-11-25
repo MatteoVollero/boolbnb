@@ -6,14 +6,14 @@
             </div>
             @if (Route::has('login'))
                 <div class="links">
-                    <a href="#"><i class="fas fa-bars none"></i></a>
+                    <a href="#"><i class="fas fa-bars hamburger"></i></a>
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" class="link-header">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}" class="link-header">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}" class="link-header">Register</a>
                         @endif
                     @endauth
                 </div>

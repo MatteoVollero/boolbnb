@@ -19,10 +19,10 @@
         }
         .links {
             display: flex;
-            .none {
+            .hamburger {
                 display: none;
             }
-            & > a {
+            .link-header {
                 color: $secondMainSection;
                 padding: 0 25px;
                 font-size: 13px;
@@ -45,6 +45,14 @@
     .header_bnb_logo {
         min-width: 80px;
     }
+    .links {
+        .hamburger {
+            display: inline;
+        }
+        .link-header {
+            display: none;
+        }
+    }
 }
 
 // media breakpoint mobile
@@ -52,7 +60,10 @@
     .header_bnb_logo {
         min-width: 80px;
     }
-    .none {
-        display: inline-block;
+    .hamburger {
+        display: inline;
+    }
+    .link-header {
+        display: none;
     }
 }
