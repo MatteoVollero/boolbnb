@@ -7,12 +7,16 @@
 @section('main_content')
 <section class="section-list">
     <div class="elm-responsive-list">
-        @for ($i = 0; $i < 10; $i++)
+        @for ($i = 0; $i < 11; $i++)
         <div class="elm-list-list">
             <div class="img-elm-list"></div>
             <div class="testo-elm-list">
                 <div class="testo-elm-list-superiore">
-                    <h3 class="title-elm-list">Appartamento</h3>
+                    <div class="row-title-elm-list">
+                        <h3 class="title-elm-list">Appartamento</h3>
+                        <h5 class="sponsor-elm-list">Sponsorized</h5>
+                    </div>
+                    <h5 class="visible-elm-list">Visible</h5>
                     <p class="text-elm-list">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus fugiat eveniet...<a href="#">Read more</a></p>
                     <div class="service-elm-searc">
                         <small class="info-elm-list">3 <i class="fas fa-toilet"></i></small>
