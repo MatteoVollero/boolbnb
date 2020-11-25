@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,7 @@ Auth::routes();
 Route::get('/home','UI\AccomodationController@index');
 Route::get('/UPRA/create','UPRA\AccomodationController@create')->name('create');
 Route::post('/UPRA/store','UPRA\AccomodationController@store')->name('store');
+Route::get('/UPRA/edit/{id}','UPRA\AccomodationController@edit')->name('edit');
+Route::put('/UPRA/update/{id}','UPRA\AccomodationController@update')->name('update');
+
 

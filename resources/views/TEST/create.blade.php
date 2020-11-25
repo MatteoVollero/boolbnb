@@ -107,17 +107,17 @@
 
             <div class="form-group">
                 <label for="price">Price</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="Inserisci">
+                <input type="number" step=0.01 class="form-control" id="price" name="price" placeholder="Inserisci">
             </div>            
 
             <div class="form-group">
                 <label for="latitude">Latitude</label>
-                <input type="number" class="form-control" id="latitude" name="latitude" placeholder="Inserisci">
+                <input type="number" step=0.000001 class="form-control" id="latitude" name="latitude" placeholder="Inserisci">
             </div>            
 
             <div class="form-group">
                 <label for="longitude">Latitude</label>
-                <input type="number" class="form-control" id="longitude" name="longitude" placeholder="Inserisci">
+                <input type="number" step=0.000001 class="form-control" id="longitude" name="longitude" placeholder="Inserisci">
             </div>            
 
             <div class="form-group">
