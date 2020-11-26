@@ -13,12 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('UI.Accomodations.home');
+Route::get('/list', function () {
+    return view('UPRA.Accomodation.index');
+});
+
+Route::get('/search', function () {
+    return view('UI.Accomodations.search');
 });
 
 Route::get('/show', function () {
     return view('UI.Accomodations.show');
+});
+
+Route::get('/', function () {
+    return view('UI.Accomodations.home');
 });
 
 

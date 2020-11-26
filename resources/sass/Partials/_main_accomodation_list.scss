@@ -6,7 +6,7 @@
     .elm-responsive-list {
         display: flex;
         flex-wrap: wrap;
-        @include GenericWrapper;
+       @include GenericWrapper;
         .elm-list-list {
             margin: 10px;
             height: 450px;
