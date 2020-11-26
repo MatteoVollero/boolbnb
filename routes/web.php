@@ -34,15 +34,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// rotte ADMIN
-Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::resource('accomodations', 'AccomodationController');
-});
+// // rotte ADMIN
+// Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
+//     Route::resource('accomodations', 'AccomodationController');
+// });
 
-Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
 
-// rotte GUESTS
-Route::resource('accomodations', 'AccomodationController');
+// // rotte GUESTS
+// Route::resource('accomodations', 'AccomodationController');
 
 // Route::get('/accomodations', 'AccomodationController@index')->name('accomodations.index');
 // Route::get('/accomodations/{slug}', 'AccomodationController@show')->name('accomdations.show');

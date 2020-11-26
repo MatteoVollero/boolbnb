@@ -47,6 +47,7 @@
 @mixin XScroller {
     flex-direction: column;
     overflow-x: scroll;
+    overflow-y: hidden;
     border-radius: 10px;
     padding:0px 20px;
     flex-wrap: wrap;

@@ -4,20 +4,22 @@ footer {
     background-image: linear-gradient(to right,  $violaHeroScuroModificato, $violaHeroScuro);
     width: 100%;
     border-top: 1px solid $secondMainSection;
-    .wrapper-footer {
-        @include GenericWrapper;
-        // margin
-        .margin-top-100 {
+    // wrapper footer 
+    .wrapper_footer {
+        width: 80%;
+        margin: auto;
+        // margin top
+        .margin_top_100 {
             padding-top: 40px;
             // upper footer flex
-            .flex-box-footer-superiore {
+            .flex_box_footer_higher {
                 display: flex;
                 justify-content: space-between;
                 // footer column
-                .colonna-footer{
+                .column_footer{
                     width: 25%;
                     // footer titles
-                    .titoli-footer {
+                    .titles_footer {
                         color: $airBnB;
                         font-size: 25px;
                         margin: 10px 0 10px 0;
@@ -30,7 +32,7 @@ footer {
                         }
                     }
                     // header logo
-                    .header-bnb-logo {
+                    .header_bnb_logo {
                         width: 50%;
                         margin: 10px 0 10px 0;
                     }
@@ -40,18 +42,20 @@ footer {
                 margin: 10px 0 10px 0;
                 border: 1px solid $violaHeroScuro;
             }
-            .flex-box-footer-inferiore {
+            // flex box footer lower 
+            .flex_box_footer_lower {
                 display: flex;
                 justify-content: flex-end;
                 // lower flex footer nested
-                .flex-box-footer-inferiore-nested {
+                .flex_box_footer_lower_nested {
                     margin: 10px 0 10px 0;
                     display: flex;
                     justify-content: flex-end;
                     align-items: center;
                     width: 50%;
                     color:#fff;
-                    .lista-icone-social {
+                    // list icons social 
+                    .list_icons_social {
                         li {
                             display: inline;
                             & a {
@@ -70,24 +74,24 @@ footer {
 }
 
 /* media  query */
-
 // media breakpoint desktop
 @media screen and (min-width: 992px) and (max-width:1200px) {
     //
 }
-
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width: 992px) {
     footer {
-        .wrapper-footer {
-            .margin-top-100 {
-                .flex-box-footer-superiore {
+        .wrapper_footer {
+            .margin_top_100 {
+                .flex_box_footer_higher {
                     display: flex;
                     justify-content: space-between;
                     flex-wrap: wrap;
-                    .colonna-footer{
+                    // column footer
+                    .column_footer{
                         width: 50%;
-                        .lista-icone-social {
+                        // list_icons_social
+                        .list_icons_social {
                             display: flex;
                             flex-direction: column;
                             text-align: center;
@@ -95,11 +99,13 @@ footer {
                         }            
                     }
                 }
-                .flex-box-footer-inferiore {
+                // flex footer lower
+                .flex_box_footer_lower {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    .flex-box-footer-inferiore-nested {
+                    // flex box footer lower nested
+                    .flex_box_footer_lower_nested {
                         display: flex;
                         justify-content: center;
                         width: 100%;
@@ -113,32 +119,38 @@ footer {
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
     footer {
-        // wrapper
+        // wrapper footer
         .wrapper-footer {
             width: 100%;
+            // margin top 
             .margin-top-100 {
-                .flex-box-footer-superiore {
+                // flex box footer higher 
+                .flex-box-footer-higher {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    .lista-icone-social {
+                    // list icons social
+                    .list-icons-social {
                         display: flex;
                         align-items: center;
                         flex-direction: column;
                         width: 100%;
                         text-align: center;
                         li { 
-                            .header-bnb-logo {
+                            // header bnb logo 
+                            .header_bnb_logo {
                             width: 60%;                                
                             }
                         }
                     }
                 }
-                .flex-box-footer-inferiore {
+                 // flex box footer lower
+                .flex_box_footer_lower {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    .flex-box-footer-inferiore-nested {
+                    // flex box footer lower nested
+                    .flex_box_footer_lower_nested {
                         display: flex;
                         justify-content: center;
                         width: 100%;
