@@ -1,0 +1,119 @@
+.section-list {
+    background-color: $firstMainSection;
+    font-family: $secondFont;
+    padding: 120px 0;
+    margin-top: 70px;
+    .elm-responsive-list {
+        display: flex;
+        flex-wrap: wrap;
+        @include GenericWrapper;
+        .elm-list-list {
+            margin: 10px;
+            height: 450px;
+            width: calc((100% - 40px) / 2);
+            display: flex;
+            flex-direction: column;
+            background-color: $secondMainSection;
+            border-radius: 15px;
+            padding: 10px;
+            .img-elm-list {
+                height: 50%;
+                width: 100%;
+                background-color: gray;
+                border-radius: 15px;
+            }
+            .testo-elm-list {
+                padding: 5px 30px;
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .testo-elm-list-superiore {
+                    .row-title-elm-list{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .title-elm-list {
+                            color: $airBnB;
+                            font-size: 25px;
+                            margin-bottom: 15px;
+                            font-weight: bolder;
+                        }
+                        .sponsor-elm-list {
+                            color: $airBnB;
+                            margin-bottom: 15px;
+                            font-weight: bolder;
+                        }
+                    }
+                    .visible-elm-list {
+                        color: $airBnB;
+                        margin-bottom: 15px;
+                        font-weight: bolder;
+                    }
+                    .text-elm-list {
+                        margin-bottom: 15px;
+                        font-weight: bold;
+                        color: $textColorSearch;
+                    }
+                    .info-elm-list {
+                        margin: 0 10px;
+                        font-size: 15px;
+                        color: $textColorSearch;
+                        font-weight: bold;
+                    }
+                }
+                .testo-elm-list-inferiore {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                    .price-elm-list {
+                        font-size: 20px;
+                        font-weight: bolder;
+                        color: $airBnB;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* media  query */
+
+// media breakpoint desktop
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    //
+}
+
+// media breakpoint tablet
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    //
+}
+
+// media breakpoint mobile
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    .section-list {
+        .elm-responsive-list {
+            display: flex;
+            flex-wrap: wrap;
+            .elm-list-list {
+                margin: 10px 0;
+                height: 400px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .img-elm-list {
+                    height: 50%;
+                    width: 100%;
+                    max-width: 350px;
+                }
+                .testo-elm-list {
+                    width: 100%;
+                    height: 50%;
+                    display: block;
+                }
+            }
+        }
+    }
+}
