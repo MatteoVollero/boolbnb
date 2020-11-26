@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccomodationImagesTable extends Migration
+class CreateAccomodationServiceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,17 @@ class CreateAccomodationImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('accomodation_images', function (Blueprint $table) {
-
-            $table->id();
+        Schema::create('accomodation_service', function (Blueprint $table) {
 
             $table->unsignedBigInteger('accomodation_id');
+            $table->unsignedBigInteger('service_id');
 
-            $table->string('image');
-
-            $table->boolean('principal')->default(false);
 
             $table->timestamps();
 
             // Istruzioni per cancellazione chiave esterna
             $table->foreign('accomodation_id')->references('id')->on('accomodations')->onDelete('cascade');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
         });
     }
 
@@ -37,6 +34,6 @@ class CreateAccomodationImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accomodation_images');
+        Schema::dropIfExists('accomodation_services');
     }
 }

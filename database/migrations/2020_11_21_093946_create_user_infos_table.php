@@ -14,8 +14,15 @@ class CreateUserInfosTable extends Migration
     public function up()
     {
         Schema::create('user_infos', function (Blueprint $table) {
-            $table->id();
+
+            $table->unsignedBigInteger('user_id');
+            $table->string('first_name',50);
+            $table->string('last_name',50);
+            $table->date('date_of_birth')->nullable();
             $table->timestamps();
+
+            // Istruzioni per cancellazione chiave esterna
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

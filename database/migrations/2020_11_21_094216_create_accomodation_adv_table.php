@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccomodationImagesTable extends Migration
+class CreateAccomodationAdvTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,20 @@ class CreateAccomodationImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('accomodation_images', function (Blueprint $table) {
-
-            $table->id();
+        Schema::create('accomodation_adv', function (Blueprint $table) {
 
             $table->unsignedBigInteger('accomodation_id');
+            $table->unsignedBigInteger('adv_id');
 
-            $table->string('image');
+            $table->dateTime('start_adv');
+            $table->dateTime('end_adv');
+            $table->unsignedDecimal('price_paid',4,2);
 
-            $table->boolean('principal')->default(false);
-
-            $table->timestamps();
+            // $table->timestamps();
 
             // Istruzioni per cancellazione chiave esterna
             $table->foreign('accomodation_id')->references('id')->on('accomodations')->onDelete('cascade');
+            $table->foreign('adv_id')->references('id')->on('advs');
         });
     }
 
@@ -37,6 +37,6 @@ class CreateAccomodationImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accomodation_images');
+        Schema::dropIfExists('accomodation_advs');
     }
 }
