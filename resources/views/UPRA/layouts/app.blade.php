@@ -9,12 +9,12 @@
     <title>@yield('title')</title>
   </head>
   <body>
-    @include('UPRA.Partials.header')
-    @include('UPRA.Partials.jumbotron')
+    @include('UI.Partials.header')
+    {{-- @include('UPRA.Partials.jumbotron') --}}
     <main>
       @yield('main_content')
     </main>
-    @include('UPRA.Partials.footer')
+    @include('UI.Partials.footer')
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="{{asset('/js/app.js')}}"></script>

@@ -8,7 +8,7 @@
                 <div class="links">
                     <a href="#"><i class="fas fa-bars hamburger"></i></a>
                     @auth
-                        <a href="{{ url('/home') }}" class="link-header">Home</a>
+                        <a href="{{ url('/') }}" class="link-header">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="link-header">Login</a>
 

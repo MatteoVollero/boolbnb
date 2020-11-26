@@ -72,7 +72,6 @@
 .first_main_section {
     background-color:$firstMainSection;
     @include GenericFlex;
-    margin-top: -5px;
     height: 1000px;
     width: 100%;
     // first main wrapper
