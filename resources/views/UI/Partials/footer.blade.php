@@ -1,11 +1,11 @@
  <footer>
-    <div class="wrapper-footer">
-        <div class="margin-top-100">
-            <div class="flex-box-footer-superiore">
-                <div class="colonna-footer">
-                    <ul class="lista-icone-social">
+    <div class="wrapper_footer">
+        <div class="margin_top_100">
+            <div class="flex_box_footer_higher">
+                <div class="column_footer">
+                    <ul class="list_icons_social">
                         <li>
-                            <h4 class="titoli-footer">Information</h4>
+                            <h4 class="titles_footer">Information</h4>
                         </li>
                         <li>
                             <a href="#">How does BoolBnB works?</a>
@@ -21,10 +21,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="colonna-footer">
-                    <ul class="lista-icone-social">
+                <div class="column_footer">
+                    <ul class="list_icons_social">
                         <li>
-                            <h4 class="titoli-footer">Community</h4>
+                            <h4 class="titles_footer">Community</h4>
                         </li>
                         <li>
                             <a href="#">Diversity and belonging</a>
@@ -40,10 +40,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="colonna-footer">
-                    <ul class="lista-icone-social">
+                <div class="column_footer">
+                    <ul class="list_icons_social">
                         <li>
-                            <h4 class="titoli-footer">Host</h4>
+                            <h4 class="titles_footer">Host</h4>
                         </li>
                         <li>
                             <a href="#">Become a host</a>
@@ -59,10 +59,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="colonna-footer">
-                    <ul class="lista-icone-social">
+                <div class="column_footer">
+                    <ul class="list_icons_social">
                         <li>
-                            <h4 class="titoli-footer">Assistance</h4>
+                            <h4 class="titles_footer">Assistance</h4>
                         </li>
                         <li>
                             <a href="#">Service center</a>
@@ -77,15 +77,15 @@
                             <a href="#">Reliability and safety</a>
                         </li>
                         <li>
-                            <img class="header-bnb-logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
+                            <img class="footer_bnb_logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
                         </li>
                     </ul>
                 </div>
             </div>
             <hr>
-            <div class="flex-box-footer-inferiore">
-                <div class="flex-box-footer-inferiore-nested">
-                    <ul class="lista-icone-social">
+            <div class="flex_box_footer_lower">
+                <div class="flex_box_footer_lower_nested">
+                    <ul class="list_icons_social">
                         <li>
                             <a href="#">
                                 <i class="fab fa-facebook"></i>
@@ -108,7 +108,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="flex-box-footer-inferiore-nested">
+                <div class="flex_box_footer_lower_nested">
                     <small>&#169; 2020 Boolbnb, Inc. All rights reserved</small>
                 </div>        
             </div>

@@ -18,10 +18,7 @@ class AccomodationController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD:app/Http/Controllers/UI/AccomodationController.php
-       //
-=======
-      // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
+      // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2)
         $sponsoredAccomodationNumber = 10;
         $normalAccomodationNumber = 20;
 
@@ -90,7 +87,6 @@ class AccomodationController extends Controller
 
 
         return view('UI.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
->>>>>>> back-end-branch:app/Http/Controllers/AccomodationController.php
     }
 
     /**

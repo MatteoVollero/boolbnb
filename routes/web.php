@@ -34,10 +34,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// rotte ADMIN
-Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::resource('accomodations', 'AccomodationController');
-});
+// // rotte ADMIN
+// Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
+//     Route::resource('accomodations', 'AccomodationController');
+// });
 
 // Route::get('/', 'HomeController@index')->name('home');
 
