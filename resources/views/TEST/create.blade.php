@@ -25,7 +25,7 @@
         @endif
 
 
-       <form action="{{route('store')}}" method="POST" enctype="multipart/form-data">
+       <form action="{{route('admin.accomodations.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
 

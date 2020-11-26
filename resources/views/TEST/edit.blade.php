@@ -24,8 +24,7 @@
             </div>
         @endif
 
-
-       <form action="{{route('update', $accomodation->id)}}" method="POST" enctype="multipart/form-data">
+       <form action="{{route('admin.accomodations.update', $accomodation->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -42,47 +41,47 @@
 
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text" class="form-control" id="title" name="title" placeholder="Inserisci il titolo" value={{$accomodation->title}}>
+              <input type="text" class="form-control" id="title" name="title" value="{{$accomodation->title}}">
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" placeholder="Inserisci il titolo"  value={{$accomodation->description}}>
+                <textarea class="form-control" id="description" name="description">{{$accomodation->description}}</textarea>
             </div>
   
             <div class="form-group">
                 <label for="image">Immagine</label>
-                <input type="file" class="form-control" id="cover_image" name="cover_image" accept="image/*" placeholder="Scegli l'immagine" value={{$accomodation->cover_image}}>
+                <input type="file" class="form-control" id="cover_image" name="cover_image" accept="image/*" placeholder="Scegli l'immagine" value="{{$accomodation->cover_image}}">
             </div>
 
             <div class="form-group">
                 <label for="slug">Slug</label>
-                <input type="text" class="form-control" id="slug" name="slug" placeholder="Inserisci lo slug"  value={{$accomodation->slug}}>
+                <input type="text" class="form-control" id="slug" name="slug" placeholder="Inserisci lo slug"  value="{{$accomodation->slug}}">
             </div>
 
             <div class="form-group">
                 <label for="country">Country</label>
-                <input type="text" class="form-control" id="country" name="country" placeholder="Inserisci"  value={{$accomodation->country}}>
+                <input type="text" class="form-control" id="country" name="country" placeholder="Inserisci"  value="{{$accomodation->country}}">
             </div>
 
             <div class="form-group">
                 <label for="region">Region</label>
-                <input type="text" class="form-control" id="region" name="region" placeholder="Inserisci"  value={{$accomodation->region}}>
+                <input type="text" class="form-control" id="region" name="region" placeholder="Inserisci"  value="{{$accomodation->region}}">
             </div>
 
             <div class="form-group">
                 <label for="city">City</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Inserisci"  value={{$accomodation->city}}>
+                <input type="text" class="form-control" id="city" name="city" placeholder="Inserisci"  value="{{$accomodation->city}}">
             </div>
 
             <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="Inserisci"  value={{$accomodation->address}}>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Inserisci"  value="{{$accomodation->address}}">
             </div>
         
             <div class="form-group">
                 <label for="zip_code">Zip Code</label>
-                <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Inserisci"  value={{$accomodation->zip_code}}>
+                <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Inserisci"  value="{{$accomodation->zip_code}}">
             </div>
 
             <div class="form-group">
@@ -159,6 +158,13 @@
             </div>
 
             <button type="submit" class="btn btn-primary">MODIFICA L'ACCOMODATION</button>
+
+            {{-- <form action="{{route('destroy', $accomodation->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">CANCELLA L'ACCOMODATION</button>
+
+            </form> --}}
    
         </form>
 

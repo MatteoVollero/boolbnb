@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UPRA;
+namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Accomodation;
@@ -10,13 +10,6 @@ use Carbon\Carbon;
 
 class AccomodationController extends Controller
 {
-
-    // Trasforma una stringa in slug
-    function slugify($string){
-      return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string), '-'));
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -33,20 +26,12 @@ class AccomodationController extends Controller
         // Array contenente tutti i record di type
         $types = AccomodationType::all();
 
-        // foreach($Accomodations as $accomodation)
-        // {
-        //   foreach($accomodation->services as $service)
-        //     echo  'appartamento: '.$accomodation->id.'   servizio: '.$service->service_name;
-        // }
-
         // Array che conterrà solo i record sponsorizzati di $Accomodations(contiene tutti i record della tabella accomodation)
         $sponsoredAccomodations = [];
 
         // Array di appartamenti non sponsorizzati
         $normalAccomodationsScroll1 = [];
         $normalAccomodationsScroll2 = [];
-
-
 
         // Cicliamo per ogni record presente all'interno di $Accomodations
         foreach($Accomodations as $accomodation)
@@ -89,8 +74,8 @@ class AccomodationController extends Controller
               }
             }
         }
-
-        return view('UPRA.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+        // Chimiamo la view della home
+        return view('TEST.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
     }
 
     /**
@@ -102,8 +87,10 @@ class AccomodationController extends Controller
     {
         // Recuperiamo tutti i services dal DB
         $services = Service::all();
+        // Recuperiamo tutti gli accomodation_types dal DB
+        $types = AccomodationType::all();
         // Chiamiamo la view contenente il form di creazione dell'accomodation
-        return view('TEST.create', compact('services'));
+        return view('TEST.create', compact('services', 'types'));
     }
 
     /**
@@ -172,6 +159,9 @@ class AccomodationController extends Controller
         // salva con attach nella tabella pivot accomodation_service gli id di services scelti dell'utente
         $newAccomodation->services()->attach($service);
       }
+      // Reindirizziamo alla route che visualizza la view show dell'accomodation appena inserito
+      return redirect()->route('admin.accomodations.show', $newAccomodation->slug);
+
     }
 
     /**
@@ -185,7 +175,7 @@ class AccomodationController extends Controller
       // Troviamo in accomodations il record che ha slug uguale a quello passato in argomento
       $accomodation = Accomodation::where('slug', $slug)->get();
       // Chiamiamo la view show dell'UPRA, passandogli  compact il record trovato
-      return view('UPRA.show', compact('accomodation'));
+      return view('TEST.show', compact('accomodation'));
     }
 
     /**
@@ -198,7 +188,9 @@ class AccomodationController extends Controller
     {
       $accomodation = Accomodation::find($id);
       $services= Service::all();
-      return view('TEST.edit', compact('accomodation', 'services'));
+      $serviceChecked='';
+
+      return view('TEST.edit', compact('accomodation', 'services', 'serviceChecked'));
     }
 
     /**
@@ -276,6 +268,10 @@ class AccomodationController extends Controller
         $editAccomodation->services()->attach($service);
       }
 
+      // Reindirizziamo alla route che visualizza la view show dell'accomodation appena inserito
+      return redirect()->route('admin.accomodations.show', $editAccomodation->slug);
+
+
     }
 
     /**
@@ -288,9 +284,9 @@ class AccomodationController extends Controller
     {
         // Troviamo in accomodations il record con l'id passato come argomento $id
         $accomodation = Accomodation::find($id);
-        // Cancelliamo dal DB  il record trovato
+        // Cancelliamo dal DB il record trovato
         $accomodation->delete();
         // Reindirizziamo alla route che visualizza la view home
-        return redirect()->route('UPRA.home');
+        return redirect()->route('admin.accomodations.index');
     }
 }
