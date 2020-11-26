@@ -14,32 +14,32 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/list', function () {
-    return view('UPRA.Accomodation.index');
-});
+// Route::get('/list', function () {
+//     return view('UPRA.Accomodation.index');
+// });
+//
+// Route::get('/search', function () {
+//     return view('UI.Accomodations.search');
+// });
+//
+// Route::get('/show', function () {
+//     return view('UI.Accomodations.show');
+// });
+//
+// Route::get('/', function () {
+//     return view('UI.Accomodations.home');
+// });
 
-Route::get('/search', function () {
-    return view('UI.Accomodations.search');
-});
-
-Route::get('/show', function () {
-    return view('UI.Accomodations.show');
-});
-
-Route::get('/', function () {
-    return view('UI.Accomodations.home');
-});
 
 
-
-Auth::routes();
+// Auth::routes();
 
 // rotte ADMIN
-Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::resource('accomodations', 'AccomodationController');
-});
+// Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
+//     Route::resource('accomodations', 'AccomodationController');
+// });
 
-Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
 
 // rotte GUESTS
 Route::resource('accomodations', 'AccomodationController');
@@ -61,7 +61,7 @@ Route::resource('accomodations', 'AccomodationController');
 // Rotte di test per back-end
 
 // CREATE
-// Route::get('/UPRA/create','UPRA\AccomodationController@create')->name('create'); // @create 
+// Route::get('/UPRA/create','UPRA\AccomodationController@create')->name('create'); // @create
 // Route::post('/UPRA/store','UPRA\AccomodationController@store')->name('store'); // @store
 // READ
 // Route::get('/UPRA/home','UPRA\AccomodationController@index')->name('home'); // @index
@@ -71,4 +71,3 @@ Route::resource('accomodations', 'AccomodationController');
 // Route::put('/UPRA/update/{id}','UPRA\AccomodationController@update')->name('update'); // @update
 // DELETE
 // Route::delete('/UPRA/destroy/{id}','UPRA\AccomodationController@destroy')->name('destroy'); // @destroy
-
