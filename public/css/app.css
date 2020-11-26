@@ -31,12 +31,12 @@ button {
 }
 
 .header_top .header_nav {
-  width: 80%;
-  height: 100%;
   margin: auto;
-  display: flex;
+  height: 100%;
+  width: 80%;
   justify-content: space-between;
   align-items: center;
+  display: flex;
 }
 
 .header_top .header_nav .header_bnb_logo {
@@ -132,10 +132,10 @@ button {
 }
 
 .jumbotron_search_item .btn_search button:hover {
-  opacity: 0.8;
   background-color: #FC6C43;
   transform: scale(1.05);
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .jumbotron_search_item .search_item {
@@ -185,16 +185,16 @@ button {
 }
 
 .jumbotron_search_item .search_item input {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  margin: 10px 0px;
-  padding: 20px 10px;
   background-color: #E9F1F7;
+  font-family: "Montserrat", sans-serif;
   border-radius: 10px;
+  padding: 20px 10px;
+  margin: 10px 0px;
+  font-size: 20px;
+  transition: 0.3s;
+  height: 30px;
   border: none;
   width: 90%;
-  height: 30px;
-  transition: 0.3s;
 }
 
 .jumbotron_search_item .search_item input:hover::-moz-placeholder {
@@ -213,30 +213,30 @@ button {
 }
 
 .jumbotron_search_item .search_item input:hover {
-  opacity: 0.8;
   background-color: #FC6C43;
   transform: scale(1.05);
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .jumbotron_search_item .search_item select {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  margin: 10px 0px;
-  padding: 20px 10px;
   background-color: #E9F1F7;
+  font-family: "Montserrat", sans-serif;
   border-radius: 10px;
+  padding: 20px 10px;
+  margin: 10px 0px;
+  font-size: 20px;
+  transition: 0.3s;
+  height: 30px;
   border: none;
   width: 90%;
-  height: 30px;
-  transition: 0.3s;
 }
 
 .jumbotron_search_item .search_item select:hover {
-  opacity: 0.8;
   background-color: #FC6C43;
   transform: scale(1.05);
   cursor: pointer;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -316,19 +316,31 @@ button {
 }
 
 .aside_accomodations {
-  min-width: 20%;
-  height: 100%;
   background-color: #131B23;
   overflow-y: auto;
+  min-width: 20%;
+  height: 100%;
 }
 
 .aside_accomodations .aside_wrapper {
-  padding: 30px 0px;
-  width: 80%;
-  height: 100%;
   margin: auto;
-  display: flex;
+  height: 100%;
+  width: 80%;
+  padding: 100px 0px;
   flex-wrap: wrap;
+  display: flex;
+  position: relative;
+}
+
+.aside_accomodations .aside_wrapper h2 {
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Ubuntu", sans-serif;
+  margin: 40px;
+  top: 0;
+  left: 0;
 }
 
 .aside_accomodations .aside_wrapper .aside_item {
@@ -345,39 +357,39 @@ button {
 .aside_accomodations .aside_wrapper .aside_item:hover {
   transform: scale(1.03);
   overflow: hidden;
-  opacity: 0.8;
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .informations_item {
-  padding: 10px;
-  font-size: 20px;
-  width: 100%;
-  height: 100%;
   border: 4px solid #E7DFC6;
-  border-radius: 10px;
   text-transform: capitalize;
-  display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .informations_item span {
-  padding: 10px;
   font-family: "Ubuntu", sans-serif;
+  padding: 10px;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .cover_image {
-  width: 100%;
-  height: 100%;
   background-color: #FC6C43;
-  position: absolute;
   border-radius: 10px;
-  top: 0;
-  left: 0;
-  opacity: 1;
+  position: absolute;
   transition: 0.3s;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  left: 0;
+  top: 0;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .cover_image:hover {
@@ -391,168 +403,206 @@ button {
 }
 
 .first_main_section {
-  margin-top: -5px;
-  width: 100%;
-  height: 1000px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   background-color: #E9F1F7;
-}
-
-.first_main_section .first_main_section_wrapper {
-  width: 90%;
-  height: 100%;
-  margin: auto;
-  display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  display: flex;
+  margin-top: -5px;
+  height: 1000px;
+  width: 100%;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards {
+.first_main_section .first_main_wrapper {
+  margin: auto;
+  height: 100%;
+  width: 90%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+}
+
+.first_main_section .first_main_wrapper h2 {
+  color: #000;
+  font-size: 40px;
+  font-family: "Ubuntu", sans-serif;
+  text-transform: capitalize;
+  position: absolute;
+  transform: translateX(-50%);
+  top: 2%;
+  left: 50%;
+}
+
+.first_main_section .first_main_wrapper .accomodation_cards {
+  background-color: none;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+  margin: auto;
   width: 100%;
   height: 90%;
-  margin: auto;
-  border-radius: 10px;
-  background-color: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .upper_cards_scroller {
-  width: 100%;
+.first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller {
+  flex-direction: column;
+  overflow-x: scroll;
+  border-radius: 10px;
+  padding: 0px 20px;
+  flex-wrap: wrap;
+  display: flex;
   height: 100%;
   margin: 20px;
-  padding: 0px 20px;
-  overflow-x: scroll;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  border-radius: 10px;
+  width: 100%;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .upper_cards_scroller .card_item {
-  width: 30%;
-  height: 100%;
+.first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item {
+  background-color: #131B23;
+  position: relative;
   border-radius: 10px;
   margin: 15px 15px;
-  position: relative;
-  background-color: #131B23;
   transition: 0.3s;
+  height: 100%;
   opacity: 1;
+  width: 30%;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .upper_cards_scroller .card_item:hover {
+.first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item:hover {
   transform: scale(1.03);
   overflow: hidden;
-  opacity: 0.8;
   cursor: pointer;
+  opacity: 0.8;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .upper_cards_scroller .card_item .informations_item {
-  padding: 10px;
-  font-size: 20px;
-  width: 100%;
-  height: 100%;
-  border: 4px solid #FC6C43;
-  border-radius: 10px;
+.first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item .informations_item {
   text-transform: capitalize;
-  display: flex;
+  border: 4px solid #FC6C43;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .upper_cards_scroller .card_item .informations_item span {
-  padding: 10px;
+.first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item .informations_item span {
   font-family: "Ubuntu", sans-serif;
+  padding: 10px;
   color: #fff;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .upper_cards_scroller .card_item .cover_image {
-  width: 100%;
-  height: 100%;
-  background-color: #E7DFC6;
-  position: absolute;
+.first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item .cover_image {
+  background-color: #FC6C43;
   border-radius: 10px;
-  top: 0;
-  left: 0;
-  opacity: 1;
+  position: absolute;
   transition: 0.3s;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  left: 0;
+  top: 0;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .upper_cards_scroller .card_item .cover_image:hover {
+.first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item .cover_image:hover {
   transform: scale(1.2);
   opacity: 0;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .lower_cards_scroller {
-  width: 100%;
+.first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller {
+  flex-direction: column;
+  overflow-x: scroll;
+  border-radius: 10px;
+  padding: 0px 20px;
+  flex-wrap: wrap;
+  display: flex;
   height: 100%;
   margin: 20px;
-  padding: 0px 20px;
-  overflow-x: scroll;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  border-radius: 10px;
+  width: 100%;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .lower_cards_scroller .card_item {
-  width: 30%;
-  height: 100%;
+.first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item {
+  background-color: #131B23;
+  position: relative;
   border-radius: 10px;
   margin: 15px 15px;
-  position: relative;
-  background-color: #131B23;
   transition: 0.3s;
+  height: 100%;
   opacity: 1;
+  width: 30%;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .lower_cards_scroller .card_item:hover {
+.first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item:hover {
   transform: scale(1.03);
   overflow: hidden;
-  opacity: 0.8;
   cursor: pointer;
+  opacity: 0.8;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .lower_cards_scroller .card_item .informations_item {
-  padding: 10px;
-  font-size: 20px;
-  width: 100%;
-  height: 100%;
-  border: 4px solid #FC6C43;
-  border-radius: 10px;
+.first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item .informations_item {
   text-transform: capitalize;
-  display: flex;
+  border: 4px solid #FC6C43;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .lower_cards_scroller .card_item .informations_item span {
-  padding: 10px;
+.first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item .informations_item span {
   font-family: "Ubuntu", sans-serif;
   color: #fff;
+  padding: 10px;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .lower_cards_scroller .card_item .cover_image {
-  width: 100%;
-  height: 100%;
-  background-color: #E7DFC6;
-  position: absolute;
+.first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item .cover_image {
+  background-color: #FC6C43;
   border-radius: 10px;
-  top: 0;
-  left: 0;
-  opacity: 1;
+  position: absolute;
   transition: 0.3s;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  left: 0;
+  top: 0;
 }
 
-.first_main_section .first_main_section_wrapper .accomodation_cards .lower_cards_scroller .card_item .cover_image:hover {
+.first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item .cover_image:hover {
   transform: scale(1.2);
   opacity: 0;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .first_main_section {
+    margin-top: 0px;
+  }
+
+  .aside_accomodations {
+    overflow-x: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 20%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .first_main_section {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .first_main_section {
+    margin-top: 0px;
+  }
 }
 
 .second_main_section {
@@ -561,15 +611,14 @@ button {
   background-color: #131B23;
 }
 
-.second_main_section .main_wrapper {
-  padding: 30px;
-  width: 80%;
-  height: 100%;
+.second_main_section .second_main_wrapper {
+  padding: 50px;
   margin: auto;
+  height: 100%;
+  width: 90%;
 }
 
-.second_main_section .main_wrapper .single_accomodation {
-  background-color: lightblue;
+.second_main_section .second_main_wrapper .single_accomodation {
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
@@ -578,12 +627,15 @@ button {
   width: 100%;
 }
 
-.second_main_section .main_wrapper .single_accomodation .cover_image {
-  height: 100%;
-  width: 50%;
+.second_main_section .second_main_wrapper .single_accomodation .cover_image {
+  height: 97%;
+  width: 250%;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: lightblue;
 }
 
-.second_main_section .main_wrapper .single_accomodation .secondary_images {
+.second_main_section .second_main_wrapper .single_accomodation .secondary_images {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
@@ -592,12 +644,85 @@ button {
   width: 50%;
 }
 
-.second_main_section .main_wrapper .single_accomodation .secondary_images .image_item {
+.second_main_section .second_main_wrapper .single_accomodation .secondary_images .image_item {
   background-color: crimson;
   border-radius: 10px;
   margin: 10px;
-  height: 47%;
-  width: 47%;
+  min-height: 47%;
+  min-width: 47%;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .image_item {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.third_main_section {
+  background-color: #446D62;
+  height: 700px;
+  padding: 50px;
+  width: 100%;
+}
+
+.third_main_section .third_main_wrapper {
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  margin: auto;
+  width: 70%;
+}
+
+.third_main_section .third_main_wrapper .elm_item {
+  width: 50%;
+  height: 100%;
+  margin: 0px 10px;
+  position: relative;
+  border-radius: 10px;
+  background-color: lightblue;
+}
+
+.third_main_section .third_main_wrapper .elm_item .higher_accomodations_types {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.third_main_section .third_main_wrapper .elm_item .higher_accomodations_types .higher_type {
+  margin: 10px;
+  width: 46%;
+  height: 45%;
+  border-radius: 10px;
+  background-color: red;
+}
+
+.third_main_section .third_main_wrapper .elm_item .lower_accomodation_type {
+  width: 100%;
+  height: 30%;
+  padding: 10px;
+}
+
+.third_main_section .third_main_wrapper .elm_item .lower_accomodation_type .lower_type {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: green;
+}
+
+.third_main_section .third_main_wrapper .elm_item h2 {
+  transform: translate(0%, 150%);
+  font-family: "Ubuntu", sans-serif;
+  position: absolute;
+  color: #fff;
+  left: 1%;
+  bottom: 0;
 }
 
 footer {
@@ -608,9 +733,9 @@ footer {
 }
 
 footer .wrapper-footer {
-  width: 80%;
-  height: 100%;
   margin: auto;
+  height: 100%;
+  width: 80%;
 }
 
 footer .wrapper-footer .margin-top-100 {
