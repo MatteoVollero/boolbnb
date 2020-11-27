@@ -21,10 +21,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            .hamburger {
-                display: none;
-            }
             .link-header {
                 border: 1px solid $airBnB;
                 background-color:$firstMainSection;
@@ -32,6 +28,11 @@
                 height: 40%;
                 padding: 10px;
                 margin: 0 10px;
+                box-shadow: 1px 2px 15px #888888;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
                 &:hover{
                     background-color: $btnColor;
                     transform: scale(1.05);
@@ -39,6 +40,9 @@
                     opacity: 0.8;
                     // color: $firstMainSection;
                     color: $secondMainSection;
+                }
+                .icn {
+                    margin: 0 10px;
                 }
             }
         }
