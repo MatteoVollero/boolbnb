@@ -10,31 +10,32 @@
     {{-- aside --}}
     <aside class="aside_accomodations">
         {{-- aside wrapper  --}}
-        
         <div class="aside_wrapper">
-            {{-- aside item  --}}
             <h2>In evidence</h2>
-            @for ($i = 0; $i < 10; $i++)
+            {{-- aside item  --}}
+            @foreach ($sponsoredAccomodations as $accomodation)
             <div class="aside_item">
                 {{-- informations item --}}
                 <div class="informations_item">
-                    <span>Country</span>
-                    <span>Region</span>
-                    <span>City</span>
-                    <span><i class="fas fa-procedures"></i></span>
-                    <span><i class="fas fa-toilet"></i></span>
+                    <span>{{$accomodation->title}}</span>
+                    <span>{{$accomodation->country}}</span>
+                    <span>{{$accomodation->region}}</span>
+                    <span>{{$accomodation->city}}</span>
+                    <span>{{$accomodation->price}}</span>
+                    <span>{{$accomodation->services}}</span>
                     <span><i class="fas fa-wifi"></i></span>
-                    <span><i class="fas fa-smoking"></i></span>
+                    <span><i class="fas fa-parking"></i></span>
                     <span><i class="fas fa-swimmer"></i></span>
+                    <span><i class="fas fa-concierge-bell"></i></span>
                     <span><i class="fas fa-hot-tub"></i></span>
-                    <span><i class="fas fa-dog"></i></span>
-                    <span>Price</span>
+                    <span><i class="fas fa-water"></i></span>
                 </div>
                 {{-- cover image --}}
                 <div class="cover_image">
+                    <img src="{{$accomodation->cover_image}}" width="inherit" height="inherit" alt="Image">
                 </div>
             </div>
-            @endfor
+            @endforeach
     </aside>
     {{-- cards section  --}}
     <div class="cards_section">
@@ -47,53 +48,57 @@
             <div class="accomodation_cards">
                 {{-- upper cards controller  --}}
                 <div class="upper_cards_scroller">
-                    @for ($i = 0; $i < 20; $i++)   
                     {{-- card item  --}}
+                    @foreach ($normalAccomodationsScroll2 as $accomodation)
                     <div class="card_item">
-                        {{-- informations item  --}}
-                        <div class="informations_item">
-                            <span>Country</span>
-                            <span>Region</span>
-                            <span>City</span>
-                            <span><i class="fas fa-procedures"></i></span>
-                            <span><i class="fas fa-toilet"></i></span>
-                            <span><i class="fas fa-wifi"></i></span>
-                            <span><i class="fas fa-smoking"></i></span>
-                            <span><i class="fas fa-swimmer"></i></span>
-                            <span><i class="fas fa-hot-tub"></i></span>
-                            <span><i class="fas fa-dog"></i></span>
-                            <span>Price</span>
+                        {{-- informations item --}}
+                         <div class="informations_item">
+                             <span>{{$accomodation->title}}</span>
+                             <span>{{$accomodation->country}}</span>
+                             <span>{{$accomodation->region}}</span>
+                             <span>{{$accomodation->city}}</span>
+                             <span>{{$accomodation->price}}</span>
+                             <span>{{$accomodation->services}}</span>
+                             <span><i class="fas fa-wifi"></i></span>
+                             <span><i class="fas fa-parking"></i></span>
+                             <span><i class="fas fa-swimmer"></i></span>
+                             <span><i class="fas fa-concierge-bell"></i></span>
+                             <span><i class="fas fa-hot-tub"></i></span>
+                             <span><i class="fas fa-water"></i></span>
+                         </div>
+                         {{-- cover image --}}
+                         <div class="cover_image">
+                             <img src="{{$accomodation->cover_image}}" width="inherit" height="inherit" alt="Image">
+                         </div>
                         </div>
-                        {{-- cover image  --}}
-                        <div class="cover_image">
-                        </div>
-                </div>
-                    @endfor
+                    @endforeach 
             </div>
                 <div class="lower_cards_scroller">
-                    @for ($i = 0; $i < 20; $i++)   
                     {{-- card item  --}}
+                    @foreach ($normalAccomodationsScroll2 as $accomodation)
                     <div class="card_item">
-                        {{-- informations item  --}}
+                       {{-- informations item --}}
                         <div class="informations_item">
-                            <span>Country</span>
-                            <span>Region</span>
-                            <span>City</span>
-                            <span><i class="fas fa-procedures"></i></span>
-                            <span><i class="fas fa-toilet"></i></span>
+                            <span>{{$accomodation->title}}</span>
+                            <span>{{$accomodation->country}}</span>
+                            <span>{{$accomodation->region}}</span>
+                            <span>{{$accomodation->city}}</span>
+                            <span>{{$accomodation->price}}</span>
+                            <span>{{$accomodation->services}}</span>
                             <span><i class="fas fa-wifi"></i></span>
-                            <span><i class="fas fa-smoking"></i></span>
+                            <span><i class="fas fa-parking"></i></span>
                             <span><i class="fas fa-swimmer"></i></span>
+                            <span><i class="fas fa-concierge-bell"></i></span>
                             <span><i class="fas fa-hot-tub"></i></span>
-                            <span><i class="fas fa-dog"></i></span>
-                            <span>Price</span>
+                            <span><i class="fas fa-water"></i></span>
                         </div>
-                        {{-- cover image  --}}
+                        {{-- cover image --}}
                         <div class="cover_image">
+                            <img src="{{$accomodation->cover_image}}" width="inherit" height="inherit" alt="Image">
                         </div>
-                </div>
-                     @endfor
-        </div>
+                    </div>
+                    @endforeach 
+            </div>
     </div>
 </section>
 {{-- // second main section --}}
@@ -137,7 +142,7 @@
         {{-- elm item  --}}
         <div class="elm_item">
             <h2>
-                Choice a type
+                Choose a type
             </h2>
             {{-- higher accomodations types  --}}
             <div class="higher_accomodations_types">

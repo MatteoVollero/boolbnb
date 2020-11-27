@@ -74,8 +74,8 @@ class AccomodationController extends Controller
               }
             }
         }
-        // Chimiamo la view della home
-        return view('UPRA.Accomodation.index', compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+        // Chiamiamo la view della home
+        return view('TEST.home', compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
     }
 
     /**

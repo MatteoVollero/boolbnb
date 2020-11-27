@@ -60,7 +60,7 @@ class AccomodationController extends Controller
               {
                 $normalAccomodationsScroll2[] = $accomodation;
               }
-          } else
+            } else
             {
               // Cicliamo per un numero di volte pari al numero delle sponsorizzazioni fatte per quel appartamento
               foreach ($accomodation->advs as $adv)
@@ -68,25 +68,22 @@ class AccomodationController extends Controller
                 // Controlliamo che l'array degli appartamenti sponsorizzati abbia raggiunto il numero di elementi prestabilito in $sponsoredAccomodationNumber
                 if(count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
                 {
-                  break;
-                }
-                // Controlliamo che la data di fine sponsorizzazione sia maggiore di quella odierna
-                if($advFound == false && $adv->pivot->end_adv > Carbon::now())
-                {
-                  // Se si entra si aggiunge tutto il record a $sponsoredAccomodations
-                  $sponsoredAccomodations[] = $accomodation;
-                  // Settiamo la flag a true in modo da non inserire più volte lo stesso appartamento
-                  $advFound = true;
-                  // inseriamo il break per far terminare il ciclo perchè abbiamo trovato una sponsorizzata attiva
-                  break;
-                }
+                break;
               }
+              // Controlliamo che la data di fine sponsorizzazione sia maggiore di quella odierna
+              if($advFound == false && $adv->pivot->end_adv > Carbon::now())
+              {
+                // Se si entra si aggiunge tutto il record a $sponsoredAccomodations
+                $sponsoredAccomodations[] = $accomodation;
+                // Settiamo la flag a true in modo da non inserire più volte lo stesso appartamento
+                $advFound = true;
+                // inseriamo il break per far terminare il ciclo perchè abbiamo trovato una sponsorizzata attiva
+              break;
             }
+          }
         }
-
-
-
-        return view('UI.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+      }
+        return view('UI.Accomodations.home', compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
     }
 
     /**
