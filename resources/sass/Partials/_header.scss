@@ -14,21 +14,32 @@
         align-items: center;
         @include GenericWrapper;
         .header_bnb_logo {
-            width: 15%;
+            width: 10%;
             max-height: 60px;
         }
         .links {
             display: flex;
+            justify-content: center;
+            align-items: center;
+
             .hamburger {
                 display: none;
             }
             .link-header {
-                color: $secondMainSection;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                text-decoration: none;
-                text-transform: uppercase;
+                border: 1px solid $airBnB;
+                background-color:$firstMainSection;
+                border-radius: 10px;
+                height: 40%;
+                padding: 10px;
+                margin: 0 10px;
+                &:hover{
+                    background-color: $btnColor;
+                    transform: scale(1.05);
+                    cursor: pointer;
+                    opacity: 0.8;
+                    // color: $firstMainSection;
+                    color: $secondMainSection;
+                }
             }
         }
     }
