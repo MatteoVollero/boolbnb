@@ -26,13 +26,13 @@
         }
         // aside item
         .aside_item {
-            background-color: $firstMainSection;
+            background-color: #000;
             position: relative;
             border-radius: 10px;
             transition: 0.3s;
             margin: 15px 0;
             width: 100%;
-            height: 30%;
+            height: 40%;
             opacity: 1;
             &:hover {
                 @include HoverCard;
@@ -41,14 +41,37 @@
             .informations_item {
                 border: 4px solid $headerColor;
                 text-transform: capitalize;
+                overflow-y: auto;
                 @include InformationsFlex;
                 border-radius: 10px;
+                position: relative;
+                padding:0px 35px;
                 font-size: 20px;
-                padding: 10px;
+                color: #fff;
                 height: 100%;
                 width: 100%;
+                .medal_bronze {
+                    transform:translate(-50%,-50%);
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+                .medal_silver {
+                    transform:translate(-50%,-50%);
+                    position: absolute;
+                    color: silver;
+                    bottom: 0;
+                    right: 0;
+                }
+                .medal_gold {
+                    transform:translate(-50%,-50%);
+                    position: absolute;
+                    color: gold;
+                    bottom: 0;
+                    right: 0;
+                }
                 span {
-                    font-family: $fourthFont;
+                    font-family: $secondFont;
                     padding: 10px;
                 }
             }
@@ -112,7 +135,7 @@
                     .informations_item {
                         @include InformationsInfo;
                         span {
-                            font-family: $fourthFont;
+                            font-family: $secondFont;
                             padding: 10px;
                             color: #fff;
                         }
@@ -142,7 +165,7 @@
                     .informations_item {
                         @include InformationsInfo;
                         span {
-                            font-family: $fourthFont;
+                            font-family: $secondFont;
                             color: #fff;
                             padding: 10px;
                         }
@@ -395,6 +418,7 @@
                     background-color: red;
                     justify-content: center;
                     align-items: center;
+                    font-family: $secondFont;
                     text-transform: capitalize;
                     border-radius: 10px;
                     transition: 0.3s;

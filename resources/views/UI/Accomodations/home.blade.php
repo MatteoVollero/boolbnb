@@ -23,7 +23,28 @@
                     <span>{{$accomodation->city}}</span>
                     <span>{{$accomodation->price}}</span>
                     @foreach ($accomodation->services as $service)
-                        <span>{{$service->service_name}}</span>
+                        @if ($service->service_name == "wi-fi")
+                        <i class="fas fa-wifi"></i>
+                        @elseif ($service->service_name == "parking")
+                        <i class="fas fa-parking"></i>
+                        @elseif ($service->service_name == "pool")
+                        <i class="fas fa-swimmer"></i>
+                        @elseif ($service->service_name == "reception")
+                        <i class="fas fa-concierge-bell"></i>
+                        @elseif ($service->service_name == "sauna")
+                        <i class="fas fa-hot-tub"></i>
+                        @elseif ($service->service_name == "sea_view")
+                        <i class="fas fa-water"></i>
+                        @endif
+                    @endforeach
+                    @foreach ($accomodation->advs as $adv)
+                        @if ($adv->label == "Bronze")
+                            <i class="fas fa-medal medal_bronze"></i>
+                        @elseif ($adv->label == "Silver")
+                            <i class="fas fa-medal medal_silver"></i>
+                        @elseif ($adv->label == "Gold")
+                            <i class="fas fa-medal medal_gold"></i>
+                        @endif
                     @endforeach
                 </div>
                 {{-- cover image --}}
@@ -39,7 +60,7 @@
         <div class="first_main_wrapper">
             {{-- accomodations card --}}
             <h2 class="cards_section_text">
-                Chosed for you
+                Chosen for you
             </h2>
             <div class="accomodation_cards">
                 {{-- upper cards controller  --}}
@@ -55,8 +76,20 @@
                              <span>{{$accomodation->city}}</span>
                              <span>{{$accomodation->price}}</span>
                              @foreach ($accomodation->services as $service)
-                                <span>{{$service->service_name}}</span>
-                             @endforeach
+                                @if ($service->service_name == "wi-fi")
+                                <i class="fas fa-wifi"></i>
+                                @elseif ($service->service_name == "parking")
+                                <i class="fas fa-parking"></i>
+                                @elseif ($service->service_name == "pool")
+                                <i class="fas fa-swimmer"></i>
+                                @elseif ($service->service_name == "reception")
+                                <i class="fas fa-concierge-bell"></i>
+                                @elseif ($service->service_name == "sauna")
+                                <i class="fas fa-hot-tub"></i>
+                                @elseif ($service->service_name == "sea_view")
+                                <i class="fas fa-water"></i>
+                                @endif
+                            @endforeach
                          </div>
                          {{-- cover image --}}
                          <div class="cover_image">
@@ -77,14 +110,20 @@
                             <span>{{$accomodation->city}}</span>
                             <span>{{$accomodation->price}}</span>
                             @foreach ($accomodation->services as $service)
-                                <span>{{$service->service_name}}</span>
+                                @if ($service->service_name == "wi-fi")
+                                <i class="fas fa-wifi"></i>
+                                @elseif ($service->service_name == "parking")
+                                <i class="fas fa-parking"></i>
+                                @elseif ($service->service_name == "pool")
+                                <i class="fas fa-swimmer"></i>
+                                @elseif ($service->service_name == "reception")
+                                <i class="fas fa-concierge-bell"></i>
+                                @elseif ($service->service_name == "sauna")
+                                <i class="fas fa-hot-tub"></i>
+                                @elseif ($service->service_name == "sea_view")
+                                <i class="fas fa-water"></i>
+                                @endif
                             @endforeach
-                            <span><i class="fas fa-wifi"></i></span>
-                            <span><i class="fas fa-parking"></i></span>
-                            <span><i class="fas fa-swimmer"></i></span>
-                            <span><i class="fas fa-concierge-bell"></i></span>
-                            <span><i class="fas fa-hot-tub"></i></span>
-                            <span><i class="fas fa-water"></i></span>
                         </div>
                         {{-- cover image --}}
                         <div class="cover_image">

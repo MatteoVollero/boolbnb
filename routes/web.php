@@ -18,10 +18,11 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/logout',function() { 
      return view('home');
     });
-    Auth::routes();
-    // rotte ADMIN
-    Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
-            Route::resource('accomodations', 'AccomodationController');
-        });
-            // rotte GUESTS
-            Route::resource('/', 'AccomodationController');
+
+Auth::routes();
+// rotte ADMIN
+Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::resource('accomodations', 'AccomodationController');
+});
+// rotte GUESTS
+Route::resource('/', 'AccomodationController');

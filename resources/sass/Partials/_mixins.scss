@@ -106,7 +106,6 @@
     transform: scale(1.03);
     overflow: hidden;
     cursor: pointer;
-    opacity: 0.8;
 }
 // cover Image
 @mixin CoverImage {
@@ -129,6 +128,7 @@
 // infromations item 
 @mixin InformationsInfo {
     text-transform: capitalize;
+    color: #fff;
     border: 4px solid $btnColor;
     @include InformationsFlex;
     border-radius: 10px;

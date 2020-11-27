@@ -75,7 +75,7 @@ class AccomodationController extends Controller
             }
         }
         // Chiamiamo la view della home
-        return view('TEST.home', compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+        return view('UI.Accomodations.home', compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
     }
 
     /**
@@ -90,7 +90,7 @@ class AccomodationController extends Controller
         // Recuperiamo tutti gli accomodation_types dal DB
         $types = AccomodationType::all();
         // Chiamiamo la view contenente il form di creazione dell'accomodation
-        return view('TEST.create', compact('services', 'types'));
+        return view('UPRA.accomodations.create', compact('services', 'types'));
     }
 
     /**
