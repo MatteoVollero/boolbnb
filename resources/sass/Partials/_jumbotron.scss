@@ -55,33 +55,40 @@
         border: 2px solid lightgoldenrodyellow;
         background-color:#fff;
         border-radius: 10px;
+        cursor: pointer;
         transition: 0.3s;
         height: 15%;
         width: 95%;
         // dropleft menu
         .dropleft_menu {
-        background-color: #fff;
-        position: absolute;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 100%;
-        right: 100%;
-        padding: 10px 0px;
-        opacity: 0;
-        transition: 0.5s;
-        z-index: 1;
-        top: 0;
-        &:hover {
+            background-color: #fff;
+            position: absolute;
+            border-radius: 5px;
+            padding: 10px 0px;
+            transition: 0.3s;
+            cursor: pointer;
+            display: none;
+            width: 100%;
+            right: 100%;
+            z-index: 1;
+            top: 0;
+            .list_item:last-child {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .service_list_item {
+                    width: 40%;
+                    height: 100%;
+                    i {
+                        color: $violaHeroScuroModificato;
+                    }
+                } 
+            }
+        }
+        &:hover .dropleft_menu {
             background-color: $firstMainSection;
             cursor: pointer;
-        }
-    }
-        &:hover .dropleft_menu {
-            opacity: 1;
-        }
-        &:hover {
-            background-color: $firstMainSection;
-            cursor:pointer;
+            display: block;
         }
         label {
             font-family: $secondFont;

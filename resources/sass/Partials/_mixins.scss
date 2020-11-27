@@ -46,13 +46,25 @@
 // cards orizzontal scroller
 @mixin XScroller {
     flex-direction: column;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     border-radius: 10px;
     padding:0px 20px;
     flex-wrap: wrap;
     display: flex;
     height: 100%;
+    margin: 20px;
+    width: 100%;
+}
+@mixin YScroller {
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 10px;
+    padding:0px 20px;
+    flex-wrap: wrap;
+    display: flex;
+    height: 20%;
     margin: 20px;
     width: 100%;
 }
@@ -71,7 +83,17 @@
     transition: 0.3s;
     height: 100%;
     opacity: 1;
-    width: 30%;
+    width: 40%;
+}
+@mixin CarditemDesktop {
+    background-color: $secondMainSection;
+    position: relative;
+    border-radius: 10px;
+    margin: 15px 15px;
+    transition: 0.3s;
+    height: 100%;
+    opacity: 1;
+    width: 100%;
 }
 // Accomodation wrapper
 @mixin AccomodationsWrapper {

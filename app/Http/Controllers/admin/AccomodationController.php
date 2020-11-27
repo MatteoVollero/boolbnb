@@ -175,7 +175,7 @@ class AccomodationController extends Controller
       // Troviamo in accomodations il record che ha slug uguale a quello passato in argomento
       $accomodation = Accomodation::where('slug', $slug)->get();
       // Chiamiamo la view show dell'UPRA, passandogli  compact il record trovato
-      return view('TEST.show', compact('accomodation'));
+      return view('UPRA.Accomodation.show', compact('accomodation'));
     }
 
     /**
@@ -190,7 +190,7 @@ class AccomodationController extends Controller
       $services= Service::all();
       $serviceChecked='';
 
-      return view('TEST.edit', compact('accomodation', 'services', 'serviceChecked'));
+      return view('UPRA.Acoomodation.edit', compact('accomodation', 'services', 'serviceChecked'));
     }
 
     /**

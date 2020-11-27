@@ -78,9 +78,27 @@
                         <li class="list_item">
                             <label id="text" for="Services">Services</label>
                         </li>
-                        <li class="list_item">
-                            <input type="checkbox" name="favorite_pet" value="Cats">Cats<br>      
-                        </li>
+                            <ul class="list_item">
+                                @foreach ($services as $service)
+                                <li class="service_list_item">
+                                    <input type="checkbox" name="service">
+                                    @if ($service->service_name == "wi-fi")
+                                    <i class="fas fa-wifi translate"></i>
+                                    @elseif ($service->service_name == "parking")
+                                    <i class="fas fa-parking translate"></i>
+                                    @elseif ($service->service_name == "pool")
+                                    <i class="fas fa-swimmer translate"></i>
+                                    @elseif ($service->service_name == "reception")
+                                    <i class="fas fa-concierge-bell translate"></i>
+                                    @elseif ($service->service_name == "sauna")
+                                    <i class="fas fa-hot-tub translate"></i>
+                                    @elseif ($service->service_name == "sea_view")
+                                    <i class="fas fa-water translate"></i>
+                                    @endif
+                                </li>
+                                @endforeach
+                            </ul>
+                        </li> 
                     </ul>
                 </div>
             </li>

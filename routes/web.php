@@ -14,36 +14,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/list', function () {
-    return view('UPRA.Accomodation.index');
-});
-
-Route::get('/search', function () {
-    return view('UI.Accomodations.search');
-});
-
-Route::get('/show', function () {
-    return view('UI.Accomodations.show');
-});
-
-Route::get('/', 'AccomodationController@index');
-
-
-
-Auth::routes();
-
-// rotte ADMIN
-Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::resource('accomodations', 'AccomodationController');
-});
-
-// Route::get('/', 'HomeController@index')->name('home');
-
-// rotte GUESTS
-Route::resource('accomodations', 'AccomodationController');
-
-// Route::get('/accomodations', 'AccomodationController@index')->name('accomodations.index');
-// Route::get('/accomodations/{slug}', 'AccomodationController@show')->name('accomdations.show');
-
-Route::get('/test-search', 'AccomodationController@showsearch')->name('showsearch');
-
+// Lo utilizziamo per debug
+Route::get('/logout',function() { 
+     return view('home');
+    });
+    Auth::routes();
+    // rotte ADMIN
+    Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
+            Route::resource('accomodations', 'AccomodationController');
+        });
+            // rotte GUESTS
+            Route::resource('/', 'AccomodationController');

@@ -22,13 +22,9 @@
                     <span>{{$accomodation->region}}</span>
                     <span>{{$accomodation->city}}</span>
                     <span>{{$accomodation->price}}</span>
-                    <span>{{$accomodation->services}}</span>
-                    <span><i class="fas fa-wifi"></i></span>
-                    <span><i class="fas fa-parking"></i></span>
-                    <span><i class="fas fa-swimmer"></i></span>
-                    <span><i class="fas fa-concierge-bell"></i></span>
-                    <span><i class="fas fa-hot-tub"></i></span>
-                    <span><i class="fas fa-water"></i></span>
+                    @foreach ($accomodation->services as $service)
+                        <span>{{$service->service_name}}</span>
+                    @endforeach
                 </div>
                 {{-- cover image --}}
                 <div class="cover_image">
@@ -49,7 +45,7 @@
                 {{-- upper cards controller  --}}
                 <div class="upper_cards_scroller">
                     {{-- card item  --}}
-                    @foreach ($normalAccomodationsScroll2 as $accomodation)
+                    @foreach ($normalAccomodationsScroll1 as $accomodation)
                     <div class="card_item">
                         {{-- informations item --}}
                          <div class="informations_item">
@@ -58,13 +54,9 @@
                              <span>{{$accomodation->region}}</span>
                              <span>{{$accomodation->city}}</span>
                              <span>{{$accomodation->price}}</span>
-                             <span>{{$accomodation->services}}</span>
-                             <span><i class="fas fa-wifi"></i></span>
-                             <span><i class="fas fa-parking"></i></span>
-                             <span><i class="fas fa-swimmer"></i></span>
-                             <span><i class="fas fa-concierge-bell"></i></span>
-                             <span><i class="fas fa-hot-tub"></i></span>
-                             <span><i class="fas fa-water"></i></span>
+                             @foreach ($accomodation->services as $service)
+                                <span>{{$service->service_name}}</span>
+                             @endforeach
                          </div>
                          {{-- cover image --}}
                          <div class="cover_image">
@@ -84,7 +76,9 @@
                             <span>{{$accomodation->region}}</span>
                             <span>{{$accomodation->city}}</span>
                             <span>{{$accomodation->price}}</span>
-                            <span>{{$accomodation->services}}</span>
+                            @foreach ($accomodation->services as $service)
+                                <span>{{$service->service_name}}</span>
+                            @endforeach
                             <span><i class="fas fa-wifi"></i></span>
                             <span><i class="fas fa-parking"></i></span>
                             <span><i class="fas fa-swimmer"></i></span>
@@ -105,6 +99,9 @@
 <section class="second_main_section">
     {{-- // second main section wrapper  --}}
     <div class="second_main_wrapper">
+        <h2>
+            The most clicked of the month
+        </h2>
         {{-- // single accomodation  --}}
         <div class="single_accomodation">
             {{-- cover image  --}}
@@ -135,6 +132,7 @@
     <div class="third_main_wrapper">
         {{-- elm item  --}}
         <div class="elm_item">
+           <a href="" target="_blank"><img src="{{asset('images/Become_an_host_air_bnb.jpg')}}" alt="Become an host"></a>
             <h2>
                 Become an Host
             </h2>
@@ -145,17 +143,11 @@
                 Choose a type
             </h2>
             {{-- higher accomodations types  --}}
-            <div class="higher_accomodations_types">
+            <div class="accomodations_types">
                 {{-- higher type --}}
-                <div class="higher_type"></div>
-                <div class="higher_type"></div>
-                <div class="higher_type"></div>
-                <div class="higher_type"></div>
-            </div>
-            {{-- lower accomodations type  --}}
-            <div class="lower_accomodation_type">
-                {{-- lower type  --}}
-                <div class="lower_type"></div>
+                @foreach ($types as $type)    
+                    <div class="type">{{$type->name}}</div>
+                @endforeach
             </div>
         </div>
     </div>

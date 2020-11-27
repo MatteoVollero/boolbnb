@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Accomodation;
+use App\Service;
 use App\Adv;
 use App\AccomodationType;
 use Carbon\Carbon;
@@ -26,6 +27,8 @@ class AccomodationController extends Controller
         $Accomodations = Accomodation::inRandomOrder()->get();
         // Array contenente tutti i record di type
         $types = AccomodationType::all();
+        // Array contenente tutti i record di Service
+        $services = Service::all();
 
         // foreach($Accomodations as $accomodation)
         // {
@@ -83,7 +86,7 @@ class AccomodationController extends Controller
           }
         }
       }
-        return view('UI.Accomodations.home', compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+        return view('UI.Accomodations.home', compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
     }
 
     /**
