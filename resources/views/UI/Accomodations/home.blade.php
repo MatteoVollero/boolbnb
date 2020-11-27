@@ -1,4 +1,5 @@
 {{-- // homepage UI --}}
+@extends('layouts.app')
 @extends('UI.layouts.app')
 @section('title')
     Homepage
@@ -10,7 +11,7 @@
     {{-- aside --}}
     <aside class="aside_accomodations">
         {{-- aside wrapper  --}}
-        
+
         <div class="aside_wrapper">
             {{-- aside item  --}}
             <h2>In evidence</h2>
@@ -47,7 +48,7 @@
             <div class="accomodation_cards">
                 {{-- upper cards controller  --}}
                 <div class="upper_cards_scroller">
-                    @for ($i = 0; $i < 20; $i++)   
+                    @for ($i = 0; $i < 20; $i++)
                     {{-- card item  --}}
                     <div class="card_item">
                         {{-- informations item  --}}
@@ -71,7 +72,7 @@
                     @endfor
             </div>
                 <div class="lower_cards_scroller">
-                    @for ($i = 0; $i < 20; $i++)   
+                    @for ($i = 0; $i < 20; $i++)
                     {{-- card item  --}}
                     <div class="card_item">
                         {{-- informations item  --}}

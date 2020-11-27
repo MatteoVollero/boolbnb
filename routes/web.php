@@ -26,23 +26,24 @@ use Illuminate\Support\Facades\Auth;
 //     return view('UI.Accomodations.show');
 // });
 //
-// Route::get('/', function () {
-//     return view('UI.Accomodations.home');
-// });
+// Route::get('/', 'AccomodationController@index');
 
+// Lo utilizziamo per debug
+Route::get('/logout',function(){
+  return view('home');
+});
 
-
-// Auth::routes();
+Auth::routes();
 
 // rotte ADMIN
-// Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
-//     Route::resource('accomodations', 'AccomodationController');
-// });
+Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::resource('accomodations', 'AccomodationController');
+});
 
-// Route::get('/', 'HomeController@index')->name('home');
+// Route::post('/logout', 'Auth\LoginController@logout');
 
 // rotte GUESTS
-Route::resource('accomodations', 'AccomodationController');
+Route::resource('/', 'AccomodationController');
 
 // Route::get('/accomodations', 'AccomodationController@index')->name('accomodations.index');
 // Route::get('/accomodations/{slug}', 'AccomodationController@show')->name('accomdations.show');

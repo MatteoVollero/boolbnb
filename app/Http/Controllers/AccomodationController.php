@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Accomodation;
 use App\Adv;
 use App\AccomodationType;
+use App\Service;
 use Carbon\Carbon;
 
 class AccomodationController extends Controller
@@ -22,12 +23,13 @@ class AccomodationController extends Controller
         $sponsoredAccomodationNumber = 10;
         $normalAccomodationNumber = 20;
 
-
         // Prendiamo tutti i record da accomodation
         $Accomodations = Accomodation::inRandomOrder()->get();
         // Array contenente tutti i record di type
         $types = AccomodationType::all();
 
+        // Array contente tutti i record di Service
+        $services = Service::all();
         //Array che conterrà solo i record sponsorizzati di $Accomodations(contiene tutti i record della tabella accomodation)
         $sponsoredAccomodations = [];
 
@@ -67,11 +69,11 @@ class AccomodationController extends Controller
                count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
             {
               // Se abbiamo riempito tutti gli array si ritorna la view della home per non ciclare inutilmente
-              return view('TEST.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+              return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
             }
           }
         // Chiamiamo la view della home
-        return view('TEST.home',compact('types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+        return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
       }
 
     /**
