@@ -97,7 +97,7 @@
                              <img src="{{$accomodation->cover_image}}" width="inherit" height="inherit" alt="Image">
                          </div>
                         </div>
-                    @endforeach 
+                    @endforeach
             </div>
                 <div class="lower_cards_scroller">
                     {{-- card item  --}}
@@ -131,7 +131,7 @@
                             <img src="{{$accomodation->cover_image}}" width="inherit" height="inherit" alt="Image">
                         </div>
                     </div>
-                    @endforeach 
+                    @endforeach
             </div>
     </div>
 </section>
@@ -185,7 +185,7 @@
             {{-- higher accomodations types  --}}
             <div class="accomodations_types">
                 {{-- higher type --}}
-                @foreach ($types as $type)    
+                @foreach ($types as $type)
                     <div class="type">{{$type->name}}</div>
                 @endforeach
             </div>

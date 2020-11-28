@@ -1,5 +1,5 @@
 {{-- // List of all accomodations of the UPRA --}}
-{{-- @extends('UPRA.layouts.app')
+@extends('UPRA.layouts.app')
 @section('title')
     Accomodations
 @endsection
@@ -32,5 +32,4 @@
         @endfor
     </div>
 </section>
-@endsection --}}
-@dd($accomodationsUpra);
+@endsection
