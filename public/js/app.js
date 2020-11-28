@@ -37274,6 +37274,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./search */ "./resources/js/search.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37318,6 +37320,56 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/search.js":
+/*!********************************!*\
+  !*** ./resources/js/search.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _require = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
+    ajax = _require.ajax;
+
+var _require2 = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    get = _require2.get,
+    defaultsDeep = _require2.defaultsDeep;
+
+jQuery(function () {
+  document.getElementById("btn-search").addEventListener("click", function () {
+    // recupera info richieste per la ricerca
+    var reqCity = $("#input-city").val();
+    var reqBeds = $("#input-beds").val();
+    var reqToilets = $("#input-toilets").val();
+    console.log(reqCity + reqBeds + reqToilets); // http://localhost:8000/api/accomodations?city=Lake%20Lisa&beds=4&toilets=0
+
+    $.ajax({
+      "url": "http://localhost:8000/api/accomodations/",
+      "data": {
+        "city": reqCity,
+        "beds": reqBeds,
+        "toilets": reqToilets
+      },
+      "method": "GET",
+      "success": function success(data) {
+        var placeholder = document.getElementById('place_id'); // console.log("DATA.LENGTH: "+data.length);
+        // Cancella la stampa a video della precedente ricerca
+
+        placeholder.innerHTML = ""; // stampa i record di data nella pagina
+
+        for (var index = 0; index < data.length; index++) {
+          //  console.log("DATA.INDEX[i]: "+data[index].title);
+          placeholder.innerHTML = placeholder.innerHTML + "<br>" + (index + 1) + ". " + data[index].city + " / " + data[index].title;
+        }
+      },
+      "error": function error(err) {
+        alert("Errore:" + err);
+      }
+    });
+  });
+});
 
 /***/ }),
 

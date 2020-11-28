@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Accomodation;
-use App\Service;
 use App\Adv;
 use App\AccomodationType
 use Carbon\Carbon;
@@ -65,7 +64,6 @@ class AccomodationController extends Controller
                     $sponsoredAccomodations[] = $accomodation;
                  }
               }
-
             if(count($normalAccomodationsScroll1) == $normalAccomodationNumber &&
                count($normalAccomodationsScroll2) == $normalAccomodationNumber &&
                count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
@@ -77,8 +75,7 @@ class AccomodationController extends Controller
       }
       // Chiamiamo la view della home
       return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
-}
-
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -144,4 +141,10 @@ class AccomodationController extends Controller
     {
         //
     }
+
+    public function search(Request $request)
+    {
+        return view('TEST.search');
+    }
+
 }

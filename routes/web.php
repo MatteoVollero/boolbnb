@@ -14,15 +14,64 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// Route::get('/list', function () {
+//     return view('UPRA.Accomodation.index');
+// });
+//
+// Route::get('/search', function () {
+//     return view('UI.Accomodations.search');
+// });
+//
+// Route::get('/show', function () {
+//     return view('UI.Accomodations.show');
+// });
+//
+// Route::get('/', 'AccomodationController@index');
+
 // Lo utilizziamo per debug
-Route::get('/logout',function() { 
-     return view('home');
-    });
+Route::get('/logout',function(){
+  return view('home');
+});
 
 Auth::routes();
+
 // rotte ADMIN
 Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('accomodations', 'AccomodationController');
 });
+
+// Route::post('/logout', 'Auth\LoginController@logout');
+
 // rotte GUESTS
 Route::resource('/', 'AccomodationController');
+
+// rotte TEST API
+Route::get('/search', 'AccomodationController@search');
+
+// Route::get('/accomodations', 'AccomodationController@index')->name('accomodations.index');
+// Route::get('/accomodations/{slug}', 'AccomodationController@show')->name('accomdations.show');
+
+
+
+
+
+
+
+
+// UI: ROTTE TEST PER BACK-END
+// Route::get('/home','UI\AccomodationController@index');
+
+// UPRA
+// Rotte di test per back-end
+
+// CREATE
+// Route::get('/UPRA/create','UPRA\AccomodationController@create')->name('create'); // @create
+// Route::post('/UPRA/store','UPRA\AccomodationController@store')->name('store'); // @store
+// READ
+// Route::get('/UPRA/home','UPRA\AccomodationController@index')->name('home'); // @index
+// Route::get('/UPRA/show/{id}','UPRA\AccomodationController@show')->name('show'); // @show
+// UPDATE
+// Route::get('/UPRA/edit/{id}','UPRA\AccomodationController@edit')->name('edit'); // @edit
+// Route::put('/UPRA/update/{id}','UPRA\AccomodationController@update')->name('update'); // @update
+// DELETE
+// Route::delete('/UPRA/destroy/{id}','UPRA\AccomodationController@destroy')->name('destroy'); // @destroy
