@@ -11,6 +11,7 @@ use App\AccomodationView;
 use Carbon\Carbon;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AccomodationController extends Controller
 {
