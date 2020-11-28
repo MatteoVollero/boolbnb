@@ -8,29 +8,28 @@
 </head>
 <body>
 
-<h3>TIPOLOGIE (accomodation_types)</h3>  
-@foreach ($types ?? '' as $type)
+<h3>TIPOLOGIE (accomodation_types)</h3>
+@foreach ($types as $type)
   <p>ID: {{$type->id}} - {{$type->name}}</p>
-@endforeach 
+@endforeach
 
-<h3>SPONSORIZZATE (accomodations / 10 record)</h3>  
+<h3>SPONSORIZZATE (accomodations / 10 record)</h3>
+{{-- @php
+    dd($sponsoredAccomodations);
+@endphp --}}
+
 @foreach ($sponsoredAccomodations as $sponsored)
   <p>ID: {{$sponsored->id}} CITY: {{$sponsored->city}} TITLE: {{$sponsored->title}} USER: {{$sponsored->user->name}}</p>
 @endforeach
 
-<h3>SCROLL HR 1 (accomodations / 20 record)</h3>  
+<h3>SCROLL HR 1 (accomodations / 20 record)</h3>
 @foreach ($normalAccomodationsScroll1 as $normalAcc)
   <p>
     ID: {{$normalAcc->id}} CITY: {{$normalAcc->city}} TITLE: {{$normalAcc->title}}
-    <form action="{{route('admin.accomodations.destroy', $normalAcc->id)}}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="btn btn-danger">CANCELLA L'ACCOMODATION</button>
-    </form>
   </p>
 @endforeach
 
-<h3>SCROLL HR 2 (accomodations / 20 record)</h3>  
+<h3>SCROLL HR 2 (accomodations / 20 record)</h3>
 @foreach ($normalAccomodationsScroll2 as $normalAcc)
   <p>ID: {{$normalAcc->id}} CITY: {{$normalAcc->city}} TITLE: {{$normalAcc->title}}</p>
 @endforeach
@@ -47,5 +46,3 @@
 
 </body>
 </html>
-
-

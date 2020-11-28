@@ -7,6 +7,7 @@ use App\Accomodation;
 use App\Service;
 use App\Adv;
 use App\AccomodationType;
+use App\Service;
 use Carbon\Carbon;
 
 class AccomodationController extends Controller
@@ -19,7 +20,7 @@ class AccomodationController extends Controller
      */
     public function index()
     {
-      // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2)
+        // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
         $sponsoredAccomodationNumber = 10;
         $normalAccomodationNumber = 20;
 
@@ -30,27 +31,18 @@ class AccomodationController extends Controller
         // Array contenente tutti i record di Service
         $services = Service::all();
 
-        // foreach($Accomodations as $accomodation)
-        // {
-        //   foreach($accomodation->services as $service)
-        //     echo  'appartamento: '.$accomodation->id.'   servizio: '.$service->service_name;
-        // }
-
-        // Array che conterrà solo i record sponsorizzati di $Accomodations(contiene tutti i record della tabella accomodation)
+        // Array contente tutti i record di Service
+        $services = Service::all();
+        //Array che conterrà solo i record sponsorizzati di $Accomodations(contiene tutti i record della tabella accomodation)
         $sponsoredAccomodations = [];
 
         // Array di appartamenti non sponsorizzati
         $normalAccomodationsScroll1 = [];
         $normalAccomodationsScroll2 = [];
-
-
-
-        // Cicliamo per ogni record presente all'interno di $Accomodations
+        //Cicliamo per ogni record presente all'interno di $Accomodations
         foreach($Accomodations as $accomodation)
         {
-          // Questa flag ci serve per non inserire due volte lo stesso appartamento in $sponsoredAccomodations
-          $advFound = false;
-
+          $stop = $Accomodations[count($Accomodations)-1];
           // Controlliamo quanti elementi ha $accomodation->advs se ne ha 0 è una non sponsorizzata
           if(count($accomodation->advs) == 0)
           {
@@ -65,13 +57,14 @@ class AccomodationController extends Controller
               }
             } else
             {
-              // Cicliamo per un numero di volte pari al numero delle sponsorizzazioni fatte per quel appartamento
-              foreach ($accomodation->advs as $adv)
+              // Controlliamo che il numero delle sponsorizzate non superi quello richiesto
+              if(count($sponsoredAccomodations) < $sponsoredAccomodationNumber)
               {
-                // Controlliamo che l'array degli appartamenti sponsorizzati abbia raggiunto il numero di elementi prestabilito in $sponsoredAccomodationNumber
-                if(count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
-                {
-                break;
+                // Controlliamo se l'ultima sponsorizzazione attivata dall'utente è ancora valida
+                 if($accomodation->advs[count($accomodation->advs)-1]->pivot->end_adv > Carbon::now())
+                 {
+                    $sponsoredAccomodations[] = $accomodation;
+                 }
               }
               // Controlliamo che la data di fine sponsorizzazione sia maggiore di quella odierna
               if($advFound == false && $adv->pivot->end_adv > Carbon::now())
@@ -83,11 +76,17 @@ class AccomodationController extends Controller
                 // inseriamo il break per far terminare il ciclo perchè abbiamo trovato una sponsorizzata attiva
               break;
             }
+            if(count($normalAccomodationsScroll1) == $normalAccomodationNumber &&
+               count($normalAccomodationsScroll2) == $normalAccomodationNumber &&
+               count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
+            {
+              // Se abbiamo riempito tutti gli array si ritorna la view della home per non ciclare inutilmente
+              return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+            }
           }
-        }
+        // Chiamiamo la view della home
+        return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
       }
-        return view('UI.Accomodations.home', compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
-    }
 
     /**
      * Show the form for creating a new resource.
