@@ -4,20 +4,32 @@
             <div>
                 <img class="header_bnb_logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
             </div>
-            @if (Route::has('login'))
-                <div class="links">
-                    <a href="#"><i class="fas fa-bars hamburger"></i></a>
-                    @auth
-                        <a href="{{ url('/') }}" class="link-header">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="link-header">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="link-header">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <!-- Right Side Of Navbar -->
+            <div class="links">
+                <!-- Authentication Links -->
+                @guest
+                    <a class="link-header" href="{{ route('login') }}">
+                        <i class="fas fa-user icn"></i> {{ __('Login') }}
+                    </a>
+                @if (Route::has('register'))
+                    <a class="link-header" href="{{ route('register') }}">
+                        <i class="fas fa-pen icn"></i> {{ __('Register') }}
+                    </a>
+                @endif
+                @else
+                    <a class="link-header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <i class="fas fa-chevron-down icn"></i>
+                    </a>
+                    <a class="link-header" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt icn"></i> {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                @endguest
+            </div>
         </div>
     </div>
 </header>
