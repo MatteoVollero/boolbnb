@@ -7,33 +7,33 @@
     </div>
     <div class="jumbotron_search_item">
         <div class="search_item">
-            <label id="Country" for="Country">Country</label>
-            <input class="country_input" type="text" id="Country" placeholder="Insert the Country please">
+            <label id="country" for="country">Country</label>
+            <input class="country_input" type="country" id="country" name="country" placeholder="Insert the Country please" maxlength="100" value="{{old('country')}}">
         </div>
         <div class="search_item">
-            <label id="Region" for="Region">Region</label>
-            <input class="region_input" type="text" id="Region" placeholder="Insert the Region please">
+            <label id="region" for="region">Region</label>
+            <input class="region_input" type="region" id="region" name="region" placeholder="Insert the Region please" maxlength="100" value="{{old('region')}}">
         </div>
         <div class="search_item">
-            <label id="City" for="City">City</label><br>
-            <input class="city_input" type="text" id="City" placeholder="Insert the City please">
+            <label id="city" for="city">City</label><br>
+            <input class="city_input" type="city" id="city" name="city" placeholder="Insert the City please" maxlength="100" value="{{old('city')}}">
         </div>
         <div class="search_item">
             <li class="list_menu">
-                <label id="Distance" for="Distance">Distance</label>
+                <label id="distance" for="distance">Distance</label>
                 <div class="dropleft_menu">
                     <ul class="flex_items">
                         <li class="list_item">
-                            <label id="Longitude" for="Longitude">Longitude</label>
+                            <label id="longitude" for="longitude">Longitude</label>
                         </li>
                         <li class="list_item">
-                            <input type="text" id="Longitude" placeholder="Insert the Longitude please">
+                            <input type="longitude" id="longitude" name="longitude" placeholder="Insert the Longitude please" value="{{old('longitude')}}">
                         </li>
                         <li class="list_item">
-                            <label id="Latitude" for="Latitude">Latitude</label>
+                            <label id="latitude" for="latitude">Latitude</label>
                         </li>
                         <li class="list_item">
-                            <input type="text" id="Latitude" placeholder="Insert the Latitude please">
+                            <input type="latitude" id="latitude" name="latitude" placeholder="Insert the Latitude please" value="{{old('latitude')}}">
                         </li>
                     </ul>
                 </div>
@@ -45,16 +45,16 @@
                 <div class="dropleft_menu">
                     <ul class="flex_items">
                         <li class="list_item">
-                            <label id="text" for="Beds">Beds</label>
+                            <label id="beds" for="beds">Beds</label>
                         </li>
                         <li class="list_item">
-                            <input class="beds_input" type="text" id="Beds" placeholder="Insert the n. of Beds please">
+                            <input class="beds_input" type="beds" id="beds" placeholder="Insert the n. of Beds please" value="{{old('beds')}}">
                         </li>
                         <li class="list_item">
-                            <label id="Rooms" for="Rooms">Rooms</label>
+                            <label id="rooms" for="rooms">Rooms</label>
                         </li>
                         <li class="list_item">
-                            <input class="rooms_input" type="text" id="Rooms" placeholder="Insert the n. of Rooms please">
+                            <input class="rooms_input" type="rooms" id="rooms" placeholder="Insert the n. of Rooms please" value="{{old('rooms')}}">
                         </li>
                         <li class="list_item">
                             <label id="text" for="Services">Services</label>
@@ -62,7 +62,7 @@
                             <ul class="list_item">
                                 @foreach ($services as $service)
                                 <li class="service_list_item">
-                                    <input class="service_input" type="checkbox" name="service">
+                                    <input class="service_input" type="checkbox" value="{{$service->service_name}}" name="service">
                                     @if ($service->service_name == "wi-fi")
                                     <i class="fas fa-wifi translate"></i>
                                     @elseif ($service->service_name == "parking")

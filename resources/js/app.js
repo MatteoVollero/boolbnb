@@ -1,5 +1,4 @@
 require('./bootstrap');
-
 // Query data for the form
 $(document).ready(function() {
     // Variable to pick the country value
@@ -49,7 +48,7 @@ $(document).ready(function() {
         if (event.which == 13) {
             // make a variable which takes the value of the country input data
             var bedsInput = $(".beds_input").val();
-            if (!isNaN(bedsInput)) {
+            if (!isNaN(bedsInput) && bedsInput != null) {
                 bedsInput;
                 $(".beds_input").val("");
                 console.log(bedsInput);
@@ -64,7 +63,7 @@ $(document).ready(function() {
         if (event.which == 13) {
             // make a variable which takes the value of the country input data
             var roomsInput = $(".rooms_input").val();
-            if (!isNaN(roomsInput)) {
+            if (!isNaN(roomsInput) && bedsInput != null) {
                 roomsInput;
                 $(".rooms_input").val("");
                 console.log(roomsInput);
@@ -74,19 +73,20 @@ $(document).ready(function() {
         }    
     });
     // Make an array for the checkbox value
-    // servicesArray(service_input, servicesArray);
     // var servicesArray = [];
-    // // Make a variable to pick the checkbox value
-    // var service_input = $(".service_input");
-    // // invoke the services array function
-    // console.log(servicesArray);
+    // Make a variable to pick the checkbox value
+    // var serviceInput = $(".service_input").val();
+    // invoke the services array function
+    // servicesArray(serviceInput);
     // // FUNCTION
-    // function servicesArray(data, array) {
+    // function servicesArray(data) {
     //     $(".service_input").click(function() {
-    //         if (data == "wi-fi" && data == "parking" && data == "pool" && data =="reception" && data == "sauna" && data == "sea_view") {
-    //             array.push(data);
-    //         }
+    //         for(var i = 0; serviceInput[i]; ++i){
+    //             if(serviceInput[i].checked) {
+    //                  checkedValue = serviceInput[i].value;
+    //                  console.log(serviceInput);
+    //             }
+    //       }
     //     });
-    //     return array;
     // }
   }); 

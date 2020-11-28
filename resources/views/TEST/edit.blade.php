@@ -1,6 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('UPRA.layouts.app')
+@section('main_content')
 
     <div class="container">
 
