@@ -45,7 +45,7 @@ class Accomodation extends Model
     // relazione inversa Mto1 con accomodation_types
     public function accomodation_type()
     {
-        return $this->belongsTo('App\AccomodationType');
+        return $this->belongsTo('App\AccomodationType', 'type_id');
     }
 
 }

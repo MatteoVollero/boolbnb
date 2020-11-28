@@ -1,5 +1,4 @@
 {{-- // homepage UI --}}
-@extends('layouts.app')
 @extends('UI.layouts.app')
 @section('title')
     Homepage
