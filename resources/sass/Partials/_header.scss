@@ -1,31 +1,28 @@
 // HEADER
 .position-flex-header {
-    font-family: $secondFont;
-    height: 70px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
     background-color: $headerColor;
+    font-family: $secondFont;
+    position: fixed;
+    height: 70px;
     width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
     .wrapper {
-        display: flex;
         justify-content: space-between;
-        align-items: center;
         @include GenericWrapper;
+        align-items: center;
+        display: flex;
         .header_bnb_logo {
-            width: 10%;
             max-height: 60px;
+            width: 10%;
         }
     }
 }
-
 // media breakpoint desktop
 @media screen and (min-width: 992px) and (max-width:1200px) {
     //
 }
-
-
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
     .header_bnb_logo {
@@ -40,7 +37,6 @@
         }
     }
 }
-
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
     .header_bnb_logo {

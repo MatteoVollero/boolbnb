@@ -18,25 +18,6 @@
             <label id="City" for="City">City</label><br>
             <input type="text" id="City" placeholder="Insert the City please">
         </div>
-        {{-- <div class="search_item">
-            <label id="Typology" for="Typology">Typology</label>
-            <div>
-                <select name="Select" id="Select">
-                    <option value="">
-                        Select
-                    </option> 
-                    <option value="">
-                        House
-                    </option> 
-                    <option value="">
-                        Room
-                    </option>  
-                    <option value="">
-                        Mansion
-                    </option>   
-                </select>
-            </div>
-        </div> --}}
         <div class="search_item">
             <li class="list_menu">
                 <label id="Distance" for="Distance">Distance</label>

@@ -9,26 +9,26 @@
     // aside wrapper
     .aside_wrapper {
         @include GenericWrapper;
+        position: relative;
         padding: 100px 0px;
         flex-wrap: wrap;
         display: flex;
-        position: relative;
         h2 {
-            color: #fff;
-            position: absolute;
-            text-align: center;
             text-transform: capitalize;
             font-family: $secondFont;
+            position: absolute;
+            text-align: center;
             margin: 40px;
-            top: 0;
+            color: #fff;
             left: 0;
+            top: 0;
 
         }
         // aside item
         .aside_item {
             background-color: #000;
-            position: relative;
             border-radius: 10px;
+            position: relative;
             transition: 0.3s;
             margin: 15px 0;
             width: 100%;
@@ -41,34 +41,32 @@
             .informations_item {
                 border: 4px solid $headerColor;
                 text-transform: capitalize;
-                overflow-y: auto;
                 @include InformationsFlex;
                 border-radius: 10px;
                 position: relative;
                 padding:0px 35px;
+                overflow-y: auto;
                 font-size: 20px;
                 color: #fff;
                 height: 100%;
                 width: 100%;
+                // medal bronze
                 .medal_bronze {
                     transform:translate(-50%,-50%);
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
+                    @include MedalAbsolute;
+                    color: #cd7f32;
                 }
+                // medal silver
                 .medal_silver {
                     transform:translate(-50%,-50%);
-                    position: absolute;
+                    @include MedalAbsolute;
                     color: silver;
-                    bottom: 0;
-                    right: 0;
                 }
+                // medal gold
                 .medal_gold {
                     transform:translate(-50%,-50%);
-                    position: absolute;
+                    @include MedalAbsolute;
                     color: gold;
-                    bottom: 0;
-                    right: 0;
                 }
                 span {
                     font-family: $secondFont;
@@ -104,14 +102,14 @@
         @include GenericFlex;
         position: relative;
         h2 {
-            color: #000;
-            font-size: 40px;
-            font-family: $secondFont;
-            text-transform: capitalize;
-            position: absolute;
             transform: translateX(-50%);
-            top: 2%;
+            text-transform: capitalize;
+            font-family: $secondFont;
+            position: absolute;
+            font-size: 40px;
+            color: #000;
             left: 50%;
+            top: 2%;
         }
         // accomodations cards
         .accomodation_cards {
@@ -187,12 +185,14 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
+    // first main section
     .first_main_section {
         margin-top: 0px;
     }
+    // aside accomodations
     .aside_accomodations {
-        overflow-x: auto;
         flex-direction: column;
+        overflow-x: auto;
         flex-wrap: wrap;
         width: 100%;
         height: 20%;
@@ -201,16 +201,11 @@
 
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
+    // first main section
     .first_main_section {
         margin-top: 0px;
     }
-}
-
-// media breakpoint desktop
-@media screen and (min-width: 992px) and (max-width:1200px) {
-    .first_main_section {
-        margin-top: 0px;
-    }
+    // aside accomodations
     .aside_accomodations {
         background-color:$secondMainSection;
         overflow-y: auto;
@@ -219,16 +214,16 @@
     }
         // cards section
     .cards_section {
-        min-width: 66%;
         height: 100%;
+        width: 66%;
         // accomodations cards
      .accomodation_cards {
         background-color: none;
         @include ColumnFlex;
         border-radius: 10px;
         margin: auto;
-        width: 100%;
         height: 100%;
+        width: 100%;
         // upper cards scroller
         .upper_cards_scroller {
             @include YScroller;
@@ -259,25 +254,83 @@
                 }
             }
         }
+        }
     }
+}
+
+// media breakpoint desktop
+@media screen and (min-width: 992px) and (max-width:1200px) {
+    .first_main_section {
+        margin-top: 0px;
+        width: 100%;
+    }
+    .aside_accomodations {
+        background-color:$secondMainSection;
+        overflow-y: auto;
+        min-width: 33%;
+        height: 100%;
+    }
+        // cards section
+    .cards_section {
+        height: 100%;
+        width: 66%;
+        // accomodations cards
+     .accomodation_cards {
+        background-color: none;
+        @include ColumnFlex;
+        border-radius: 10px;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        // upper cards scroller
+        .upper_cards_scroller {
+            @include YScroller;
+            // card item
+            .card_item {
+                overflow-y: hidden;
+                @include CarditemDesktop;
+                &:hover {
+                    @include HoverCard;
+                }
+                // informations item
+                .informations_item {
+                    @include InformationsInfo;
+                    span {
+                        font-family: $fourthFont;
+                        padding: 10px;
+                        color: #fff;
+                    }
+                }
+                // cover image
+                .cover_image {
+                    overflow-x: hidden;
+                    @include CoverImage;
+                    &:hover {
+                        transform: scale(1.2);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        }
     }
 }
 
 
 // second section
 .second_main_section {
-    width: 100%;
     background-color: $secondMainSection;
+    width: 100%;
     // second main wrapper 
     .second_main_wrapper {
+        position: relative;
         padding: 100px;
         height: 100%;
-        position: relative;
         h2 {
+            text-transform: capitalize;
             font-family: $secondFont;
             position: absolute;
             font-size: 30px;
-            text-transform: capitalize;
             color: #fff;
             left: 10%;
             top: 5%;
@@ -292,11 +345,11 @@
             width: 100%;
             // cover image
             .cover_image {
+                background-color: lightblue;
+                border-radius: 10px;
+                margin: 20px;
                 height: 97%;
                 width: 50%;
-                margin: 20px;
-                border-radius: 10px;
-                background-color: lightblue;
             }
             // secondary images
             .secondary_images {
@@ -308,8 +361,8 @@
                     background-color:crimson;
                     border-radius: 10px;
                     min-height: 47%;
-                    margin: 1%;
                     min-width: 47%;
+                    margin: 1%;
                 }
             }
         }
@@ -336,20 +389,20 @@
 @media screen and (min-width: 769px) and (max-width:992px) {
     // single accomodation 
     .single_accomodation {
-        display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        background-color: red;
         border-radius: 10px;
+        flex-wrap: wrap;
+        display: flex;
         height: 100%;
         width: 100%;
-        background-color: red;
         // cover image
         .cover_image {
+            background-color: lightblue;
+            border-radius: 10px;
+            margin: 20px;
             height: 97%;
             width: 70%;
-            margin: 20px;
-            border-radius: 10px;
-            background-color: lightblue;
         }
         // secondary images
         .secondary_images {
@@ -362,8 +415,8 @@
                 background-color:crimson;
                 border-radius: 10px;
                 min-height: 47%;
-                margin: 1%;
                 min-width: 47%;
+                margin: 1%;
             }
         }
     }   
@@ -389,17 +442,17 @@
         width: 70%;
         //element item
         .elm_item {
-            width: 50%;
-            height: 100%;
-            margin: 0px 10px;
-            position: relative;
-            border-radius: 10px;
             background-color: lightblue;
+            border-radius: 10px;
+            position: relative;
+            margin: 0px 10px;
+            height: 100%;
+            width: 50%;
             img {
-                width: 100%;
-                height: 100%;
                 border-radius: 10px;
                 transition: 0.3s;
+                height: 100%;
+                width: 100%;
                 &:hover {
                     cursor: pointer;
                     transform:scale(1.03);
@@ -407,19 +460,19 @@
             }
             // accomodations types 
             .accomodations_types {
-                width: 100%;
-                height: 100%;
-                display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 flex-wrap:wrap;
+                display: flex;
+                height: 100%;
+                width: 100%;
                 // type 
                 .type {
+                    text-transform: capitalize;
                     background-color: red;
+                    font-family: $secondFont;
                     justify-content: center;
                     align-items: center;
-                    font-family: $secondFont;
-                    text-transform: capitalize;
                     border-radius: 10px;
                     transition: 0.3s;
                     font-size: 20px;

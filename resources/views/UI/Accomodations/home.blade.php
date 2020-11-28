@@ -50,7 +50,7 @@
                 </div>
                 {{-- cover image --}}
                 <div class="cover_image">
-                    <img src="{{$accomodation->cover_image}}" width="inherit" height="inherit" alt="Image">
+                    <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
                 </div>
             </div>
             @endforeach
@@ -94,7 +94,7 @@
                          </div>
                          {{-- cover image --}}
                          <div class="cover_image">
-                             <img src="{{$accomodation->cover_image}}" width="inherit" height="inherit" alt="Image">
+                            <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
                          </div>
                         </div>
                     @endforeach 
@@ -128,7 +128,7 @@
                         </div>
                         {{-- cover image --}}
                         <div class="cover_image">
-                            <img src="{{$accomodation->cover_image}}" width="inherit" height="inherit" alt="Image">
+                            <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
                         </div>
                     </div>
                     @endforeach 
