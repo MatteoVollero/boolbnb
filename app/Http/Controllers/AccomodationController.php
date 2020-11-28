@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Accomodation;
-use App\Service;
 use App\Adv;
 use App\AccomodationType;
 use App\Service;
@@ -66,16 +65,6 @@ class AccomodationController extends Controller
                     $sponsoredAccomodations[] = $accomodation;
                  }
               }
-              // Controlliamo che la data di fine sponsorizzazione sia maggiore di quella odierna
-              if($advFound == false && $adv->pivot->end_adv > Carbon::now())
-              {
-                // Se si entra si aggiunge tutto il record a $sponsoredAccomodations
-                $sponsoredAccomodations[] = $accomodation;
-                // Settiamo la flag a true in modo da non inserire più volte lo stesso appartamento
-                $advFound = true;
-                // inseriamo il break per far terminare il ciclo perchè abbiamo trovato una sponsorizzata attiva
-              break;
-            }
             if(count($normalAccomodationsScroll1) == $normalAccomodationNumber &&
                count($normalAccomodationsScroll2) == $normalAccomodationNumber &&
                count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
@@ -84,10 +73,10 @@ class AccomodationController extends Controller
               return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
             }
           }
-        // Chiamiamo la view della home
-        return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
       }
-
+      // Chiamiamo la view della home
+      return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -153,4 +142,10 @@ class AccomodationController extends Controller
     {
         //
     }
+
+    public function search(Request $request)
+    {
+        return view('TEST.search');
+    }
+
 }
