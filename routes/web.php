@@ -40,8 +40,6 @@ Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->
     Route::resource('accomodations', 'AccomodationController');
 });
 
-// Route::post('/logout', 'Auth\LoginController@logout');
-
 // rotte GUESTS
 Route::resource('/', 'AccomodationController');
 
