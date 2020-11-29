@@ -1,7 +1,7 @@
 require('./bootstrap');
 // Query data for the form
 $(document).ready(function() {
-    // Variable to pick the country value
+    // event click function to pick the country value
     $(".country_input").keypress(function(event) {
         if (event.which == 13) {
             // make a variable which takes the value of the country input data
@@ -15,7 +15,7 @@ $(document).ready(function() {
             }
         }
     });
-    // Variable to pick the region value
+    // event click function to pick the region value
     $(".region_input").keypress(function(event) {
         if (event.which == 13) {
             // make a variable which takes the value of the region input data
@@ -29,7 +29,7 @@ $(document).ready(function() {
             }
         }
     });
-    // Variable to pick the city value
+    // event click function to pick the city value
     $(".city_input").keypress(function(event) {
         if (event.which == 13) {
             // make a variable which takes the value of the region input data
@@ -43,7 +43,7 @@ $(document).ready(function() {
             }
         }
     });
-    // Variable to pick the beds value
+    // event click function to pick the beds value
     $(".beds_input").keypress(function(event) {
         if (event.which == 13) {
             // make a variable which takes the value of the country input data
@@ -57,8 +57,7 @@ $(document).ready(function() {
             }
         }
     });
-    // Variable to pick the rooms value
-    var roomsInput = "";
+    // event click function to pick the rooms value
     $(".rooms_input").keypress(function(event) {
         if (event.which == 13) {
             // make a variable which takes the value of the country input data
@@ -72,21 +71,39 @@ $(document).ready(function() {
             }
         }    
     });
-    // Make an array for the checkbox value
-    // var servicesArray = [];
-    // Make a variable to pick the checkbox value
-    // var serviceInput = $(".service_input").val();
-    // invoke the services array function
-    // servicesArray(serviceInput);
-    // // FUNCTION
-    // function servicesArray(data) {
-    //     $(".service_input").click(function() {
-    //         for(var i = 0; serviceInput[i]; ++i){
-    //             if(serviceInput[i].checked) {
-    //                  checkedValue = serviceInput[i].value;
-    //                  console.log(serviceInput);
-    //             }
-    //       }
-    //     });
-    // }
-  }); 
+    
+}); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Make an array for the checkbox value
+// var servicesArray = [];
+// Make a variable to pick the checkbox value
+// var serviceInput = $(".service_input").val();
+// invoke the services array function
+// servicesArray(serviceInput);
+// // FUNCTION
+// function servicesArray(data) {
+//     $(".service_input").click(function() {
+//         for(var i = 0; serviceInput[i]; ++i){
+//             if(serviceInput[i].checked) {
+//                  checkedValue = serviceInput[i].value;
+//                  console.log(serviceInput);
+//             }
+//       }
+//     });
+// }

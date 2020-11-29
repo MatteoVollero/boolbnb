@@ -99,6 +99,7 @@
                         </div>
                     @endforeach 
             </div>
+            {{-- lower cards controller  --}}
                 <div class="lower_cards_scroller">
                     {{-- card item  --}}
                     @foreach ($normalAccomodationsScroll2 as $accomodation)
