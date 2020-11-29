@@ -1,2 +1,3 @@
 require('./bootstrap');
-require('./search');
+require('./search_api_accomodation');
+require('./search_tom_tom');

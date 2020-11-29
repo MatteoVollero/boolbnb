@@ -52,12 +52,6 @@ Route::get('/search', 'AccomodationController@search');
 // Route::get('/accomodations/{slug}', 'AccomodationController@show')->name('accomdations.show');
 
 
-
-
-
-
-
-
 // UI: ROTTE TEST PER BACK-END
 // Route::get('/home','UI\AccomodationController@index');
 
