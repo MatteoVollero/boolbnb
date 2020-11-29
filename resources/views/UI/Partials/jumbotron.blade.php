@@ -30,7 +30,14 @@
                             <label id="beds" for="beds">Beds</label>
                         </li>
                         <li class="list_item">
-                            <input type="number" class="beds_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of beds" value="{{old("rooms")}}">
+                            <input type="number" class="beds_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of beds" value="{{old("beds")}}">
+                        </li>
+                        <li class="list_item">
+                            {{-- toilets  --}}
+                            <label id="toilets" for="toilets">Toilets</label>
+                        </li>
+                        <li class="list_item">
+                            <input type="number" class="toilets_input form_input" id="toilets" name="toilets" min="0" max="100" placeholder="Insert the numbers of toilets" value="{{old("toilets")}}">
                         </li>
                         {{-- rooms  --}}
                         <li class="list_item">
