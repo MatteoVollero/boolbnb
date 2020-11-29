@@ -1,54 +1,25 @@
 require('./bootstrap');
 // Query data for the form
 $(document).ready(function() {
-    // event click function to pick the country value
-    $(".country_input").keypress(function(event) {
+    // event click function to pick the location value
+    $(".location_input").keypress(function locationValue(event) {
         if (event.which == 13) {
             // make a variable which takes the value of the country input data
-            var countryInput = $(".country_input").val();
-            if (isNaN(countryInput)) {
-                countryInput;
-                $(".country_Input").val("");
-                console.log(countryInput);
+            var locationInput = $(".location_input").val();
+            if (isNaN(locationInput) && locationInput != null) {
+                locationInput;
+                $(".location_Input").val("");
             } else {
-                $(".country_Input").val("");
-            }
-        }
-    });
-    // event click function to pick the region value
-    $(".region_input").keypress(function(event) {
-        if (event.which == 13) {
-            // make a variable which takes the value of the region input data
-            var regionInput = $(".region_input").val();
-            if (isNaN(regionInput)) {
-                regionInput;
-                $(".region_input").val("");
-                console.log(regionInput);
-            } else {
-                $(".region_Input").val("");
-            }
-        }
-    });
-    // event click function to pick the city value
-    $(".city_input").keypress(function(event) {
-        if (event.which == 13) {
-            // make a variable which takes the value of the region input data
-            var cityInput = $(".city_input").val();
-            if (isNaN(cityInput)) {
-                cityInput;
-                $(".city_input").val("");
-                console.log(cityInput);
-            } else {
-                $(".city_Input").val("");
+                $(".location_Input").val("");
             }
         }
     });
     // event click function to pick the beds value
-    $(".beds_input").keypress(function(event) {
+    $(".beds_input").keypress(function bedsValue(event) {
         if (event.which == 13) {
             // make a variable which takes the value of the country input data
             var bedsInput = $(".beds_input").val();
-            if (!isNaN(bedsInput) && bedsInput != null) {
+            if (!isNaN(bedsInput)) {
                 bedsInput;
                 $(".beds_input").val("");
                 console.log(bedsInput);
@@ -58,52 +29,51 @@ $(document).ready(function() {
         }
     });
     // event click function to pick the rooms value
-    $(".rooms_input").keypress(function(event) {
+    $(".rooms_input").keypress(function roomsValue(event) {
         if (event.which == 13) {
             // make a variable which takes the value of the country input data
             var roomsInput = $(".rooms_input").val();
-            if (!isNaN(roomsInput) && bedsInput != null) {
+            if (!isNaN(roomsInput)) {
                 roomsInput;
                 $(".rooms_input").val("");
                 console.log(roomsInput);
             } else {
                 $(".rooms_Input").val("");
             }
-        }    
+        }
     });
-    
-}); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Make an array for the checkbox value
-// var servicesArray = [];
-// Make a variable to pick the checkbox value
-// var serviceInput = $(".service_input").val();
-// invoke the services array function
-// servicesArray(serviceInput);
-// // FUNCTION
-// function servicesArray(data) {
-//     $(".service_input").click(function() {
-//         for(var i = 0; serviceInput[i]; ++i){
-//             if(serviceInput[i].checked) {
-//                  checkedValue = serviceInput[i].value;
-//                  console.log(serviceInput);
-//             }
-//       }
-//     });
-// }
+    // event click function to pick the rooms value
+    $(".service_input").click(function servicesValue() {
+        // make a this variable 
+        clickedElm = $(this);  
+        //  make an empty array
+        var servicesArray = [];
+        // conditions
+        if (clickedElm != null) {
+            // change the clicked value 
+            clickedElm = $(this).val;
+            // push inside of the array 
+            servicesArray.push(clickedElm);
+            console.log(servicesArray);
+            // cicle for in
+            for ( var i = 0; i < servicesArray.length; i++) {
+                // console log of array 
+                services = servicesArray[i];
+                console.log(services);
+                break;
+            }
+        }
+    });
+    // positionValue();
+    // invoke the search data function 
+    getSearchData(positionValue, bedsValue, roomsValue, servicesValue);
+    // FUNCTIONS
+    function getSearchData (positionValue, bedsValue, roomsValue, servicesValue) {
+        var dataFound = [];
+        if (positionValue != null && bedsValue != null 
+            && roomsValue != null && servicesValue != null) {
+                dataFound.push(positionValue, bedsValue, roomsValue, servicesValue)
+        }
+        return dataFound;
+    } 
+});

@@ -23,31 +23,51 @@
                     <span>{{$accomodation->region}}</span>
                     <span>{{$accomodation->city}}</span>
                     <span>{{$accomodation->price}}</span>
+                </div>
+                <ul class="services_list">
                     @foreach ($accomodation->services as $service)
                         @if ($service->service_name == "wi-fi")
-                        <i class="fas fa-wifi"></i>
+                        <li class="service_list">
+                            <i class="fas fa-wifi"></i>
+                        </li>
                         @elseif ($service->service_name == "parking")
-                        <i class="fas fa-parking"></i>
+                        <li class="service_list">
+                            <i class="fas fa-parking"></i>
+                        </li>
                         @elseif ($service->service_name == "pool")
-                        <i class="fas fa-swimmer"></i>
+                        <li class="service_list">
+                            <i class="fas fa-swimmer"></i>
+                        </li>
                         @elseif ($service->service_name == "reception")
-                        <i class="fas fa-concierge-bell"></i>
+                        <li class="service_list">
+                            <i class="fas fa-bell"></i>
+                        </li>
                         @elseif ($service->service_name == "sauna")
-                        <i class="fas fa-hot-tub"></i>
+                        <li class="service_list">
+                            <i class="fas fa-hot-tub"></i>
+                        </li>
                         @elseif ($service->service_name == "sea_view")
-                        <i class="fas fa-water"></i>
+                        <li class="service_list">
+                            <i class="fas fa-water"></i>
+                        </li>
                         @endif
                     @endforeach
                     @foreach ($accomodation->advs as $adv)
                         @if ($adv->label == "Bronze")
+                        <li class="service_list">
                             <i class="fas fa-medal medal_bronze"></i>
+                        </li>
                         @elseif ($adv->label == "Silver")
+                        <li class="service_list">
                             <i class="fas fa-medal medal_silver"></i>
+                        </li>
                         @elseif ($adv->label == "Gold")
+                        <li class="service_list">
                             <i class="fas fa-medal medal_gold"></i>
+                        </li>
                         @endif
                     @endforeach
-                </div>
+                </ul>
                 {{-- cover image --}}
                 <div class="cover_image">
                     <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
@@ -147,18 +167,18 @@
         <div class="single_accomodation">
             {{-- cover image  --}}
             <div class="cover_image">
-                {{-- @foreach ($mostViewedAccomodation as $accomodation)
-                     <img src="{{$accomodation->cover_image}}" alt="cover image">
-                @endforeach --}}
+                     <img src="{{$mostViewedAccomodation->cover_image}}" alt="cover image">
             </div>
             {{-- // secondary images  --}}
             <div class="secondary_images">
                 {{-- image item  --}}
-                {{-- @foreach ($mostViewedAccomodation as $accomodation)
-                    <div class="image_item">
-                        <img src="{{$accomodation->accomodation_images->image}}" alt="Images">
-                    </div>
-                @endforeach --}}
+                @foreach ($mostViewedAccomodation->accomodation_images as $accomodation_image)
+                    @if ($accomodation_image->principal)
+                        <div class="image_item">
+                            <img src="{{$accomodation_image->image}}" alt="Images"> 
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>

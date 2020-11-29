@@ -105,6 +105,8 @@
 }
 // hover Card
 @mixin HoverCard {
+    padding: 20px;
+    border: 4px solid $headerColor;
     transform: scale(1.03);
     overflow: hidden;
     cursor: pointer;
@@ -122,9 +124,9 @@
 }
 // flex Informations item 
 @mixin InformationsFlex {
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     display: flex;
 }
 // infromations item 

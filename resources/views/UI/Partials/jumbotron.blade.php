@@ -12,47 +12,8 @@
     <div class="jumbotron_search_item">
         {{-- search item  --}}
         <div class="search_item">
-            <label id="country" for="country">Country</label>
-            <input type="text" class="country_input form_input" id="country" name="country" required minlength="5" maxlength="100" placeholder="Insert the country please" value="{{old("country")}}">
-        </div>
-        {{-- search item  --}}
-        <div class="search_item">
-            <label id="region" for="region">Region</label>
-            <input type="text" class="region_input form_input" id="region" name="region" required minlength="5" maxlength="100" placeholder="Insert the region please" value="{{old("region")}}">
-        </div>
-        {{-- search item  --}}
-        <div class="search_item">
-            <label id="city" for="city">City</label><br>
-            <input type="text" class="city_input form_input" id="city" name="city" required minlength="5" maxlength="100" placeholder="Insert the city please" value="{{old("city")}}">
-        </div>
-        {{-- search item  --}}
-        <div class="search_item">
-            {{-- list menu  --}}
-            <li class="list_menu">
-                <label id="distance" for="distance">Distance</label>
-                {{-- dropleft_menu  --}}
-                <div class="dropleft_menu">
-                    {{-- flex_items  --}}
-                    <ul class="flex_items">
-                        {{-- list item  --}}
-                        <li class="list_item">
-                            <label id="longitude" for="longitude">Longitude</label>
-                        </li>
-                        {{-- list item  --}}
-                        <li class="list_item">
-                            <input type="number" step=0.000001 class="form_input" id="longitude" name="longitude" required min="-180.00" max="180.00" placeholder="Insert the longitude please" value="{{old("longitude")}}">
-                        </li>
-                        {{-- list item  --}}
-                        <li class="list_item">
-                            <label id="latitude" for="latitude">Latitude</label>
-                        </li>
-                        {{-- list item  --}}
-                        <li class="list_item">
-                            <input type="number" step=0.000001 class="form_input" id="latitude" name="latitude" required min="-90" max="90.01" placeholder="Insert the latitude please" value="{{old("latitude")}}">
-                        </li>
-                    </ul>
-                </div>
-            </li>
+            <label id="location" for="location">Where do you want to go?</label>
+            <input type="text" class="location_input form_input" id="location" name="location" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
         </div>
         {{-- search item  --}}
         <div class="search_item">
