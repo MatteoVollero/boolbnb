@@ -1,79 +1,82 @@
 require('./bootstrap');
 // Query data for the form
 $(document).ready(function() {
-    // event click function to pick the location value
-    $(".location_input").keypress(function locationValue(event) {
-        if (event.which == 13) {
-            // make a variable which takes the value of the country input data
-            var locationInput = $(".location_input").val();
-            if (isNaN(locationInput) && locationInput != null) {
-                locationInput;
-                $(".location_Input").val("");
-            } else {
-                $(".location_Input").val("");
-            }
-        }
-    });
-    // event click function to pick the beds value
-    $(".beds_input").keypress(function bedsValue(event) {
-        if (event.which == 13) {
-            // make a variable which takes the value of the country input data
-            var bedsInput = $(".beds_input").val();
-            if (!isNaN(bedsInput)) {
-                bedsInput;
-                $(".beds_input").val("");
-                console.log(bedsInput);
-            } else {
-                $(".beds_Input").val("");
-            }
-        }
-    });
-    // event click function to pick the rooms value
-    $(".rooms_input").keypress(function roomsValue(event) {
-        if (event.which == 13) {
-            // make a variable which takes the value of the country input data
-            var roomsInput = $(".rooms_input").val();
-            if (!isNaN(roomsInput)) {
-                roomsInput;
-                $(".rooms_input").val("");
-                console.log(roomsInput);
-            } else {
-                $(".rooms_Input").val("");
-            }
-        }
-    });
-    // event click function to pick the rooms value
-    $(".service_input").click(function servicesValue() {
-        // make a this variable 
-        clickedElm = $(this);  
-        //  make an empty array
-        var servicesArray = [];
-        // conditions
-        if (clickedElm != null) {
-            // change the clicked value 
-            clickedElm = $(this).val;
-            // push inside of the array 
-            servicesArray.push(clickedElm);
-            console.log(servicesArray);
-            // cicle for in
-            for ( var i = 0; i < servicesArray.length; i++) {
-                // console log of array 
-                services = servicesArray[i];
-                console.log(services);
-                break;
-            }
-        }
-    });
-    // positionValue();
-    // invoke the search data function 
-    getSearchData(positionValue, bedsValue, roomsValue, servicesValue);
     // FUNCTIONS
-    function getSearchData (positionValue, bedsValue, roomsValue, servicesValue) {
-        var dataFound = [];
-        if (positionValue != null && bedsValue != null 
-            && roomsValue != null && servicesValue != null) {
-                dataFound.push(positionValue, bedsValue, roomsValue, servicesValue)
+    function getSearchData() {
+        $(".btn_search").on("click", function() { 
+            // make a location variable and invoke the function
+            var location = locationInput();
+            // make a beds varible and invoke the function
+            var beds = bedsInput();
+            // make a rooms variable and invoke the function
+            var rooms = roomsInput();
+            // taking the array input value
+            var services = [];
+            var checkboxes = document.getElementsByName('service');
+            var vals = "";
+            for (var i = 0; i < checkboxes.length; i++) {
+
+                if (checkboxes[i].checked) {
+                    vals += checkboxes[i].value;
+                    services.push(checkboxes);
+                    console.log(services);
+                }
+            }
+            // make an empty array for the input
+            var arrayInput = []; 
+            // make a data variable for the JSON
+            var data = {};
+            // push inside the array the objects
+            arrayInput.push({ 
+                "location" : location,
+                "beds"     : beds,
+                "rooms"    : rooms,
+                "services" : services
+            });
+            data.arrayInput = arrayInput;
+            console.log(data.arrayInput);
+        });
+    }
+    getSearchData();
+    // make a location input function
+    function locationInput() {
+        // taking the location input value
+        var locationInput = $(".location_input").val().toLowerCase();
+        if (isNaN(locationInput) && bedsInput != null && bedsInput != "") {
+            // empty the input
+            $(".location_Input").val("");
+        } else {
+            // empty the input
+            $(".location_Input").val("");
         }
-        return dataFound;
-    } 
+        return locationInput; 
+    };
+
+    // make a beds input function 
+    function bedsInput() {
+        // taking the beds input value
+        var bedsInput = $(".beds_input").val();
+        if (!isNaN(bedsInput) && bedsInput != "") {
+            // empty the input
+            $(".beds_input").val("");
+        } else {
+            // empty the input
+            $(".beds_Input").val("");
+        }    
+        return bedsInput; 
+    };
+
+    // make a rooms input function 
+    function roomsInput() {
+        // taking the beds input value
+        var roomsInput = $(".rooms_input").val();
+        if (!isNaN(roomsInput) && roomsInput != "") {
+            // empty the input
+            $(".rooms_input").val("");
+        } else {
+            // empty the input
+            $(".rooms_Input").val("");
+        }
+        return roomsInput;
+    };
 });
