@@ -507,10 +507,21 @@
     // form wrapper
     .form_wrapper {
         @include GenericWrapper;
-        padding: 100px;
+        padding: 240px;
         // form group
         .form_group {
             padding: 10px;
+            #forgot_password {
+                font-family:$font-family-sans-serif;
+                color: #000;
+                transition: 0.3s;
+                font-size: 20px;
+                // id hover 
+                &:hover {
+                    color: $btnColor;
+                    cursor: pointer;
+                }
+            }
             label {
                 font-family: $font-family-sans-serif;
                 text-transform: capitalize;
@@ -560,6 +571,28 @@
             width: 150px;
             height: 50px;
             // btn hover 
+            &:hover {
+                background-color: $btnColor;
+                transform: translate(1.05);
+                cursor: pointer;
+                color: #fff;
+                opacity: 0.8;
+            }
+        }
+        .form_a {
+            font-family:$font-family-sans-serif;
+            background-color: $firstMainSection;
+            border: 2px solid $btnColor;
+            border-radius: 10px;
+            margin-left: 10px;
+            color: #000;
+            margin-right: 50px;
+            padding: 5px;
+            transition: 0.3s;
+            font-size: 30px;
+            width: 150px;
+            height: 50px;
+            // a hover 
             &:hover {
                 background-color: $btnColor;
                 transform: translate(1.05);
