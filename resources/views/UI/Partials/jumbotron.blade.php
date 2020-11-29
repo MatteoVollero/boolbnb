@@ -8,15 +8,15 @@
     <div class="jumbotron_search_item">
         <div class="search_item">
             <label id="country" for="country">Country</label>
-            <input class="country_input" type="country" id="country" name="country" placeholder="Insert the Country please" maxlength="100" value="{{old('country')}}">
+            <input type="text" class="country_input form_input" id="country" name="country" required minlength="5" maxlength="100" placeholder="Insert the country please" value="{{old("country")}}">
         </div>
         <div class="search_item">
             <label id="region" for="region">Region</label>
-            <input class="region_input" type="region" id="region" name="region" placeholder="Insert the Region please" maxlength="100" value="{{old('region')}}">
+            <input type="text" class="region_input form_input" id="region" name="region" required minlength="5" maxlength="100" placeholder="Insert the region please" value="{{old("region")}}">
         </div>
         <div class="search_item">
             <label id="city" for="city">City</label><br>
-            <input class="city_input" type="city" id="city" name="city" placeholder="Insert the City please" maxlength="100" value="{{old('city')}}">
+            <input type="text" class="city_input form_input" id="city" name="city" required minlength="5" maxlength="100" placeholder="Insert the city please" value="{{old("city")}}">
         </div>
         <div class="search_item">
             <li class="list_menu">
@@ -27,13 +27,13 @@
                             <label id="longitude" for="longitude">Longitude</label>
                         </li>
                         <li class="list_item">
-                            <input type="longitude" id="longitude" name="longitude" placeholder="Insert the Longitude please" value="{{old('longitude')}}">
+                            <input type="number" step=0.000001 class="form_input" id="longitude" name="longitude" required min="-180.00" max="180.00" placeholder="Insert the longitude please" value="{{old("longitude")}}">
                         </li>
                         <li class="list_item">
                             <label id="latitude" for="latitude">Latitude</label>
                         </li>
                         <li class="list_item">
-                            <input type="latitude" id="latitude" name="latitude" placeholder="Insert the Latitude please" value="{{old('latitude')}}">
+                            <input type="number" step=0.000001 class="form_input" id="latitude" name="latitude" required min="-90" max="90.01" placeholder="Insert the latitude please" value="{{old("latitude")}}">
                         </li>
                     </ul>
                 </div>
@@ -48,13 +48,13 @@
                             <label id="beds" for="beds">Beds</label>
                         </li>
                         <li class="list_item">
-                            <input class="beds_input" type="beds" id="beds" placeholder="Insert the n. of Beds please" value="{{old('beds')}}">
+                            <input type="number" class="beds_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of beds" value="{{old("rooms")}}">
                         </li>
                         <li class="list_item">
                             <label id="rooms" for="rooms">Rooms</label>
                         </li>
                         <li class="list_item">
-                            <input class="rooms_input" type="rooms" id="rooms" placeholder="Insert the n. of Rooms please" value="{{old('rooms')}}">
+                            <input type="number" class="rooms_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}">
                         </li>
                         <li class="list_item">
                             <label id="text" for="Services">Services</label>

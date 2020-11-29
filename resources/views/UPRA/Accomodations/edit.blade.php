@@ -8,17 +8,6 @@
             <div class="form_text">
               <h1>Edit accomodation data</h1>
             </div>
-        <br>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
        <form action="{{route('admin.accomodations.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
@@ -110,6 +99,15 @@
             </div>
             <button type="submit" class="form_btn">Edit</button>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         </div>
     </div>    
 @endsection

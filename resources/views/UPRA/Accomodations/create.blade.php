@@ -7,17 +7,6 @@
             <div class="form_text">
               <h1>Insert a new Accomodation</h1>
             </div>
-        <br>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
        <form action="{{route('admin.accomodations.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
@@ -36,7 +25,7 @@
             </div>
             <div class="form_group">
                 <label for="description">Description</label>
-                <input type="textarea" class="form_input" id="description" name="description" required minlength="100" maxlength="800" placeholder="Insert the description" value="{{old("description")}}">
+                <textarea class="form_input" id="description" name="description" required minlength="100" maxlength="800" placeholder="insert your description" cols="50" rows="10" value="{{old('description')}}"></textarea>
             </div>
             <div class="form_group">
                 <label for="cover_image">Image</label>
@@ -109,6 +98,15 @@
             </div>
             <button type="submit" class="form_btn">Create</button>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         </div>
     </div>    
 @endsection

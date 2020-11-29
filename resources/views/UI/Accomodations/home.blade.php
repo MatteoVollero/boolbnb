@@ -146,22 +146,18 @@
         <div class="single_accomodation">
             {{-- cover image  --}}
             <div class="cover_image">
-
+                {{-- @foreach ($mostViewedAccomodation as $accomodation)
+                     <img src="{{$accomodation->cover_image}}" alt="cover image">
+                @endforeach --}}
             </div>
             {{-- // secondary images  --}}
             <div class="secondary_images">
                 {{-- image item  --}}
-                <div class="image_item">
-                </div>
-                {{-- image item  --}}
-                <div class="image_item">
-                </div>
-                {{-- image item  --}}
-                <div class="image_item">
-                </div>
-                {{-- image item  --}}
-                <div class="image_item">
-                </div>
+                {{-- @foreach ($mostViewedAccomodation as $accomodation)
+                    <div class="image_item">
+                        <img src="{{$accomodation->accomodation_images->image}}" alt="Images">
+                    </div>
+                @endforeach --}}
             </div>
         </div>
     </div>
@@ -172,7 +168,7 @@
     <div class="third_main_wrapper">
         {{-- elm item  --}}
         <div class="elm_item">
-           <a href="" target="_blank"><img src="{{asset('images/Become_an_host_air_bnb.jpg')}}" alt="Become an host"></a>
+           <a href="{{route('register')}}" target="_blank"><img src="{{asset('images/Become_an_host_air_bnb.jpg')}}" alt="Become an host"></a>
             <h2>
                 Become an Host
             </h2>
@@ -185,7 +181,7 @@
             {{-- higher accomodations types  --}}
             <div class="accomodations_types">
                 {{-- higher type --}}
-                @foreach ($types as $type)    
+                @foreach ($types as $type)
                     <div class="type">{{$type->name}}</div>
                 @endforeach
             </div>

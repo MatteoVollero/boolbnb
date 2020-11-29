@@ -7,7 +7,10 @@ use App\Accomodation;
 use App\Service;
 use App\Adv;
 use App\AccomodationType;
+use App\AccomodationView;
 use Carbon\Carbon;
+
+use Illuminate\Support\Facades\DB;
 
 class AccomodationController extends Controller
 {
@@ -22,6 +25,12 @@ class AccomodationController extends Controller
         // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
         $sponsoredAccomodationNumber = 10;
         $normalAccomodationNumber = 20;
+        
+        $mostViewed = DB::table('accomodation_views')->selectRaw('accomodation_id, count(accomodation_id)')
+                                                     ->groupBy('accomodation_id')
+                                                     ->orderBy('count(accomodation_id)','desc')->limit(1)->get();
+
+        $mostViewedAccomodation = Accomodation::find($mostViewed[0]->accomodation_id);
 
         // Prendiamo tutti i record da accomodation
         $Accomodations = Accomodation::inRandomOrder()->get();
@@ -70,12 +79,12 @@ class AccomodationController extends Controller
                count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
             {
               // Se abbiamo riempito tutti gli array si ritorna la view della home per non ciclare inutilmente
-              return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+              return view('UI.Accomodations.home',compact('mostViewedAccomodation','services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
             }
           }
         }
         // Chiamiamo la view della home
-        return view('UI.Accomodations.home',compact('services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
+        return view('UI.Accomodations.home',compact('mostViewedAccomodation','services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
       }
 
     /**
