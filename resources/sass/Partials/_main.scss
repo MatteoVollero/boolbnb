@@ -1,6 +1,11 @@
 // main
 // first section
 // aside
+
+.none {
+    display: none;
+}
+
 .aside_accomodations {
     background-color:$secondMainSection;
     overflow-y: auto;

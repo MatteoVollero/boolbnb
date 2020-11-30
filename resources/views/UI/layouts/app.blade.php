@@ -15,6 +15,7 @@
     </main>
     @include('UI.Partials.footer')
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="{{asset('/js/app.js')}}"></script>
+  <script src="{{asset('public/js/app.js')}}"></script>
 </html>

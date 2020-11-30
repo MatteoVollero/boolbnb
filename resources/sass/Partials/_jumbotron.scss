@@ -72,6 +72,19 @@
             right: 100%;
             z-index: 1;
             top: 0;
+            // list item tom
+            .list_item_tom {
+                font-family: $secondFont;
+                transition: 0.3s;
+                font-size: 25px;
+                height: 100%;
+                width: 100%;
+                &:hover {
+                    background-color: $btnColor;
+                    transform:translate(1.05);
+                    border-radius: 20px;
+                }
+            }
             // list item
             .list_item:last-child {
                 display: flex;

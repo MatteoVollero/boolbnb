@@ -14,6 +14,11 @@
         <div class="search_item">
             <label id="location" for="location">Where do you want to go?</label>
             <input type="text" class="location_input form_input" id="location" name="location" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
+            <div class="dropleft_menu">
+                <ul class="flex_items_tom">
+                    <li></li>
+                </ul>
+            </div>
         </div>
         {{-- search item  --}}
         <div class="search_item">
@@ -51,35 +56,39 @@
                             <label id="text" for="Services">Services</label>
                         </li>
                         {{-- list item  --}}
-                            <ul class="list_item">
-                                @foreach ($services as $service)
-                                {{-- services list item  --}}
-                                <li class="service_list_item">
-                                    <input class="service_input" type="checkbox" value="{{$service->service_name}}" name="service">
-                                    @if ($service->service_name == "wi-fi")
-                                    <i class="fas fa-wifi translate"></i>
-                                    @elseif ($service->service_name == "parking")
-                                    <i class="fas fa-parking translate"></i>
-                                    @elseif ($service->service_name == "pool")
-                                    <i class="fas fa-swimmer translate"></i>
-                                    @elseif ($service->service_name == "reception")
-                                    <i class="fas fa-concierge-bell translate"></i>
-                                    @elseif ($service->service_name == "sauna")
-                                    <i class="fas fa-hot-tub translate"></i>
-                                    @elseif ($service->service_name == "sea_view")
-                                    <i class="fas fa-water translate"></i>
-                                    @endif
-                                </li>
-                                @endforeach
-                            </ul>
-                        </li> 
-                    </ul>
-                </div>
-            </li>
-        </div>
-        {{-- btn search  --}}
-        <div class="btn_search">
-            <button type="submit">Search<i class="fas fa-search"></i></button>
-        </div>
+                        <ul class="list_item">
+                            @foreach ($services as $service)
+                            {{-- services list item  --}}
+                            <li class="service_list_item">
+                                <input class="service_input" type="checkbox" value="{{$service->service_name}}" name="service">
+                                @if ($service->service_name == "wi-fi")
+                                <i class="fas fa-wifi translate"></i>
+                                @elseif ($service->service_name == "parking")
+                                <i class="fas fa-parking translate"></i>
+                                @elseif ($service->service_name == "pool")
+                                <i class="fas fa-swimmer translate"></i>
+                                @elseif ($service->service_name == "reception")
+                                <i class="fas fa-concierge-bell translate"></i>
+                                @elseif ($service->service_name == "sauna")
+                                <i class="fas fa-hot-tub translate"></i>
+                                @elseif ($service->service_name == "sea_view")
+                                <i class="fas fa-water translate"></i>
+                                @endif
+                            </li>
+                            @endforeach
+                        </ul>
+                    </li> 
+                </ul>
+            </div>
+        </li>
     </div>
+    {{-- btn search  --}}
+    <div class="btn_search">
+        <button type="submit">Search<i class="fas fa-search"></i></button>
+    </div>
+</div>
 </section>
+{{-- handlebars template  --}}
+<script id="tomtom_template" type="text/x-handlebars-template">
+   <a href=""><li class="list_item_tom">@{{ address }}</li></a>
+</script>
