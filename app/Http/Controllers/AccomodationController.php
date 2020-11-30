@@ -26,27 +26,22 @@ class AccomodationController extends Controller
         // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
         $sponsoredAccomodationNumber = 10;
         $normalAccomodationNumber = 20;
-        
-        $mostViewed = DB::table('accomodation_views')->selectRaw('accomodation_id, count(accomodation_id)')
-                                                     ->groupBy('accomodation_id')
-                                                     ->orderBy('count(accomodation_id)','desc')->limit(1)->get();
 
         $mostViewed = DB::table('accomodation_views')->selectRaw('accomodation_id, count(accomodation_id)')
                                                      ->groupBy('accomodation_id')
                                                      ->orderBy('count(accomodation_id)','desc')->limit(1)->get();
+
 
         $mostViewedAccomodation = Accomodation::find($mostViewed[0]->accomodation_id);
 
         // Prendiamo tutti i record da accomodation
         $Accomodations = Accomodation::inRandomOrder()->get();
-        
+
         // Array contenente tutti i record di type
         $types = AccomodationType::all();
         // Array contenente tutti i record di Service
         $services = Service::all();
 
-        // Array contente tutti i record di Service
-        $services = Service::all();
         //Array che conterrà solo i record sponsorizzati di $Accomodations(contiene tutti i record della tabella accomodation)
         $sponsoredAccomodations = [];
 
@@ -56,7 +51,6 @@ class AccomodationController extends Controller
         //Cicliamo per ogni record presente all'interno di $Accomodations
         foreach($Accomodations as $accomodation)
         {
-          $stop = $Accomodations[count($Accomodations)-1];
           // Controlliamo quanti elementi ha $accomodation->advs se ne ha 0 è una non sponsorizzata
           if(count($accomodation->advs) == 0)
           {
@@ -158,10 +152,88 @@ class AccomodationController extends Controller
         //
     }
 
-    public function search(Request $request)
-    {
 
-        return view('TEST.search');
+    public function distance($lat1, $lon1, $lat2, $lon2) {
+        $pi80 = M_PI / 180;
+        $lat1 *= $pi80;
+        $lon1 *= $pi80;
+        $lat2 *= $pi80;
+        $lon2 *= $pi80;
+        $r = 6372.797; // mean radius of Earth in km
+        $dlat = $lat2 - $lat1;
+        $dlon = $lon2 - $lon1;
+        $a = sin($dlat / 2) * sin($dlat / 2) + cos($lat1) * cos($lat2) * sin($dlon / 2) * sin($dlon / 2);
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+        $km = $r * $c;
+        //echo ' '.$km;
+        return $km;
     }
+
+     public function search(Request $request)
+     {
+       // Prendiamo tutti i dati
+       $data = $request->all();
+       dd($data);
+       // Array contente tutte le accomodation filtrate
+       $accomodationsFiltered = [];
+       // Array per i services
+       $accomodationServicesFiltered = [];
+        // Prendiamo tutti gli appartamenti secondo i parametri richiesti dall'utente(cha saranno i requisiti minimi)
+       $accomodationsToFilter = Accomodation::where("beds", ">=", $data['beds'])
+       ->where("toilets", ">=", $data['toilets'])
+       ->where("rooms", ">=", $data['rooms'])
+       ->where("visible", true)
+       ->get();
+        // Controlliamo che ci siano dei servizi richiesti
+       if(count($request->services) != 0)
+       {
+         // Utilizziamo questa variabile come parametro di misura dei servizi da trovare,per decidere di inserire nell'array $accomodationServicesFiltered[]
+         $requiredServices = count($request->services);
+         foreach($accomodationsToFilter as $accomodation)
+         {
+           // Flag inizialmente settata a zero
+           $findService = 0;
+           // Cicliamo i servizi che ci sono stati passati da request
+          foreach($data['services'] as $service)
+          {
+            // Cicliamo sui i servizi di $accomodation
+            foreach($accomodation->services as $accomodation_service)
+            {
+              // Se troviamo un servizio uguale a quello richiesto dall'utente
+              if($accomodation_service->id == $service)
+              {
+                // Incrementiamo la flag
+                $findService ++;
+              }
+            }
+          }
+            // Se il numero presente all'inerno della flag è >= dei servizi richiesti($requiredServices) allora lo inseriamo negli appartamenti da considerare
+          if($findService >= $requiredServices)
+          {
+            $accomodationServicesFiltered[] = $accomodation;
+          }
+        }
+      }
+
+      // Cicliamo su $accomodationServicesFiltered per calcolare le distanze
+      foreach ($accomodationServicesFiltered as $accomodation) {
+          // Calcoliamo la distanza
+          $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['lat'], $data['lon']);
+          // La distanza di default la prima volta sarà 20
+          if ($distance<=20) {
+              // Inseriamo tutti con distanza opportuna
+              $tempAccomodationsFiltered = [
+                  'accomodation' => $accomodation,
+                  'distance' => $distance,
+                  'service' => $accomodation->services,
+                  'type' => $accomodation->accomodation_type
+              ];
+              // Inseriamo nell'array finale
+              $accomodationsFiltered[] = $tempAccomodationsFiltered;
+          }
+      }
+
+         return view('UI.Accomodations.search',compact('accomodationsFiltered'));
+     }
 
 }

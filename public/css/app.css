@@ -1,17 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap);@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap);@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css);.section-search {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap);@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap);@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css);.section_search {
   background-color: #131B23;
   font-family: "Montserrat", sans-serif;
   padding: 120px 0;
   margin-top: 70px;
 }
 
-.section-search .elm-responsive-search {
+.section_search .elm_responsive_search {
   margin: auto;
   height: 100%;
   width: 80%;
 }
 
-.section-search .elm-responsive-search .elm-search-list {
+.section_search .elm_responsive_search .elm_search_list {
   background-color: #E9F1F7;
   border-radius: 15px;
   margin: 10px 0;
@@ -21,14 +21,14 @@
   display: flex;
 }
 
-.section-search .elm-responsive-search .elm-search-list .img-elm-search {
+.section_search .elm_responsive_search .elm_search_list .img_elm_search {
   height: 100%;
   width: 40%;
   background-color: gray;
   border-radius: 15px;
 }
 
-.section-search .elm-responsive-search .elm-search-list .testo-elm-search {
+.section_search .elm_responsive_search .elm_search_list .title_elm_search {
   padding: 5px 30px;
   width: 60%;
   display: flex;
@@ -36,33 +36,34 @@
   justify-content: space-between;
 }
 
-.section-search .elm-responsive-search .elm-search-list .testo-elm-search .testo-elm-search-superiore .title-elm-search {
+.section_search .elm_responsive_search .elm_search_list .title_elm_search h3,
+.section_search .elm_responsive_search .elm_search_list .title_elm_search h5 {
   color: #23102b;
   font-size: 25px;
   margin-bottom: 15px;
   font-weight: bolder;
 }
 
-.section-search .elm-responsive-search .elm-search-list .testo-elm-search .testo-elm-search-superiore .text-elm-search {
+.section_search .elm_responsive_search .elm_search_list .title_elm_search .title_elm_search_higher .text_elm_search {
   margin-bottom: 15px;
   font-weight: bold;
   color: #a08fa9;
 }
 
-.section-search .elm-responsive-search .elm-search-list .testo-elm-search .testo-elm-search-superiore .info-elm-search {
+.section_search .elm_responsive_search .elm_search_list .title_elm_search .title_elm_search_higher .info_elm_search {
   margin: 0 10px;
   font-size: 15px;
   color: #a08fa9;
   font-weight: bold;
 }
 
-.section-search .elm-responsive-search .elm-search-list .testo-elm-search .testo-elm-search-inferiore {
+.section_search .elm_responsive_search .elm_search_list .title_elm_search .text_elm_search_lower {
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
 
-.section-search .elm-responsive-search .elm-search-list .testo-elm-search .testo-elm-search-inferiore .price-elm-search {
+.section_search .elm_responsive_search .elm_search_list .title_elm_search .text_elm_search_lower .price_elm_search {
   font-size: 20px;
   font-weight: bolder;
 }
@@ -70,12 +71,12 @@
 /* media  query */
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-  .section-search .elm-responsive-search {
+  .section_search .elm_responsive_list {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .section-search .elm-responsive-search .elm-search-list {
+  .section_search .elm_responsive_list .elm_search_list {
     margin: 10px;
     height: 400px;
     width: calc((100% - 40px) / 2);
@@ -83,12 +84,12 @@
     flex-direction: column;
   }
 
-  .section-search .elm-responsive-search .elm-search-list .img-elm-search {
+  .section_search .elm_responsive_list .elm_search_list .img_elm_search {
     height: 50%;
     width: 100%;
   }
 
-  .section-search .elm-responsive-search .elm-search-list .testo-elm-search {
+  .section_search .elm_responsive_list .elm_search_list .text_elm_search {
     width: 100%;
     height: 50%;
     display: block;
@@ -96,12 +97,12 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .section-search .elm-responsive-search {
+  .section_search .elm_responsive_search {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .section-search .elm-responsive-search .elm-search-list {
+  .section_search .elm_responsive_search .elm_search_list {
     margin: 10px 0;
     height: 400px;
     width: 100%;
@@ -110,27 +111,27 @@
     flex-direction: column;
   }
 
-  .section-search .elm-responsive-search .elm-search-list .img-elm-search {
+  .section_search .elm_responsive_search .elm_search_list .img_elm_search {
     height: 50%;
     width: 100%;
     max-width: 350px;
   }
 
-  .section-search .elm-responsive-search .elm-search-list .testo-elm-search {
+  .section_search .elm_responsive_search .elm_search_list .text_elm_search {
     width: 100%;
     height: 50%;
     display: block;
   }
 }
 
-.section-list {
+.section_list {
   background-color: #E9F1F7;
   font-family: "Montserrat", sans-serif;
   padding: 120px 0;
   margin-top: 70px;
 }
 
-.section-list .elm-responsive-list {
+.section_list .elm_responsive_list {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -138,7 +139,7 @@
   width: 80%;
 }
 
-.section-list .elm-responsive-list .elm-list-list {
+.section_list .elm_responsive_list .elm_search_list {
   margin: 10px;
   height: 600px;
   width: calc((100% - 40px) / 2);
@@ -149,14 +150,14 @@
   padding: 10px;
 }
 
-.section-list .elm-responsive-list .elm-list-list .img-elm-list {
+.section_list .elm_responsive_list .elm_search_list .img_elm_list {
   height: 60%;
   width: 100%;
   background-color: gray;
   border-radius: 15px;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list {
   padding: 5px 30px;
   width: 100%;
   height: 40%;
@@ -165,51 +166,51 @@
   justify-content: space-between;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list .testo-elm-list-superiore .row-title-elm-list {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list .title_elm_list_higher .row_title_elm_list {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list .testo-elm-list-superiore .row-title-elm-list .title-elm-list {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list .title_elm_list_higher .row_title_elm_list .title_elm_list {
   color: #FF5A5F;
   font-size: 25px;
   margin-bottom: 15px;
   font-weight: bolder;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list .testo-elm-list-superiore .row-title-elm-list .sponsor-elm-list {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list .title_elm_list_higher .row_title_elm_list .sponsor_elm_list {
   color: #FF5A5F;
   margin-bottom: 15px;
   font-weight: bolder;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list .testo-elm-list-superiore .visible-elm-list {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list .title_elm_list_higher .visible_elm_list {
   color: #FF5A5F;
   margin-bottom: 15px;
   font-weight: bolder;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list .testo-elm-list-superiore .text-elm-list {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list .title_elm_list_higher .text_elm_list {
   margin-bottom: 15px;
   font-weight: bold;
   color: #a08fa9;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list .testo-elm-list-superiore .info-elm-list {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list .title_elm_list_higher .info_elm_list {
   margin: 0 10px;
   font-size: 15px;
   color: #a08fa9;
   font-weight: bold;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list .testo-elm-list-inferiore {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list .title_elm_list_lower {
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
 
-.section-list .elm-responsive-list .elm-list-list .testo-elm-list .testo-elm-list-inferiore .price-elm-list {
+.section_list .elm_responsive_list .elm_search_list .title_elm_list .title_elm_list_lower .price_elm_list {
   font-size: 20px;
   font-weight: bolder;
   color: #FF5A5F;
@@ -218,12 +219,12 @@
 /* media  query */
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .section-list .elm-responsive-list {
+  .section_list .elm_responsive_list {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .section-list .elm-responsive-list .elm-list-list {
+  .section_list .elm_responsive_list .elm_search_list {
     margin: 10px 0;
     height: 400px;
     width: 100%;
@@ -232,13 +233,13 @@
     flex-direction: column;
   }
 
-  .section-list .elm-responsive-list .elm-list-list .img-elm-list {
+  .section_list .elm_responsive_list .elm_search_list .img_elm_list {
     height: 50%;
     width: 100%;
     max-width: 350px;
   }
 
-  .section-list .elm-responsive-list .elm-list-list .testo-elm-list {
+  .section_list .elm_responsive_list .elm_search_list .title_elm_list {
     width: 100%;
     height: 50%;
     display: block;
@@ -256,6 +257,7 @@ li {
 }
 
 a {
+  color: #000;
   text-decoration: none;
 }
 
@@ -268,28 +270,28 @@ button {
 }
 
 .position-flex-header {
-  font-family: "Montserrat", sans-serif;
-  height: 70px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
   background-color: #E7DFC6;
+  font-family: "Montserrat", sans-serif;
+  position: fixed;
+  height: 70px;
   width: 100%;
+  z-index: 1;
+  left: 0;
+  top: 0;
 }
 
 .position-flex-header .wrapper {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   margin: auto;
   height: 100%;
   width: 80%;
+  align-items: center;
+  display: flex;
 }
 
 .position-flex-header .wrapper .header_bnb_logo {
-  width: 10%;
   max-height: 60px;
+  width: 10%;
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -376,15 +378,15 @@ button {
 }
 
 .jumbotron_search_item .search_item {
-  position: relative;
-  margin: 5px 5px;
-  padding: 5px;
-  text-align: center;
   border: 2px solid lightgoldenrodyellow;
   background-color: #fff;
   border-radius: 10px;
-  cursor: pointer;
+  position: relative;
+  text-align: center;
   transition: 0.3s;
+  cursor: pointer;
+  margin: 5px 5px;
+  padding: 5px;
   height: 15%;
   width: 95%;
 }
@@ -401,6 +403,20 @@ button {
   right: 100%;
   z-index: 1;
   top: 0;
+}
+
+.jumbotron_search_item .search_item .dropleft_menu .list_item_tom {
+  font-family: "Montserrat", sans-serif;
+  transition: 0.3s;
+  font-size: 25px;
+  height: 100%;
+  width: 100%;
+}
+
+.jumbotron_search_item .search_item .dropleft_menu .list_item_tom:hover {
+  background-color: #FC6C43;
+  transform: translate(1.05);
+  border-radius: 20px;
 }
 
 .jumbotron_search_item .search_item .dropleft_menu .list_item:last-child {
@@ -435,8 +451,8 @@ button {
   border-radius: 10px;
   padding: 20px 10px;
   margin: 10px 0px;
-  font-size: 20px;
   transition: 0.3s;
+  font-size: 20px;
   height: 30px;
   border: none;
   width: 90%;
@@ -470,8 +486,8 @@ button {
   border-radius: 10px;
   padding: 20px 10px;
   margin: 10px 0px;
-  font-size: 20px;
   transition: 0.3s;
+  font-size: 20px;
   height: 30px;
   border: none;
   width: 90%;
@@ -560,6 +576,10 @@ button {
   }
 }
 
+.none {
+  display: none;
+}
+
 .aside_accomodations {
   background-color: #131B23;
   overflow-y: auto;
@@ -571,78 +591,92 @@ button {
   margin: auto;
   height: 100%;
   width: 80%;
+  position: relative;
   padding: 100px 0px;
   flex-wrap: wrap;
   display: flex;
-  position: relative;
 }
 
 .aside_accomodations .aside_wrapper h2 {
-  color: #fff;
-  position: absolute;
-  text-align: center;
   text-transform: capitalize;
   font-family: "Montserrat", sans-serif;
+  position: absolute;
+  text-align: center;
+  color: #fff;
   margin: 40px;
-  top: 0;
   left: 0;
+  top: 0;
 }
 
 .aside_accomodations .aside_wrapper .aside_item {
+  justify-content: flex-start;
   background-color: #000;
-  position: relative;
+  flex-direction: column;
   border-radius: 10px;
+  align-items: center;
+  position: relative;
   transition: 0.3s;
   margin: 15px 0;
-  width: 100%;
+  display: flex;
   height: 40%;
+  width: 100%;
   opacity: 1;
 }
 
 .aside_accomodations .aside_wrapper .aside_item:hover {
+  padding: 20px;
+  border: 4px solid #E7DFC6;
   transform: scale(1.03);
   overflow: hidden;
   cursor: pointer;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .informations_item {
-  border: 4px solid #E7DFC6;
   text-transform: capitalize;
-  overflow-y: auto;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   display: flex;
+  background-color: none;
   border-radius: 10px;
   position: relative;
   padding: 0px 35px;
+  overflow-y: auto;
   font-size: 20px;
   color: #fff;
-  height: 100%;
+  height: 70%;
   width: 100%;
+}
+
+.aside_accomodations .aside_wrapper .aside_item .informations_item .service_list {
+  background-color: none;
+  color: #fff;
+  width: 100%;
+  height: 30%;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .informations_item .medal_bronze {
   transform: translate(-50%, -50%);
   position: absolute;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  color: #cd7f32;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .informations_item .medal_silver {
   transform: translate(-50%, -50%);
   position: absolute;
-  color: silver;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  color: silver;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .informations_item .medal_gold {
   transform: translate(-50%, -50%);
   position: absolute;
-  color: gold;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  color: gold;
 }
 
 .aside_accomodations .aside_wrapper .aside_item .informations_item span {
@@ -692,14 +726,14 @@ button {
 }
 
 .first_main_section .first_main_wrapper h2 {
-  color: #000;
-  font-size: 40px;
-  font-family: "Montserrat", sans-serif;
-  text-transform: capitalize;
-  position: absolute;
   transform: translateX(-50%);
-  top: 2%;
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  font-size: 40px;
+  color: #000;
   left: 50%;
+  top: 2%;
 }
 
 .first_main_section .first_main_wrapper .accomodation_cards {
@@ -716,10 +750,10 @@ button {
 
 .first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller {
   flex-direction: column;
-  overflow-x: auto;
   overflow-y: hidden;
   border-radius: 10px;
   padding: 0px 20px;
+  overflow-x: auto;
   flex-wrap: wrap;
   display: flex;
   height: 100%;
@@ -730,8 +764,8 @@ button {
 .first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item {
   overflow-y: hidden;
   background-color: #131B23;
-  position: relative;
   border-radius: 10px;
+  position: relative;
   margin: 15px 15px;
   transition: 0.3s;
   height: 100%;
@@ -740,6 +774,8 @@ button {
 }
 
 .first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item:hover {
+  padding: 20px;
+  border: 4px solid #E7DFC6;
   transform: scale(1.03);
   overflow: hidden;
   cursor: pointer;
@@ -747,14 +783,14 @@ button {
 
 .first_main_section .first_main_wrapper .accomodation_cards .upper_cards_scroller .card_item .informations_item {
   text-transform: capitalize;
-  color: #fff;
   border: 4px solid #FC6C43;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   display: flex;
   border-radius: 10px;
   font-size: 20px;
+  color: #fff;
   padding: 10px;
   height: 100%;
   width: 100%;
@@ -785,10 +821,10 @@ button {
 
 .first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller {
   flex-direction: column;
-  overflow-x: auto;
   overflow-y: hidden;
   border-radius: 10px;
   padding: 0px 20px;
+  overflow-x: auto;
   flex-wrap: wrap;
   display: flex;
   height: 100%;
@@ -799,8 +835,8 @@ button {
 .first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item {
   overflow-y: hidden;
   background-color: #131B23;
-  position: relative;
   border-radius: 10px;
+  position: relative;
   margin: 15px 15px;
   transition: 0.3s;
   height: 100%;
@@ -809,6 +845,8 @@ button {
 }
 
 .first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item:hover {
+  padding: 20px;
+  border: 4px solid #E7DFC6;
   transform: scale(1.03);
   overflow: hidden;
   cursor: pointer;
@@ -816,14 +854,14 @@ button {
 
 .first_main_section .first_main_wrapper .accomodation_cards .lower_cards_scroller .card_item .informations_item {
   text-transform: capitalize;
-  color: #fff;
   border: 4px solid #FC6C43;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   display: flex;
   border-radius: 10px;
   font-size: 20px;
+  color: #fff;
   padding: 10px;
   height: 100%;
   width: 100%;
@@ -858,8 +896,8 @@ button {
   }
 
   .aside_accomodations {
-    overflow-x: auto;
     flex-direction: column;
+    overflow-x: auto;
     flex-wrap: wrap;
     width: 100%;
     height: 20%;
@@ -867,12 +905,6 @@ button {
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-  .first_main_section {
-    margin-top: 0px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1200px) {
   .first_main_section {
     margin-top: 0px;
   }
@@ -885,8 +917,8 @@ button {
   }
 
   .cards_section {
-    min-width: 66%;
     height: 100%;
+    width: 66%;
   }
 
   .cards_section .accomodation_cards {
@@ -897,16 +929,16 @@ button {
     display: flex;
     border-radius: 10px;
     margin: auto;
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 
   .cards_section .accomodation_cards .upper_cards_scroller {
     flex-direction: column;
-    overflow-y: auto;
     overflow-x: hidden;
     border-radius: 10px;
     padding: 0px 20px;
+    overflow-y: auto;
     flex-wrap: wrap;
     display: flex;
     height: 20%;
@@ -917,16 +949,18 @@ button {
   .cards_section .accomodation_cards .upper_cards_scroller .card_item {
     overflow-y: hidden;
     background-color: #131B23;
-    position: relative;
     border-radius: 10px;
+    position: relative;
     margin: 15px 15px;
     transition: 0.3s;
     height: 100%;
     opacity: 1;
-    width: 100%;
+    width: 40%;
   }
 
   .cards_section .accomodation_cards .upper_cards_scroller .card_item:hover {
+    padding: 20px;
+    border: 4px solid #E7DFC6;
     transform: scale(1.03);
     overflow: hidden;
     cursor: pointer;
@@ -934,14 +968,116 @@ button {
 
   .cards_section .accomodation_cards .upper_cards_scroller .card_item .informations_item {
     text-transform: capitalize;
-    color: #fff;
     border: 4px solid #FC6C43;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     display: flex;
     border-radius: 10px;
     font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .cards_section .accomodation_cards .upper_cards_scroller .card_item .informations_item span {
+    font-family: "Ubuntu", sans-serif;
+    padding: 10px;
+    color: #fff;
+  }
+
+  .cards_section .accomodation_cards .upper_cards_scroller .card_item .cover_image {
+    overflow-x: hidden;
+    border-radius: 10px;
+    position: absolute;
+    transition: 0.3s;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    left: 0;
+    top: 0;
+  }
+
+  .cards_section .accomodation_cards .upper_cards_scroller .card_item .cover_image:hover {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .first_main_section {
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .aside_accomodations {
+    background-color: #131B23;
+    overflow-y: auto;
+    min-width: 33%;
+    height: 100%;
+  }
+
+  .cards_section {
+    height: 100%;
+    width: 66%;
+  }
+
+  .cards_section .accomodation_cards {
+    background-color: none;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  .cards_section .accomodation_cards .upper_cards_scroller {
+    flex-direction: column;
+    overflow-x: hidden;
+    border-radius: 10px;
+    padding: 0px 20px;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    display: flex;
+    height: 20%;
+    margin: 20px;
+    width: 100%;
+  }
+
+  .cards_section .accomodation_cards .upper_cards_scroller .card_item {
+    overflow-y: hidden;
+    background-color: #131B23;
+    border-radius: 10px;
+    position: relative;
+    margin: 15px 15px;
+    transition: 0.3s;
+    height: 100%;
+    opacity: 1;
+    width: 40%;
+  }
+
+  .cards_section .accomodation_cards .upper_cards_scroller .card_item:hover {
+    padding: 20px;
+    border: 4px solid #E7DFC6;
+    transform: scale(1.03);
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .cards_section .accomodation_cards .upper_cards_scroller .card_item .informations_item {
+    text-transform: capitalize;
+    border: 4px solid #FC6C43;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #fff;
     padding: 10px;
     height: 100%;
     width: 100%;
@@ -972,21 +1108,21 @@ button {
 }
 
 .second_main_section {
-  width: 100%;
   background-color: #131B23;
+  width: 100%;
 }
 
 .second_main_section .second_main_wrapper {
+  position: relative;
   padding: 100px;
   height: 100%;
-  position: relative;
 }
 
 .second_main_section .second_main_wrapper h2 {
+  text-transform: capitalize;
   font-family: "Montserrat", sans-serif;
   position: absolute;
   font-size: 30px;
-  text-transform: capitalize;
   color: #fff;
   left: 10%;
   top: 5%;
@@ -1002,11 +1138,25 @@ button {
 }
 
 .second_main_section .second_main_wrapper .single_accomodation .cover_image {
+  background-color: lightblue;
+  border-radius: 10px;
+  margin: 20px;
   height: 97%;
   width: 50%;
-  margin: 20px;
+}
+
+.second_main_section .second_main_wrapper .single_accomodation .cover_image img {
   border-radius: 10px;
-  background-color: lightblue;
+  overflow: hidden;
+  transition: 0.3s;
+  height: 100%;
+  width: 100%;
+}
+
+.second_main_section .second_main_wrapper .single_accomodation .cover_image img:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .second_main_section .second_main_wrapper .single_accomodation .secondary_images {
@@ -1022,8 +1172,22 @@ button {
   background-color: crimson;
   border-radius: 10px;
   min-height: 47%;
-  margin: 1%;
   min-width: 47%;
+  margin: 1%;
+}
+
+.second_main_section .second_main_wrapper .single_accomodation .secondary_images .image_item img {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+  height: 47%;
+  width: 100%;
+}
+
+.second_main_section .second_main_wrapper .single_accomodation .secondary_images .image_item img:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -1044,21 +1208,21 @@ button {
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .single_accomodation {
-    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    background-color: red;
     border-radius: 10px;
+    flex-wrap: wrap;
+    display: flex;
     height: 100%;
     width: 100%;
-    background-color: red;
   }
 
   .single_accomodation .cover_image {
+    background-color: lightblue;
+    border-radius: 10px;
+    margin: 20px;
     height: 97%;
     width: 70%;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: lightblue;
   }
 
   .single_accomodation .secondary_images {
@@ -1075,8 +1239,8 @@ button {
     background-color: crimson;
     border-radius: 10px;
     min-height: 47%;
-    margin: 1%;
     min-width: 47%;
+    margin: 1%;
   }
 }
 
@@ -1099,19 +1263,19 @@ button {
 }
 
 .third_main_section .third_main_wrapper .elm_item {
-  width: 50%;
-  height: 100%;
-  margin: 0px 10px;
-  position: relative;
-  border-radius: 10px;
   background-color: lightblue;
+  border-radius: 10px;
+  position: relative;
+  margin: 0px 10px;
+  height: 100%;
+  width: 50%;
 }
 
 .third_main_section .third_main_wrapper .elm_item img {
-  width: 100%;
-  height: 100%;
   border-radius: 10px;
   transition: 0.3s;
+  height: 100%;
+  width: 100%;
 }
 
 .third_main_section .third_main_wrapper .elm_item img:hover {
@@ -1120,20 +1284,20 @@ button {
 }
 
 .third_main_section .third_main_wrapper .elm_item .accomodations_types {
-  width: 100%;
-  height: 100%;
-  display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 .third_main_section .third_main_wrapper .elm_item .accomodations_types .type {
+  text-transform: capitalize;
   background-color: red;
+  font-family: "Montserrat", sans-serif;
   justify-content: center;
   align-items: center;
-  font-family: "Montserrat", sans-serif;
-  text-transform: capitalize;
   border-radius: 10px;
   transition: 0.3s;
   font-size: 20px;
@@ -1157,6 +1321,123 @@ button {
   color: #fff;
   left: 1%;
   bottom: 0;
+}
+
+.form_background {
+  background-color: #E9F1F7;
+  height: 100%;
+  width: 100%;
+}
+
+.form_background .form_wrapper {
+  margin: auto;
+  height: 100%;
+  width: 80%;
+  padding: 240px;
+}
+
+.form_background .form_wrapper .form_group {
+  padding: 10px;
+}
+
+.form_background .form_wrapper .form_group #forgot_password {
+  font-family: "Nunito", sans-serif;
+  color: #000;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.form_background .form_wrapper .form_group #forgot_password:hover {
+  color: #FC6C43;
+  cursor: pointer;
+}
+
+.form_background .form_wrapper .form_group label {
+  font-family: "Nunito", sans-serif;
+  text-transform: capitalize;
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.form_background .form_wrapper .form_text {
+  font-family: "Nunito", sans-serif;
+  text-transform: capitalize;
+  text-align: right;
+  color: #000;
+}
+
+.form_background .form_wrapper .form_input {
+  border: 2px solid #FC6C43;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: 0.3s;
+  padding: 20px;
+  margin: 10px;
+  height: 30px;
+  width: 100%;
+}
+
+.form_background .form_wrapper .form_input::-moz-placeholder {
+  color: #fff;
+}
+
+.form_background .form_wrapper .form_input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.form_background .form_wrapper .form_input::placeholder {
+  color: #fff;
+}
+
+.form_background .form_wrapper .form_input:hover {
+  background-color: #FC6C43;
+  transform: translate(1.05);
+  cursor: pointer;
+  color: #fff;
+}
+
+.form_background .form_wrapper .form_btn {
+  font-family: "Nunito", sans-serif;
+  background-color: #E9F1F7;
+  border: 2px solid #FC6C43;
+  border-radius: 10px;
+  margin-top: 50px;
+  transition: 0.3s;
+  font-size: 30px;
+  width: 150px;
+  height: 50px;
+}
+
+.form_background .form_wrapper .form_btn:hover {
+  background-color: #FC6C43;
+  transform: translate(1.05);
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.form_background .form_wrapper .form_a {
+  font-family: "Nunito", sans-serif;
+  background-color: #E9F1F7;
+  border: 2px solid #FC6C43;
+  border-radius: 10px;
+  margin-left: 10px;
+  color: #000;
+  margin-right: 50px;
+  padding: 5px;
+  transition: 0.3s;
+  font-size: 30px;
+  width: 150px;
+  height: 50px;
+}
+
+.form_background .form_wrapper .form_a:hover {
+  background-color: #FC6C43;
+  transform: translate(1.05);
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.8;
 }
 
 footer {
@@ -1306,13 +1587,14 @@ footer .wrapper_footer .margin_top_100 .flex_box_footer_lower .flex_box_footer_l
 }
 
 .home_search_btn {
+  box-shadow: 1px 2px 10px #888888;
+  border: 1px solid #FF5A5F;
+  border-radius: 10px;
+  padding-left: 10px;
+  transition: 0.3s;
   min-width: 200px;
   min-height: 30px;
-  padding-left: 10px;
-  background-color: #E9F1F7;
-  border-radius: 10px;
   border: none;
-  transition: 0.3s;
 }
 
 .home_search_btn:hover::-moz-placeholder {
@@ -1335,35 +1617,72 @@ footer .wrapper_footer .margin_top_100 .flex_box_footer_lower .flex_box_footer_l
 }
 
 .links {
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
-.links .link-header {
-  box-shadow: 1px 2px 15px #888888;
+.links .link_header {
+  box-shadow: 1px 2px 10px #888888;
   background-color: #E9F1F7;
   border: 1px solid #FF5A5F;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  position: relative;
   font-weight: bold;
   transition: 0.3s;
+  cursor: pointer;
   margin: 0 10px;
   padding: 10px;
   display: flex;
+  color: #000;
   height: 40%;
 }
 
-.links .link-header:hover {
+.links .link_header .dropdown_menu {
+  background-color: #fff;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  display: none;
+  bottom: -100%;
+  width: 200px;
+  height: 100%;
+  z-index: 1;
+  left: -100%;
+}
+
+.links .link_header .dropdown_menu .list_item {
+  background-color: #fff;
+  height: 30px;
+  width: 200px;
+  padding: 5px;
+}
+
+.links .link_header .dropdown_menu .list_item:hover {
+  background-color: #FC6C43;
+}
+
+.links .link_header:hover .dropdown_menu {
+  background-color: #E9F1F7;
+  cursor: pointer;
+  display: block;
+}
+
+.links .link_header:hover {
   background-color: #FC6C43;
   color: #131B23;
   transform: scale(1.08);
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 1;
 }
 
-.links .link-header .icn {
+.links .link_header .icn {
   margin: 0 10px;
 }
 

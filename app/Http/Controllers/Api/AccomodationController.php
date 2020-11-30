@@ -20,9 +20,9 @@ class AccomodationController extends Controller
         // Array Che riempieremo alla fine con tutti i campi del JSON
         $accomodationsFilteredJSON = [];
          // Prendiamo tutti gli appartamenti secondo i parametri richiesti dall'utente(cha saranno i requisiti minimi)
-        $accomodationsToFilter = Accomodation::where("beds", ">=", $request['beds'])
-        ->where("toilets", ">=", $request['toilets'])
-        ->where("rooms", ">=", $request['rooms'])
+        $accomodationsToFilter = Accomodation::where("beds", ">=", $data['beds'])
+        ->where("toilets", ">=", $data['toilets'])
+        ->where("rooms", ">=", $data['rooms'])
         ->where("visible", true)
         ->get();
 
@@ -50,8 +50,10 @@ class AccomodationController extends Controller
           }
         }
 
+
+
         foreach ($accomodationServicesFiltered as $accomodation) {
-            $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['lat'], $data['lon']);
+            $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['latitude'], $data['longitude']);
             if ($distance<=$data['radius']) {
                 $tempAccomodationsFilteredJSON = [
                     'accomodation' => $accomodation,

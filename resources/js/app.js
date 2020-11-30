@@ -3,53 +3,73 @@ require('./bootstrap');
 const Handlebars = require("handlebars");
 // Query data for the form
 $(document).ready(function() {
+    console.log('Chiamo la funzione');
     // invoke the searching data function
-    getSearchData();
+    $(".btn_search").on("click", function() {
+        // make a longitude function
+        // var longitude = longitudeInput();
+        var longitude = 9.18812;
+        // make a latitude function
+        // var latitude = latitudeInput();
+        var latitude = 45.46362;
+
+        // make a beds varible and invoke the relative function
+        // var getBeds = bedsInput();
+        var getBeds = 0;
+
+        // make a rooms variable and invoke the relative function
+        // var getToilets = toiletsInput();
+        var getToilets = 0;
+        // make a rooms variable and invoke the relative function
+        // roomsInput();
+        var getRooms =  1
+        // make a services variable and invoke the relative function
+        var getServices = [1,2,3]; //servicesInput();
+        // make an empty array for the search input
+        var arrayData = [];
+        // make a data variable for the JSON
+        var data = {};
+
+        var getRadius = 6000;
+        // push inside the array the objects
+        arrayData.push ({
+            // "longitude" : longitude,
+            "longitude" : longitude,
+            "latitude"  : latitude,
+            "beds"      : getBeds,
+            "rooms"     : getRooms,
+            "toilets"   : getToilets,
+            "services"  : getServices
+        });
+        data.arrayData = arrayData;
+        console.log(data.arrayData);
+        // make an ajax call to send the data to the DB
+        $.ajax ({
+            "url": "http://localhost:8000/api/accomodations/",
+            "data" : {
+              "longitude" : longitude,
+              "latitude"  : latitude,
+              "beds"      : getBeds,
+              "rooms"     : getRooms,
+              "toilets"   : getToilets,
+              "services"  : getServices,
+              "radius"    : getRadius
+            },
+            "method" : "GET",
+            "success" : function (data) {
+              console.log(data);
+            },
+            "error" : function (err) {
+                alert("error" + err);
+            }
+        });
+    });
+    console.log('Ho Chiamato la funzione');
 });
         // FUNCTIONS
         // make a function to get the data from the jumbotron form
         function getSearchData() {
-            $(".btn_search").on("click", function() { 
-                // make a longitude function
-                var longitude = longitudeInput();
-                // make a latitude function
-                var latitude = latitudeInput();
-                // make a beds varible and invoke the relative function
-                var getBeds = bedsInput();
-                // make a rooms variable and invoke the relative function
-                var getToilets = toiletsInput();
-                // make a rooms variable and invoke the relative function
-                var getRooms = roomsInput();
-                // make a services variable and invoke the relative function
-                var getServices = servicesInput();
-                // make an empty array for the search input
-                var arrayData = []; 
-                // make a data variable for the JSON
-                var data = {};
-                // push inside the array the objects
-                arrayData.push ({ 
-                    // "longitude" : longitude,
-                    "longitude" : longitude,
-                    "latitude"  : latitude,
-                    "beds"      : getBeds,
-                    "rooms"     : getRooms,
-                    "toilets"   : getToilets,
-                    "services"  : getServices
-                });
-                data.arrayData = arrayData;
-                console.log(data.arrayData);
-                // make an ajax call to send the data to the DB
-                $.ajax ({
-                    "url": "http://localhost:8000/api/accomodations/",
-                    "data" : arrayData,
-                    "method" : "GET",
-                    "success" : function (data) {
-                    },
-                    "error" : function (err) {
-                        alert("error" + err);
-                    }
-                });
-            });
+
         }
             // make a keyup function event
             $(".location_input").keyup(function() {
@@ -81,7 +101,7 @@ $(document).ready(function() {
                             for (let i = 0; i < results.length; i++) {
                                 // make a json object with the key and value to take
                                 //make an address variable
-                                var address = results[i].address.freeformAddress; 
+                                var address = results[i].address.freeformAddress;
                                 //make a latitude variable
                                 var latitude = results[i].position.lat;
                                 //make a longitude variable
@@ -113,7 +133,7 @@ $(document).ready(function() {
 
              // FUNCTIONS
 
-    // make a beds input function 
+    // make a beds input function
     function bedsInput() {
         // taking the beds input value
         var bedsInput = $(".beds_input").val();
@@ -123,11 +143,11 @@ $(document).ready(function() {
         } else {
             // empty the input
             $(".beds_Input").val("");
-        }    
-        return bedsInput; 
+        }
+        return bedsInput;
     };
 
-    // make a toilets input function 
+    // make a toilets input function
     function toiletsInput() {
         // taking the beds input value
         var toiletsInput = $(".toilets_input").val();
@@ -137,11 +157,11 @@ $(document).ready(function() {
         } else {
             // empty the input
             $(".toilets_Input").val("");
-        }    
-        return toiletsInput; 
+        }
+        return toiletsInput;
     };
 
-    // make a rooms input function 
+    // make a rooms input function
     function roomsInput() {
         // taking the beds input value
         var roomsInput = $(".rooms_input").val();
@@ -170,9 +190,9 @@ $(document).ready(function() {
         return servicesArray;
     }
 
-    
 
-    // make a longitude input function 
+
+    // make a longitude input function
     function longitudeInput() {
         //make a location input
         var locationInput = $(".location_input").val();
@@ -184,10 +204,10 @@ $(document).ready(function() {
         // empty the input
         $(".location_Input").val("");
     }
-    return longitude; 
+    return longitude;
 };
 
-    // make a latitude input function 
+    // make a latitude input function
     function latitudeInput() {
         // make a location input
         var locationInput = $(".location_input").val();
@@ -199,9 +219,9 @@ $(document).ready(function() {
         // empty the input
         $(".location_Input").val("");
     }
-    return latitude; 
+    return latitude;
     };
-    
+
     // make a click event to take the value from the tom tom compilation inside the dropleft menu
     $(document).on("click", ".list_item_tom", function() {
         // make a variable for the clicked element

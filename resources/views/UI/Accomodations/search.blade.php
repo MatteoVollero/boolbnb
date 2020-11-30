@@ -37,6 +37,8 @@
                 </div>
             </div>
             @endfor
+
+            <button class="btn_search" type="button" name="button"> CERCA </button>
         </div>
     </section>
 @endsection

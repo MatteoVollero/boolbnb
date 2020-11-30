@@ -14,20 +14,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/list', function () {
-//     return view('UPRA.Accomodation.index');
-// });
-//
-// Route::get('/search', function () {
-//     return view('UI.Accomodations.search');
-// });
-//
-// Route::get('/show', function () {
-//     return view('UI.Accomodations.show');
-// });
-//
-// Route::get('/', 'AccomodationController@index');
-
 // Lo utilizziamo per debug
 Route::get('/logout',function(){
   return view('home');
@@ -44,9 +30,7 @@ Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->
 
 // rotte GUESTS
 Route::resource('/', 'AccomodationController');
-
-// rotte TEST API
-Route::get('/search', 'AccomodationController@search');
+Route::get('/search', 'AccomodationController@search')->name('search');
 
 // Route::get('/accomodations', 'AccomodationController@index')->name('accomodations.index');
 // Route::get('/accomodations/{slug}', 'AccomodationController@show')->name('accomdations.show');
