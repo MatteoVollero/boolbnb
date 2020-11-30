@@ -13,10 +13,10 @@
         {{-- search item  --}}
         <div class="search_item">
             <label id="location" for="location">Where do you want to go?</label>
-            <input type="text" class="location_input form_input" id="location" name="location" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
-            <div class="dropleft_menu">
+            <input type="text" class="location_input form_input" id="location" name="location" data-long="" data-lat="" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
+            <div class="dropleft_menu" name="dropleft_tom_menu">
                 <ul class="flex_items_tom">
-                    <li></li>
+                   
                 </ul>
             </div>
         </div>
@@ -90,5 +90,5 @@
 </section>
 {{-- handlebars template  --}}
 <script id="tomtom_template" type="text/x-handlebars-template">
-   <a href=""><li class="list_item_tom">@{{ address }}</li></a>
+   <li class="list_item_tom" data-long="@{{longitude}}" data-lat="@{{latitude}}">@{{ address }}</li>
 </script>
