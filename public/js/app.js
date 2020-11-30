@@ -37347,7 +37347,10 @@ jQuery(function () {
     var reqBeds = $("#input-beds").val();
     var reqToilets = $("#input-toilets").val();
     var reqRadius = $("#input-radius").val();
-    console.log("parametri ricerca: " + "Beds: " + reqBeds + " - Toilets: " + reqToilets + " - Radius: " + reqRadius); // http://localhost:8000/api/accomodations?city=Lake%20Lisa&beds=4&toilets=0
+    var reqRooms = $("#input-rooms").val();
+    var services = [1,2,3];
+
+    console.log("parametri ricerca: " + "Beds: " + reqBeds + " - Toilets: " + reqToilets + " - Radius: " + reqRadius+ "reqRooms: " + reqRooms); // http://localhost:8000/api/accomodations?city=Lake%20Lisa&beds=4&toilets=0
     // https://api.tomtom.com/search/2/search/barletta%20via%20roma.json?typeahead=true&limit=20&countrySet=IT&extendedPostalCodesFor=Addr&minFuzzyLevel=1&maxFuzzyLevel=2&idxSet=Addr%2CGeo&view=Unified&key=*****
 
     $.ajax({
@@ -37357,7 +37360,9 @@ jQuery(function () {
         "lon": reqLon,
         "toilets": reqToilets,
         "beds": reqBeds,
-        "radius": reqRadius
+        "radius": reqRadius,
+        "rooms" : reqRooms,
+        "services": services,
       },
       "method": "GET",
       "success": function success(data) {
@@ -37404,7 +37409,7 @@ jQuery(function () {
       "url": $queryUrl,
       "method": "GET",
       "success": function success(data) {
-        console.log(data['results']); // seleziona il tag <p> in cui stampare    
+        console.log(data['results']); // seleziona il tag <p> in cui stampare
 
         var placeholder = document.getElementById('place_id'); // svuota il tag <p> dai precedenti risultati
 

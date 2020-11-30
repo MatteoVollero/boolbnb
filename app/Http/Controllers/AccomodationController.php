@@ -35,6 +35,7 @@ class AccomodationController extends Controller
 
         // Prendiamo tutti i record da accomodation
         $Accomodations = Accomodation::inRandomOrder()->get();
+        
         // Array contenente tutti i record di type
         $types = AccomodationType::all();
         // Array contenente tutti i record di Service
@@ -155,6 +156,7 @@ class AccomodationController extends Controller
 
     public function search(Request $request)
     {
+
         return view('TEST.search');
     }
 
