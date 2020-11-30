@@ -13,7 +13,7 @@
     //    elm search list 
         .elm_search_list {
             margin: 10px;
-            height: 600px;
+            height: 800px;
             width: calc((100% - 40px) / 2);
             display: flex;
             flex-direction: column;
@@ -26,12 +26,17 @@
                 width: 100%;
                 background-color: gray;
                 border-radius: 15px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 15px;
+                }
             }
             // title lem list 
             .title_elm_list {
                 padding: 5px 30px;
                 width: 100%;
-                height: 40%;
+                height: 50%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -54,6 +59,15 @@
                             color: $airBnB;
                             margin-bottom: 15px;
                             font-weight: bolder;
+                            .medal_bronze {
+                                color: rgb(205, 127, 50);
+                            }
+                            .medal_silver {
+                                color: silver;
+                            }
+                            .medal_gold {
+                                color: gold;
+                            }   
                         }
                     }
                     // visible elm list 
@@ -74,6 +88,9 @@
                         font-size: 15px;
                         color: $textColorSearch;
                         font-weight: bold;
+                        .icn-space {
+                            margin: 10px 5px;
+                        }
                     }
                 }
                 // title elm list lower 
@@ -102,7 +119,38 @@
 
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    //
+    .section-list {
+        .elm-responsive-list {
+            display: flex;
+            flex-wrap: wrap;
+            .elm-list-list {
+                margin: 10px 0;
+                height: 700px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .img-elm-list {
+                    height: 50%;
+                    width: 100%;
+                    max-width: 350px;
+                }
+                .testo-elm-list {
+                    width: 100%;
+                    height: 50%;
+                    display: block;
+                    .testo-elm-list-superiore {
+                        .row-title-elm-list {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // media breakpoint mobile
@@ -116,7 +164,7 @@
             // elm search list 
             .elm_search_list {
                 margin: 10px 0;
-                height: 400px;
+                height: 700px;
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -132,6 +180,14 @@
                     width: 100%;
                     height: 50%;
                     display: block;
+                    .testo-elm-list-superiore {
+                        .row-title-elm-list {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                        }
+                    }
                 }
             }
         }
