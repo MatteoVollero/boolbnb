@@ -35,11 +35,16 @@
     </div> <br><br>
 
     <div>
+      <label for="radius">KM RADIUS:</label>
+      <input id="input-radius" type="text" name="radius">
+    </div> <br><br>
+
+    <div>
       <label for="lon">TOILETS:</label>
       <input id="input-toilets" type="text" name="toilets">
     </div> <br><br>
 
-    <button id="btn-search"> RICERCA</button>
+    <button id="btn-search"> RICERCA ACCOMODATIONS</button>
 
     <h3>RESEARCH API LARAVEL RESULTS</h3>
     <p id="accomodations_id"></p>
