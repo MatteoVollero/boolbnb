@@ -1,13 +1,17 @@
-.section-list {
+// main accomodations list 
+// section list 
+.section_list {
     background-color: $firstMainSection;
     font-family: $secondFont;
     padding: 120px 0;
     margin-top: 70px;
-    .elm-responsive-list {
+    // elm responsive list 
+    .elm_responsive_list {
         display: flex;
         flex-wrap: wrap;
        @include GenericWrapper;
-        .elm-list-list {
+    //    elm search list 
+        .elm_search_list {
             margin: 10px;
             height: 600px;
             width: calc((100% - 40px) / 2);
@@ -16,58 +20,69 @@
             background-color: $secondMainSection;
             border-radius: 15px;
             padding: 10px;
-            .img-elm-list {
+            // img elm list 
+            .img_elm_list {
                 height: 60%;
                 width: 100%;
                 background-color: gray;
                 border-radius: 15px;
             }
-            .testo-elm-list {
+            // title lem list 
+            .title_elm_list {
                 padding: 5px 30px;
                 width: 100%;
                 height: 40%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                .testo-elm-list-superiore {
-                    .row-title-elm-list{
+                // title elm list higher 
+                .title_elm_list_higher {
+                    // row title elm list 
+                    .row_title_elm_list{
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        .title-elm-list {
+                        // title elm list 
+                        .title_elm_list {
                             color: $airBnB;
                             font-size: 25px;
                             margin-bottom: 15px;
                             font-weight: bolder;
                         }
-                        .sponsor-elm-list {
+                        // sponsor elm list 
+                        .sponsor_elm_list {
                             color: $airBnB;
                             margin-bottom: 15px;
                             font-weight: bolder;
                         }
                     }
-                    .visible-elm-list {
+                    // visible elm list 
+                    .visible_elm_list {
                         color: $airBnB;
                         margin-bottom: 15px;
                         font-weight: bolder;
                     }
-                    .text-elm-list {
+                    // text elm list 
+                    .text_elm_list {
                         margin-bottom: 15px;
                         font-weight: bold;
                         color: $textColorSearch;
                     }
-                    .info-elm-list {
+                    // info elm list 
+                    .info_elm_list {
                         margin: 0 10px;
                         font-size: 15px;
                         color: $textColorSearch;
                         font-weight: bold;
                     }
                 }
-                .testo-elm-list-inferiore {
+                // title elm list lower 
+                .title_elm_list_lower {
                     display: flex;
                     justify-content: flex-end;
                     width: 100%;
-                    .price-elm-list {
+                    // price elm list 
+                    .price_elm_list {
                         font-size: 20px;
                         font-weight: bolder;
                         color: $airBnB;
@@ -92,23 +107,28 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width: 768px) {
-    .section-list {
-        .elm-responsive-list {
+    // seciotn list 
+    .section_list {
+        // elm responsive list 
+        .elm_responsive_list {
             display: flex;
             flex-wrap: wrap;
-            .elm-list-list {
+            // elm search list 
+            .elm_search_list {
                 margin: 10px 0;
                 height: 400px;
                 width: 100%;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                .img-elm-list {
+                // img elm list 
+                .img_elm_list {
                     height: 50%;
                     width: 100%;
                     max-width: 350px;
                 }
-                .testo-elm-list {
+                // title elm list 
+                .title_elm_list {
                     width: 100%;
                     height: 50%;
                     display: block;

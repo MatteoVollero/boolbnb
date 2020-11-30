@@ -19,7 +19,7 @@ class AccomodationController extends Controller
     public function index()
     {
       // Inseriamo in questo array tutti gli appartamenti di proprietà dello user loggato
-      $accomodationsUpra = Accomodation::where('user_id',Auth::id())->get();
+      $accomodationsUpra = Accomodation::where('user_id', Auth::id())->get();
       // Controlliamo che $accomodationsUpra contenga effettivamente qualcosa
       if(count($accomodationsUpra) == 0)
       {
@@ -126,7 +126,7 @@ class AccomodationController extends Controller
       // Troviamo in accomodations il record che ha slug uguale a quello passato in argomento
       $accomodation = Accomodation::where('slug', $slug)->get();
       // Chiamiamo la view show dell'UPRA, passandogli  compact il record trovato
-      return view('UPRA.Accomodation.show', compact('accomodation'));
+      return view('UPRA.Accomodations.show', compact('accomodation'));
     }
 
     /**
@@ -141,7 +141,7 @@ class AccomodationController extends Controller
       $services= Service::all();
       $serviceChecked='';
 
-      return view('UPRA.Acoomodation.edit', compact('accomodation', 'services', 'serviceChecked'));
+      return view('UPRA.Accomodations.edit', compact('accomodation', 'services', 'serviceChecked'));
     }
 
     /**

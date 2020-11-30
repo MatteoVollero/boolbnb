@@ -26,6 +26,10 @@ class AccomodationController extends Controller
         // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
         $sponsoredAccomodationNumber = 10;
         $normalAccomodationNumber = 20;
+        
+        $mostViewed = DB::table('accomodation_views')->selectRaw('accomodation_id, count(accomodation_id)')
+                                                     ->groupBy('accomodation_id')
+                                                     ->orderBy('count(accomodation_id)','desc')->limit(1)->get();
 
         $mostViewed = DB::table('accomodation_views')->selectRaw('accomodation_id, count(accomodation_id)')
                                                      ->groupBy('accomodation_id')

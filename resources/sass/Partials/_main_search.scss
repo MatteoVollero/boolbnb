@@ -1,13 +1,15 @@
-// Search
-
-.section-search {
+// main search
+// section search 
+.section_search {
     background-color: $secondMainSection;
     font-family: $secondFont;
     padding: 120px 0;
     margin-top: 70px;
-    .elm-responsive-search {
+    // elm responsive search
+    .elm_responsive_search {
         @include GenericWrapper;
-        .elm-search-list {
+        // elm search list 
+        .elm_search_list {
             background-color: $firstMainSection;
             border-radius: 15px;
             margin: 10px 0;
@@ -15,42 +17,49 @@
             width: 100%;
             padding: 10px;
             display: flex;
-            .img-elm-search {
+            // img elm search
+            .img_elm_search {
                 height: 100%;
                 width: 40%;
                 background-color: gray;
                 border-radius: 15px;
             }
-            .testo-elm-search {
+            // title elm search
+            .title_elm_search {
                 padding: 5px 30px;
                 width: 60%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                .testo-elm-search-superiore {
-                    .title-elm-search {
-                        color: $violaHeroScuroModificato;
-                        font-size: 25px;
-                        margin-bottom: 15px;
-                        font-weight: bolder;
-                    }
-                    .text-elm-search {
+                h3, h5 {
+                    color: $violaHeroScuroModificato;
+                    font-size: 25px;
+                    margin-bottom: 15px;
+                    font-weight: bolder;
+                }
+                // title elm search higher 
+                .title_elm_search_higher {
+                    // text elm search
+                    .text_elm_search {
                         margin-bottom: 15px;
                         font-weight: bold;
                         color: $textColorSearch;
                     }
-                    .info-elm-search {
+                    // info elm search
+                    .info_elm_search {
                         margin: 0 10px;
                         font-size: 15px;
                         color: $textColorSearch;
                         font-weight: bold;
                     }
                 }
-                .testo-elm-search-inferiore {
+                // text elm search lower 
+                .text_elm_search_lower {
                     display: flex;
                     justify-content: flex-end;
                     width: 100%;
-                    .price-elm-search {
+                    // price elm search 
+                    .price_elm_search {
                         font-size: 20px;
                         font-weight: bolder;
                     }
@@ -69,21 +78,26 @@
 
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    .section-search {
-        .elm-responsive-search {
+    // section search
+    .section_search {
+        // elm responsive list
+        .elm_responsive_list {
             display: flex;
             flex-wrap: wrap;
-            .elm-search-list {
+            // elm search list 
+            .elm_search_list {
                 margin: 10px;
                 height: 400px;
                 width: calc((100% - 40px) / 2);
                 display: flex;
                 flex-direction: column;
-                .img-elm-search {
+                // img elm search
+                .img_elm_search {
                     height: 50%;
                     width: 100%;
                 }
-                .testo-elm-search {
+                // text elm search 
+                .text_elm_search {
                     width: 100%;
                     height: 50%;
                     display: block;
@@ -95,23 +109,28 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width: 768px) {
-    .section-search {
-        .elm-responsive-search {
+    // section search 
+    .section_search {
+        // elm responsive search 
+        .elm_responsive_search {
             display: flex;
             flex-wrap: wrap;
-            .elm-search-list {
+            // elm search list 
+            .elm_search_list {
                 margin: 10px 0;
                 height: 400px;
                 width: 100%;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                .img-elm-search {
+                // img elm search 
+                .img_elm_search {
                     height: 50%;
                     width: 100%;
                     max-width: 350px;
                 }
-                .testo-elm-search {
+                // text elm search 
+                .text_elm_search {
                     width: 100%;
                     height: 50%;
                     display: block;
