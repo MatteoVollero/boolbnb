@@ -1,7 +1,7 @@
 require('./bootstrap');
 // require('./functions');
 const Handlebars = require("handlebars");
-// Query data for the form
+// call the document ready function
 $(document).ready(function() {
     // invoke the searching data function
     getSearchData();
