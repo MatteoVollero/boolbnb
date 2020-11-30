@@ -1,5 +1,6 @@
 require('./bootstrap');
 // require('./functions');
+//prova
 const Handlebars = require("handlebars");
 // call the document ready function
 $(document).ready(function() {
