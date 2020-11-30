@@ -47,7 +47,7 @@ $(document).ready(function() {
                     "success" : function (data) {
                     },
                     "error" : function (err) {
-                        alert("error" + err);
+                        // alert("error" + err);
                     }
                 });
             });
@@ -55,14 +55,14 @@ $(document).ready(function() {
             // make a keyup function event
             $(".location_input").keyup(function() {
                 // empty the text input each time the keyup event is called
-                // $(".list_item_tom").text("");
                 // dropleftMenu = document.getElementsByName("dropleft_tom_menu");
                 // if (dropleftMenu.lenght <= 1 ) {
-                //     dropleftMenu.hide();
-                // } else {
-                //     dropleftMenu.show();
-                // };
-                // invoke the location function
+                    //     dropleftMenu.hide();
+                    // } else {
+                        //     dropleftMenu.show();
+                        // };
+                        // invoke the location function
+                $(".list_item_tom").text("");
                 var location = $(".location_input").val().toLowerCase();
                 // take a tom tom api
                 var tomQuery = "https://api.tomtom.com/search/2/search/"+location+".json?typeahead=true&limit=5&language=it-IT&extendedPostalCodesFor=Geo&minFuzzyLevel=1&maxFuzzyLevel=2&idxSet=Addr%2CGeo%2CStr&view=Unified&key=5f9vpvhd3dCu5qyQPFDmWnkS1fQQ1Yrg";
@@ -104,15 +104,6 @@ $(document).ready(function() {
                     }
                 });
             });
-
-
-
-
-
-
-
-
-             // FUNCTIONS
 
     // make a beds input function 
     function bedsInput() {
@@ -170,8 +161,6 @@ $(document).ready(function() {
         }
         return servicesArray;
     }
-
-    
 
     // make a longitude input function 
     function longitudeInput() {
