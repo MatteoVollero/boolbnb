@@ -8,9 +8,9 @@
             We take you everywhere you want.
         </h2>
     </div>
-    <form action="{{route('admin.accomodations.store')}}" method="GET" enctype="multipart/form-data">
+    {{-- <form action="{{route('admin.accomodations.store')}}" method="GET" enctype="multipart/form-data">
         @csrf
-        @method('GET')
+        @method('GET') --}}
         {{-- jumbotron search item  --}}
         <div class="jumbotron_search_item">
             {{-- search item  --}}
@@ -79,16 +79,16 @@
                                 </li>
                                 @endforeach
                             </ul>
-                        </li> 
-                    </ul>
-                </div>
-            </li>
+                        </ul> 
+                    </div>
+                </li>
+            </div>
+            <div class="btn_search">
+                <button type="submit">Search<i class="fas fa-search"></i></button>
+            </div>
         </div>
     {{-- btn search  --}}
-    <div class="btn_search">
-        <button type="submit">Search<i class="fas fa-search"></i></button>
-    </div>
-    </form>
+    {{-- </form>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -97,7 +97,7 @@
                 @endforeach
             </ul>
         </div>
-    @endif
+    @endif --}}
 </section>
 {{-- handlebars template  --}}
 <script id="tomtom_template" type="text/x-handlebars-template">
