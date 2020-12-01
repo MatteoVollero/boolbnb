@@ -185,7 +185,6 @@
                     <small class="info_elm_search">@{{distance}}km</small>
                     <div class="service_elm_search">
                         {{-- info elm search  --}}
-                        
                     </div>
                 </div>
                 {{-- text elm search lower  --}}
