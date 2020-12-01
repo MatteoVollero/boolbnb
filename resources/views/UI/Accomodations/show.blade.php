@@ -84,6 +84,7 @@
                         @endif
                     @endforeach
                 </div> --}}
+                {{-- Services elm show  --}}
                 <div class="services_elm_show">
                     <small class="small_info_elm_show"><i class="fas fa-bed icn_space_show"></i>5</small>
                     <small class="small_info_elm_show"><i class="fas fa-door-open icn_space_show"></i>5</small>
@@ -94,11 +95,10 @@
                 </div>
                 <h2 class="price_elm_show">666 &euro;</h2>
             </div>
-
             {{-- MAPS --}}
             <div class="section_map_show">
                 <div class="map_accomodation_show">
-                
+
                 </div>
             </div>
 

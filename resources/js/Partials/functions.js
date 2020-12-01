@@ -95,17 +95,18 @@ $(document).ready(function() {
         }
         // make a keyup function event
         $(".location_input").keyup(function() {
+            // console.log("enter");
+            // // at the event keyup show the dropleft menu
+            // if( $(".location_input") > 0 && $(".location_input") < 2) {
+            //     console.log($(".location_input"));
+            //     $('.tom_search').addClass("block"); 
+            // };
+            // console.log("exit");
             // empty the text input each time the keyup event is called
-            // dropleftMenu = document.getElementsByName("dropleft_tom_menu");
-            // if (dropleftMenu.lenght <= 1 ) {
-                //     dropleftMenu.hide();
-                // } else {
-                    //     dropleftMenu.show();
-                    // };
-                    // invoke the location function
             $(".list_item_tom").text("");
+            // make a location variable for the tom tom api
             var location = $(".location_input").val().toLowerCase();
-            // take a tom tom api
+            // call the tom tom api
             var tomQuery = "https://api.tomtom.com/search/2/search/"+location+".json?typeahead=true&limit=5&language=it-IT&extendedPostalCodesFor=Geo&minFuzzyLevel=1&maxFuzzyLevel=2&idxSet=Addr%2CGeo%2CStr&view=Unified&key=5f9vpvhd3dCu5qyQPFDmWnkS1fQQ1Yrg";
             // select the handlebar template to print the data
             var source = $("#tomtom_template").html();
@@ -258,6 +259,7 @@ $(document).ready(function() {
             var longitude = $(this).attr("data-long");
             // insert the value in the location input
             $(".location_input").val(autoCompile);
+            $(".tom_search").removeClass("block");
             // make an attribute for the longitude
             $(".longitude_input").val(longitude);
             // make an attribute for the latitude

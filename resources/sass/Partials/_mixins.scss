@@ -105,7 +105,6 @@
 }
 // hover Card
 @mixin HoverCard {
-    padding: 20px;
     border: 4px solid $headerColor;
     transform: scale(1.03);
     overflow: hidden;
