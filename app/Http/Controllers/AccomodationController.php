@@ -172,12 +172,15 @@ class AccomodationController extends Controller
      public function search(Request $request)
      {
        // Prendiamo tutti i dati
+       $types = AccomodationType:: all();
+       $services = Service::all();
        $data = $request->all();
-       dd($data);
        // Array contente tutte le accomodation filtrate
        $accomodationsFiltered = [];
+       
        // Array per i services
        $accomodationServicesFiltered = [];
+       
         // Prendiamo tutti gli appartamenti secondo i parametri richiesti dall'utente(cha saranno i requisiti minimi)
        $accomodationsToFilter = Accomodation::where("beds", ">=", $data['beds'])
        ->where("toilets", ">=", $data['toilets'])
@@ -194,46 +197,45 @@ class AccomodationController extends Controller
            // Flag inizialmente settata a zero
            $findService = 0;
            // Cicliamo i servizi che ci sono stati passati da request
-          foreach($data['services'] as $service)
-          {
-            // Cicliamo sui i servizi di $accomodation
-            foreach($accomodation->services as $accomodation_service)
-            {
-              // Se troviamo un servizio uguale a quello richiesto dall'utente
-              if($accomodation_service->id == $service)
-              {
-                // Incrementiamo la flag
-                $findService ++;
+           foreach($data['services'] as $service)
+           {
+             // Cicliamo sui i servizi di $accomodation
+             foreach($accomodation->services as $accomodation_service)
+             {
+               // Se troviamo un servizio uguale a quello richiesto dall'utente
+               if($accomodation_service->service_name == $service)
+               {
+                 // Incrementiamo la flag
+                 $findService ++;
+                }
               }
             }
-          }
             // Se il numero presente all'inerno della flag è >= dei servizi richiesti($requiredServices) allora lo inseriamo negli appartamenti da considerare
-          if($findService >= $requiredServices)
-          {
-            $accomodationServicesFiltered[] = $accomodation;
+            if($findService >= $requiredServices)
+            {
+              $accomodationServicesFiltered[] = $accomodation;
+            }
           }
         }
-      }
 
       // Cicliamo su $accomodationServicesFiltered per calcolare le distanze
       foreach ($accomodationServicesFiltered as $accomodation) {
           // Calcoliamo la distanza
-          $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['lat'], $data['lon']);
+          $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['latitude'], $data['longitude']);
           // La distanza di default la prima volta sarà 20
-          if ($distance<=20) {
+          if ($distance<=6000) {
               // Inseriamo tutti con distanza opportuna
               $tempAccomodationsFiltered = [
                   'accomodation' => $accomodation,
                   'distance' => $distance,
-                  'service' => $accomodation->services,
+                  'services' => $accomodation->services,
                   'type' => $accomodation->accomodation_type
               ];
               // Inseriamo nell'array finale
               $accomodationsFiltered[] = $tempAccomodationsFiltered;
           }
-      }
-
-         return view('UI.Accomodations.search',compact('accomodationsFiltered'));
+        }
+         return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
      }
 
 }

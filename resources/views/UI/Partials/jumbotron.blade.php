@@ -8,10 +8,10 @@
             We take you everywhere you want.
         </h2>
     </div>
-    {{-- <form action="{{route('admin.accomodations.store')}}" method="GET" enctype="multipart/form-data">
+    <form action="{{route('search')}}" method="GET" enctype="multipart/form-data">
         @csrf
-        @method('GET') --}}
-        {{-- jumbotron search item  --}}
+        @method('GET')
+        {{-- {{-- jumbotron search item  --}}
         <div class="jumbotron_search_item">
             {{-- search item  --}}
             <div class="search_item">
@@ -37,7 +37,7 @@
                                 <label id="beds" for="beds">Beds</label>
                             </li>
                             <li class="list_item">
-                                <input type="number" class="beds_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of beds" value="{{old("beds")}}">
+                                <input type="number" class="beds_input form_input" id="beds" name="beds" min="0" max="100" placeholder="Insert the numbers of beds" value="{{old("beds")}}">
                             </li>
                             <li class="list_item">
                                 {{-- toilets  --}}
@@ -51,7 +51,15 @@
                                 <label id="rooms" for="rooms">Rooms</label>
                             </li>
                             <li class="list_item">
-                                <input type="number" class="rooms_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}">
+                                <input type="number" class="rooms_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}s">
+                            </li>
+                            {{-- longitude --}}
+                            <li class="list_item">
+                                <input type="hidden" class="longitude_input form_input" id="longitude" name="longitude" min="-180.00" max="180" value="">
+                            </li>
+                            {{-- latitude--}}
+                            <li class="list_item">
+                                <input type="hidden" class="latitude_input form_input" id="latitude" name="latitude" min="-90.00" max="90" value="">
                             </li>
                             {{-- services  --}}
                             <li class="list_item">
@@ -62,7 +70,7 @@
                                 @foreach ($services as $service)
                                 {{-- services list item  --}}
                                 <li class="service_list_item">
-                                    <input class="service_input" type="checkbox" value="{{$service->service_name}}" name="service">
+                                    <input class="service_input" type="checkbox" value="{{$service->service_name}}" name="services[]">
                                     @if ($service->service_name == "wi-fi")
                                     <i class="fas fa-wifi translate"></i>
                                     @elseif ($service->service_name == "parking")
@@ -83,12 +91,12 @@
                     </div>
                 </li>
             </div>
+            {{-- btn search  --}}
             <div class="btn_search">
-                <button type="submit">Search<i class="fas fa-search"></i></button>
+               <button type="submit">Search<i class="fas fa-search"></i></button>
             </div>
         </div>
-    {{-- btn search  --}}
-    {{-- </form>
+    </form>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -97,7 +105,7 @@
                 @endforeach
             </ul>
         </div>
-    @endif --}}
+    @endif
 </section>
 {{-- handlebars template  --}}
 <script id="tomtom_template" type="text/x-handlebars-template">
