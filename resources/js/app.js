@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./mobile-or-tablet'); // per gestione map Tom Tom
 // require('./functions');
 const Handlebars = require("handlebars");
 // call the document ready function

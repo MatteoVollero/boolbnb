@@ -286,4 +286,11 @@ class AccomodationController extends Controller
          return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
      }
 
+     public function map(Request $request)
+     {
+      $accomodation = Accomodation::inRandomOrder()->limit(1)->get();
+      return view('TEST.map', compact('accomodation'));
+     }
+
+
 }
