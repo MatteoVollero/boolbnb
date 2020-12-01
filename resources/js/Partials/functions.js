@@ -41,7 +41,6 @@ $(document).ready(function() {
                     "services"  : getServices
                 });
                 data.arrayData = arrayData;
-                console.log(arrayData);
                 // call handlebar variables
             $.ajax 
             (   
@@ -64,12 +63,12 @@ $(document).ready(function() {
                     // make a cicle for
                     for (let i = 0; i < data.length; i++) {
                         // take the context to print with handlebars
-                        console.log(data);
+                        var service = data[i]['services'];
                         var context = {
                             "cover_image" : data[i]['accomodation'].cover_image,
                             "description" : data[i]['accomodation'].description,
-                            // "type" : data[i]['type'].name,
-                            // "service" : data[i]['services'][0].service_name,
+                            "type" : data[i]['type'].name,
+                            "service" : service.service_name,
                             "toilets" : data[i]['accomodation'].toilets,
                             "country" : data[i]['accomodation'].country,
                             "region" : data[i]['accomodation'].region,
@@ -82,9 +81,9 @@ $(document).ready(function() {
                         // take all the data inside of a variable
                         var html = template(context);
                         var researchResults = $(".research_results");
+                        console.log(context);
                         researchResults.removeClass('none');
                         $(".ajax_handlebar_print").append(html);
-                        console.log(context);
                         // append the data
                     }
                 },

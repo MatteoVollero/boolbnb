@@ -176,6 +176,7 @@
                     <h4 class="title_elm_search">@{{country}}</h4>
                     <h4 class="title_elm_search">@{{region}}</h4>
                     <h4 class="title_elm_search">@{{city}}</h4>
+                    <h4 class="title_elm_search">@{{type}}</h4>
                     {{-- text elm search  --}}
                     <p class="text_elm_search">@{{description}}</p>
                     {{-- service elm search  --}}
