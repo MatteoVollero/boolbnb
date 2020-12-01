@@ -182,6 +182,7 @@
                         <h4 class="title-elm-search">{{$accomodation['accomodation']->country}}</h4>
                         <h4 class="title-elm-search">{{$accomodation['accomodation']->region}}</h4>
                         <h4 class="title-elm-search">{{$accomodation['accomodation']->city}}</h4>
+                        <h4 class="title-elm-search">{{$accomodation['distance']}} km</h4>
                         {{-- text elm search  --}}
                         <p class="text_elm_search">{{$accomodation['accomodation']->description}}</p>
                         {{-- service elm search  --}}

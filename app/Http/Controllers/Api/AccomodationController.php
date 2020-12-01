@@ -15,6 +15,13 @@ class AccomodationController extends Controller
         $data = $request->all();
         // Array contente tutte le accomodation filtrate
         $accomodationsFiltered = [];
+
+        // Array che conterrà le distanze da ordinare
+        $distances = [];
+
+       // Array di accomodation ordinate per distanza dalla piu vicina alla piu lontana dal punto di ricerca
+        $accomodationsFilteredAsc = [];
+
         // Array per i services
         $accomodationServicesFiltered = [];
         // Array Che riempieremo alla fine con tutti i campi del JSON
@@ -52,6 +59,7 @@ class AccomodationController extends Controller
 
         foreach ($accomodationServicesFiltered as $accomodation) {
             $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['latitude'], $data['longitude']);
+            $distance = round($distance,1);
             if ($distance<=$data['radius']) {
                 $tempAccomodationsFilteredJSON = [
                     'accomodation' => $accomodation,
@@ -60,9 +68,24 @@ class AccomodationController extends Controller
                     'type' => $accomodation->accomodation_type
                 ];
 
+                $distances[] = $distance;
+
                 $accomodationsFilteredJSON[] = $tempAccomodationsFilteredJSON;
             }
         }
+
+        // Ordiniamo in base alla distanza
+        asort($distances);
+
+
+        // Cicliamo sull'array delee distanze
+        foreach ($distances as $key => $value) {
+          // Inseriamo il relativo valore in maniera crescente all'interno di $accomodationsFilteredAsc
+          $accomodationsFilteredAsc[] = $accomodationsFilteredJSON[$key];
+        }
+
+        // Assegnamo l'array ordinato ad $accomodationsFiltered
+        $accomodationsFilteredJSON = $accomodationsFilteredAsc;
 
         return response()->json($accomodationsFilteredJSON);
     }

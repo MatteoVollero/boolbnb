@@ -177,10 +177,16 @@ class AccomodationController extends Controller
        $data = $request->all();
        // Array contente tutte le accomodation filtrate
        $accomodationsFiltered = [];
-       
+
+       // Array che conterrà le distanze da ordinare
+       $distances = [];
+
+      // Array di accomodation ordinate per distanza dalla piu vicina alla piu lontana dal punto di ricerca
+       $accomodationsFilteredAsc = [];
+
        // Array per i services
        $accomodationServicesFiltered = [];
-       
+
         // Prendiamo tutti gli appartamenti secondo i parametri richiesti dall'utente(cha saranno i requisiti minimi)
        $accomodationsToFilter = Accomodation::where("beds", ">=", $data['beds'])
        ->where("toilets", ">=", $data['toilets'])
@@ -222,6 +228,7 @@ class AccomodationController extends Controller
       foreach ($accomodationServicesFiltered as $accomodation) {
           // Calcoliamo la distanza
           $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['latitude'], $data['longitude']);
+          $distance = round($distance,1);
           // La distanza di default la prima volta sarà 20
           if ($distance<=6000) {
               // Inseriamo tutti con distanza opportuna
@@ -231,10 +238,26 @@ class AccomodationController extends Controller
                   'services' => $accomodation->services,
                   'type' => $accomodation->accomodation_type
               ];
+              $distances[] = $distance;
               // Inseriamo nell'array finale
               $accomodationsFiltered[] = $tempAccomodationsFiltered;
           }
         }
+
+        // Ordiniamo in base alla distanza
+        asort($distances);
+
+
+        // Cicliamo sull'array delee distanze
+        foreach ($distances as $key => $value) {
+          // Inseriamo il relativo valore in maniera crescente all'interno di $accomodationsFilteredAsc
+          $accomodationsFilteredAsc[] = $accomodationsFiltered[$key];
+        }
+
+        // Assegnamo l'array ordinato ad $accomodationsFiltered
+        $accomodationsFiltered = $accomodationsFilteredAsc;
+
+
          return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
      }
 
