@@ -113,9 +113,34 @@ class AccomodationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $accomodation = Accomodation::where('slug', $slug)->first();
+/*
+****************************************************************************************************************
++
++
++                ESEMPIO PER L'ACCESSO
++
++                  *********** URL IMMAGINI DETTAGLIO ***********
++                  foreach ($accomodation->accomodation_images as $accomodationImage){
++                     $accomodationImage->nome_del_campo;
++                  }
++
++                  *********** SERVICES ***********
++                  foreach ($accomodation->services as $service){
++                     $service->nome_del_campo;
++                  }
++
++                  *********** TYPE ***********
++                  $accomodation->accomodation_type->name  Si accede al nome
++
++              PER ACCEDERE ALLE ALTRE PROPRIETA BASTA SCRIVERE ALL'INTERNO DI UN CICLO FOREACH QUESTO:
++                  $accomodationImage->nome_del_campo
++
+****************************************************************************************************************
+*/
+        return view('UI.Accomodations.show', compact('accomodation'));
     }
 
     /**
@@ -228,9 +253,9 @@ class AccomodationController extends Controller
       foreach ($accomodationServicesFiltered as $accomodation) {
           // Calcoliamo la distanza
           $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['latitude'], $data['longitude']);
-          $distance = round($distance,1);
           // La distanza di default la prima volta sarà 20
           if ($distance<=6000) {
+            $distance = round($distance,1);
               // Inseriamo tutti con distanza opportuna
               $tempAccomodationsFiltered = [
                   'accomodation' => $accomodation,
