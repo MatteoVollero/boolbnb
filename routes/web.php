@@ -19,6 +19,11 @@ Route::get('/logout',function(){
   return view('home');
 });
 
+Route::get('/show',function(){
+  return view('UI.Accomodations.show');
+});
+
+
 Auth::routes();
 
 // rotte ADMIN

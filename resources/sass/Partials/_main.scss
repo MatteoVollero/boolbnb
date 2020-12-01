@@ -1,11 +1,6 @@
 // main
 // first section
 // aside
-
-.none {
-    display: none;
-}
-
 .aside_accomodations {
     background-color:$secondMainSection;
     overflow-y: auto;
@@ -482,7 +477,6 @@
         width: 70%;
         //element item
         .elm_item {
-            background-color: lightblue;
             border-radius: 10px;
             position: relative;
             margin: 0px 10px;
@@ -548,9 +542,32 @@
     .form_wrapper {
         @include GenericWrapper;
         padding: 240px;
+        .admin_btn_edit_delete {
+            justify-content: flex-start;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            button {
+                margin-right: 50px;
+            }
+        }
         // form group
         .form_group {
             padding: 10px;
+            .form_type {
+                font-family: $font-family-sans-serif;
+                border-radius: 10px;
+                transition: 0.3s;
+                font-size: 20px;
+                padding: 10px;
+                width: 180px;
+                height: 50px;
+                &:hover {
+                    background-color: $btnColor;
+                    cursor: pointer;
+                    color: #fff;
+                }
+            }
             #forgot_password {
                 font-family:$font-family-sans-serif;
                 color: #000;

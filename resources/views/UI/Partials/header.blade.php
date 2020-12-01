@@ -1,5 +1,5 @@
 <header>
-    <div class="position-flex-header">
+    <div class="position_flex_header">
         <div class="wrapper">
             <div>
                 <img class="header_bnb_logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
@@ -21,14 +21,17 @@
                         {{ Auth::user()->name }} 
                         <i class="fas fa-chevron-down icn"></i>
                         <ul class="dropdown_menu">
-                            <li class="list_item">
-                                Accomodations Area
+                            <li  href="{{asset('admin/accomodations')}}" class="list_item">
+                              Accomodations Area
                             </li>
                             <li class="list_item">
                                 Advertising Area
                             </li>
                             <li class="list_item">
                                 Message Area
+                            </li>
+                            <li class="list_item">
+                               Homepage
                             </li>
                         </ul>
                     </a>

@@ -7,64 +7,70 @@
     margin-top: 70px;
     // elm responsive list
     .elm_responsive_list {
-        display: flex;
         flex-wrap: wrap;
+        display: flex;
        @include GenericWrapper;
     //    elm search list
         .elm_search_list {
-            margin: 10px;
-            height: 800px;
-            width: calc((100% - 40px) / 2);
-            display: flex;
-            flex-direction: column;
             background-color: $secondMainSection;
+            width: calc((100% - 40px) / 2);
+            flex-direction: column;
             border-radius: 15px;
+            height: 800px;
+            display: flex;
             padding: 10px;
+            margin: 10px;
             // img elm list 
             .img_elm_list {
-                height: 60%;
-                width: 100%;
                 background-color: gray;
                 border-radius: 15px;
+                height: 60%;
+                width: 100%;
                 img {
+                    border-radius: 15px;
                     height: 100%;
                     width: 100%;
-                    border-radius: 15px;
                 }
             }
             // title lem list
             .title_elm_list {
+                justify-content: space-between;
+                flex-direction: column;
                 padding: 5px 30px;
+                display: flex;
                 width: 100%;
                 height: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                // title elm list higher
+                // title elm list higher 
                 .title_elm_list_higher {
                     // row title elm list
                     .row_title_elm_list{
-                        display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        // title elm list
+                        display: flex;
+                        // title elm list 
                         .title_elm_list {
-                            color: $airBnB;
-                            font-size: 25px;
                             margin-bottom: 15px;
                             font-weight: bolder;
+                            font-size: 25px;
+                            color: $airBnB;
                         }
                         // sponsor elm list
                         .sponsor_elm_list {
-                            color: $airBnB;
-                            margin-bottom: 15px;
+                            justify-content: space-between;
                             font-weight: bolder;
+                            margin-bottom: 10px;
+                            margin-right:20px;
+                            display: flex;
+                            color: $airBnB;
+                            // bronze medal
                             .medal_bronze {
                                 color: rgb(205, 127, 50);
                             }
+                            // silver medal
                             .medal_silver {
                                 color: silver;
                             }
+                            // gold medal
                             .medal_gold {
                                 color: gold;
                             }
@@ -72,22 +78,22 @@
                     }
                     // visible elm list
                     .visible_elm_list {
-                        color: $airBnB;
-                        margin-bottom: 15px;
                         font-weight: bolder;
+                        margin-bottom: 15px;
+                        color: $airBnB;
                     }
                     // text elm list
                     .text_elm_list {
+                        color: $textColorSearch;
                         margin-bottom: 15px;
                         font-weight: bold;
-                        color: $textColorSearch;
                     }
                     // info elm list
                     .info_elm_list {
-                        margin: 0 10px;
-                        font-size: 15px;
                         color: $textColorSearch;
                         font-weight: bold;
+                        font-size: 15px;
+                        margin: 0 10px;
                         .icn-space {
                             margin: 10px 5px;
                         }
@@ -95,13 +101,13 @@
                 }
                 // title elm list lower
                 .title_elm_list_lower {
-                    display: flex;
                     justify-content: flex-end;
+                    display: flex;
                     width: 100%;
                     // price elm list
                     .price_elm_list {
-                        font-size: 20px;
                         font-weight: bolder;
+                        font-size: 20px;
                         color: $airBnB;
                     }
                 }
@@ -119,32 +125,32 @@
 
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    .section-list {
-        .elm-responsive-list {
-            display: flex;
+    .section_list {
+        .elm_responsive_list {
             flex-wrap: wrap;
-            .elm-list-list {
+            display: flex;
+            .elm_list_list {
+                flex-direction: column;
+                align-items: center;
                 margin: 10px 0;
+                display: flex;
                 height: 700px;
                 width: 100%;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                .img-elm-list {
-                    height: 50%;
-                    width: 100%;
+                .img_elm_list {
                     max-width: 350px;
+                    height: 50%;
+                    width: 100%;
                 }
-                .testo-elm-list {
+                .testo_elm_list {
+                    display: block;
                     width: 100%;
                     height: 50%;
-                    display: block;
-                    .testo-elm-list-superiore {
-                        .row-title-elm-list {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
+                    .testo_elm_list_higher {
+                        .row_title_elm_list {
                             justify-content: flex-start;
+                            align-items: flex-start;
+                            flex-direction: column;
+                            display: flex;
                         }
                     }
                 }
@@ -159,33 +165,33 @@
     .section_list {
         // elm responsive list
         .elm_responsive_list {
-            display: flex;
             flex-wrap: wrap;
-            // elm search list
+            display: flex;
+            // elm search list 
             .elm_search_list {
+                flex-direction: column;
+                align-items: center;
                 margin: 10px 0;
+                display: flex;
                 height: 700px;
                 width: 100%;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                // img elm list
+                // img elm list 
                 .img_elm_list {
-                    height: 50%;
-                    width: 100%;
                     max-width: 350px;
+                    width: 100%;
+                    height: 50%;
                 }
                 // title elm list
                 .title_elm_list {
+                    display: block;
                     width: 100%;
                     height: 50%;
-                    display: block;
-                    .testo-elm-list-superiore {
-                        .row-title-elm-list {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
+                    .testo_elm_list_higher {
+                        .row_title_elm_list {
                             justify-content: flex-start;
+                            align-items: flex-start;
+                            flex-direction: column;
+                            display: flex;
                         }
                     }
                 }

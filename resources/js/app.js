@@ -63,6 +63,7 @@ $(document).ready(function() {
                         var template = Handlebars.compile(source);
                         // make a cicle for
                         for (let i = 0; i < data.length; i++) {
+                          console.log(data[i]['services'][0].service_name);
                             // take the context to print with handlebars
                             var context = {
                                 "title" : data[i]['accomodation'].title,
