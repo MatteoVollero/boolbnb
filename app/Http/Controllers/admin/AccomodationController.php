@@ -153,6 +153,7 @@ class AccomodationController extends Controller
      */
     public function update(Request $request, $id)
     {
+  
       // Trasferiamo in $data tutto i dati che sono stati inseriti all'interno del form
       $data = $request->all();
 
