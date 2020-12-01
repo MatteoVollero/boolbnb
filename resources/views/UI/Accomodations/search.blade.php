@@ -142,7 +142,7 @@
                     {{-- text elm search lower  --}}
                     <div class="text_elm_search_lower">
                         {{-- price elm search  --}}
-                        <h4 class="price_elm_search">$ {{$accomodation['accomodation']->price}}</h4>
+                        <h4 class="price_elm_search">{{$accomodation['accomodation']->price}} &euro;</h4>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
                 {{-- text elm search lower  --}}
                 <div class="text_elm_search_lower">
                     {{-- price elm search  --}}
-                    <h4 class="price_elm_search">$ @{{price}}</h4>
+                    <h4 class="price_elm_search">@{{price}} &euro;</h4>
                 </div>
             </div>
         </div>

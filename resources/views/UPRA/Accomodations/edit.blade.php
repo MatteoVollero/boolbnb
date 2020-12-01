@@ -10,7 +10,7 @@
             </div>
        <form action="{{route('admin.accomodations.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
-            @method('POST')
+            @method('PUT')
 
             <div class="form_group">
                 <input type="hidden" class="form_input" id="user_id" name="user_id" required placeholder="Insert the User Id">
@@ -104,6 +104,11 @@
                 </select>
               </div>
             <button type="submit" class="form_btn">Edit</button>
+        </form>
+        <form action="{{route("admin.accomodations.destroy", $accomodation->id)}}" method="POST">
+            @csrf
+            @method("DELETE")
+            <button type="submit" class="form_btn">Delete</button>
         </form>
         @if ($errors->any())
             <div class="alert alert-danger">
