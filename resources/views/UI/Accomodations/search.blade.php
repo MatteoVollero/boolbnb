@@ -4,6 +4,7 @@
     Accomodations research
 @endsection
 @section('main_content')
+    {{-- section search  --}}
     <section class="section_search">
         {{-- {{-- jumbotron search item  --}}
         <div class="jumbotron_search_item">
