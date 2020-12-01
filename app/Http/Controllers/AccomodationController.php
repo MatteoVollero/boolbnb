@@ -113,9 +113,34 @@ class AccomodationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $accomodation = Accomodation::where('slug', $slug)->first();
+/*
+****************************************************************************************************************
++
++
++                ESEMPIO PER L'ACCESSO
++
++                  *********** URL IMMAGINI DETTAGLIO ***********
++                  foreach ($accomodation->accomodation_images as $accomodationImage){
++                     $accomodationImage->nome_del_campo;
++                  }
++
++                  *********** SERVICES ***********
++                  foreach ($accomodation->services as $service){
++                     $service->nome_del_campo;
++                  }
++
++                  *********** TYPE ***********
++                  $accomodation->accomodation_type->name  Si accede al nome
++
++              PER ACCEDERE ALLE ALTRE PROPRIETA BASTA SCRIVERE ALL'INTERNO DI UN CICLO FOREACH QUESTO:
++                  $accomodationImage->nome_del_campo
++
+****************************************************************************************************************
+*/
+        return view('UI.Accomodations.show', compact('accomodation'));
     }
 
     /**
@@ -177,10 +202,16 @@ class AccomodationController extends Controller
        $data = $request->all();
        // Array contente tutte le accomodation filtrate
        $accomodationsFiltered = [];
-       
+
+       // Array che conterrà le distanze da ordinare
+       $distances = [];
+
+      // Array di accomodation ordinate per distanza dalla piu vicina alla piu lontana dal punto di ricerca
+       $accomodationsFilteredAsc = [];
+
        // Array per i services
        $accomodationServicesFiltered = [];
-       
+
         // Prendiamo tutti gli appartamenti secondo i parametri richiesti dall'utente(cha saranno i requisiti minimi)
        $accomodationsToFilter = Accomodation::where("beds", ">=", $data['beds'])
        ->where("toilets", ">=", $data['toilets'])
@@ -224,6 +255,7 @@ class AccomodationController extends Controller
           $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['latitude'], $data['longitude']);
           // La distanza di default la prima volta sarà 20
           if ($distance<=6000) {
+            $distance = round($distance,1);
               // Inseriamo tutti con distanza opportuna
               $tempAccomodationsFiltered = [
                   'accomodation' => $accomodation,
@@ -231,11 +263,34 @@ class AccomodationController extends Controller
                   'services' => $accomodation->services,
                   'type' => $accomodation->accomodation_type
               ];
+              $distances[] = $distance;
               // Inseriamo nell'array finale
               $accomodationsFiltered[] = $tempAccomodationsFiltered;
           }
         }
+
+        // Ordiniamo in base alla distanza
+        asort($distances);
+
+
+        // Cicliamo sull'array delee distanze
+        foreach ($distances as $key => $value) {
+          // Inseriamo il relativo valore in maniera crescente all'interno di $accomodationsFilteredAsc
+          $accomodationsFilteredAsc[] = $accomodationsFiltered[$key];
+        }
+
+        // Assegnamo l'array ordinato ad $accomodationsFiltered
+        $accomodationsFiltered = $accomodationsFilteredAsc;
+
+
          return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
      }
+
+     public function map(Request $request)
+     {
+      $accomodation = Accomodation::inRandomOrder()->limit(1)->get();
+      return view('TEST.map', compact('accomodation'));
+     }
+
 
 }

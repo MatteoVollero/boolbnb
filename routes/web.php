@@ -36,6 +36,9 @@ Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->
 // rotte GUESTS
 Route::resource('/', 'AccomodationController');
 Route::get('/search', 'AccomodationController@search')->name('search');
+Route::get('/show/{slug}', 'AccomodationController@show')->name('show');
+// Rotta TEST per mappe tom tom
+Route::get('/map', 'AccomodationController@map')->name('map');
 
 // Route::get('/accomodations', 'AccomodationController@index')->name('accomodations.index');
 // Route::get('/accomodations/{slug}', 'AccomodationController@show')->name('accomdations.show');
