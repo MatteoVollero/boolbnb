@@ -47,21 +47,24 @@
                             <i class="far fa-eye-slash"></i>
                         @endif
                     </h5>
-                    {{-- ADDRESS --}}
+                    {{-- address informations list --}}
                     <h5 class="visible_elm_list">
+                        {{-- info elm list  --}}
                         <small class="info_elm_list"><i class="fas fa-map-marker-alt"></i></small>
                         {{$accomodation->address}}, {{$accomodation->city}}, {{$accomodation->zipcode}}, {{$accomodation->region}}, {{$accomodation->country}}
                     </h5>
-                    {{-- DESCRIPTION --}}
+                    {{-- description elm list --}}
                     <p class="text_elm_list">{{$accomodation->description}}</p>
                     {{-- SERVICES --}}
                     <div class="service_elm_search">
+                        {{-- info elm list  --}}
                         <small class="info_elm_list"><i class="fas fa-bed icn-space"></i>{{$accomodation->beds}}</small>
                         <small class="info_elm_list"><i class="fas fa-door-open icn-space"></i>{{$accomodation->rooms}}</small>
                         <small class="info_elm_list"><i class="fas fa-toilet icn-space"></i>{{$accomodation->toilets}}</small>
                         <small class="info_elm_list">{{$accomodation->square_meters}} m&sup2;</small>
                         @foreach ($accomodation->services as $service)
                             @if ($service->service_name == "wi-fi")
+                            {{-- info elm list  --}}
                         <small class="info_elm_list"><i class="fas fa-bed icn-space"></i>{{$accomodation->beds}}</small>
                                 <small class="info_elm_list"><i class="fas fa-wifi icn-space"></i></small>
                             @elseif ($service->service_name == "parking")
@@ -78,8 +81,9 @@
                         @endforeach
                     </div>
                 </div>
-                {{-- PRICE --}}
+                {{-- price --}}
                 <div class="title_elm_list_lower">
+                    {{-- price elm list  --}}
                     <h4 class="price_elm_list">{{$accomodation->price}} &euro;</h4>
                 </div>
             </div>

@@ -82,8 +82,11 @@
                 <button type="submit">Search<i class="fas fa-search"></i></button>
             </div>
         </div>
+        {{-- print handlebars informations  --}}
         <div class="ajax_handlebar_print">
+            <h1 class="research_results none">Here the results of your research</h1>
         </div>
+            {{-- clear blade div  --}}
             <div class="elm_responsive_search clear_blade">
             @foreach ($accomodationsFiltered as $accomodation)
             {{-- elm search list  --}}
@@ -101,13 +104,14 @@
                         <h4 class="title_elm_search">{{$accomodation['accomodation']->country}}</h4>
                         <h4 class="title_elm_search">{{$accomodation['accomodation']->region}}</h4>
                         <h4 class="title_elm_search">{{$accomodation['accomodation']->city}}</h4>
+                        <h4 class="title_elm_search">{{$accomodation['accomodation']->address}}</h4>
+                        <h4 class="info_elm_search">{{$accomodation['type']->name}}</h4>
                         {{-- text elm search  --}}
                         <p class="text_elm_search">{{$accomodation['accomodation']->description}}</p>
                         {{-- service elm search  --}}
-                        <small class="info_elm_search">{{$accomodation['type']->name}}</small>
                         <small class="info_elm_search">{{$accomodation['distance']}}Km</small>
                         <div class="service_elm_search">
-                            <ul class="flex_items">
+                            <ul class="flex_items_services">
                                 {{-- info elm search  --}}
                                 @foreach ($accomodation['services'] as $service)
                                     @if ($service->service_name == "wi-fi")

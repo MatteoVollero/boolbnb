@@ -11,6 +11,8 @@ $(document).ready(function() {
                 ClearBlade();
                 // invoke the clear handlebars function
                 ClearHandlebars();
+                var researchResults = $(".research_results");
+                researchResults.addClass('none');
                 // make a longitude function
                 var longitude = longitudeInput();
                 // make a latitude function
@@ -79,6 +81,8 @@ $(document).ready(function() {
                         }
                         // take all the data inside of a variable
                         var html = template(context);
+                        var researchResults = $(".research_results");
+                        researchResults.removeClass('none');
                         $(".ajax_handlebar_print").append(html);
                         console.log(context);
                         // append the data

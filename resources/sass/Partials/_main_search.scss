@@ -13,7 +13,7 @@
         align-items: center;
         display: flex;
         width: 100%;
-            // search item
+        // search item
         .search_item {
             border: 2px solid lightgoldenrodyellow;
             background-color:#fff;
@@ -81,18 +81,26 @@
             }
         }
     }
-
     //search results
     .elm_responsive_search {
         @include GenericWrapper;
         padding-top: 70px;
         // elm search list 
+        .flex_items_services {
+            justify-content: flex-start;
+            align-items: center;
+            display: flex;
+            li {
+                margin-top: 20px;
+                margin-right: 20px;
+            }
+        }
         .elm_search_list {
             background-color: $firstMainSection;
             border-radius: 15px;
             margin: 30px 0;
             display: flex;
-            height: 300px;
+            height: 400px;
             padding: 10px;
             width: 100%;
             img {
@@ -125,6 +133,7 @@
                     padding: 0px 30px;
                     h3, h4, p, small {
                         padding: 5px;
+                        text-transform: capitalize;
                     }
                     p {
                         line-height: 20px;
@@ -159,6 +168,18 @@
 // handlebar class for printing
 .ajax_handlebar_print {
     padding: 20px;
+}
+.research_results {
+    text-align: center;
+    margin-top: 150px;
+    font-size: 40px;
+    color: #fff;
+}
+.none {
+    display: none;
+}
+.block {
+    display: block;
 }
 /* media  query */
 

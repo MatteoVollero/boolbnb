@@ -542,6 +542,15 @@
     .form_wrapper {
         @include GenericWrapper;
         padding: 240px;
+        .admin_btn_edit_delete {
+            justify-content: flex-start;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            button {
+                margin-right: 50px;
+            }
+        }
         // form group
         .form_group {
             padding: 10px;
