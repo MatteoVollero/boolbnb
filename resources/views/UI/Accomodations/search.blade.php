@@ -79,10 +79,10 @@
             </div>
             {{-- btn search  --}}
             <div class="btn_search button_search">
-               <button type="submit">Search<i class="fas fa-search"></i></button>
+                <button type="submit">Search<i class="fas fa-search"></i></button>
             </div>
         </div>
-        <div class="ajax_handlebar_print">
+        <div class="elm-responsive-search ajax_handlebar_print">
 
         </div>
         {{-- SEARCHBAR --}}
@@ -164,8 +164,8 @@
             {{-- <div class="btn_search">
                 <button type="submit">Search<i class="fas fa-search"></i></button>
             </div> --}}
-        {{-- RESULTS --}}
-        <div class="elm-responsive-search clear_blade">
+            {{-- RESULTS --}}
+            <div class="elm-responsive-search clear_blade">
             @foreach ($accomodationsFiltered as $accomodation)
             {{-- elm search list  --}}
             <div class="elm_search_list">
@@ -234,9 +234,8 @@
  </script>
  {{-- handlebars ajax template  --}}
 <script id="ajax_template" type="text/x-handlebars-template">
-    <div class="elm-responsive-search clear_handlebars">
         {{-- elm search list  --}}
-        <div class="elm_search_list">
+        <div class="elm_search_list clear_handlebars">
             {{-- img elm search  --}}
             <div class="img_elm_search">
                 <img src="@{{cover_image}}" alt="@{{title}}">
