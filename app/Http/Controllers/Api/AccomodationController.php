@@ -25,7 +25,7 @@ class AccomodationController extends Controller
         ->where("rooms", ">=", $data['rooms'])
         ->where("visible", true)
         ->get();
-        
+
         if(count($request->services) != 0)
         {
           $requiredServices = count($request->services);
@@ -42,7 +42,7 @@ class AccomodationController extends Controller
                 }
               }
             }
-            
+
             if($findService >= $requiredServices)
             {
               $accomodationServicesFiltered[] = $accomodation;
@@ -56,7 +56,7 @@ class AccomodationController extends Controller
                 $tempAccomodationsFilteredJSON = [
                     'accomodation' => $accomodation,
                     'distance' => $distance,
-                    'service' => $accomodation->services,
+                    'services' => $accomodation->services,
                     'type' => $accomodation->accomodation_type
                 ];
 

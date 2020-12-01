@@ -8,7 +8,7 @@ $(document).ready(function() {
         // FUNCTIONS
         // make a function to get the data from the jumbotron form
         function getSearchData() {
-            $(".button_search").on("click", function() { 
+            $(".button_search").on("click", function() {
                 ClearBlade();
                 ClearHandlebars();
                 // make a longitude function
@@ -23,14 +23,14 @@ $(document).ready(function() {
                 var getRooms = roomsInput();
                 // make a services variable and invoke the relative function
                 var getServices = servicesInput();
-                // variable get radius 
+                // variable get radius
                 var getRadius = 6000;
                 // make an empty array for the search input
-                var arrayData = []; 
+                var arrayData = [];
                 // make a data variable for the JSON
                 var data = {};
                 // push inside the array the objects
-                arrayData.push ({ 
+                arrayData.push ({
                     "longitude" : longitude,
                     "latitude"  : latitude,
                     "beds"      : getBeds,
@@ -41,8 +41,8 @@ $(document).ready(function() {
                 data.arrayData = arrayData;
                 console.log(arrayData);
                 // call handlebar variables
-                $.ajax 
-                (   
+                $.ajax
+                (
 
                     {
                         // take the url from the DB
@@ -62,6 +62,7 @@ $(document).ready(function() {
                         var template = Handlebars.compile(source);
                         // make a cicle for
                         for (let i = 0; i < data.length; i++) {
+                          console.log(data[i]['services'][0].service_name);
                             // take the context to print with handlebars
                             var context = {
                                 "title" : data[i]['accomodation'].title,
@@ -141,7 +142,7 @@ $(document).ready(function() {
                 });
             });
 
-    // make a beds input function 
+    // make a beds input function
     function bedsInput() {
         // taking the beds input value
         var bedsInput = $(".beds_input").val();
@@ -197,7 +198,7 @@ $(document).ready(function() {
         return servicesArray;
     }
 
-    // make a longitude input function 
+    // make a longitude input function
     function longitudeInput() {
         //make a location input
         var locationInput = $(".search_input").val();

@@ -73,7 +73,7 @@
                                 </li>
                                 @endforeach
                             </ul>
-                        </ul> 
+                        </ul>
                     </div>
                 </li>
             </div>
@@ -97,16 +97,16 @@
                     <select name="Select" id="Select">
                         <option value="">
                             Select
-                        </option> 
+                        </option>
                         <option value="">
                             House
-                        </option> 
+                        </option>
                         <option value="">
                             Room
-                        </option>  
+                        </option>
                         <option value="">
                             Mansion
-                        </option>   
+                        </option>
                     </select>
                 </div>
             </div>
@@ -156,11 +156,11 @@
                                     </li>
                                     @endforeach --}}
                                 {{-- </ul>
-                            </li> 
+                            </li>
                         </ul>
                     </div>
                 </li>
-            </div> --}} 
+            </div> --}}
             {{-- <div class="btn_search">
                 <button type="submit">Search<i class="fas fa-search"></i></button>
             </div> --}}
