@@ -13,12 +13,7 @@
             @method('POST')
 
             <div class="form_group">
-                <label for="user_id">User id</label>
-                <input type="text" class="form_input" id="user_id" name="user_id" required placeholder="Insert the User Id">
-              </div>
-              <div class="form_group">
-                <label for="type_id">type id</label>
-                <input type="text" class="form_input" id="type_id" name="type_id" required placeholder="Insert the Type Id">
+                <input type="hidden" class="form_input" id="user_id" name="user_id" required placeholder="Insert the User Id">
               </div>
             <div class="form_group">
               <label for="title">Title</label>
@@ -89,14 +84,25 @@
                 <input type="number" class="form_input" id="visible" name="visible" required min="0" max="1" placeholder="Insert the visibility" value="{{old("visible")}}">
             </div>            
             <div class="form_group">
-              <label for="services"><strong>Services:</strong></label>
-              @foreach ($services as $service)
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" name="services[]" type="checkbox" id="service{{$service->id}}" value="{{$service->id}}">
-                    <label class="form-check-label" for="service-{{$service->id}}">{{$service->service_name}}</label>
-                </div>
-              @endforeach
-            </div>
+                <label for="services"><strong>Services:</strong></label>
+                @foreach ($services as $service)
+                  <div class="form_check form_group">
+                      <input class="form_check" name="services[]" type="checkbox" id="service{{$service->id}}" value="{{$service->id}}">
+                      <label class="form_check" for="service-{{$service->id}}">{{$service->service_name}}</label>
+                  </div>
+                @endforeach
+              </div>
+            <div class="form_group">
+                <label for="type_id">type</label>
+                <select class="form_type" name="checklist" id="type">
+                    <option value="accomodation">Accomodation</option>
+                    <option value="room">Room</option>
+                    <option value="mansion">Mansion</option>
+                    <option value="house">House</option>
+                    <option value="loft">Loft</option>
+                    <option value="hostel">Hostel</option>
+                </select>
+              </div>
             <button type="submit" class="form_btn">Edit</button>
         </form>
         @if ($errors->any())
