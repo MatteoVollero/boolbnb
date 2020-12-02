@@ -1,9 +1,13 @@
 {{-- // showing the single accomodations for the UPRA --}}
 @extends('UPRA.layouts.app')
+@section('chart_content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+@endsection
 @section('title')
     Accomodation
 @endsection
 @section('main_content')
+<link rel="stylesheet" type="text/css" href="{{asset('/chart.js/dist/Chart.min.css')}}">
 <section class="show_section">
     <div class="show_wrapper">
         {{-- TITLE AND BUTTON --}}
@@ -18,11 +22,13 @@
                 </h5>
             </div>
             <a href="#" class="btn_message_show none modal_stats_button">Statistics Area</a>
+            <a href="#" class="btn_message_show none">Advertising Area</a>
             <a href="#" class="btn_message_show none">Messages Area</a>
             <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
         </div>
         <div class="modal_stats_bg">
             <div class="modal_stats_data ">
+                <canvas id="accomodation_stats_chart" width="700" height="400" aria-label="Hello" role="img"></canvas>
                 <small class="close_stats_modal">X</small>
             </div>
         </div>
@@ -62,7 +68,6 @@
                 {{-- @endforeach --}}
             </div>
         </div>
-
         {{-- INFO --}}
         <div class="section_info_show">
             <div class="info_accomodation_show">
