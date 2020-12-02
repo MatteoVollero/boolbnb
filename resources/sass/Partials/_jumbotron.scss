@@ -60,6 +60,25 @@
         height: 15%;
         width: 95%;
         // dropleft menu
+        .tom_search {
+            background-color: $firstMainSection;
+            position: absolute;
+            border-radius: 5px;
+            padding: 10px 0px;
+            transition: 0.3s;
+            cursor: pointer;
+            display: none;
+            width: 100%;
+            right: 100%;
+            z-index: 1;
+            top: 0;
+        }
+        // adding class block with js 
+        .block {
+            background-color: $firstMainSection;
+            cursor: pointer;
+            display: block;   
+        }
         .dropleft_menu {
             background-color: $firstMainSection;
             position: absolute;

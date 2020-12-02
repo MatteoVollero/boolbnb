@@ -481,9 +481,8 @@
         }
     }
 }
-
 // MAPS
-
+// marker icon 
 .marker-icon {
     background-position: center;
     background-size: 22px 22px;
@@ -500,6 +499,7 @@
     height: 30px;
     width: 30px;
 }
+// marker content 
 .marker-content {
     background: #c30b82;
     border-radius: 50% 50% 50% 0;
@@ -511,6 +511,7 @@
     transform: rotate(-45deg);
     width: 30px;
 }
+// marker content
 .marker-content::before {
     background: #ffffff;
     border-radius: 50%;
