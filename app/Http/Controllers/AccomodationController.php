@@ -140,6 +140,7 @@ class AccomodationController extends Controller
 +
 ****************************************************************************************************************
 */
+
         return view('UI.Accomodations.show', compact('accomodation'));
     }
 
