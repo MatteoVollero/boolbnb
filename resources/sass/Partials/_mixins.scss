@@ -105,7 +105,6 @@
 }
 // hover Card
 @mixin HoverCard {
-    padding: 20px;
     border: 4px solid $headerColor;
     transform: scale(1.03);
     overflow: hidden;
@@ -153,4 +152,33 @@
     position: absolute;
     right: 0;
     bottom: 0;
+}
+// flex modal
+@mixin modalFlex {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+//modal generic
+@mixin modalGeneric {
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    visibility: hidden;
+    transition: 0.3s;
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+//modal stats
+@mixin modalStats {
+    justify-content: space-around;
+    flex-direction:column;
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
 }

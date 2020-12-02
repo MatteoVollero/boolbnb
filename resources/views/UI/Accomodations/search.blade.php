@@ -4,6 +4,7 @@
     Accomodations research
 @endsection
 @section('main_content')
+    {{-- section search  --}}
     <section class="section_search">
         {{-- {{-- jumbotron search item  --}}
         <div class="jumbotron_search_item">
@@ -176,15 +177,14 @@
                     <h4 class="title_elm_search">@{{country}}</h4>
                     <h4 class="title_elm_search">@{{region}}</h4>
                     <h4 class="title_elm_search">@{{city}}</h4>
+                    <h4 class="title_elm_search">@{{address}}</h4>
                     <h4 class="title_elm_search">@{{type}}</h4>
                     {{-- text elm search  --}}
                     <p class="text_elm_search">@{{description}}</p>
                     {{-- service elm search  --}}
+                    <small class="info_elm_search">@{{distance}}km</small>
                     <div class="service_elm_search">
                         {{-- info elm search  --}}
-                        <small class="info_elm_search">@{{toilets}}<i class="fas fa-toilet"></i></small>
-                        <small class="info_elm_search">@{{beds}}<i class="fas fa-bed"></i></small>
-                        <small class="info_elm_search">@{{rooms}}<i class="fas fa-person-booth"></i></small>
                     </div>
                 </div>
                 {{-- text elm search lower  --}}

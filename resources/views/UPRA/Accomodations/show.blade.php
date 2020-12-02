@@ -1,5 +1,5 @@
-{{-- // showing the single accomodations for the UI --}}
-@extends('UI.layouts.app')
+{{-- // showing the single accomodations for the UPRA --}}
+@extends('UPRA.layouts.app')
 @section('title')
     Accomodation
 @endsection
@@ -17,7 +17,14 @@
                     Via Dei Feltreschi 10, Rome, Italy
                 </h5>
             </div>
+            <a href="#" class="btn_message_show none modal_stats_button">Statistics</a>
+            <a href="#" class="btn_message_show none">Messages List</a>
             <a href="#" class="btn_message_show none">Contact the Host</a>
+        </div>
+        <div class="modal_stats_bg">
+            <div class="modal_stats_data">
+                <small class="close_stats_modal">X</small>
+            </div>
         </div>
         {{-- // Images  --}}
         <div class="images_show">
