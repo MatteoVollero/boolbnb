@@ -84,6 +84,7 @@
                 {{-- price --}}
                 <div class="title_elm_list_lower">
                     {{-- price elm list  --}}
+                    <a class="btn_message_show none">Make an advertisment</a>
                     <h4 class="price_elm_list">{{$accomodation->price}} &euro;</h4>
                 </div>
             </div>

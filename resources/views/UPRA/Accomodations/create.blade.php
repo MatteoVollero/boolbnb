@@ -1,7 +1,6 @@
 {{-- // Create a submit form accomodation for the UPRA --}}
 @extends('UPRA.layouts.app')
 @section('main_content')
-
     <div class="form_background">
         <div class="form_wrapper">
             <div class="form_text">

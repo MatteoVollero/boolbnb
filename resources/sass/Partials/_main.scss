@@ -557,6 +557,12 @@
         // form group
         .form_group {
             padding: 10px;
+            // remember 
+            .remember_me {
+                margin-left: 10px;
+                font-size: 20px;
+            }
+            // form type 
             .form_type {
                 font-family: $font-family-sans-serif;
                 border-radius: 10px;
@@ -571,7 +577,7 @@
                     color: #fff;
                 }
             }
-            #forgot_password {
+            .forgot_password {
                 font-family:$font-family-sans-serif;
                 color: #000;
                 transition: 0.3s;
@@ -595,6 +601,7 @@
             font-family: $font-family-sans-serif;
             text-transform: capitalize;
             text-align: right;
+            font-size: 30px;
             color: #000;
         }
         // form input
@@ -626,6 +633,7 @@
             border: 2px solid $btnColor;
             border-radius: 10px;
             margin-top: 50px;
+            margin-right: 20px;
             transition: 0.3s;
             font-size: 30px;
             width: 150px;
@@ -644,12 +652,12 @@
             background-color: $firstMainSection;
             border: 2px solid $btnColor;
             border-radius: 10px;
-            margin-left: 10px;
-            color: #000;
             margin-right: 50px;
-            padding: 5px;
+            margin-left: 10px;
             transition: 0.3s;
             font-size: 30px;
+            color: #000;
+            padding: 5px;
             width: 150px;
             height: 50px;
             // a hover 

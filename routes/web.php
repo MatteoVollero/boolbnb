@@ -15,14 +15,6 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // Lo utilizziamo per debug
-Route::get('/logout',function(){
-  return view('home');
-});
-
-Route::get('/admin/show',function(){
-  return view('UPRA.Accomodations.show');
-});
-
 Auth::routes();
 
 // rotte ADMIN
@@ -36,9 +28,6 @@ Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->
     Route::get('/accomodations/message_index', 'AccomodationController@message_index')->name('message_index');
 });
 
-// Route::post('/logout', 'Auth\LoginController@logout');
-
-// rotte GUESTS
 // Route::resource('/', 'AccomodationController');
 // rotte UI
 Route::get('/', 'AccomodationController@index')->name('home');

@@ -4,7 +4,6 @@ $(document).ready(function() {
     getSearchData();
 });
 // FUNCTIONS
-
         // make a function to get the data from the jumbotron form
         function getSearchData() {
             $(".button_search").on("click", function() { 
