@@ -72,6 +72,10 @@
                     margin: 2.5%;
                     height: 95%;
                     width: 95%;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
                     &:hover {
                         background-color: $btnColor;
                         transform:scale(1.02);
@@ -97,6 +101,10 @@
                     height: 45%;
                     width: 45%;
                     margin: 2%;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
                     &:hover {
                         background-color: $btnColor;
                         transform:scale(1.04);
@@ -119,12 +127,12 @@
             // TEXT
             // info accomodation 
             .info_accomodation_show {
-                height: 50%;
+                height: 45%;
                 // flex 
                 .flex_between_show {
                     justify-content: space-between;
                     align-items: center;
-                    margin: 2.5% 0;
+                    margin: 1.5% 0;
                     display: flex;
                     &:first-child {
                         margin: 0 0 5% 0;
@@ -142,6 +150,26 @@
                         color: $airBnB;
                     }
                     .type_elm_show {
+                        font-weight: bolder;
+                        color: $airBnB;
+                    }
+                    .medal_bronze {
+                        font-size: 20px;
+                        font-weight: bolder;
+                        color: rgb(205, 127, 50);
+                    }
+                    .medal_silver {
+                        font-size: 20px;
+                        font-weight: bolder;
+                        color: silver;
+                    }
+                    .medal_gold {
+                        font-size: 20px;
+                        font-weight: bolder;
+                        color: gold;
+                    }
+                    .icn_visible_show {
+                        font-size: 20px;
                         font-weight: bolder;
                         color: $airBnB;
                     }
@@ -179,11 +207,10 @@
                 justify-content: center;
                 align-items: center;
                 display: flex;
-                height: 45%;
+                height: 50%;
                 width: 100%;
                 // map accomodation 
                 .map_accomodation_show {
-                    background-color: green;
                     border-radius: 10px;
                     height: 95%;
                     width: 60%;
@@ -346,11 +373,11 @@
                 height: 55%;
                 // TEXT
                 .info_accomodation_show {
-                    height: 60%;
+                    height: 50%;
                 }
                 // MAP
                 .section_map_show {
-                    height: 40%;
+                    height: 50%;
                 }
             }
         }
@@ -417,7 +444,7 @@
                 height: 55%;
                 // TEXT
                 .info_accomodation_show {
-                    height: 80%;
+                    height: 50%;
                     // flex show 
                     .flex_between_show {
                         justify-content: space-between;
@@ -472,7 +499,7 @@
                 }
                 // MAP
                 .section_map_show {
-                    height: 20%;
+                    height: 50%;
                     .map_accomodation_show {
                         width: 80%;
                     }
