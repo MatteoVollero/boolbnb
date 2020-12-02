@@ -2,18 +2,17 @@
 @extends('UI.layouts.app')
 {{-- TITLE --}}
 @section('title')
-    Accomodation
+Accomodation
 @endsection
 {{-- LINK HEAD --}}
 @section('link')
-    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
-    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
-    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
+<link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
+<link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
+<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
 </head>
 @endsection
 {{-- MAIN SECTION --}}
 @section('main_content')
-{{-- @dd($accomodation); --}}
 <section class="show_section">
     <div class="show_wrapper">
         {{-- TITLE AND BUTTON --}}

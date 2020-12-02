@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
 @endsection
 @section('main_content')
-{{-- @dd($accomodation[0]['latitude']) --}}
 <section class="show_section">
     <div class="show_wrapper">
         {{-- TITLE AND BUTTON --}}

@@ -186,8 +186,8 @@ class AccomodationController extends Controller
     public function edit($id)
     {
       $accomodation = Accomodation::find($id);
-      $services= Service::all();
-      $serviceChecked='';
+      $services = Service::all();
+      $serviceChecked ='';
 
       return view('UPRA.Accomodations.edit', compact('accomodation', 'services', 'serviceChecked'));
     }

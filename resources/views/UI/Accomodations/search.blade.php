@@ -12,7 +12,7 @@
             <div class="search_item">
                 <label id="location" for="location">Where do you want to go?</label>
                 <input type="text" class="location_input search_input form_input" id="location" name="location" data-long="" data-lat="" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
-                <div class="dropleft_menu" name="dropleft_tom_menu">
+                <div class="tom_search">
                     <ul class="flex_items_tom">
                     </ul>
                 </div> 
@@ -94,7 +94,7 @@
             <div class="elm_search_list">
                 {{-- img elm search  --}}
                 <div class="img_elm_search">
-                    <img src="{{$accomodation['accomodation']->cover_image}}" alt="{{$accomodation['accomodation']->title}}">
+                   <a href="{{route('show', $accomodation['accomodation']->slug)}}"><img src="{{$accomodation['accomodation']->cover_image}}" alt="{{$accomodation['accomodation']->title}}"></a>
                 </div>
                 {{-- title elm search  --}}
                 <div class="title_elm_search">
@@ -166,7 +166,7 @@
         <div class="elm_search_list">
             {{-- img elm search  --}}
             <div class="img_elm_search">
-                <img src="@{{cover_image}}" alt="@{{title}}">
+                <a href="{{asset('http://localhost:8000/show/@{{slug}}"><img src="@{{cover_image}}" alt="@{{title}}"></a>
             </div>
             {{-- title elm search  --}}
             <div class="title_elm_search">
