@@ -17,7 +17,12 @@
                     Via Dei Feltreschi 10, Rome, Italy
                 </h5>
             </div>
-            <a href="#" class="btn_message_show none">Contact the Host</a>
+            <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
+        </div>
+        <div class="modal_messages_bg">
+            <div class="modal_messages_data">
+                <small class="close_messages_modal">X</small>
+            </div>
         </div>
         {{-- // Images  --}}
         <div class="images_show">
