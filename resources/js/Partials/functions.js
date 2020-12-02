@@ -275,3 +275,22 @@ $(document).ready(function() {
         function ClearHandlebars () {
             $(".clear_handlebars").remove();
         }
+
+        // chart modal variables
+        // modal stats bg 
+        var modalStatsBg = document.querySelector('.modal_stats_bg');
+        // button stats modal
+        var modalStatsBtn = document.querySelector('.modal_stats_button');
+        // close modal stats button
+        var closeStats = document.querySelector('.close_stats_modal');
+        // make a stats button event click function to add the class active
+        modalStatsBtn.addEventListener('click', function() {
+            modalStatsBg.classList.add('bg_active');
+            console.log("open");
+        });
+        // make an event click function to delete the class active
+        closeStats.addEventListener('click', function() {
+            modalStatsBg.classList.remove('bg_active');
+            console.log('close');
+
+        });
