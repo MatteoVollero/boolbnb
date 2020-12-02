@@ -29,6 +29,54 @@ class AccomodationController extends Controller
       return view('UPRA.Accomodations.index',compact('accomodationsUpra'));
     }
 
+
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // METODI PER LA GESTIONE DELLE ADVS
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    public function adv_index()
+    {
+      // TO DO: codice per selezionare tutte le sponsorizzate dell'UPRA
+      
+      // $userAccomodations = Accomodation::where('id', Auth::id())->get;
+      // $accomodationsSponsored=[];
+      // foreach ($userAccomodations as $userAccomodation) {
+      // }
+      // return view('UPRA.Advs.index', compact('accomodation'));
+
+    }
+
+    public function adv_create($id)
+    {
+      $accomodation = Accomodation::find($id);
+      return view('UPRA.Advs.create', compact('accomodation'));
+    }
+
+    public function adv_store(Request $request)
+    {
+      // TO DO: codice per salvare dati della sponsorizzazione nella tabella pivot accomodation_advs
+    }
+
+    
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // METODI PER LA GESTIONE DELLE ADVS / end
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // METODI PER LA GESTIONE DEI MESSAGE
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    public function message_index()
+    {
+      // TO DO: codice per selezionare tutti i messaggi inviati alle accomodation dell'UPRA
+      
+    }
+
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // METODI PER LA GESTIONE DEI MESSAGE / end
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
     /**
      * Show the form for creating a new resource.
      *

@@ -286,6 +286,19 @@ class AccomodationController extends Controller
          return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
      }
 
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // METODI PER LA GESTIONE DEI MESSAGE
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    public function message_send(Request $request)
+    {
+      // TO DO: codice per salvare dati del messaggio nella tabella user_messages
+    }
+    
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // METODI PER LA GESTIONE DEI MESSAGE / end
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
      public function map(Request $request)
      {
       $accomodation = Accomodation::inRandomOrder()->limit(1)->get();
