@@ -7,7 +7,7 @@
 <div class="form_background">
     <div class="form_wrapper">
         <div class="form_text">
-          <h1>Insert your data</h1>
+          <h1>Make an advertisment for : {{$accomodation->title}}</h1>
         </div>
    <form action="{{route('admin.accomodations.store')}}" method="POST" enctype="multipart/form-data">
         @csrf

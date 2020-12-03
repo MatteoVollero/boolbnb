@@ -96,7 +96,9 @@ $(document).ready(function() {
         }
         // make a keyup function event
         $(".location_input").keyup(function() {
+            // at the keyup event show the tom search dropleft menu
             $(".tom_search").addClass("block");
+            // at every keyup delete the precedent character
             $(".list_item_tom").text("");
             // make a location variable for the tom tom api
             var location = $(".location_input").val().toLowerCase();
@@ -263,13 +265,25 @@ $(document).ready(function() {
         // make a function to clear Blade files
         function ClearBlade () {
             $(".clear_blade").remove();
-        }
+        };
 
         // make a function to clear handlebars files
         function ClearHandlebars () {
             $(".clear_handlebars").remove();
-        }
+        };
 
+        // make a position function to toggle the form based on the position insde the DOM
+        $(window).scroll(function() {
+            // If user didn't scroll 350px set default z-index
+            if ($(this).scrollTop() < 250) { 
+                console.log("if");
+                $(".jumbotron_search_item" ).show();
+            } else {
+                console.log("else");
+                // If user scrolled 350px change logo's z-index to 9999  
+                $(".jumbotron_search_item" ).hide();
+            }
+        });
         // messages modal variables
         // modal messages bg 
         var modalMessagesBg = document.querySelector('.modal_messages_bg');
