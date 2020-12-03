@@ -166,7 +166,7 @@
         <div class="elm_search_list">
             {{-- img elm search  --}}
             <div class="img_elm_search">
-                <a href="{{asset('http://localhost:8000/show/@{{slug}}"><img src="@{{cover_image}}" alt="@{{title}}"></a>
+                <a href="http://localhost:8000/show/@{{slug}}"><img src="@{{cover_image}}" alt="@{{title}}"></a>
             </div>
             {{-- title elm search  --}}
             <div class="title_elm_search">

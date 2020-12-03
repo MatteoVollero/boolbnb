@@ -67,17 +67,17 @@ $(document).ready(function() {
                         var context = {
                             "cover_image" : data[i]['accomodation'].cover_image,
                             "description" : data[i]['accomodation'].description,
-                            "type" : data[i]['type'].name,
-                            "service" : service.service_name,
-                            "slug" : data[i]['accomodation'].slug,
                             "toilets" : data[i]['accomodation'].toilets,
                             "country" : data[i]['accomodation'].country,
                             "region" : data[i]['accomodation'].region,
                             "price" : data [i]['accomodation'].price,
                             "title" : data[i]['accomodation'].title,
                             "rooms" : data[i]['accomodation'].rooms,
+                            "slug" : data[i]['accomodation'].slug,
                             "city" : data[i]['accomodation'].city,
-                            "beds" : data[i]['accomodation'].beds
+                            "beds" : data[i]['accomodation'].beds,
+                            "service" : service.service_name,
+                            "type" : data[i]['type'].name
                         }
                         // take all the data inside of a variable
                         var html = template(context);

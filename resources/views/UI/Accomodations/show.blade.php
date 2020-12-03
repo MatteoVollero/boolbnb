@@ -28,12 +28,37 @@ Accomodation
             </div>
             <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
         </div>
+        {{-- // modola messages bg  --}}
         <div class="modal_messages_bg">
+            {{-- modal messages data  --}}
             <div class="modal_messages_data">
-                <small class="close_messages_modal">X</small>
+                {{-- modal messages wrapper  --}}
+                <div class="modal_messages_wrapper">
+                    {{-- form group show  --}}
+                    <div class="form_group_show">
+                        <h3>Compile your message</h3>
+                        {{-- form input  --}}
+                        <div class="form_group">
+                            <label id="nickname" for="">NickName</label>
+                            <input type="text" class="form_input" id="nickname" name="nickname" required minlenght="8" maxlength="50" placeholder="insert your nickname">
+                        </div>
+                        {{-- slug input  --}}
+                        <div class="form_group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form_input" id="email" name="slug" required minlength="10" maxlength="50" placeholder="Insert your email">
+                        </div>
+                        <textarea class="form_input" id="message" name="message" required minlength="50" maxlength="300" placeholder="insert your message"></textarea>
+                    </div>
+                </div>
+                {{-- lower messager form  --}}
+                <div class="lower_messages_form">
+                    <span><i class="fab fa-telegram-plane"></i></span>
+                    {{-- close messages modal  --}}
+                    <span class="close_messages_modal">X</span>
+                </div>
             </div>
         </div>
-        {{-- // Images  --}}
+        {{-- Images  --}}
         <div class="images_show">
             {{-- cover image  --}}
             <div class="primary_image_show">
@@ -41,11 +66,12 @@ Accomodation
                     <img src="{{$accomodation->cover_image}}" alt="{{$accomodation->title}}">
                 </div>
             </div>
-            {{-- // secondary images  --}}
+            {{-- secondary images  --}}
             <div class="secondary_images_show">
                 {{-- image item  --}}
                 @foreach ($accomodation->accomodation_images as $accomodationImage)
-                    @if ($accomodationImage->principal)   
+                    @if ($accomodationImage->principal)  
+                    {{-- image item show   --}}
                         <div class="image_item_show">
                             <img src="{{$accomodationImage->image}}" alt="{{$accomodation->title}}"> 
                         </div>

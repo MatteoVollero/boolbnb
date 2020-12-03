@@ -36,16 +36,32 @@
                 <small class="close_stats_modal">X</small>
             </div>
         </div>
+        {{-- // modola messages bg  --}}
         <div class="modal_messages_bg">
+            {{-- modal messages data  --}}
             <div class="modal_messages_data">
+                {{-- modal messages wrapper  --}}
                 <div class="modal_messages_wrapper">
+                    {{-- form group show  --}}
                     <div class="form_group_show">
-                        <h3>Write your message</h3>
+                        <h3>Compile your message</h3>
+                        {{-- form input  --}}
+                        <div class="form_group">
+                            <label id="nickname" for="">NickName</label>
+                            <input type="text" class="form_input" id="nickname" name="nickname" required minlenght="8" maxlength="50" placeholder="insert your nickname">
+                        </div>
+                        {{-- slug input  --}}
+                        <div class="form_group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form_input" id="email" name="slug" required minlength="10" maxlength="50" placeholder="Insert your email">
+                        </div>
                         <textarea class="form_input" id="message" name="message" required minlength="50" maxlength="300" placeholder="insert your message"></textarea>
                     </div>
                 </div>
+                {{-- lower messager form  --}}
                 <div class="lower_messages_form">
                     <span><i class="fab fa-telegram-plane"></i></span>
+                    {{-- close messages modal  --}}
                     <span class="close_messages_modal">X</span>
                 </div>
             </div>

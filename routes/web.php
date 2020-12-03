@@ -23,6 +23,10 @@ Route::get('/logout',function(){
   Route::get('/admin/show',function(){
     return view('UPRA.Accomodations.show');
   });
+
+  Route::get('/admin/adv/create', function(){
+    return view('UPRA.Advs.create');
+  });
   
   Auth::routes();
   
