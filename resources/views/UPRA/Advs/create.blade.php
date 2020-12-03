@@ -7,9 +7,9 @@
 <div class="form_background">
     <div class="form_wrapper">
         <div class="form_text">
-          <h1>Choose an advertisment</h1>
+          <h1>Insert your data</h1>
         </div>
-   <form action="{{route('admin.accomodations.adv.store')}}" method="POST" enctype="multipart/form-data">
+   <form action="{{route('admin.accomodations.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
         {{-- id input --}}
@@ -19,24 +19,24 @@
         {{-- city input  --}}
         <div class="form_group">
             <label for="credit card">Credit Card</label>
-            <input type="number" class="form_input" id="credit card" name="credit card" required min="16" maxlength="16" placeholder="Insert the credit card number" value="{{old("credit card")}}">
+            <input type="number" class="form_input" id="credit card" name="credit card" required min="14" maxlength="16" placeholder="Insert the credit card number" value="{{old("credit card")}}">
         </div>
         {{-- square meters input  --}}
         <div class="form_group">
             <label for="cvc">Cvc</label>
-            <input type="number" class="form_input" id="cvc" name="cvc" required min="3" max="3" placeholder="CvC" value="{{old("cvc")}}">
+            <input type="number" class="form_input" id="cvc" name="cvc" required min="3" max="3" placeholder="Cvc" value="{{old("cvc")}}">
         </div>
           
         <div class="form_group">
             <label for="advertisment">advertisment typology</label>
             {{-- selecting type informations  --}}
             <select class="form_type" name="checklist" id="advertisment">
-                <option value="accomodation">2.99&euro;</option>
-                <option value="room">5.99&euro;</option>
-                <option value="mansion">8.99&euro;</option>
+                <option value="accomodation">&euro; 2.99 Bronze</option>
+                <option value="room">&euro; 5.99 Silver</option>
+                <option value="mansion">&euro; 8.99 Gold</option>
             </select>
           </div>
-        <button type="submit" class="form_btn">Make the payment</button>
+        <button type="submit" class="form_btn">Pay</button>
     </form>
     @if ($errors->any())
         <div class="alert alert-danger">
