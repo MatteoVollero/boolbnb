@@ -46,7 +46,7 @@
                                 <label id="rooms" for="rooms">Rooms</label>
                             </li>
                             <li class="list_item">
-                                <input type="number" class="rooms_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}s">
+                                <input type="number" class="rooms_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}">
                             </li>
                             {{-- services  --}}
                             <li class="list_item">
