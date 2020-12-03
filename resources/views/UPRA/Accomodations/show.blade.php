@@ -1,17 +1,15 @@
-{{-- // showing the single accomodations for the UI --}}
-@extends('UI.layouts.app')
-{{-- TITLE --}}
+{{-- // showing the single accomodations for the UPRA --}}
+@extends('UPRA.layouts.app')
 @section('title')
-Accomodation
+    Accomodation
 @endsection
-{{-- LINK HEAD --}}
 @section('link')
-<link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
-<link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
-<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
-</head>
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
+    <link rel="stylesheet" type="text/css" href="{{asset('/chart.js/dist/Chart.min.css')}}">
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
 @endsection
-{{-- MAIN SECTION --}}
 @section('main_content')
 <section class="show_section">
     <div class="show_wrapper">
@@ -26,7 +24,17 @@ Accomodation
                     {{$accomodation->address}}, {{$accomodation->city}}, {{$accomodation->zip_code}}, {{$accomodation->region}}, {{$accomodation->country}}
                 </h5>
             </div>
+            <a href="{{asset('admin/accomodations/message_index')}}"class="btn_message_show none">Messages Area</a>
+            <a href="{{asset('admin/accomodations/adv_index')}}" class="btn_message_show none">Advertising Area</a>
+            <a class="btn_message_show none">Make an advertisment</a>
+            <a href="#" class="btn_message_show none modal_stats_button">Statistics Area</a>
             <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
+        </div>
+        <div class="modal_stats_bg">
+            <div class="modal_stats_data ">
+                <canvas id="accomodation_stats_chart" width="700" height="400" aria-label="Hello" role="img"></canvas>
+                <small class="close_stats_modal">X</small>
+            </div>
         </div>
         {{-- // modola messages bg  --}}
         <div class="modal_messages_bg">
@@ -58,7 +66,7 @@ Accomodation
                 </div>
             </div>
         </div>
-        {{-- Images  --}}
+        {{-- // Images  --}}
         <div class="images_show">
             {{-- cover image  --}}
             <div class="primary_image_show">
@@ -66,12 +74,11 @@ Accomodation
                     <img src="{{$accomodation->cover_image}}" alt="{{$accomodation->title}}">
                 </div>
             </div>
-            {{-- secondary images  --}}
+            {{-- // secondary images  --}}
             <div class="secondary_images_show">
                 {{-- image item  --}}
                 @foreach ($accomodation->accomodation_images as $accomodationImage)
-                    @if ($accomodationImage->principal)  
-                    {{-- image item show   --}}
+                    @if ($accomodationImage->principal)   
                         <div class="image_item_show">
                             <img src="{{$accomodationImage->image}}" alt="{{$accomodation->title}}"> 
                         </div>
@@ -88,6 +95,24 @@ Accomodation
                     {{-- PRICE --}}
                     <h2 class="price_elm_show">{{$accomodation->price}} &euro;</h2>
                 </div>
+                <div class="flex_between_show">
+                    {{-- SPONSOR ELEMENT  --}}
+                    @foreach ($accomodation->advs as $adv)
+                        @if ($adv->label == "Bronze")
+                            <i class="fas fa-medal medal_bronze"></i>
+                        @elseif ($adv->label == "Silver")
+                            <i class="fas fa-medal medal_silver"></i>
+                        @elseif ($adv->label == "Gold")
+                            <i class="fas fa-medal medal_gold"></i>
+                        @endif
+                    @endforeach
+                    {{-- VISIBLE --}}
+                    @if ($accomodation->visible == 1)
+                        <i class="far fa-eye icn_visible_show"></i>
+                    @elseif ($accomodation->visible == 0)
+                        <i class="far fa-eye-slash icn_visible_show"></i>
+                    @endif
+                 </div>
                 {{-- ADDRESS --}}
                 <div class="flex_between_show">
                     <h5 class="address_elm_show">
@@ -133,6 +158,7 @@ Accomodation
                     <div id='map' class='map'></div>
                 </div>
             </div>
+
         </div>
         {{-- BUTTON --}}
         <div class="button_section_show">

@@ -67,16 +67,17 @@ $(document).ready(function() {
                         var context = {
                             "cover_image" : data[i]['accomodation'].cover_image,
                             "description" : data[i]['accomodation'].description,
-                            "type" : data[i]['type'].name,
-                            "service" : service.service_name,
                             "toilets" : data[i]['accomodation'].toilets,
                             "country" : data[i]['accomodation'].country,
                             "region" : data[i]['accomodation'].region,
                             "price" : data [i]['accomodation'].price,
                             "title" : data[i]['accomodation'].title,
                             "rooms" : data[i]['accomodation'].rooms,
+                            "slug" : data[i]['accomodation'].slug,
                             "city" : data[i]['accomodation'].city,
-                            "beds" : data[i]['accomodation'].beds
+                            "beds" : data[i]['accomodation'].beds,
+                            "service" : service.service_name,
+                            "type" : data[i]['type'].name
                         }
                         // take all the data inside of a variable
                         var html = template(context);
@@ -95,17 +96,11 @@ $(document).ready(function() {
         }
         // make a keyup function event
         $(".location_input").keyup(function() {
-            // empty the text input each time the keyup event is called
-            // dropleftMenu = document.getElementsByName("dropleft_tom_menu");
-            // if (dropleftMenu.lenght <= 1 ) {
-                //     dropleftMenu.hide();
-                // } else {
-                    //     dropleftMenu.show();
-                    // };
-                    // invoke the location function
+            $(".tom_search").addClass("block");
             $(".list_item_tom").text("");
+            // make a location variable for the tom tom api
             var location = $(".location_input").val().toLowerCase();
-            // take a tom tom api
+            // call the tom tom api
             var tomQuery = "https://api.tomtom.com/search/2/search/"+location+".json?typeahead=true&limit=5&language=it-IT&extendedPostalCodesFor=Geo&minFuzzyLevel=1&maxFuzzyLevel=2&idxSet=Addr%2CGeo%2CStr&view=Unified&key=5f9vpvhd3dCu5qyQPFDmWnkS1fQQ1Yrg";
             // select the handlebar template to print the data
             var source = $("#tomtom_template").html();
@@ -258,6 +253,7 @@ $(document).ready(function() {
             var longitude = $(this).attr("data-long");
             // insert the value in the location input
             $(".location_input").val(autoCompile);
+            $(".tom_search").removeClass("block");
             // make an attribute for the longitude
             $(".longitude_input").val(longitude);
             // make an attribute for the latitude
@@ -273,3 +269,81 @@ $(document).ready(function() {
         function ClearHandlebars () {
             $(".clear_handlebars").remove();
         }
+
+        // messages modal variables
+        // modal messages bg 
+        var modalMessagesBg = document.querySelector('.modal_messages_bg');
+        // button messages modal
+        var modalMessagesBtn = document.querySelector('.modal_messages_button');
+        // close modal messages button
+        var closeMessages = document.querySelector('.close_messages_modal');
+
+        // make a stats button event click function to add the class active
+        modalMessagesBtn.addEventListener('click', function() {
+            modalMessagesBg.classList.add('bg_active');
+            console.log("open");
+        });
+
+        // make an event click function to remove the class active
+        closeMessages.addEventListener('click', function() {
+            modalMessagesBg.classList.remove('bg_active');
+            console.log('close');
+        });
+
+        // chart modal variables
+        // modal stats bg 
+        var modalStatsBg = document.querySelector('.modal_stats_bg');
+        // button stats modal
+        var modalStatsBtn = document.querySelector('.modal_stats_button');
+        // close modal stats button
+        var closeStats = document.querySelector('.close_stats_modal');
+
+        // make a stats button event click function to add the class active
+        modalStatsBtn.addEventListener('click', function() {
+            modalStatsBg.classList.add('bg_active');
+            console.log("open");
+        });
+
+        // make an event click function to remove the class active
+        closeStats.addEventListener('click', function() {
+            modalStatsBg.classList.remove('bg_active');
+            console.log('close');
+        });
+        // single accomodation statistic chart
+        var ctx = document.getElementById('accomodation_stats_chart').getContext('2d');
+        var accomodationChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'febraury', 'march'],
+                datasets: [{
+                    label: 'Accomodation Views',
+                    data: [ 30 , 35 , 36 ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });

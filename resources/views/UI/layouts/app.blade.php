@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
     <title>@yield('title')</title>
+    @yield('link')
   </head>
   <body>
     @include('UI.Partials.header')

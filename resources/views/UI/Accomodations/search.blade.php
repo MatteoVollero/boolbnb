@@ -12,7 +12,7 @@
             <div class="search_item">
                 <label id="location" for="location">Where do you want to go?</label>
                 <input type="text" class="location_input search_input form_input" id="location" name="location" data-long="" data-lat="" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
-                <div class="dropleft_menu" name="dropleft_tom_menu">
+                <div class="tom_search">
                     <ul class="flex_items_tom">
                     </ul>
                 </div> 
@@ -46,7 +46,7 @@
                                 <label id="rooms" for="rooms">Rooms</label>
                             </li>
                             <li class="list_item">
-                                <input type="number" class="rooms_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}s">
+                                <input type="number" class="rooms_input form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}">
                             </li>
                             {{-- services  --}}
                             <li class="list_item">
@@ -94,7 +94,7 @@
             <div class="elm_search_list">
                 {{-- img elm search  --}}
                 <div class="img_elm_search">
-                    <img src="{{$accomodation['accomodation']->cover_image}}" alt="{{$accomodation['accomodation']->title}}">
+                   <a href="{{route('show', $accomodation['accomodation']->slug)}}"><img src="{{$accomodation['accomodation']->cover_image}}" alt="{{$accomodation['accomodation']->title}}"></a>
                 </div>
                 {{-- title elm search  --}}
                 <div class="title_elm_search">
@@ -166,7 +166,7 @@
         <div class="elm_search_list">
             {{-- img elm search  --}}
             <div class="img_elm_search">
-                <img src="@{{cover_image}}" alt="@{{title}}">
+                <a href="http://localhost:8000/show/@{{slug}}"><img src="@{{cover_image}}" alt="@{{title}}"></a>
             </div>
             {{-- title elm search  --}}
             <div class="title_elm_search">
@@ -177,15 +177,14 @@
                     <h4 class="title_elm_search">@{{country}}</h4>
                     <h4 class="title_elm_search">@{{region}}</h4>
                     <h4 class="title_elm_search">@{{city}}</h4>
+                    <h4 class="title_elm_search">@{{address}}</h4>
                     <h4 class="title_elm_search">@{{type}}</h4>
                     {{-- text elm search  --}}
                     <p class="text_elm_search">@{{description}}</p>
                     {{-- service elm search  --}}
+                    <small class="info_elm_search">@{{distance}}km</small>
                     <div class="service_elm_search">
                         {{-- info elm search  --}}
-                        <small class="info_elm_search">@{{toilets}}<i class="fas fa-toilet"></i></small>
-                        <small class="info_elm_search">@{{beds}}<i class="fas fa-bed"></i></small>
-                        <small class="info_elm_search">@{{rooms}}<i class="fas fa-person-booth"></i></small>
                     </div>
                 </div>
                 {{-- text elm search lower  --}}
