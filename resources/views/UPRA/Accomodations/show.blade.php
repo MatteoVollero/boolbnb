@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
 @endsection
 @section('main_content')
-{{-- @dd($accomodation[0]['latitude']) --}}
 <section class="show_section">
     <div class="show_wrapper">
         {{-- TITLE AND BUTTON --}}
@@ -25,9 +24,10 @@
                     {{$accomodation[0]->address}}, {{$accomodation[0]->city}}, {{$accomodation[0]->zip_code}}, {{$accomodation[0]->region}}, {{$accomodation[0]->country}}
                 </h5>
             </div>
+            <a href="{{asset('admin/accomodations/message_index')}}"class="btn_message_show none">Messages Area</a>
+            <a href="{{asset('admin/accomodations/adv_index')}}" class="btn_message_show none">Advertising Area</a>
+            <a class="btn_message_show none">Make an advertisment</a>
             <a href="#" class="btn_message_show none modal_stats_button">Statistics Area</a>
-            <a href="#" class="btn_message_show none">Advertising Area</a>
-            <a href="#" class="btn_message_show none">Messages Area</a>
             <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
         </div>
         <div class="modal_stats_bg">
@@ -36,16 +36,32 @@
                 <small class="close_stats_modal">X</small>
             </div>
         </div>
+        {{-- // modola messages bg  --}}
         <div class="modal_messages_bg">
+            {{-- modal messages data  --}}
             <div class="modal_messages_data">
+                {{-- modal messages wrapper  --}}
                 <div class="modal_messages_wrapper">
+                    {{-- form group show  --}}
                     <div class="form_group_show">
-                        <h3>Write your message</h3>
+                        <h3>Compile your message</h3>
+                        {{-- form input  --}}
+                        <div class="form_group">
+                            <label id="nickname" for="">NickName</label>
+                            <input type="text" class="form_input" id="nickname" name="nickname" required minlenght="8" maxlength="50" placeholder="insert your nickname">
+                        </div>
+                        {{-- slug input  --}}
+                        <div class="form_group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form_input" id="email" name="slug" required minlength="10" maxlength="50" placeholder="Insert your email">
+                        </div>
                         <textarea class="form_input" id="message" name="message" required minlength="50" maxlength="300" placeholder="insert your message"></textarea>
                     </div>
                 </div>
+                {{-- lower messager form  --}}
                 <div class="lower_messages_form">
                     <span><i class="fab fa-telegram-plane"></i></span>
+                    {{-- close messages modal  --}}
                     <span class="close_messages_modal">X</span>
                 </div>
             </div>

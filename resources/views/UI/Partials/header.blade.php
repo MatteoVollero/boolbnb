@@ -2,7 +2,7 @@
     <div class="position_flex_header">
         <div class="wrapper">
             <div>
-                <img class="header_bnb_logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
+              <a href="{{route('home')}}"><img class="header_bnb_logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb"></a>
             </div>
             <!-- Right Side Of Navbar -->
             <div class="links">

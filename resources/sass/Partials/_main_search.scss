@@ -37,8 +37,14 @@
             .img_elm_search {
                 background-color: gray;
                 border-radius: 15px;
+                transition: 0.3s;
                 height: 100%;
                 width: 40%;
+                &:hover {
+                    transform: translate(1.15);
+                    cursor:pointer;
+                    opacity: 0.8;
+                }
             }
             // title elm search
             .title_elm_search {
