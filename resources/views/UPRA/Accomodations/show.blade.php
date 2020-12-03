@@ -17,11 +17,11 @@
         <div class="button_section_show">
             <div>
                 {{-- TITLE --}}
-                <h1 class="title_elm_show">{{$accomodation[0]->title}}</h1>
+                <h1 class="title_elm_show">{{$accomodation->title}}</h1>
                 {{-- ADDRESS --}}
                 <h5 class="address_elm_show">
                     <i class="fas fa-map-marker-alt"></i>
-                    {{$accomodation[0]->address}}, {{$accomodation[0]->city}}, {{$accomodation[0]->zip_code}}, {{$accomodation[0]->region}}, {{$accomodation[0]->country}}
+                    {{$accomodation->address}}, {{$accomodation->city}}, {{$accomodation->zip_code}}, {{$accomodation->region}}, {{$accomodation->country}}
                 </h5>
             </div>
             <a href="{{asset('admin/accomodations/message_index')}}"class="btn_message_show none">Messages Area</a>
@@ -71,16 +71,16 @@
             {{-- cover image  --}}
             <div class="primary_image_show">
                 <div class="cover_image_show">
-                    <img src="{{$accomodation[0]->cover_image}}" alt="{{$accomodation[0]->title}}">
+                    <img src="{{$accomodation->cover_image}}" alt="{{$accomodation->title}}">
                 </div>
             </div>
             {{-- // secondary images  --}}
             <div class="secondary_images_show">
                 {{-- image item  --}}
-                @foreach ($accomodation[0]->accomodation_images as $accomodationImage)
+                @foreach ($accomodation->accomodation_images as $accomodationImage)
                     @if ($accomodationImage->principal)   
                         <div class="image_item_show">
-                            <img src="{{$accomodationImage->image}}" alt="{{$accomodation[0]->title}}"> 
+                            <img src="{{$accomodationImage->image}}" alt="{{$accomodation->title}}"> 
                         </div>
                     @endif
                 @endforeach
@@ -91,13 +91,13 @@
             <div class="info_accomodation_show">
                 <div class="flex_between_show">
                 {{-- TITLE --}}
-                    <h1 class="title_elm_show">{{$accomodation[0]->title}}</h1>
+                    <h1 class="title_elm_show">{{$accomodation->title}}</h1>
                     {{-- PRICE --}}
-                    <h2 class="price_elm_show">{{$accomodation[0]->price}} &euro;</h2>
+                    <h2 class="price_elm_show">{{$accomodation->price}} &euro;</h2>
                 </div>
                 <div class="flex_between_show">
                     {{-- SPONSOR ELEMENT  --}}
-                    @foreach ($accomodation[0]->advs as $adv)
+                    @foreach ($accomodation->advs as $adv)
                         @if ($adv->label == "Bronze")
                             <i class="fas fa-medal medal_bronze"></i>
                         @elseif ($adv->label == "Silver")
@@ -107,9 +107,9 @@
                         @endif
                     @endforeach
                     {{-- VISIBLE --}}
-                    @if ($accomodation[0]->visible == 1)
+                    @if ($accomodation->visible == 1)
                         <i class="far fa-eye icn_visible_show"></i>
-                    @elseif ($accomodation[0]->visible == 0)
+                    @elseif ($accomodation->visible == 0)
                         <i class="far fa-eye-slash icn_visible_show"></i>
                     @endif
                  </div>
@@ -117,22 +117,22 @@
                 <div class="flex_between_show">
                     <h5 class="address_elm_show">
                         <i class="fas fa-map-marker-alt"></i>
-                        {{$accomodation[0]->address}}, {{$accomodation[0]->city}}, {{$accomodation[0]->zip_code}}, {{$accomodation[0]->region}}, {{$accomodation[0]->country}}
+                        {{$accomodation->address}}, {{$accomodation->city}}, {{$accomodation->zip_code}}, {{$accomodation->region}}, {{$accomodation->country}}
                     </h5>
-                    <h4 class="type_elm_show">{{$accomodation[0]->accomodation_type->name}}</h4>
+                    <h4 class="type_elm_show">{{$accomodation->accomodation_type->name}}</h4>
                 </div>
                 {{-- DESCRIPTION --}}
-                <p class="description_elm_show">{{$accomodation[0]->description}}</p>
+                <p class="description_elm_show">{{$accomodation->description}}</p>
                 {{-- Services elm show  --}}
                 <div class="services_elm_show">
-                    <small class="small_info_elm_show"><i class="fas fa-bed icn_space_show"></i>{{$accomodation[0]->beds}}</small>
-                    <small class="small_info_elm_show"><i class="fas fa-door-open icn_space_show"></i>{{$accomodation[0]->rooms}}</small>
-                    <small class="small_info_elm_show"><i class="fas fa-toilet icn_space_show"></i>{{$accomodation[0]->toilets}}</small>
-                    <small class="small_info_elm_show">{{$accomodation[0]->square_meters}} m&sup2;</small>
+                    <small class="small_info_elm_show"><i class="fas fa-bed icn_space_show"></i>{{$accomodation->beds}}</small>
+                    <small class="small_info_elm_show"><i class="fas fa-door-open icn_space_show"></i>{{$accomodation->rooms}}</small>
+                    <small class="small_info_elm_show"><i class="fas fa-toilet icn_space_show"></i>{{$accomodation->toilets}}</small>
+                    <small class="small_info_elm_show">{{$accomodation->square_meters}} m&sup2;</small>
                 </div>
                 {{-- SERVICES --}}
                 <div class="services_elm_show">
-                    @foreach ($accomodation[0]->services as $service)
+                    @foreach ($accomodation->services as $service)
                         @if ($service->service_name == "wi-fi")
                             <small class="small_info_elm_show"><i class="fas fa-wifi icn_space_show"></i></small>
                         @elseif ($service->service_name == "parking")
@@ -148,13 +148,13 @@
                         @endif
                     @endforeach
                 </div>
-                <h2 class="price_elm_show">{{$accomodation[0]->price}} &euro;</h2>
+                <h2 class="price_elm_show">{{$accomodation->price}} &euro;</h2>
             </div>
             {{-- MAPS --}}
             <div class="section_map_show">
                 <div class="map_accomodation_show">
-                    <input type="hidden" id="latitude" value={{$accomodation[0]['latitude']}}>
-                    <input type="hidden" id="longitude" value={{$accomodation[0]['longitude']}}>
+                    <input type="hidden" id="latitude" value={{$accomodation['latitude']}}>
+                    <input type="hidden" id="longitude" value={{$accomodation['longitude']}}>
                     <div id='map' class='map'></div>
                 </div>
             </div>
