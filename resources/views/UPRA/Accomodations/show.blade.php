@@ -26,7 +26,7 @@
             </div>
             <a href="{{asset('admin/accomodations/message_index')}}"class="btn_message_show none">Messages Area</a>
             <a href="{{asset('admin/accomodations/adv_index')}}" class="btn_message_show none">Advertising Area</a>
-            <a class="btn_message_show none">Make an advertisment</a>
+            <a href="{{route ('admin.accomodations.adv_create', $accomodation[0]->id) }}" class="btn_message_show none">Make an advertisment</a>
             <a href="#" class="btn_message_show none modal_stats_button">Statistics Area</a>
             <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
         </div>

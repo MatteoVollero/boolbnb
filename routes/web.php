@@ -34,7 +34,7 @@ Route::get('/logout',function(){
   Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
       Route::resource('accomodations', 'AccomodationController');
       // rotte ADVS
-      Route::get('/accomodations/adv_create', 'AccomodationController@adv_create')->name('accomodations.adv_create');
+      Route::get('/accomodations/adv_create/{id}', 'AccomodationController@adv_create')->name('accomodations.adv_create');
       Route::get('/accomodations/adv_store', 'AccomodationController@adv_store')->name('accomodations.adv_store');
       Route::get('/accomodations/adv_index', 'AccomodationController@adv_index')->name('accomodations.adv_index');
       // rotte MESSAGE
