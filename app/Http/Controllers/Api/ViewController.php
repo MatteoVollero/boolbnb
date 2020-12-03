@@ -14,10 +14,7 @@ class ViewController extends Controller
 {
     // Funzione per le statistiche
     public function stats(Request $request){
-
       $data = $request->all();
-
-
       $lastWeekStats = DB::table('accomodation_views')->selectRaw('date,accomodation_id,count(*) as views')
                   ->groupBy('date','accomodation_id')
                   ->having('accomodation_id', '=', $data['id'])
@@ -25,7 +22,6 @@ class ViewController extends Controller
                   ->having('date',  '<', Carbon::now())
                   ->orderBy('date')
                   ->get();
-
       $date = [];
       $views = [];
       $totalViews = 0;
@@ -36,7 +32,6 @@ class ViewController extends Controller
         $views[] = $stats->views;
         $totalViews += $stats->views;
       }
-
       if(count($date) != 7)
       {
         for($i = 0; $i < 6; $i ++)
@@ -54,7 +49,6 @@ class ViewController extends Controller
         'views' => $views,
         'viewsTotal' => $totalViews
       ];
-
         return response()->json($stats);
     }
 }

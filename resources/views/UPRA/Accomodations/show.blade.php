@@ -25,14 +25,18 @@
                 </h5>
             </div>
             <a class="btn_message_show none">Messages Area</a>
-            <a href="" class="btn_message_show none">Advertising Area</a>
-            <a href="{{route ('admin.accomodations.adv_create', $accomodation[0]->id) }}" class="btn_message_show none">Make an advertisment</a>
-            <a href="#" class="btn_message_show none modal_stats_button">Statistics Area</a>
-            <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
+            <a class="btn_message_show none">Advertising Area</a>
+            <a class="btn_message_show none">Make an advertisment</a>
+            <a class="btn_message_show none modal_stats_button" data-id="{{$accomodation->id}}">Statistics Area</a>
+            <a class="btn_message_show none modal_messages_button">Contact the Host</a>
         </div>
+        {{-- modal stats bg  --}}
         <div class="modal_stats_bg">
+            {{-- modal stats data  --}}
             <div class="modal_stats_data ">
-                <canvas id="accomodation_stats_chart" width="700" height="400" aria-label="Hello" role="img"></canvas>
+                {{-- canvas accomodations stats chart  --}}
+                <canvas id="accomodation_stats_chart" width="700" height="400" data-attr="stats" role="img"></canvas>
+                {{-- close stats modal  --}}
                 <small class="close_stats_modal">X</small>
             </div>
         </div>
