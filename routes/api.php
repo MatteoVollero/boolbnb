@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('accomodations', 'Api\AccomodationController@search');
+Route::get('views', 'Api\ViewController@stats');
