@@ -136,6 +136,7 @@
                 </div>
                 {{-- SERVICES --}}
                 <div class="services_elm_show">
+                    {{-- cicle for each  --}}
                     @foreach ($accomodation->services as $service)
                         @if ($service->service_name == "wi-fi")
                             <small class="small_info_elm_show"><i class="fas fa-wifi icn_space_show"></i></small>
