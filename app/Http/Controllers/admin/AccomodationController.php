@@ -97,7 +97,7 @@ class AccomodationController extends Controller
         // Recuperiamo tutti gli accomodation_types dal DB
         $types = AccomodationType::all();
         // Chiamiamo la view contenente il form di creazione dell'accomodation
-        return view('UPRA.accomodations.create', compact('services', 'types'));
+        return view('UPRA.Accomodations.create', compact('services', 'types'));
     }
 
     /**
@@ -178,6 +178,7 @@ class AccomodationController extends Controller
      */
     public function show($slug)
     {
+      // dd($slug);
       // Troviamo in accomodations il record che ha slug uguale a quello passato in argomento
       $accomodation = Accomodation::where('slug', $slug)->first();
       // Chiamiamo la view show dell'UPRA, passandogli  compact il record trovato

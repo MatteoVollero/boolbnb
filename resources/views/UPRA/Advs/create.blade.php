@@ -29,7 +29,7 @@
             <label for="cvc">Cvc</label>
             <input type="number" class="form_input" id="cvc" name="cvc" required min="3" max="3" placeholder="Cvc" value="{{old("cvc")}}">
         </div>
-          
+
         <div class="form_group">
             <label for="advertisment">advertisment typology</label>
             {{-- selecting type informations  --}}
