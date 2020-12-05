@@ -9,54 +9,90 @@
     // aside wrapper
     .aside_wrapper {
         @include GenericWrapper;
+        position: relative;
         padding: 100px 0px;
         flex-wrap: wrap;
         display: flex;
-        position: relative;
         h2 {
-            color: #fff;
+            text-transform: capitalize;
+            font-family: $secondFont;
             position: absolute;
             text-align: center;
-            text-transform: capitalize;
-            font-family: $fourthFont;
+            color: #fff;
             margin: 40px;
-            top: 0;
             left: 0;
+            top: 0;
 
         }
         // aside item
         .aside_item {
-            background-color: $firstMainSection;
-            position: relative;
+            justify-content: flex-start;
+            background-color: #000;
+            flex-direction: column;
             border-radius: 10px;
+            align-items: center;
+            position: relative;
             transition: 0.3s;
             margin: 15px 0;
+            display: flex;
+            padding: 5px;
+            height: 40%;
             width: 100%;
-            height: 30%;
             opacity: 1;
             &:hover {
                 @include HoverCard;
             }
             // informations item 
             .informations_item {
-                border: 4px solid $headerColor;
                 text-transform: capitalize;
                 @include InformationsFlex;
+                background-color: none;
                 border-radius: 10px;
-                font-size: 20px;
-                padding: 10px;
-                height: 100%;
+                position: relative;
+                padding:0px 15px;
+                overflow-y: auto;
+                font-size: 15px;
+                color: #fff;
+                height: 70%;
                 width: 100%;
-                span {
-                    font-family: $fourthFont;
-                    padding: 10px;
-                }
+            }
+            // service list 
+            .services_list {
+                justify-content: space-around;
+                align-items: center;
+                color: #fff;
+                display: flex;
+                width: 100%;
+                height: 30%;
+            }
+            // medal bronze
+            .medal_bronze {
+                transform:translate(-50%,-50%);
+                @include MedalAbsolute;
+                color: #cd7f32;
+            }
+            // medal silver
+            .medal_silver {
+                transform:translate(-50%,-50%);
+                @include MedalAbsolute;
+                color: silver;
+            }
+            // medal gold
+            .medal_gold {
+                transform:translate(-50%,-50%);
+                @include MedalAbsolute;
+                color: gold;
+            }
+            span {
+                font-family: $secondFont;
+                padding: 10px;
             }
             // cover image
             .cover_image {
+                overflow: hidden;
                 @include CoverImage;
                 &:hover {
-                    transform: scale(1.2);
+                    transform: translate(1.05);
                     opacity: 0;
                 }
             }
@@ -72,7 +108,6 @@
 .first_main_section {
     background-color:$firstMainSection;
     @include GenericFlex;
-    margin-top: -5px;
     height: 1000px;
     width: 100%;
     // first main wrapper
@@ -81,14 +116,14 @@
         @include GenericFlex;
         position: relative;
         h2 {
-            color: #000;
-            font-size: 40px;
-            font-family:$fourthFont;
-            text-transform: capitalize;
-            position: absolute;
             transform: translateX(-50%);
-            top: 2%;
+            text-transform: capitalize;
+            font-family: $secondFont;
+            position: absolute;
+            font-size: 40px;
+            color: #000;
             left: 50%;
+            top: 2%;
         }
         // accomodations cards
         .accomodation_cards {
@@ -103,6 +138,7 @@
                 @include XScroller;
                 // card item
                 .card_item {
+                    overflow-y: hidden;
                     @include CardItem;
                     &:hover {
                         @include HoverCard;
@@ -111,13 +147,14 @@
                     .informations_item {
                         @include InformationsInfo;
                         span {
-                            font-family: $fourthFont;
+                            font-family: $secondFont;
                             padding: 10px;
                             color: #fff;
                         }
                     }
                     // cover image
                     .cover_image {
+                        overflow-x: hidden;
                         @include CoverImage;
                         &:hover {
                             transform: scale(1.2);
@@ -131,6 +168,7 @@
                 @include XScroller;
                 // card item
                 .card_item {
+                    overflow-y: hidden;
                     @include CardItem;
                     &:hover {
                         @include HoverCard;
@@ -139,13 +177,14 @@
                     .informations_item {
                         @include InformationsInfo;
                         span {
-                            font-family: $fourthFont;
+                            font-family: $secondFont;
                             color: #fff;
                             padding: 10px;
                         }
                     }
                     // cover image
                     .cover_image {
+                        overflow-x: hidden;
                         @include CoverImage;
                         &:hover {
                             transform: scale(1.2);
@@ -160,12 +199,14 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
+    // first main section
     .first_main_section {
         margin-top: 0px;
     }
+    // aside accomodations
     .aside_accomodations {
-        overflow-x: auto;
         flex-direction: column;
+        overflow-x: auto;
         flex-wrap: wrap;
         width: 100%;
         height: 20%;
@@ -174,8 +215,60 @@
 
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
+    // first main section
     .first_main_section {
         margin-top: 0px;
+    }
+    // aside accomodations
+    .aside_accomodations {
+        background-color:$secondMainSection;
+        overflow-y: auto;
+        min-width: 33%;
+        height: 100%;
+    }
+        // cards section
+    .cards_section {
+        height: 100%;
+        width: 66%;
+        // accomodations cards
+     .accomodation_cards {
+        background-color: none;
+        @include ColumnFlex;
+        border-radius: 10px;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        // upper cards scroller
+        .upper_cards_scroller {
+            @include YScroller;
+            // card item
+            .card_item {
+                overflow-y: hidden;
+                @include CarditemDesktop;
+                &:hover {
+                    @include HoverCard;
+                }
+                // informations item
+                .informations_item {
+                    @include InformationsInfo;
+                    span {
+                        font-family: $fourthFont;
+                        padding: 10px;
+                        color: #fff;
+                    }
+                }
+                // cover image
+                .cover_image {
+                    overflow-x: hidden;
+                    @include CoverImage;
+                    &:hover {
+                        transform: scale(1.2);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        }
     }
 }
 
@@ -183,19 +276,79 @@
 @media screen and (min-width: 992px) and (max-width:1200px) {
     .first_main_section {
         margin-top: 0px;
+        width: 100%;
+    }
+    .aside_accomodations {
+        background-color:$secondMainSection;
+        overflow-y: auto;
+        min-width: 33%;
+        height: 100%;
+    }
+        // cards section
+    .cards_section {
+        height: 100%;
+        width: 66%;
+        // accomodations cards
+     .accomodation_cards {
+        background-color: none;
+        @include ColumnFlex;
+        border-radius: 10px;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        // upper cards scroller
+        .upper_cards_scroller {
+            @include YScroller;
+            // card item
+            .card_item {
+                overflow-y: hidden;
+                @include CarditemDesktop;
+                &:hover {
+                    @include HoverCard;
+                }
+                // informations item
+                .informations_item {
+                    @include InformationsInfo;
+                    span {
+                        font-family: $fourthFont;
+                        padding: 10px;
+                        color: #fff;
+                    }
+                }
+                // cover image
+                .cover_image {
+                    overflow-x: hidden;
+                    @include CoverImage;
+                    &:hover {
+                        transform: scale(1.2);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        }
     }
 }
 
 
 // second section
 .second_main_section {
-    width: 100%;
-    height: 1000px;
     background-color: $secondMainSection;
+    width: 100%;
     // second main wrapper 
     .second_main_wrapper {
-        padding: 50px;
-        @include AccomodationsWrapper;
+        position: relative;
+        padding: 100px;
+        height: 100%;
+        h2 {
+            text-transform: capitalize;
+            font-family: $secondFont;
+            position: absolute;
+            font-size: 30px;
+            color: #fff;
+            left: 10%;
+            top: 5%;
+        }
         // single accomodation 
         .single_accomodation {
             justify-content: flex-start;
@@ -206,11 +359,23 @@
             width: 100%;
             // cover image
             .cover_image {
+                background-color: lightblue;
+                border-radius: 10px;
+                margin: 20px;
                 height: 97%;
                 width: 50%;
-                margin: 20px;
-                border-radius: 10px;
-                background-color: lightblue;
+                img {
+                    border-radius: 10px;
+                    overflow: hidden;
+                    transition: 0.3s;
+                    height: 100%;
+                    width: 100%;
+                    &:hover {
+                        transform:scale(1.02);
+                        cursor: pointer;
+                        opacity: 0.8;
+                    }
+                }
             }
             // secondary images
             .secondary_images {
@@ -223,6 +388,19 @@
                     border-radius: 10px;
                     min-height: 47%;
                     min-width: 47%;
+                    margin: 1%;
+                    img {
+                        border-radius: 10px;
+                        overflow: hidden;
+                        transition: 0.3s;
+                        height: 47%;
+                        width: 100%;
+                        &:hover {
+                            transform:scale(1.02);
+                            cursor: pointer;
+                            opacity: 0.8;
+                        }
+                    }
                 }
             }
         }
@@ -231,20 +409,59 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
-
+    
+    .single_accomodation{
+        flex-wrap: wrap;
+    }
+    .secondary_images {
+        width: 50%;
+    }
+    .cover_image {
+        margin: auto;
+        width: 100%;
+        height: 50%;
+    }
 }
 
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
-
+    // single accomodation 
+    .single_accomodation {
+        justify-content: center;
+        background-color: red;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        // cover image
+        .cover_image {
+            background-color: lightblue;
+            border-radius: 10px;
+            margin: 20px;
+            height: 97%;
+            width: 70%;
+        }
+        // secondary images
+        .secondary_images {
+            @include SecondaryImagesFlex;
+            margin: 20px;
+            height: 100%;
+            width: 70%;
+            // image item 
+            .image_item {
+                background-color:crimson;
+                border-radius: 10px;
+                min-height: 47%;
+                min-width: 47%;
+                margin: 1%;
+            }
+        }
+    }   
 }
 
 // media breakpoint desktop
 @media screen and (min-width: 992px) and (max-width:1200px) {
-   .image_item {
-       display: flex;
-       flex-wrap: nowrap;
-   }
 }
 
 // third main section
@@ -263,49 +480,195 @@
         width: 70%;
         //element item
         .elm_item {
-            width: 50%;
-            height: 100%;
-            margin: 0px 10px;
-            position: relative;
             border-radius: 10px;
-            background-color:lightblue;
-            // higher accomodations types 
-            .higher_accomodations_types {
+            position: relative;
+            margin: 0px 10px;
+            height: 100%;
+            width: 50%;
+            img {
+                border-radius: 10px;
+                transition: 0.3s;
+                height: 100%;
                 width: 100%;
-                height: 70%;
-                display: flex;
+                &:hover {
+                    cursor: pointer;
+                    transform:scale(1.03);
+                }
+            }
+            // accomodations types 
+            .accomodations_types {
                 justify-content: flex-start;
                 align-items: center;
                 flex-wrap:wrap;
-                // higher type 
-                .higher_type {
-                    margin: 10px;
-                    width: 46%;
-                    height: 45%;
-                    border-radius: 10px;
-                    background-color: red;
-                }  
-            }
-            // lower accomodation type 
-            .lower_accomodation_type {
+                display: flex;
+                height: 100%;
                 width: 100%;
-                height: 30%;
-                padding:10px;
-                // lower type 
-                .lower_type {
-                    width: 100%;
-                    height: 100%;
+                // type 
+                .type {
+                    text-transform: capitalize;
+                    background-color: red;
+                    font-family: $secondFont;
+                    justify-content: center;
+                    align-items: center;
                     border-radius: 10px;
-                    background-color: green;
-                }
+                    transition: 0.3s;
+                    font-size: 20px;
+                    color: #fff;
+                    display: flex;
+                    margin: 0% 2%;
+                    height: 30%;
+                    width: 46%;
+                    &:hover {
+                        transform:scale(1.02);
+                        opacity: 0.6;
+                        cursor: pointer;
+                    }
+                }  
             }
             h2 {
                 transform: translate(0%, 150%);
-                font-family: $fourthFont;
+                font-family: $secondFont;
                 position: absolute;
                 color: #fff;
                 left: 1%;
                 bottom:0
+            }
+        }
+    }
+}
+// admin create/edit form
+.form_background {
+    background-color: $firstMainSection;
+    height: 100%;
+    width: 100%;
+    // form wrapper
+    .form_wrapper {
+        padding: 240px;
+        margin: auto;
+        height: 80%;
+        width: 60%;
+        .admin_btn_edit_delete {
+            justify-content: flex-start;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            button {
+                margin-right: 50px;
+            }
+        }
+        // form group
+        .form_group {
+            padding: 10px;
+            // remember 
+            .remember_me {
+                margin-left: 10px;
+                font-size: 20px;
+            }
+            // form type 
+            .form_type {
+                font-family: $font-family-sans-serif;
+                border-radius: 10px;
+                transition: 0.3s;
+                font-size: 20px;
+                padding: 10px;
+                width: 180px;
+                height: 50px;
+                &:hover {
+                    background-color: $btnColor;
+                    cursor: pointer;
+                    color: #fff;
+                }
+            }
+            .forgot_password {
+                font-family:$font-family-sans-serif;
+                color: #000;
+                transition: 0.3s;
+                font-size: 20px;
+                // id hover 
+                &:hover {
+                    color: $btnColor;
+                    cursor: pointer;
+                }
+            }
+            label {
+                font-family: $font-family-sans-serif;
+                text-transform: capitalize;
+                font-size: 20px;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        // form text
+        .form_text {
+            font-family: $font-family-sans-serif;
+            text-transform: capitalize;
+            text-align: right;
+            font-size: 15px;
+            color: #000;
+        }
+        // form input
+        .form_input {
+            border: 2px solid $btnColor;
+            background-color:#fff;
+            border-radius: 10px;
+            transition: 0.3s;
+            padding: 20px;
+            margin: 10px;
+            height: 30px;
+            width: 100%;
+            // placeholder
+            &::placeholder {
+                color: #fff;
+            }
+            // form input hover 
+            &:hover {
+                background-color: $btnColor;
+                transform:translate(1.05);
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+        // form btn
+        .form_btn {
+            font-family:$font-family-sans-serif;
+            background-color: $firstMainSection;
+            border: 2px solid $btnColor;
+            border-radius: 10px;
+            margin-top: 50px;
+            margin-right: 20px;
+            transition: 0.3s;
+            font-size: 30px;
+            width: 150px;
+            height: 50px;
+            // btn hover 
+            &:hover {
+                background-color: $btnColor;
+                transform: translate(1.05);
+                cursor: pointer;
+                color: #fff;
+                opacity: 0.8;
+            }
+        }
+        .form_a {
+            font-family:$font-family-sans-serif;
+            background-color: $firstMainSection;
+            border: 2px solid $btnColor;
+            border-radius: 10px;
+            margin-right: 50px;
+            margin-left: 10px;
+            transition: 0.3s;
+            font-size: 30px;
+            color: #000;
+            padding: 5px;
+            width: 150px;
+            height: 50px;
+            // a hover 
+            &:hover {
+                background-color: $btnColor;
+                transform: translate(1.05);
+                cursor: pointer;
+                color: #fff;
+                opacity: 0.8;
             }
         }
     }

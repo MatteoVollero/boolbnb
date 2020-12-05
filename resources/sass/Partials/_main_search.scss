@@ -1,65 +1,120 @@
-// Search
-
-.section-search {
+// main search
+// section search 
+.section_search {
     background-color: $secondMainSection;
     font-family: $secondFont;
-    padding: 120px 0;
-    margin-top: 70px;
-    .elm-responsive-search {
+    overflow-y: scroll;
+    padding-top: 350px;
+    height: 100%;
+    //search results
+    .elm_responsive_search {
         @include GenericWrapper;
-        .elm-search-list {
+        // elm search list 
+        .flex_items_services {
+            justify-content: flex-start;
+            align-items: center;
+            display: flex;
+            li {
+                margin-top: 20px;
+                margin-right: 20px;
+            }
+        }
+        .elm_search_list {
             background-color: $firstMainSection;
             border-radius: 15px;
-            margin: 10px 0;
-            height: 300px;
-            width: 100%;
-            padding: 10px;
+            margin: 30px;
             display: flex;
-            .img-elm-search {
+            height: 400px;
+            padding: 10px;
+            width: 100%;
+            img {
+                border-radius: 10px;
+                overflow: auto;
                 height: 100%;
-                width: 40%;
+                width: 100%;
+            }
+            // img elm search
+            .img_elm_search {
                 background-color: gray;
                 border-radius: 15px;
+                transition: 0.3s;
+                height: 100%;
+                width: 40%;
+                &:hover {
+                    transform: translate(1.15);
+                    cursor:pointer;
+                    opacity: 0.8;
+                }
             }
-            .testo-elm-search {
-                padding: 5px 30px;
-                width: 60%;
-                display: flex;
-                flex-direction: column;
+            // title elm search
+            .title_elm_search {
                 justify-content: space-between;
-                .testo-elm-search-superiore {
-                    .title-elm-search {
-                        color: $violaHeroScuroModificato;
-                        font-size: 25px;
-                        margin-bottom: 15px;
-                        font-weight: bolder;
+                flex-direction: column;
+                display: flex;
+                width: 60%;
+                h3 {
+                    color: $violaHeroScuroModificato;
+                    font-weight: bolder;
+                    margin-bottom: 15px;
+                    font-size: 25px;
+                }
+                // title elm search higher 
+                .title_elm_search_higher {
+                    padding: 0px 30px;
+                    h3, h4, p, small {
+                        padding: 5px;
+                        text-transform: capitalize;
                     }
-                    .text-elm-search {
-                        margin-bottom: 15px;
-                        font-weight: bold;
+                    p {
+                        line-height: 20px;
+                    }
+                    // text elm search
+                    .text_elm_search {
                         color: $textColorSearch;
+                        font-weight: bold;
                     }
-                    .info-elm-search {
-                        margin: 0 10px;
+                    // info elm search
+                    .info_elm_search {
+                        color: $textColorSearch;
+                        font-weight: bold;
                         font-size: 15px;
-                        color: $textColorSearch;
-                        font-weight: bold;
                     }
                 }
-                .testo-elm-search-inferiore {
-                    display: flex;
+                // text elm search lower 
+                .text_elm_search_lower {
                     justify-content: flex-end;
+                    display: flex;
                     width: 100%;
-                    .price-elm-search {
-                        font-size: 20px;
+                    // price elm search 
+                    .price_elm_search {
                         font-weight: bolder;
+                        font-size: 20px;
                     }
                 }
             }
         }
     }
 }
-
+// handlebar class for printing
+.ajax_handlebar_print {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    padding: 20px;
+}
+.research_results {
+    text-align: center;
+    margin-top: 150px;
+    font-size: 40px;
+    color: #fff;
+}
+.none {
+    display: none;
+}
+.block {
+    display: block;
+}
 /* media  query */
 
 // media breakpoint desktop
@@ -69,24 +124,29 @@
 
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    .section-search {
-        .elm-responsive-search {
-            display: flex;
+    // section search
+    .section_search {
+        // elm responsive list
+        .elm_responsive_list {
             flex-wrap: wrap;
-            .elm-search-list {
+            display: flex;
+            // elm search list 
+            .elm_search_list {
+                width: calc((100% - 40px) / 2);
+                flex-direction: column;
                 margin: 10px;
                 height: 400px;
-                width: calc((100% - 40px) / 2);
                 display: flex;
-                flex-direction: column;
-                .img-elm-search {
+                // img elm search
+                .img_elm_search {
                     height: 50%;
                     width: 100%;
                 }
-                .testo-elm-search {
+                // text elm search 
+                .text_elm_search {
+                    display: block;
                     width: 100%;
                     height: 50%;
-                    display: block;
                 }
             }
         }
@@ -95,26 +155,31 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width: 768px) {
-    .section-search {
-        .elm-responsive-search {
+    // section search 
+    .section_search {
+        // elm responsive search 
+        .elm_responsive_search {
             display: flex;
             flex-wrap: wrap;
-            .elm-search-list {
+            // elm search list 
+            .elm_search_list {
+                flex-direction: column;
+                align-items: center;
                 margin: 10px 0;
+                display: flex;
                 height: 400px;
                 width: 100%;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                .img-elm-search {
-                    height: 50%;
-                    width: 100%;
+                // img elm search 
+                .img_elm_search {
                     max-width: 350px;
+                    height: 50%;
+                    width: 100%;
                 }
-                .testo-elm-search {
+                // text elm search 
+                .text_elm_search {
+                    display: block;
                     width: 100%;
                     height: 50%;
-                    display: block;
                 }
             }
         }

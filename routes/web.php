@@ -14,61 +14,30 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/list', function () {
-    return view('UPRA.Accomodation.index');
-});
 
-Route::get('/search', function () {
-    return view('UI.Accomodations.search');
-});
+  Auth::routes();
 
-Route::get('/show', function () {
-    return view('UI.Accomodations.show');
-});
+  // rotte ADMIN
+  Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
+      // rotte ADVS
+      Route::get('accomodations/adv_create/{id}', 'AccomodationController@adv_create')->name('accomodations.adv_create');
+      Route::get('/accomodations/adv_store', 'AccomodationController@adv_store')->name('accomodations.adv_store');
+      Route::get('/accomodations/adv_index', 'AccomodationController@adv_index')->name('accomodations.adv_index');
+      // rotte MESSAGE
+      Route::get('/accomodations/message_index', 'AccomodationController@message_index')->name('accomodations.message_index');
+      Route::resource('accomodations', 'AccomodationController');
+  });
 
-Route::get('/', function () {
-    return view('UI.Accomodations.home');
-});
+  // Route::post('/logout', 'Auth\LoginController@logout');
 
+  // rotte GUESTS
+  // Route::resource('/', 'AccomodationController');
+  // rotte UI
+  Route::get('/', 'AccomodationController@index')->name('home');
+  Route::get('/search', 'AccomodationController@search')->name('search');
+  Route::get('/show/{slug}', 'AccomodationController@show')->name('show');
+  // rotte MESSAGE
+  Route::post('/accomodations/message_send', 'AccomodationController@message_send')->name('message_send');
 
-
-Auth::routes();
-
-// rotte ADMIN
-Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::resource('accomodations', 'AccomodationController');
-});
-
-Route::get('/', 'HomeController@index')->name('home');
-
-// rotte GUESTS
-Route::resource('accomodations', 'AccomodationController');
-
-// Route::get('/accomodations', 'AccomodationController@index')->name('accomodations.index');
-// Route::get('/accomodations/{slug}', 'AccomodationController@show')->name('accomdations.show');
-
-
-
-
-
-
-
-
-// UI: ROTTE TEST PER BACK-END
-// Route::get('/home','UI\AccomodationController@index');
-
-// UPRA
-// Rotte di test per back-end
-
-// CREATE
-// Route::get('/UPRA/create','UPRA\AccomodationController@create')->name('create'); // @create 
-// Route::post('/UPRA/store','UPRA\AccomodationController@store')->name('store'); // @store
-// READ
-// Route::get('/UPRA/home','UPRA\AccomodationController@index')->name('home'); // @index
-// Route::get('/UPRA/show/{id}','UPRA\AccomodationController@show')->name('show'); // @show
-// UPDATE
-// Route::get('/UPRA/edit/{id}','UPRA\AccomodationController@edit')->name('edit'); // @edit
-// Route::put('/UPRA/update/{id}','UPRA\AccomodationController@update')->name('update'); // @update
-// DELETE
-// Route::delete('/UPRA/destroy/{id}','UPRA\AccomodationController@destroy')->name('destroy'); // @destroy
-
+  // Rotta TEST per mappe tom tom
+  Route::get('/map', 'AccomodationController@map')->name('map');

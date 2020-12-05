@@ -1,5 +1,12 @@
 <?php
 
+// ------------------------------------------------- COME RINOMINARE UN FILE NELLA STORAGE ------------------------------------------
+        // $file = Storage::files('public/cover');
+        // Storage::move($file[0], 'public/cover/modified.jpg');
+        // $file = Storage::files('public/cover');
+        // dd($file);
+// ------------------------------------------------- /COME RINOMINARE UN FILE NELLA STORAGE ------------------------------------------
+
 use App\Accomodation;
 use App\AccomodationImage;
 use Illuminate\Database\Seeder;

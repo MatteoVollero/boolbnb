@@ -3,3 +3,6 @@
 @section('title')
     Advertisments
 @endsection
+@section('main_content')
+    Advertisments
+@endsection

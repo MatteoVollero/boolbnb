@@ -1,61 +1,76 @@
 // footer
 footer {
     font-family: $secondFont;
-    background-image: linear-gradient(to right,  $violaHeroScuroModificato, $violaHeroScuro);
+    background-image: linear-gradient($yellowJumbotron, $orangeJumbotron);
     width: 100%;
-    border-top: 1px solid $secondMainSection;
-    .wrapper-footer {
-        @include GenericWrapper;
-        // margin
-        .margin-top-100 {
-            padding-top: 40px;
+    border-top: 2px solid $violaHeroScuroModificato;
+    // wrapper footer 
+    .wrapper_footer {
+        margin: auto;
+        width: 80%;
+        // margin top
+        .margin_top_100 {
+            padding-top: 50px;
             // upper footer flex
-            .flex-box-footer-superiore {
-                display: flex;
+            .flex_box_footer_higher {
                 justify-content: space-between;
+                display: flex;
                 // footer column
-                .colonna-footer{
+                .column_footer{
                     width: 25%;
                     // footer titles
-                    .titoli-footer {
-                        color: $airBnB;
-                        font-size: 25px;
-                        margin: 10px 0 10px 0;
-                    }
-                    a {
+                    .titles_footer {
                         color: #fff;
-                        &:hover {
-                            text-decoration: none;
-                            font-weight: bold;
-                        }
-                    }
-                    // header logo
-                    .header-bnb-logo {
-                        width: 50%;
+                        font-size: 30px;
+                        font-weight: bold;
                         margin: 10px 0 10px 0;
+                        font-size: 25px;
+                    }
+                    li {
+                        line-height: 35px;
+                        a {
+                            color: $violaHeroScuroModificato;
+                            font-family: $secondFont;
+                            font-size: small;
+                            font-weight: bold;
+                            &:hover {
+                                color: #fff;
+                                text-decoration: none;
+                                font-weight: bolder;
+                            }
+                        }    
+                    }
+                    // footer logo
+                    .footer_bnb_logo {
+                        width: 50%;
+                        margin: 20px 0 10px 0;
                     }
                 }
             }
             hr {
-                margin: 10px 0 10px 0;
                 border: 1px solid $violaHeroScuro;
+                margin: 10px 0 10px 0;
             }
-            .flex-box-footer-inferiore {
-                display: flex;
+            // flex box footer lower 
+            .flex_box_footer_lower {
                 justify-content: flex-end;
+                display: flex;
                 // lower flex footer nested
-                .flex-box-footer-inferiore-nested {
-                    margin: 10px 0 10px 0;
+                .flex_box_footer_lower_nested {
+                    margin: 20px 0 20px 0;
                     display: flex;
                     justify-content: flex-end;
+                    margin: 10px 0 10px 0;
                     align-items: center;
+                    color: $violaHeroScuro;
+                    font-weight: bold;
                     width: 50%;
-                    color:#fff;
-                    .lista-icone-social {
+                    // list icons social 
+                    .list_icons_social {
                         li {
                             display: inline;
                             & a {
-                                color:#fff;
+                                color: #fff;
                                 font-size: 25px;
                                 &:hover {
                                     text-decoration: none;
@@ -70,38 +85,40 @@ footer {
 }
 
 /* media  query */
-
 // media breakpoint desktop
 @media screen and (min-width: 992px) and (max-width:1200px) {
     //
 }
-
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width: 992px) {
     footer {
-        .wrapper-footer {
-            .margin-top-100 {
-                .flex-box-footer-superiore {
-                    display: flex;
+        .wrapper_footer {
+            .margin_top_100 {
+                .flex_box_footer_higher {
                     justify-content: space-between;
                     flex-wrap: wrap;
-                    .colonna-footer{
+                    display: flex;
+                    // column footer
+                    .column_footer{
                         width: 50%;
-                        .lista-icone-social {
-                            display: flex;
+                        // list_icons_social
+                        .list_icons_social {
                             flex-direction: column;
-                            text-align: center;
                             align-items: center;
+                            text-align: center;
+                            display: flex;
                         }            
                     }
                 }
-                .flex-box-footer-inferiore {
-                    display: flex;
+                // flex footer lower
+                .flex_box_footer_lower {
                     flex-direction: column;
                     align-items: center;
-                    .flex-box-footer-inferiore-nested {
-                        display: flex;
+                    display: flex;
+                    // flex box footer lower nested
+                    .flex_box_footer_lower_nested {
                         justify-content: center;
+                        display: flex;
                         width: 100%;
                     }
                 }
@@ -113,34 +130,40 @@ footer {
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
     footer {
-        // wrapper
-        .wrapper-footer {
+        // wrapper footer
+        .wrapper_footer {
             width: 100%;
-            .margin-top-100 {
-                .flex-box-footer-superiore {
-                    display: flex;
+            // margin top 
+            .margin_top_100 {
+                // flex box footer higher 
+                .flex_box_footer_higher {
                     flex-direction: column;
                     align-items: center;
-                    .lista-icone-social {
-                        display: flex;
-                        align-items: center;
+                    display: flex;
+                    // list icons social
+                    .list_icons_social {
                         flex-direction: column;
-                        width: 100%;
+                        align-items: center;
                         text-align: center;
+                        display: flex;
+                        width: 100%;
                         li { 
-                            .header-bnb-logo {
+                            // header bnb logo 
+                            .header_bnb_logo {
                             width: 60%;                                
                             }
                         }
                     }
                 }
-                .flex-box-footer-inferiore {
-                    display: flex;
+                 // flex box footer lower
+                .flex_box_footer_lower {
                     flex-direction: column;
                     align-items: center;
-                    .flex-box-footer-inferiore-nested {
-                        display: flex;
+                    display: flex;
+                    // flex box footer lower nested
+                    .flex_box_footer_lower_nested {
                         justify-content: center;
+                        display: flex;
                         width: 100%;
                     }
                 }

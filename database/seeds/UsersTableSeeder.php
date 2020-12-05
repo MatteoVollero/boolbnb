@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -21,7 +22,7 @@ class UsersTableSeeder extends Seeder
             $newUser->name = $faker->userName;
             $newUser->email = $faker->email;
             $newUser->email_verified_at = $faker->dateTime;
-            $newUser->password = '1234';
+            $newUser->password =  Hash::make("1234");
             // Salviamo il tutto
             $newUser->save();
         }

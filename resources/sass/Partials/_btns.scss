@@ -1,12 +1,14 @@
 // btns
+// home search btn
 .home_search_btn {
+    box-shadow: 1px 2px 10px #888888;
+    border: 1px solid $airBnB;
+    border-radius: 10px;
+    padding-left: 10px;
+    transition: 0.3s;
     min-width: 200px;
     min-height: 30px;
-    padding-left: 10px;
-    background-color:$firstMainSection;
-    border-radius: 10px;
     border: none;
-    transition: 0.3s;
     &:hover::placeholder {
         color: #000;
     }
@@ -15,5 +17,72 @@
         background-color: $btnColor;
         transform: scale(1.05);
         cursor: pointer;
+    }
+}
+// links
+.links {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    // link header
+    .link_header {
+        box-shadow: 1px 2px 10px #888888;
+        background-color:$firstMainSection;
+        border: 1px solid $airBnB;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        position: relative;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+        margin: 0 10px;
+        padding: 10px;
+        display: flex;
+        color: #000;
+        height: 40%;
+        // dropdown menu
+        .dropdown_menu {
+            background-color: #fff;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            display: none;
+            bottom: -100%;
+            width: 200px;
+            height: 100%;
+            z-index: 1;
+            left: -100%;
+            .list_item {
+                background-color: #fff;
+                height: 30px;
+                width: 200px;
+                padding: 5px;
+                &:hover {
+                    background-color: $btnColor;
+                }
+            }
+        }
+        // hover dropdpwn menu
+        &:hover .dropdown_menu {
+            background-color: $firstMainSection;
+            cursor: pointer;
+            display: block;
+        }
+        &:hover{
+            background-color: $btnColor;
+            color: $secondMainSection;
+            transform: scale(1.08);
+            cursor: pointer;
+            opacity: 1;
+        }
+        // icon
+        .icn {
+            margin: 0 10px;
+        }
     }
 }

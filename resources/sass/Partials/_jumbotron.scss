@@ -48,40 +48,82 @@
     }
     // search item
     .search_item {
-        position: relative;
-        margin: 5px 5px;
-        padding: 5px;
-        text-align: center;
         border: 2px solid lightgoldenrodyellow;
         background-color:#fff;
         border-radius: 10px;
+        position: relative;
+        text-align: center;
         transition: 0.3s;
+        cursor: pointer;
+        margin: 5px 5px;
+        padding: 5px;
         height: 15%;
         width: 95%;
-        // dropleft menu
-        .dropleft_menu {
-        background-color: #fff;
-        position: absolute;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 100%;
-        right: 100%;
-        padding: 10px 0px;
-        opacity: 0;
-        transition: 0.5s;
-        z-index: 1;
-        top: 0;
-        &:hover {
+        // 
+        .tom_search {
+            background-color: $firstMainSection;
+            position: absolute;
+            border-radius: 5px;
+            padding: 10px 0px;
+            transition: 0.3s;
+            cursor: pointer;
+            display: none;
+            width: 100%;
+            right: 100%;
+            z-index: 1;
+            top: 0;
+        }
+        // adding class block with js 
+        .block {
             background-color: $firstMainSection;
             cursor: pointer;
+            display: block;   
         }
-    }
-        &:hover .dropleft_menu {
-            opacity: 1;
-        }
-        &:hover {
+        .dropleft_menu {
             background-color: $firstMainSection;
-            cursor:pointer;
+            position: absolute;
+            border-radius: 5px;
+            padding: 10px 0px;
+            transition: 0.3s;
+            cursor: pointer;
+            display: none;
+            width: 100%;
+            right: 100%;
+            z-index: 1;
+            top: 0;
+            // list item tom
+            .list_item_tom {
+                font-family: $secondFont;
+                transition: 0.3s;
+                font-size: 25px;
+                height: 100%;
+                width: 100%;
+                &:hover {
+                    background-color: $btnColor;
+                    transform:translate(1.05);
+                    border-radius: 20px;
+                }
+            }
+            // list item
+            .list_item:last-child {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // service list item
+                .service_list_item {
+                    width: 40%;
+                    height: 100%;
+                    i {
+                        color: $violaHeroScuroModificato;
+                    }
+                } 
+            }
+        }
+        // hover dropleft menu
+        &:hover .dropleft_menu {
+            background-color: $firstMainSection;
+            cursor: pointer;
+            display: block;
         }
         label {
             font-family: $secondFont;
