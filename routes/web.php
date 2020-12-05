@@ -16,28 +16,24 @@ use Illuminate\Support\Facades\Auth;
 
 
   
-  Route::get('/admin/adv/create', function(){
-    return view('UPRA.Advs.create');
-  });
-  
   Auth::routes();
   
   // rotte ADMIN
   Route::prefix('admin')->namespace('admin')->name('admin.')->middleware('auth')->group(function () {
-      Route::resource('accomodations', 'AccomodationController');
-      // rotte ADVS
-      Route::get('/accomodations/adv_store', 'AccomodationController@adv_store')->name('accomodations.adv_store');
-      Route::get('/accomodations/adv_index', 'AccomodationController@adv_index')->name('accomodations.adv_index');
-      // rotte MESSAGE
-      Route::get('/accomodations/message_index', 'AccomodationController@message_index')->name('message_index');
-    });
+    // rotte ADVS
+    Route::get('/accomodations/adv_create/{id}', 'AccomodationController@adv_create')->name('accomodations.adv_create');
+    Route::get('/accomodations/adv_store', 'AccomodationController@adv_store')->name('accomodations.adv_store');
+    Route::get('/accomodations/adv_index', 'AccomodationController@adv_index')->name('accomodations.adv_index');
+    // rotte MESSAGE
+    Route::get('/accomodations/message_index', 'AccomodationController@message_index')->name('message_index');
+    Route::resource('accomodations', 'AccomodationController');
+  });
     
     // Route::post('/logout', 'Auth\LoginController@logout');
     
     // rotte GUESTS
     // Route::resource('/', 'AccomodationController');
     // rotte UI
-  // Route::get('/accomodations/adv_create/{id}', 'AccomodationController@adv_create')->name('accomodations.adv_create');
   Route::get('/', 'AccomodationController@index')->name('home');
   Route::get('/search', 'AccomodationController@search')->name('search');
   Route::get('/show/{slug}', 'AccomodationController@show')->name('show');
