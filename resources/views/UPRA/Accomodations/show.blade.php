@@ -25,10 +25,8 @@
                 </h5>
             </div>
             <a href="{{route ('admin.accomodations.message_index') }}" class="btn_message_show none">Messages Area</a>
-            <a href="{{route ('admin.accomodations.adv_index') }}" class="btn_message_show none">Advertising Area</a>
             <a href="{{route ('admin.accomodations.adv_create', $accomodation->id) }}"  class="btn_message_show none">Make an advertisment</a>
-            <a href="#" class="btn_message_show none modal_stats_button">Statistics Area</a>
-            <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
+            <a href="#" class="btn_message_show none modal_stats_button" data-id="{{$accomodation->id}}">Statistics Area</a>
         </div>
         {{-- modal stats bg  --}}
         <div class="modal_stats_bg">
@@ -38,36 +36,6 @@
                 <canvas id="accomodation_stats_chart" width="700" height="400" data-attr="stats" role="img"></canvas>
                 {{-- close stats modal  --}}
                 <small class="close_stats_modal">X</small>
-            </div>
-        </div>
-        {{-- // mododal messages bg  --}}
-        <div class="modal_messages_bg">
-            {{-- modal messages data  --}}
-            <div class="modal_messages_data">
-                {{-- modal messages wrapper  --}}
-                <div class="modal_messages_wrapper">
-                    {{-- form group show  --}}
-                    <div class="form_group_show">
-                        <h3>Compile your message</h3>
-                        {{-- form input  --}}
-                        <div class="form_group">
-                            <label id="nickname" for="">NickName</label>
-                            <input type="text" class="form_input" id="nickname" name="nickname" required minlenght="8" maxlength="50" placeholder="insert your nickname">
-                        </div>
-                        {{-- slug input  --}}
-                        <div class="form_group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form_input" id="email" name="slug" required minlength="10" maxlength="50" placeholder="Insert your email">
-                        </div>
-                        <textarea class="form_input" id="message" name="message" required minlength="50" maxlength="300" placeholder="insert your message"></textarea>
-                    </div>
-                </div>
-                {{-- lower messager form  --}}
-                <div class="lower_messages_form">
-                    <span><i class="fab fa-telegram-plane"></i></span>
-                    {{-- close messages modal  --}}
-                    <span class="close_messages_modal">X</span>
-                </div>
             </div>
         </div>
         {{-- // Images  --}}
@@ -82,11 +50,11 @@
             <div class="secondary_images_show">
                 {{-- image item  --}}
                 @foreach ($accomodation->accomodation_images as $accomodationImage)
-                    @if ($accomodationImage->principal)
-                        <div class="image_item_show">
-                            <img src="{{$accomodationImage->image}}" alt="{{$accomodation->title}}">
-                        </div>
-                    @endif
+                @if ($accomodationImage->principal)
+                <div class="image_item_show">
+                    <img src="{{$accomodationImage->image}}" alt="{{$accomodation->title}}">
+                </div>
+                @endif
                 @endforeach
             </div>
         </div>
@@ -94,7 +62,7 @@
         <div class="section_info_show">
             <div class="info_accomodation_show">
                 <div class="flex_between_show">
-                {{-- TITLE --}}
+                    {{-- TITLE --}}
                     <h1 class="title_elm_show">{{$accomodation->title}}</h1>
                     {{-- PRICE --}}
                     <h2 class="price_elm_show">{{$accomodation->price}} &euro;</h2>
@@ -102,21 +70,21 @@
                 <div class="flex_between_show">
                     {{-- SPONSOR ELEMENT  --}}
                     @foreach ($accomodation->advs as $adv)
-                        @if ($adv->label == "Bronze")
-                            <i class="fas fa-medal medal_bronze"></i>
-                        @elseif ($adv->label == "Silver")
-                            <i class="fas fa-medal medal_silver"></i>
-                        @elseif ($adv->label == "Gold")
-                            <i class="fas fa-medal medal_gold"></i>
-                        @endif
+                    @if ($adv->label == "Bronze")
+                    <i class="fas fa-medal medal_bronze"></i>
+                    @elseif ($adv->label == "Silver")
+                    <i class="fas fa-medal medal_silver"></i>
+                    @elseif ($adv->label == "Gold")
+                    <i class="fas fa-medal medal_gold"></i>
+                    @endif
                     @endforeach
                     {{-- VISIBLE --}}
                     @if ($accomodation->visible == 1)
-                        <i class="far fa-eye icn_visible_show"></i>
+                    <i class="far fa-eye icn_visible_show"></i>
                     @elseif ($accomodation->visible == 0)
-                        <i class="far fa-eye-slash icn_visible_show"></i>
+                    <i class="far fa-eye-slash icn_visible_show"></i>
                     @endif
-                 </div>
+                </div>
                 {{-- ADDRESS --}}
                 <div class="flex_between_show">
                     <h5 class="address_elm_show">
@@ -138,19 +106,19 @@
                 <div class="services_elm_show">
                     {{-- cicle for each  --}}
                     @foreach ($accomodation->services as $service)
-                        @if ($service->service_name == "wi-fi")
-                            <small class="small_info_elm_show"><i class="fas fa-wifi icn_space_show"></i></small>
-                        @elseif ($service->service_name == "parking")
-                            <small class="small_info_elm_show"><i class="fas fa-parking icn_space_show"></i></small>
-                        @elseif ($service->service_name == "pool")
-                            <small class="small_info_elm_show"><i class="fas fa-swimmer icn_space_show"></i></small>
-                        @elseif ($service->service_name == "reception")
-                            <small class="small_info_elm_show"><i class="fas fa-concierge-bell icn_space_show"></i></small>
-                        @elseif ($service->service_name == "sauna")
-                            <small class="small_info_elm_show"><i class="fas fa-hot-tub icn_space_show"></i></small>
-                        @elseif ($service->service_name == "sea_view")
-                            <small class="small_info_elm_show"><i class="fas fa-water icn_space_show"></i></small>
-                        @endif
+                    @if ($service->service_name == "wi-fi")
+                    <small class="small_info_elm_show"><i class="fas fa-wifi icn_space_show"></i></small>
+                    @elseif ($service->service_name == "parking")
+                    <small class="small_info_elm_show"><i class="fas fa-parking icn_space_show"></i></small>
+                    @elseif ($service->service_name == "pool")
+                    <small class="small_info_elm_show"><i class="fas fa-swimmer icn_space_show"></i></small>
+                    @elseif ($service->service_name == "reception")
+                    <small class="small_info_elm_show"><i class="fas fa-concierge-bell icn_space_show"></i></small>
+                    @elseif ($service->service_name == "sauna")
+                    <small class="small_info_elm_show"><i class="fas fa-hot-tub icn_space_show"></i></small>
+                    @elseif ($service->service_name == "sea_view")
+                    <small class="small_info_elm_show"><i class="fas fa-water icn_space_show"></i></small>
+                    @endif
                     @endforeach
                 </div>
                 <h2 class="price_elm_show">{{$accomodation->price}} &euro;</h2>
@@ -163,10 +131,11 @@
                     <div id='map' class='map'></div>
                 </div>
             </div>
-
+            
         </div>
         {{-- BUTTON --}}
         <div class="button_section_show">
+            <input type="hidden" class="input" value="Upra">
             <a href="{{route('admin.accomodations.edit', $accomodation->id)}}" class="btn_message_show none">Edit the accomodation</a>
             <a href="{{route('admin.accomodations.create', $accomodation->id)}}" class="btn_message_show none">Insert a new accomodation</a>
         </div>

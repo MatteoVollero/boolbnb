@@ -136,6 +136,7 @@ Accomodation
         </div>
         {{-- BUTTON --}}
         <div class="button_section_show">
+            <input type="hidden" class="input" value="UI">
             <a href="#" class="btn_message_show">Contact the Host</a>
         </div>
     </div>
