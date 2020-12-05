@@ -86,7 +86,6 @@ class AccomodationController extends Controller
 
         // Assegnamo l'array ordinato ad $accomodationsFiltered
         $accomodationsFilteredJSON = $accomodationsFilteredAsc;
-
         return response()->json($accomodationsFilteredJSON);
     }
 

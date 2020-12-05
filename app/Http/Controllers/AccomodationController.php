@@ -72,13 +72,13 @@ class AccomodationController extends Controller
                  if($accomodation->advs[count($accomodation->advs)-1]->pivot->end_adv > Carbon::now())
                  {
                     $sponsoredAccomodations[] = $accomodation;
-                 }
-              }
-            if(count($normalAccomodationsScroll1) == $normalAccomodationNumber &&
-               count($normalAccomodationsScroll2) == $normalAccomodationNumber &&
-               count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
-            {
-              // Se abbiamo riempito tutti gli array si ritorna la view della home per non ciclare inutilmente
+                  }
+                }
+                if(count($normalAccomodationsScroll1) == $normalAccomodationNumber &&
+                count($normalAccomodationsScroll2) == $normalAccomodationNumber &&
+                count($sponsoredAccomodations) == $sponsoredAccomodationNumber)
+                {
+                  // Se abbiamo riempito tutti gli array si ritorna la view della home per non ciclare inutilmente
               return view('UI.Accomodations.home',compact('mostViewedAccomodation','services','types','sponsoredAccomodations','normalAccomodationsScroll1','normalAccomodationsScroll2'));
             }
           }
