@@ -42344,6 +42344,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Partials/ajax.js":
+/*!***************************************!*\
+  !*** ./resources/js/Partials/ajax.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Partials/functions.js":
 /*!********************************************!*\
   !*** ./resources/js/Partials/functions.js ***!
@@ -42355,8 +42366,7 @@ module.exports = function(module) {
 $(document).ready(function () {
   // invoke the getSearchdata function
   getSearchData();
-}); // FUNCTIONS
-// make a function to get the data from the jumbotron form
+}); // make a function to get the data from the jumbotron form
 
 function getSearchData() {
   $(".button_search").on("click", function () {
@@ -42412,9 +42422,10 @@ function getSearchData() {
         var source = $("#ajax_template").html();
         var template = Handlebars.compile(source); // make a cicle for
 
+        console.log(data);
+
         for (var i = 0; i < data.length; i++) {
           // take the context to print with handlebars
-          var service = data[i]['services'];
           var context = {
             "cover_image": data[i]['accomodation'].cover_image,
             "description": data[i]['accomodation'].description,
@@ -42427,7 +42438,7 @@ function getSearchData() {
             "slug": data[i]['accomodation'].slug,
             "city": data[i]['accomodation'].city,
             "beds": data[i]['accomodation'].beds,
-            "service": service.service_name,
+            "service": data[i]['services'],
             "type": data[i]['type'].name
           }; // take all the data inside of a variable
 
@@ -42446,7 +42457,9 @@ function getSearchData() {
 
 
 $(".location_input").keyup(function () {
-  $(".tom_search").addClass("block");
+  // at the keyup event show the tom search dropleft menu
+  $(".tom_search").addClass("block"); // at every keyup delete the precedent character
+
   $(".list_item_tom").text(""); // make a location variable for the tom tom api
 
   var location = $(".location_input").val().toLowerCase(); // call the tom tom api
@@ -42484,7 +42497,8 @@ $(".location_input").keyup(function () {
     },
     "error": function error(err) {}
   });
-}); // make a beds input function 
+}); // FUNCTIONS
+// make a beds input function 
 
 function bedsInput() {
   // taking the beds input value
@@ -42622,14 +42636,28 @@ $(document).on("click", ".list_item_tom", function () {
 
 function ClearBlade() {
   $(".clear_blade").remove();
-} // make a function to clear handlebars files
+}
 
+; // make a function to clear handlebars files
 
 function ClearHandlebars() {
   $(".clear_handlebars").remove();
-} // messages modal variables
-// modal messages bg 
+}
 
+; // make a position function to toggle the form based on the position insde the DOM
+
+$(window).scroll(function () {
+  // If user didn't scroll 350px set default z-index
+  if ($(this).scrollTop() < 250) {
+    console.log("if");
+    $(".jumbotron_search_item").show();
+  } else {
+    console.log("else"); // If user scrolled 350px change logo's z-index to 9999  
+
+    $(".jumbotron_search_item").hide();
+  }
+}); // messages modal variables
+// modal messages bg 
 
 var modalMessagesBg = document.querySelector('.modal_messages_bg'); // button messages modal
 
@@ -42639,12 +42667,10 @@ var closeMessages = document.querySelector('.close_messages_modal'); // make a s
 
 modalMessagesBtn.addEventListener('click', function () {
   modalMessagesBg.classList.add('bg_active');
-  console.log("open");
 }); // make an event click function to remove the class active
 
 closeMessages.addEventListener('click', function () {
   modalMessagesBg.classList.remove('bg_active');
-  console.log('close');
 }); // chart modal variables
 // modal stats bg 
 
@@ -42656,36 +42682,52 @@ var closeStats = document.querySelector('.close_stats_modal'); // make a stats b
 
 modalStatsBtn.addEventListener('click', function () {
   modalStatsBg.classList.add('bg_active');
-  console.log("open");
+}); // Make an AJAX call from the api views inside the DB at the button modal click
+
+$(".modal_stats_button").click(function () {
+  // take the id from the modal button
+  var accomodationId = $(this).attr("data-id");
+  $.ajax({
+    // take the url from the DB for the views
+    "url": "http://localhost:8000/api/views/",
+    "data": {
+      "id": accomodationId
+    },
+    "method": "GET",
+    "success": function success(data) {
+      console.log(data);
+      var ctx = document.getElementById('accomodation_stats_chart').getContext('2d');
+      var accomodationChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data['date'],
+          datasets: [{
+            label: 'Last ' + 'Week ' + 'Views ' + 'For ' + 'This ' + 'Accomodation: ' + data['viewsTotal'],
+            data: data['views'],
+            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 255, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 2, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    },
+    "error": function error(err, data) {
+      console.log("--------------------[DEBUG]--------->[ERROR:" + err + "]: " + data);
+    }
+  });
 }); // make an event click function to remove the class active
 
 closeStats.addEventListener('click', function () {
   modalStatsBg.classList.remove('bg_active');
-  console.log('close');
-}); // single accomodation statistic chart
-
-var ctx = document.getElementById('accomodation_stats_chart').getContext('2d');
-var accomodationChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ['January', 'febraury', 'march'],
-    datasets: [{
-      label: 'Accomodation Views',
-      data: [30, 35, 36],
-      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-      borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-  }
 });
 
 /***/ }),
@@ -42744,12 +42786,13 @@ createMarker('accident.colors-white.svg', [$('#longitude').val(), $('#latitude')
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./mobile-or-tablet */ "./resources/js/mobile-or-tablet.js"); // per gestione map Tom Tom
-
+__webpack_require__(/*! ./mobile-or-tablet */ "./resources/js/mobile-or-tablet.js");
 
 __webpack_require__(/*! ././Partials/functions.js */ "./resources/js/Partials/functions.js");
 
 __webpack_require__(/*! ././Partials/map.js */ "./resources/js/Partials/map.js");
+
+__webpack_require__(/*! ././Partials/ajax.js */ "./resources/js/Partials/ajax.js");
 
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
