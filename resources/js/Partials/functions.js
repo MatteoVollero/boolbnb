@@ -60,9 +60,9 @@ $(document).ready(function() {
                     var source = $("#ajax_template").html();
                     var template = Handlebars.compile(source);
                     // make a cicle for
+                    console.log(data);
                     for (let i = 0; i < data.length; i++) {
                         // take the context to print with handlebars
-                        var service = data[i]['services'];
                         var context = {
                             "cover_image" : data[i]['accomodation'].cover_image,
                             "description" : data[i]['accomodation'].description,
@@ -75,7 +75,7 @@ $(document).ready(function() {
                             "slug" : data[i]['accomodation'].slug,
                             "city" : data[i]['accomodation'].city,
                             "beds" : data[i]['accomodation'].beds,
-                            "service" : service.service_name,
+                            "service" : data[i]['services'],
                             "type" : data[i]['type'].name
                         }
                         // take all the data inside of a variable

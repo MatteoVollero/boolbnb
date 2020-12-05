@@ -26,7 +26,6 @@
             </div>
             {{-- buttons  --}}
             <a class="btn_message_show none">Messages Area</a>
-            <a class="btn_message_show none">Advertising Area</a>
             <a href="{{route('admin.accomodations.adv_create', $accomodation->id)}}" class="btn_message_show none">Make an advertisment</a>
             <a class="btn_message_show none modal_stats_button" data-id="{{$accomodation->id}}">Statistics Area</a>
             <a class="btn_message_show none modal_messages_button">Contact the Host</a>
@@ -167,7 +166,8 @@
         </div>
         {{-- BUTTON --}}
         <div class="button_section_show">
-            <a class="btn_message_show none modal_messages_button">Contact the Host</a>
+            <a href="{{route('admin.accomodations.edit', $accomodation->id)}}" class="btn_message_show none">Edit the accomodation</a>
+            <a href="{{route('admin.accomodations.create', $accomodation->id)}}" class="btn_message_show none">Insert a new accomodation</a>
         </div>
     </div>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js'></script>

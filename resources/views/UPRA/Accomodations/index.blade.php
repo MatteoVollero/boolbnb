@@ -85,7 +85,8 @@
                 <div class="title_elm_list_lower">
                     {{-- price elm list  --}}
                     <a href="{{route('admin.accomodations.adv_create', $accomodation->id)}}" class="btn_message_show none">Make an advertisment</a>
-                    <h4 class="price_elm_list">{{$accomodation->price}} &euro;</h4>
+                    <a href="{{route('admin.accomodations.edit', $accomodation->id)}}" class="btn_message_show none">Edit the accomodation</a>
+                    <small class="price_elm_list">{{$accomodation->price}} &euro;</small>
                 </div>
             </div>
         </div>
