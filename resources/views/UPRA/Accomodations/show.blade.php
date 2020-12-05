@@ -24,11 +24,11 @@
                     {{$accomodation->address}}, {{$accomodation->city}}, {{$accomodation->zip_code}}, {{$accomodation->region}}, {{$accomodation->country}}
                 </h5>
             </div>
-            {{-- buttons  --}}
-            <a class="btn_message_show none">Messages Area</a>
-            <a href="{{route('admin.accomodations.adv_create', $accomodation->id)}}" class="btn_message_show none">Make an advertisment</a>
-            <a class="btn_message_show none modal_stats_button" data-id="{{$accomodation->id}}">Statistics Area</a>
-            <a class="btn_message_show none modal_messages_button">Contact the Host</a>
+            <a href="{{route ('admin.accomodations.message_index') }}" class="btn_message_show none">Messages Area</a>
+            <a href="{{route ('admin.accomodations.adv_index') }}" class="btn_message_show none">Advertising Area</a>
+            <a href="{{route ('admin.accomodations.adv_create', $accomodation->id) }}"  class="btn_message_show none">Make an advertisment</a>
+            <a href="#" class="btn_message_show none modal_stats_button">Statistics Area</a>
+            <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
         </div>
         {{-- modal stats bg  --}}
         <div class="modal_stats_bg">
@@ -82,9 +82,9 @@
             <div class="secondary_images_show">
                 {{-- image item  --}}
                 @foreach ($accomodation->accomodation_images as $accomodationImage)
-                    @if ($accomodationImage->principal)   
+                    @if ($accomodationImage->principal)
                         <div class="image_item_show">
-                            <img src="{{$accomodationImage->image}}" alt="{{$accomodation->title}}"> 
+                            <img src="{{$accomodationImage->image}}" alt="{{$accomodation->title}}">
                         </div>
                     @endif
                 @endforeach

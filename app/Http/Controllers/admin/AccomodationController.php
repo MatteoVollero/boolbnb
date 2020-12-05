@@ -178,6 +178,7 @@ class AccomodationController extends Controller
      */
     public function show($slug)
     {
+      // dd($slug);
       // Troviamo in accomodations il record che ha slug uguale a quello passato in argomento
       $accomodation = Accomodation::where('slug', $slug)->first();
       // Chiamiamo la view show dell'UPRA, passandogli  compact il record trovato
