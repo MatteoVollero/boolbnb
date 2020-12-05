@@ -31,8 +31,9 @@ footer {
                         a {
                             color: $violaHeroScuroModificato;
                             font-family: $secondFont;
-                            font-size: small;
                             font-weight: bold;
+                            transition: 0.3s;
+                            font-size: small;
                             &:hover {
                                 color: #fff;
                                 text-decoration: none;

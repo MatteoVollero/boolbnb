@@ -1,6 +1,6 @@
 // call the document ready function
 $(document).ready(function() {
-
+    // make an input control for the Upra and UI 
     if ($(".input").val() == "Upra") {
         // chart modal variables
         // modal stats bg 
@@ -235,7 +235,6 @@ $(document).ready(function() {
                 }
             });
         });
-
         // FUNCTIONS
         // make a beds input function 
         function bedsInput() {
