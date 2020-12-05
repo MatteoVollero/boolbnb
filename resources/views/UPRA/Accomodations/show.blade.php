@@ -12,7 +12,7 @@
 @endsection
 @section('main_content')
 <section class="show_section">
-    <div class="show_wrapper">
+    <div class="show_wrapper">  
         {{-- TITLE AND BUTTON --}}
         <div class="button_section_show">
             <div>
