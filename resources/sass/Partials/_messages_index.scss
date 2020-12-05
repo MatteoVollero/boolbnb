@@ -50,6 +50,11 @@
                 .icn_message {
                     margin-left: 10px;
                 }
+                &:hover{
+                    background-color: $btnColor;
+                    color: $secondMainSection;
+                    transform: scale(1.03);
+                }
             }
         }
     }
