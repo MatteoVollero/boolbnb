@@ -4,12 +4,15 @@
     create advertisment
 @endsection
 @section('main_content')
+{{-- form background  --}}
 <div class="form_background">
+    {{-- form wrapper  --}}
     <div class="form_wrapper">
+        {{-- form text  --}}
         <div class="form_text">
-          <h1>Insert your data</h1>
+          <h1>Make an advertisment for : {{$accomodation->title}}</h1>
         </div>
-   <form action="{{route('admin.accomodations.store')}}" method="POST" enctype="multipart/form-data">
+   <form action="{{route('admin.accomodations.adv_store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
         {{-- id input --}}
@@ -33,9 +36,10 @@
             <select class="form_type" name="checklist" id="advertisment">
                 <option value="accomodation">&euro; 2.99 Bronze</option>
                 <option value="room">&euro; 5.99 Silver</option>
-                <option value="mansion">&euro; 8.99 Gold</option>
+                <option value="mansion">&euro; 9.99 Gold</option>
             </select>
           </div>
+          {{-- form button  --}}
         <button type="submit" class="form_btn">Pay</button>
     </form>
     @if ($errors->any())

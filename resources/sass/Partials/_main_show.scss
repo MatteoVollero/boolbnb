@@ -3,9 +3,9 @@
 .show_section {
     background-color: $firstMainSection;
     font-family: $secondFont;
+    overflow-x: hidden;
     padding-top: 100px;
     height: 1800px;
-    overflow-x: hidden;
     // show wrapper 
     .show_wrapper {
         @include GenericWrapper;
@@ -96,8 +96,8 @@
                 // image item show
                 .image_item_show {
                     background-color:rgb(59, 59, 59);
-                    overflow: hidden;
                     border-radius: 10px;
+                    overflow: hidden;
                     transition: 0.3s;
                     height: 45%;
                     width: 45%;
@@ -155,23 +155,23 @@
                         color: $airBnB;
                     }
                     .medal_bronze {
-                        font-size: 20px;
-                        font-weight: bolder;
                         color: rgb(205, 127, 50);
+                        font-weight: bolder;
+                        font-size: 20px;
                     }
                     .medal_silver {
-                        font-size: 20px;
                         font-weight: bolder;
                         color: silver;
+                        font-size: 20px;
                     }
                     .medal_gold {
-                        font-size: 20px;
                         font-weight: bolder;
+                        font-size: 20px;
                         color: gold;
                     }
                     .icn_visible_show {
-                        font-size: 20px;
                         font-weight: bolder;
+                        font-size: 20px;
                         color: $airBnB;
                     }
                 }
@@ -183,15 +183,16 @@
                     padding: 0 30px;
                     margin: 2.5% 0;
                 }
-                // services elm 
+                // services elm show
                 .services_elm_show {
-                    justify-content: space-around;
+                    justify-content: flex-start;
                     color: $textColorSearch;
                     font-weight: bolder;
                     align-items: center;
                     margin: 2.5% 0;
                     display: flex;
                     .small_info_elm_show {
+                        padding-right: 30px;
                         font-size: 20px;
                         .icn_space_show {
                             margin: 0 10px;
@@ -213,11 +214,10 @@
                 // map accomodation 
                 .map_accomodation_show {
                     border-radius: 10px;
+                    overflow: hidden;
                     height: 95%;
                     width: 60%;
                     z-index: 1;
-                    overflow: hidden;
-                    border-radius: 10px;
                 }
             }
         }
@@ -225,8 +225,8 @@
 }
 // modal stats
 .modal_stats_bg {
+    justify-content: center;
     @include modalGeneric;
-     justify-content: center;
     // modal stats content
     .modal_stats_data {
         background-color:$firstMainSection;
@@ -235,6 +235,7 @@
         padding: 10px 30px;
         position: relative;
         line-height: 35px;
+        z-index: 9999;
         opacity: 0.9;
         height: 80%;
         width: 70%;
@@ -501,13 +502,14 @@
                     }
                     // services elm show 
                     .services_elm_show {
-                        justify-content: space-around;
+                        justify-content: flex-start;
                         color: $textColorSearch;
                         font-weight: bolder;
                         align-items: center;
                         margin: 2.5% 0;
                         display: flex;
                         .small_info_elm_show {
+                            padding-right: 10px;
                             font-size: 20px;
                             .icn_space_show {
                                 margin: 0 10px;

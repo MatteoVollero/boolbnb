@@ -24,19 +24,23 @@
                     {{$accomodation->address}}, {{$accomodation->city}}, {{$accomodation->zip_code}}, {{$accomodation->region}}, {{$accomodation->country}}
                 </h5>
             </div>
-            <a href="{{asset('admin/accomodations/message_index')}}"class="btn_message_show none">Messages Area</a>
-            <a href="{{asset('admin/accomodations/adv_index')}}" class="btn_message_show none">Advertising Area</a>
-            <a class="btn_message_show none">Make an advertisment</a>
-            <a href="#" class="btn_message_show none modal_stats_button">Statistics Area</a>
-            <a href="#" class="btn_message_show none modal_messages_button">Contact the Host</a>
+            {{-- buttons  --}}
+            <a class="btn_message_show none">Messages Area</a>
+            <a href="{{route('admin.accomodations.adv_create', $accomodation->id)}}" class="btn_message_show none">Make an advertisment</a>
+            <a class="btn_message_show none modal_stats_button" data-id="{{$accomodation->id}}">Statistics Area</a>
+            <a class="btn_message_show none modal_messages_button">Contact the Host</a>
         </div>
+        {{-- modal stats bg  --}}
         <div class="modal_stats_bg">
+            {{-- modal stats data  --}}
             <div class="modal_stats_data ">
-                <canvas id="accomodation_stats_chart" width="700" height="400" aria-label="Hello" role="img"></canvas>
+                {{-- canvas accomodations stats chart  --}}
+                <canvas id="accomodation_stats_chart" width="700" height="400" data-attr="stats" role="img"></canvas>
+                {{-- close stats modal  --}}
                 <small class="close_stats_modal">X</small>
             </div>
         </div>
-        {{-- // modola messages bg  --}}
+        {{-- // mododal messages bg  --}}
         <div class="modal_messages_bg">
             {{-- modal messages data  --}}
             <div class="modal_messages_data">
@@ -132,6 +136,7 @@
                 </div>
                 {{-- SERVICES --}}
                 <div class="services_elm_show">
+                    {{-- cicle for each  --}}
                     @foreach ($accomodation->services as $service)
                         @if ($service->service_name == "wi-fi")
                             <small class="small_info_elm_show"><i class="fas fa-wifi icn_space_show"></i></small>
@@ -162,7 +167,8 @@
         </div>
         {{-- BUTTON --}}
         <div class="button_section_show">
-            <a href="#" class="btn_message_show">Contact the Host</a>
+            <a href="{{route('admin.accomodations.edit', $accomodation->id)}}" class="btn_message_show none">Edit the accomodation</a>
+            <a href="{{route('admin.accomodations.create', $accomodation->id)}}" class="btn_message_show none">Insert a new accomodation</a>
         </div>
     </div>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js'></script>
