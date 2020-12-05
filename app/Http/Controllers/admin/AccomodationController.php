@@ -9,6 +9,8 @@ use App\Service;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\DB;
+
 class AccomodationController extends Controller
 {
     /**
@@ -37,7 +39,7 @@ class AccomodationController extends Controller
     public function adv_index()
     {
       // TO DO: codice per selezionare tutte le sponsorizzate dell'UPRA
-      
+
       // $userAccomodations = Accomodation::where('id', Auth::id())->get;
       // $accomodationsSponsored=[];
       // foreach ($userAccomodations as $userAccomodation) {
@@ -57,7 +59,7 @@ class AccomodationController extends Controller
       // TO DO: codice per salvare dati della sponsorizzazione nella tabella pivot accomodation_advs
     }
 
-    
+
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // METODI PER LA GESTIONE DELLE ADVS / end
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -69,7 +71,13 @@ class AccomodationController extends Controller
     public function message_index()
     {
       // TO DO: codice per selezionare tutti i messaggi inviati alle accomodation dell'UPRA
-      
+      $userMessages = DB::table('accomodations')
+                        ->select('accomodations.user_id as utente_loggato','accomodations.id','accomodations.title','accomodations.city','accomodations.address','user_messages.email','user_messages.nickname','user_messages.text_message')
+                        ->join('user_messages','user_messages.accomodation_id','=','accomodations.id')
+                        ->where('accomodations.user_id','=', Auth::id())
+                        ->get();
+
+      return view('TEST.message_index',compact('userMessages'));
     }
 
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -152,7 +160,7 @@ class AccomodationController extends Controller
       // Prendiamo dalla tabella accomodations l'ultimo record appena inserito per recuperare l'id
       $newAccomodation = Accomodation::all()->last();
 
-      // Cicliamo su tutti i servizi che hai scelto l'utente
+      // Cicliamo su tutti i servizi che ha scelto l'utente
       // foreach ($data['services'] as $service) {
       foreach ($request->services as $service) {
         // salva con attach nella tabella pivot accomodation_service gli id di services scelti dell'utente
@@ -162,7 +170,6 @@ class AccomodationController extends Controller
       return redirect()->route('admin.accomodations.show', $newAccomodation->slug);
 
     }
-
     /**
      * Display the specified resource.
      *
@@ -201,7 +208,7 @@ class AccomodationController extends Controller
      */
     public function update(Request $request, $id)
     {
-  
+
       // Trasferiamo in $data tutto i dati che sono stati inseriti all'interno del form
       $data = $request->all();
 
@@ -270,8 +277,6 @@ class AccomodationController extends Controller
 
       // Reindirizziamo alla route che visualizza la view show dell'accomodation appena inserito
       return redirect()->route('admin.accomodations.show', $editAccomodation->slug);
-
-
     }
 
     /**

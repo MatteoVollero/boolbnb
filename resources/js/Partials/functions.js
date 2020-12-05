@@ -3,45 +3,44 @@ $(document).ready(function() {
     // invoke the getSearchdata function
     getSearchData();
 });
-// FUNCTIONS
         // make a function to get the data from the jumbotron form
         function getSearchData() {
             $(".button_search").on("click", function() { 
-                // invoke the clear blade function
-                ClearBlade();
-                // invoke the clear handlebars function
-                ClearHandlebars();
-                var researchResults = $(".research_results");
-                researchResults.addClass('none');
-                // make a longitude function
-                var longitude = longitudeInput();
-                // make a latitude function
-                var latitude = latitudeInput();
-                // make a beds varible and invoke the relative function
-                var getBeds = bedsInput();
-                // make a rooms variable and invoke the relative function
-                var getToilets = toiletsInput();
-                // make a rooms variable and invoke the relative function
-                var getRooms = roomsInput();
-                // make a services variable and invoke the relative function
-                var getServices = servicesInput();
-                // variable get radius 
-                var getRadius = 6000;
-                // make an empty array for the search input
-                var arrayData = []; 
-                // make a data variable for the JSON
-                var data = {};
-                // push inside the array the objects
-                arrayData.push ({ 
-                    "longitude" : longitude,
-                    "latitude"  : latitude,
-                    "beds"      : getBeds,
-                    "rooms"     : getRooms,
-                    "toilets"   : getToilets,
-                    "services"  : getServices
-                });
-                data.arrayData = arrayData;
-                // call handlebar variables
+            // invoke the clear blade function
+            ClearBlade();
+            // invoke the clear handlebars function
+            ClearHandlebars();
+            var researchResults = $(".research_results");
+            researchResults.addClass('none');
+            // make a longitude function
+            var longitude = longitudeInput();
+            // make a latitude function
+            var latitude = latitudeInput();
+            // make a beds varible and invoke the relative function
+            var getBeds = bedsInput();
+            // make a rooms variable and invoke the relative function
+            var getToilets = toiletsInput();
+            // make a rooms variable and invoke the relative function
+            var getRooms = roomsInput();
+            // make a services variable and invoke the relative function
+            var getServices = servicesInput();
+            // variable get radius 
+            var getRadius = 6000;
+            // make an empty array for the search input
+            var arrayData = []; 
+            // make a data variable for the JSON
+            var data = {};
+            // push inside the array the objects
+            arrayData.push ({ 
+                "longitude" : longitude,
+                "latitude"  : latitude,
+                "beds"      : getBeds,
+                "rooms"     : getRooms,
+                "toilets"   : getToilets,
+                "services"  : getServices
+            });
+            data.arrayData = arrayData;
+            // call handlebar variables
             $.ajax 
             (   
                 {
@@ -96,51 +95,53 @@ $(document).ready(function() {
         }
         // make a keyup function event
         $(".location_input").keyup(function() {
-            $(".tom_search").addClass("block");
-            $(".list_item_tom").text("");
-            // make a location variable for the tom tom api
-            var location = $(".location_input").val().toLowerCase();
-            // call the tom tom api
-            var tomQuery = "https://api.tomtom.com/search/2/search/"+location+".json?typeahead=true&limit=5&language=it-IT&extendedPostalCodesFor=Geo&minFuzzyLevel=1&maxFuzzyLevel=2&idxSet=Addr%2CGeo%2CStr&view=Unified&key=5f9vpvhd3dCu5qyQPFDmWnkS1fQQ1Yrg";
-            // select the handlebar template to print the data
-            var source = $("#tomtom_template").html();
-            var template = Handlebars.compile(source);
-            // make an ajax call for the tom tom location
-            $.ajax
-            (
-                {
-                    "url" : tomQuery,
-                    "method" : "GET",
-                    "success" : function (data) {
-                        // make a variable for results
-                        var results = data.results;
-                        // make a cicle for to iterate the results data
-                        for (let i = 0; i < results.length; i++) {
-                            // make a json object with the key and value to take
-                            //make an address variable
-                            var address = results[i].address.freeformAddress;
-                            //make a latitude variable
-                            var latitude = results[i].position.lat;
-                            //make a longitude variable
-                            var longitude = results[i].position.lon;
+        // at the keyup event show the tom search dropleft menu
+        $(".tom_search").addClass("block");
+        // at every keyup delete the precedent character
+        $(".list_item_tom").text("");
+        // make a location variable for the tom tom api
+        var location = $(".location_input").val().toLowerCase();
+        // call the tom tom api
+        var tomQuery = "https://api.tomtom.com/search/2/search/"+location+".json?typeahead=true&limit=5&language=it-IT&extendedPostalCodesFor=Geo&minFuzzyLevel=1&maxFuzzyLevel=2&idxSet=Addr%2CGeo%2CStr&view=Unified&key=5f9vpvhd3dCu5qyQPFDmWnkS1fQQ1Yrg";
+        // select the handlebar template to print the data
+        var source = $("#tomtom_template").html();
+        var template = Handlebars.compile(source);
+        // make an ajax call for the tom tom location
+        $.ajax
+        (
+            {
+                "url" : tomQuery,
+                "method" : "GET",
+                "success" : function (data) {
+                    // make a variable for results
+                    var results = data.results;
+                    // make a cicle for to iterate the results data
+                    for (let i = 0; i < results.length; i++) {
+                        // make a json object with the key and value to take
+                        //make an address variable
+                        var address = results[i].address.freeformAddress;
+                        //make a latitude variable
+                        var latitude = results[i].position.lat;
+                        //make a longitude variable
+                        var longitude = results[i].position.lon;
 
-                            var dataTom = {
-                                "address" : address,
-                                "latitude": latitude,
-                                "longitude": longitude
-                            }
-
-                            // take all the data inside of a variable
-                            var html = template(dataTom);
-                            // append the data
-                            $(".flex_items_tom").append(html);
+                        var dataTom = {
+                            "address" : address,
+                            "latitude": latitude,
+                            "longitude": longitude
                         }
-                    },
-                    "error" : function (err) {
+                        // take all the data inside of a variable
+                        var html = template(dataTom);
+                        // append the data
+                        $(".flex_items_tom").append(html);
                     }
-                });
+                },
+                "error" : function (err) {
+                }
             });
+        });
 
+        // FUNCTIONS
         // make a beds input function 
         function bedsInput() {
             // taking the beds input value
@@ -263,13 +264,25 @@ $(document).ready(function() {
         // make a function to clear Blade files
         function ClearBlade () {
             $(".clear_blade").remove();
-        }
+        };
 
         // make a function to clear handlebars files
         function ClearHandlebars () {
             $(".clear_handlebars").remove();
-        }
+        };
 
+        // make a position function to toggle the form based on the position insde the DOM
+        $(window).scroll(function() {
+            // If user didn't scroll 350px set default z-index
+            if ($(this).scrollTop() < 250) { 
+                console.log("if");
+                $(".jumbotron_search_item" ).show();
+            } else {
+                console.log("else");
+                // If user scrolled 350px change logo's z-index to 9999  
+                $(".jumbotron_search_item" ).hide();
+            }
+        });
         // messages modal variables
         // modal messages bg 
         var modalMessagesBg = document.querySelector('.modal_messages_bg');
@@ -281,13 +294,11 @@ $(document).ready(function() {
         // make a stats button event click function to add the class active
         modalMessagesBtn.addEventListener('click', function() {
             modalMessagesBg.classList.add('bg_active');
-            console.log("open");
         });
 
         // make an event click function to remove the class active
         closeMessages.addEventListener('click', function() {
-            modalMessagesBg.classList.remove('bg_active');
-            console.log('close');
+            modalMessagesBg.classList.remove('bg_active'); 
         });
 
         // chart modal variables
@@ -301,49 +312,65 @@ $(document).ready(function() {
         // make a stats button event click function to add the class active
         modalStatsBtn.addEventListener('click', function() {
             modalStatsBg.classList.add('bg_active');
-            console.log("open");
         });
-
+            // Make an AJAX call from the api views inside the DB at the button modal click
+            $(".modal_stats_button").click(function(){
+                // take the id from the modal button
+                var accomodationId = $(this).attr("data-id"); 
+                $.ajax
+                ({
+                    // take the url from the DB for the views
+                    "url": "http://localhost:8000/api/views/",
+                    "data" : {
+                    "id" : accomodationId
+                    },
+                    "method" : "GET",
+                    "success" : function (data) {
+                        console.log(data);
+                        var ctx = document.getElementById('accomodation_stats_chart').getContext('2d');
+                        var accomodationChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: data['date'],
+                                datasets: [{
+                                    label: 'Last ' + 'Week ' + 'Views ' + 'For ' + 'This ' + 'Accomodation: ' + data['viewsTotal'],
+                                    data: data['views'],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                    },
+                    "error" : function (err,data) {
+                    console.log("--------------------[DEBUG]--------->[ERROR:" + err + "]: " + data);
+                    }
+                });
+            });
         // make an event click function to remove the class active
         closeStats.addEventListener('click', function() {
             modalStatsBg.classList.remove('bg_active');
-            console.log('close');
-        });
-        // single accomodation statistic chart
-        var ctx = document.getElementById('accomodation_stats_chart').getContext('2d');
-        var accomodationChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['January', 'febraury', 'march'],
-                datasets: [{
-                    label: 'Accomodation Views',
-                    data: [ 30 , 35 , 36 ],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
         });

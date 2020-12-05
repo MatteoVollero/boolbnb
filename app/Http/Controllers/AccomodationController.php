@@ -295,7 +295,7 @@ class AccomodationController extends Controller
     {
       // TO DO: codice per salvare dati del messaggio nella tabella user_messages
     }
-    
+
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // METODI PER LA GESTIONE DEI MESSAGE / end
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

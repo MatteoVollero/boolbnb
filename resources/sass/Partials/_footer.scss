@@ -6,15 +6,15 @@ footer {
     border-top: 2px solid $violaHeroScuroModificato;
     // wrapper footer 
     .wrapper_footer {
-        width: 80%;
         margin: auto;
+        width: 80%;
         // margin top
         .margin_top_100 {
             padding-top: 50px;
             // upper footer flex
             .flex_box_footer_higher {
-                display: flex;
                 justify-content: space-between;
+                display: flex;
                 // footer column
                 .column_footer{
                     width: 25%;
@@ -24,6 +24,8 @@ footer {
                         font-size: 30px;
                         font-weight: bold;
                         margin: 10px 0 10px 0;
+                        font-size: 25px;
+                        color: $airBnB;
                     }
                     li {
                         line-height: 35px;
@@ -47,18 +49,19 @@ footer {
                 }
             }
             hr {
-                margin: 10px 0 10px 0;
                 border: 1px solid $violaHeroScuro;
+                margin: 10px 0 10px 0;
             }
             // flex box footer lower 
             .flex_box_footer_lower {
-                display: flex;
                 justify-content: flex-end;
+                display: flex;
                 // lower flex footer nested
                 .flex_box_footer_lower_nested {
                     margin: 20px 0 20px 0;
                     display: flex;
                     justify-content: flex-end;
+                    margin: 10px 0 10px 0;
                     align-items: center;
                     color: $violaHeroScuro;
                     font-weight: bold;
@@ -93,30 +96,30 @@ footer {
         .wrapper_footer {
             .margin_top_100 {
                 .flex_box_footer_higher {
-                    display: flex;
                     justify-content: space-between;
                     flex-wrap: wrap;
+                    display: flex;
                     // column footer
                     .column_footer{
                         width: 50%;
                         // list_icons_social
                         .list_icons_social {
-                            display: flex;
                             flex-direction: column;
-                            text-align: center;
                             align-items: center;
+                            text-align: center;
+                            display: flex;
                         }            
                     }
                 }
                 // flex footer lower
                 .flex_box_footer_lower {
-                    display: flex;
                     flex-direction: column;
                     align-items: center;
+                    display: flex;
                     // flex box footer lower nested
                     .flex_box_footer_lower_nested {
-                        display: flex;
                         justify-content: center;
+                        display: flex;
                         width: 100%;
                     }
                 }
@@ -135,16 +138,16 @@ footer {
             .margin_top_100 {
                 // flex box footer higher 
                 .flex_box_footer_higher {
-                    display: flex;
                     flex-direction: column;
                     align-items: center;
+                    display: flex;
                     // list icons social
                     .list_icons_social {
-                        display: flex;
-                        align-items: center;
                         flex-direction: column;
-                        width: 100%;
+                        align-items: center;
                         text-align: center;
+                        display: flex;
+                        width: 100%;
                         li { 
                             // header bnb logo 
                             .header_bnb_logo {
@@ -155,13 +158,13 @@ footer {
                 }
                  // flex box footer lower
                 .flex_box_footer_lower {
-                    display: flex;
                     flex-direction: column;
                     align-items: center;
+                    display: flex;
                     // flex box footer lower nested
                     .flex_box_footer_lower_nested {
-                        display: flex;
                         justify-content: center;
+                        display: flex;
                         width: 100%;
                     }
                 }
