@@ -77,7 +77,7 @@ class AccomodationController extends Controller
                         ->where('accomodations.user_id','=', Auth::id())
                         ->get();
 
-      return view('TEST.message_index',compact('userMessages'));
+      return view('UPRA.Messages.message_index',compact('userMessages'));
     }
 
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

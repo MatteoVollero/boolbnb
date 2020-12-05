@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\Auth;
   Route::get('/', 'AccomodationController@index')->name('home');
   Route::get('/search', 'AccomodationController@search')->name('search');
   Route::get('/show/{slug}', 'AccomodationController@show')->name('show');
-  // rotte MESSAGGE
+  // rotte MESSAGE
   Route::post('/accomodations/message_send', 'AccomodationController@message_send')->name('message_send');
   
   // Rotta TEST per mappe tom tom

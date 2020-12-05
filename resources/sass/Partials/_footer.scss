@@ -1,16 +1,16 @@
 // footer
 footer {
-    background-image: linear-gradient(to right,  $violaHeroScuroModificato, $violaHeroScuro);
-    border-top: 1px solid $secondMainSection;
     font-family: $secondFont;
+    background-image: linear-gradient($yellowJumbotron, $orangeJumbotron);
     width: 100%;
+    border-top: 2px solid $violaHeroScuroModificato;
     // wrapper footer 
     .wrapper_footer {
         margin: auto;
         width: 80%;
         // margin top
         .margin_top_100 {
-            padding-top: 40px;
+            padding-top: 50px;
             // upper footer flex
             .flex_box_footer_higher {
                 justify-content: space-between;
@@ -20,21 +20,30 @@ footer {
                     width: 25%;
                     // footer titles
                     .titles_footer {
+                        color: #fff;
+                        font-size: 30px;
+                        font-weight: bold;
                         margin: 10px 0 10px 0;
                         font-size: 25px;
-                        color: $airBnB;
                     }
-                    a {
-                        color: #fff;
-                        &:hover {
-                            text-decoration: none;
+                    li {
+                        line-height: 35px;
+                        a {
+                            color: $violaHeroScuroModificato;
+                            font-family: $secondFont;
+                            font-size: small;
                             font-weight: bold;
-                        }
+                            &:hover {
+                                color: #fff;
+                                text-decoration: none;
+                                font-weight: bolder;
+                            }
+                        }    
                     }
                     // footer logo
                     .footer_bnb_logo {
-                        margin: 10px 0 10px 0;
                         width: 50%;
+                        margin: 20px 0 10px 0;
                     }
                 }
             }
@@ -48,18 +57,20 @@ footer {
                 display: flex;
                 // lower flex footer nested
                 .flex_box_footer_lower_nested {
+                    margin: 20px 0 20px 0;
+                    display: flex;
                     justify-content: flex-end;
                     margin: 10px 0 10px 0;
                     align-items: center;
-                    display: flex;
-                    color:#fff;
+                    color: $violaHeroScuro;
+                    font-weight: bold;
                     width: 50%;
                     // list icons social 
                     .list_icons_social {
                         li {
                             display: inline;
                             & a {
-                                color:#fff;
+                                color: #fff;
                                 font-size: 25px;
                                 &:hover {
                                     text-decoration: none;
