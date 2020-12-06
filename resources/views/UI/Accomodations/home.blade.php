@@ -173,16 +173,16 @@
                      <img src="{{$mostViewedAccomodation->cover_image}}" alt="cover image">
             </div>
             {{-- // secondary images  --}}
-            <div class="secondary_images">
-                {{-- image item  --}}
-                @foreach ($mostViewedAccomodation->accomodation_images as $accomodation_image)
-                    @if ($accomodation_image->principal)
-                        <div class="image_item">
-                            <img src="{{$accomodation_image->image}}" alt="Images"> 
-                        </div>
-                    @endif
-                @endforeach
-            </div>
+        </div>
+        <div class="secondary_images">
+            {{-- image item  --}}
+            @foreach ($mostViewedAccomodation->accomodation_images as $accomodation_image)
+                @if ($accomodation_image->principal)
+                    <div class="image_item">
+                        <img src="{{$accomodation_image->image}}" alt="Images"> 
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
 </section>

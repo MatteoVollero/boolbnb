@@ -142,9 +142,8 @@
 }
 // secondary images flex 
 @mixin SecondaryImagesFlex {
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
     display: flex;
 }
 // Medal position absolute 
