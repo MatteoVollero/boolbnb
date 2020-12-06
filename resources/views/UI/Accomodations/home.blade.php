@@ -170,7 +170,7 @@
         <div class="single_accomodation">
             {{-- cover image  --}}
             <div class="cover_image">
-                     <img src="{{$mostViewedAccomodation->cover_image}}" alt="cover image">
+                  <a href="{{route('show', $mostViewedAccomodation->slug)}}"><img src="{{$mostViewedAccomodation->cover_image}}" alt="cover image"></a>
             </div>
             {{-- // secondary images  --}}
         </div>

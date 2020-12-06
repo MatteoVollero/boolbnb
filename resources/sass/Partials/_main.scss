@@ -385,7 +385,7 @@
             .image_item {
                 border-radius: 10px;
                 min-height: 100%;
-                min-width: 20%;
+                min-width: 25%;
                 margin: 1%;
                 img {
                     border-radius: 10px;
@@ -406,7 +406,42 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
-
+    // second section
+.second_main_section {
+    background-color: $secondMainSection;
+    width: 100%;
+    // second main wrapper 
+    .second_main_wrapper {
+        position: relative;
+        padding: 40px;
+        height: 100%;
+        width: 100%;
+        h2 {
+            text-transform: capitalize;
+            transform: translate(-50%,-50%);
+            font-family: $secondFont;
+            position: absolute;
+            font-size: 18px;
+            color: #fff;
+            left: 50%;
+            top: 4%;
+        }
+        // single accomodation 
+        .single_accomodation {
+            justify-content: flex-start;
+            border-radius: 10px;
+            align-items: center;
+            margin-top: 10px;
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+        // secondary images
+        .secondary_images {
+            display: none;
+        }
+    }
+}
 }
 
 // media breakpoint tablet

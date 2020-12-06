@@ -365,16 +365,16 @@ $(document).ready(function() {
             $(".clear_handlebars").remove();
         };
 
-        // make a position function to toggle the form based on the position insde the DOM
-        $(window).scroll(function() {
-            // If user didn't scroll 350px set default z-index
-            if ($(this).scrollTop() < 250) { 
-                console.log("if");
-                $(".jumbotron_search_item" ).show();
-            } else {
-                console.log("else");
-                // If user scrolled 350px change logo's z-index to 9999  
-                $(".jumbotron_search_item" ).hide();
-            }
-        });
+        // // make a position function to toggle the form based on the position insde the DOM
+        // $(window).scroll(function() {
+        //     // If user didn't scroll 350px set default z-index
+        //     if ($(this).scrollTop() < 250) { 
+        //         console.log("if");
+        //         $(".jumbotron_search_item" ).show();
+        //     } else {
+        //         console.log("else");
+        //         // If user scrolled 350px change logo's z-index to 9999  
+        //         $(".jumbotron_search_item" ).hide();
+        //     }
+        // });
         
