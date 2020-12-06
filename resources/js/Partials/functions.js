@@ -74,7 +74,7 @@ $(document).ready(function() {
             });
         // make an event click function to remove the class active
         closeStats.addEventListener('click', function() {
-            var BFixed = $("body").removeClass("modal-open");
+            BFixed = $("body").removeClass("modal-open");
             modalStatsBg.classList.remove('bg_active');
         });    
     } else if (($(".input").val() == "UI")) {

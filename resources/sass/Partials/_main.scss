@@ -89,8 +89,8 @@
             }
             // cover image
             .cover_image {
-                overflow: hidden;
                 @include CoverImage;
+                overflow: hidden;
                 &:hover {
                     transform: translate(1.05);
                     opacity: 0;
@@ -196,7 +196,6 @@
         }
     }
 }
-
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
     // first main section
@@ -212,122 +211,121 @@
         height: 20%;
     }
 }
-
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
-    // first main section
-    .first_main_section {
-        margin-top: 0px;
-    }
-    // aside accomodations
-    .aside_accomodations {
-        background-color:$secondMainSection;
-        overflow-y: auto;
-        min-width: 33%;
-        height: 100%;
-    }
-        // cards section
-    .cards_section {
-        height: 100%;
-        width: 66%;
-        // accomodations cards
-     .accomodation_cards {
-        background-color: none;
-        @include ColumnFlex;
-        border-radius: 10px;
-        margin: auto;
-        height: 100%;
-        width: 100%;
-        // upper cards scroller
-        .upper_cards_scroller {
-            @include YScroller;
-            // card item
-            .card_item {
-                overflow-y: hidden;
-                @include CarditemDesktop;
-                &:hover {
-                    @include HoverCard;
-                }
-                // informations item
-                .informations_item {
-                    @include InformationsInfo;
-                    span {
-                        font-family: $fourthFont;
-                        padding: 10px;
-                        color: #fff;
-                    }
-                }
-                // cover image
-                .cover_image {
-                    overflow-x: hidden;
-                    @include CoverImage;
-                    &:hover {
-                        transform: scale(1.2);
-                        opacity: 0;
-                    }
-                }
-            }
-        }
-        }
-    }
+    // // first main section
+    // .first_main_section {
+    //     margin-top: 0px;
+    // }
+    // // aside accomodations
+    // .aside_accomodations {
+    //     background-color:$secondMainSection;
+    //     overflow-y: auto;
+    //     min-width: 33%;
+    //     height: 100%;
+    // }
+    //     // cards section
+    // .cards_section {
+    //     height: 100%;
+    //     width: 66%;
+    //     // accomodations cards
+    //     .accomodation_cards {
+    //     background-color: none;
+    //     @include ColumnFlex;
+    //     border-radius: 10px;
+    //     margin: auto;
+    //     height: 100%;
+    //     width: 100%;
+    //         // upper cards scroller
+    //         .upper_cards_scroller {
+    //             @include YScroller;
+    //             // card item
+    //             .card_item {
+    //                 overflow-y: hidden;
+    //                 @include CarditemDesktop;
+    //                 &:hover {
+    //                     @include HoverCard;
+    //                 }
+    //             // informations item
+    //             .informations_item {
+    //                 @include InformationsInfo;
+    //                 span {
+    //                     font-family: $fourthFont;
+    //                     padding: 10px;
+    //                     color: #fff;
+    //                 }
+    //             }
+    //             // cover image
+    //             .cover_image {
+    //                 overflow-x: hidden;
+    //                 @include CoverImage;
+    //                 &:hover {
+    //                     transform: scale(1.2);
+    //                     opacity: 0;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     }
+    // }
 }
 
 // media breakpoint desktop
 @media screen and (min-width: 992px) and (max-width:1200px) {
-    .first_main_section {
-        margin-top: 0px;
-        width: 100%;
-    }
-    .aside_accomodations {
-        background-color:$secondMainSection;
-        overflow-y: auto;
-        min-width: 33%;
-        height: 100%;
-    }
-        // cards section
-    .cards_section {
-        height: 100%;
-        width: 66%;
-        // accomodations cards
-     .accomodation_cards {
-        background-color: none;
-        @include ColumnFlex;
-        border-radius: 10px;
-        margin: auto;
-        height: 100%;
-        width: 100%;
-        // upper cards scroller
-        .upper_cards_scroller {
-            @include YScroller;
-            // card item
-            .card_item {
-                overflow-y: hidden;
-                @include CarditemDesktop;
-                &:hover {
-                    @include HoverCard;
-                }
-                // informations item
-                .informations_item {
-                    @include InformationsInfo;
-                    span {
-                        font-family: $fourthFont;
-                        padding: 10px;
-                        color: #fff;
-                    }
-                }
-                // cover image
-                .cover_image {
-                    overflow-x: hidden;
-                    @include CoverImage;
-                    &:hover {
-                        transform: scale(1.2);
-                        opacity: 0;
-                    }
-                }
-            }
-        }
-        }
-    }
+    // .first_main_section {
+    //     margin-top: 0px;
+    //     width: 100%;
+    // }
+    // .aside_accomodations {
+    //     background-color:$secondMainSection;
+    //     overflow-y: auto;
+    //     min-width: 33%;
+    //     height: 100%;
+    // }
+    //     // cards section
+    // .cards_section {
+    //     height: 100%;
+    //     width: 66%;
+    //     // accomodations cards
+    //  .accomodation_cards {
+    //     background-color: none;
+    //     @include ColumnFlex;
+    //     border-radius: 10px;
+    //     margin: auto;
+    //     height: 100%;
+    //     width: 100%;
+    //     // upper cards scroller
+    //     .upper_cards_scroller {
+    //         @include YScroller;
+    //         // card item
+    //         .card_item {
+    //             overflow-y: hidden;
+    //             @include CarditemDesktop;
+    //             &:hover {
+    //                 @include HoverCard;
+    //             }
+    //             // informations item
+    //             .informations_item {
+    //                 @include InformationsInfo;
+    //                 span {
+    //                     font-family: $fourthFont;
+    //                     padding: 10px;
+    //                     color: #fff;
+    //                 }
+    //             }
+    //             // cover image
+    //             .cover_image {
+    //                 overflow-x: hidden;
+    //                 @include CoverImage;
+    //                 &:hover {
+    //                     transform: scale(1.2);
+    //                     opacity: 0;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     }
+    // }
 }
 
 

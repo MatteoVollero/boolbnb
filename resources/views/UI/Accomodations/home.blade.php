@@ -159,9 +159,9 @@
             </div>
     </div>
 </section>
-{{-- // second main section --}}
+{{--  second main section --}}
 <section class="second_main_section">
-    {{-- // second main section wrapper  --}}
+    {{-- second main section wrapper  --}}
     <div class="second_main_wrapper">
         <h2>
             The most clicked of the month
