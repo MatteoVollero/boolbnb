@@ -4,6 +4,7 @@
     Accomodations research
 @endsection
 @section('main_content')
+    <input type="hidden" class="var_search" value="search">
     {{-- section search  --}}
     <section class="section_search">
         {{-- {{-- jumbotron search item  --}}

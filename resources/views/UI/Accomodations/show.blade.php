@@ -13,6 +13,8 @@ Accomodation
 @endsection
 {{-- MAIN SECTION --}}
 @section('main_content')
+<input type="hidden" class="input" value="UI">
+<input type="hidden" class="var_map" value="map">
 <section class="show_section">
     <div class="show_wrapper">
         {{-- TITLE AND BUTTON --}}
@@ -136,7 +138,6 @@ Accomodation
         </div>
         {{-- BUTTON --}}
         <div class="button_section_show">
-            <input type="hidden" class="input" value="UI">
             <a href="#" class="btn_message_show">Contact the Host</a>
         </div>
     </div>

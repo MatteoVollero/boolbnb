@@ -1,4 +1,6 @@
-
+$(document).ready(function() {
+    if ($(".var_map").val() == "map") {
+        
         var map = tt.map({
             key: '5f9vpvhd3dCu5qyQPFDmWnkS1fQQ1Yrg',
             container: 'map',
@@ -34,3 +36,5 @@
         }
         console.log('LAT: '+$('#latitude').val()+' / LGT: '+$('#longitude').val() );
         createMarker('accident.colors-white.svg', [$('#longitude').val(), $('#latitude').val()], '#5327c3', 'SVG icon');
+    } 
+});

@@ -11,6 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
 @endsection
 @section('main_content')
+<input type="hidden" class="var_map" value="map">
+<input type="hidden" class="input" value="Upra">
 <section class="show_section">
     <div class="show_wrapper">
         {{-- TITLE AND BUTTON --}}
@@ -135,7 +137,6 @@
         </div>
         {{-- BUTTON --}}
         <div class="button_section_show">
-            <input type="hidden" class="input" value="Upra">
             <a href="{{route('admin.accomodations.edit', $accomodation->id)}}" class="btn_message_show none">Edit the accomodation</a>
             <a href="{{route('admin.accomodations.create', $accomodation->id)}}" class="btn_message_show none">Insert a new accomodation</a>
         </div>

@@ -1037,6 +1037,11 @@
   width: 24px;
 }
 
+body.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -1084,21 +1089,29 @@ select {
   display: flex;
 }
 
+.position_flex_header .wrapper .hamburger_icn {
+  display: none;
+}
+
+.position_flex_header .wrapper .hamburger_menu {
+  display: none;
+}
+
 .position_flex_header .wrapper .header_bnb_logo {
   width: 100px;
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-  .header_bnb_logo {
-    min-width: 80px;
+  .position_flex_header .wrapper .links {
+    display: none;
   }
 
-  .links .hamburger {
+  .position_flex_header .wrapper .hamburger_icn {
     display: inline;
   }
 
-  .links .link-header {
-    display: none;
+  .position_flex_header .wrapper .header_bnb_logo {
+    width: 100px;
   }
 }
 
@@ -2315,7 +2328,7 @@ footer .wrapper_footer .margin_top_100 .flex_box_footer_higher .column_footer .t
 }
 
 footer .wrapper_footer .margin_top_100 .flex_box_footer_higher .column_footer li {
-  line-height: 35px;
+  line-height: 30px;
 }
 
 footer .wrapper_footer .margin_top_100 .flex_box_footer_higher .column_footer li a {
@@ -3171,6 +3184,11 @@ footer .wrapper_footer .margin_top_100 .flex_box_footer_lower .flex_box_footer_l
   margin: 3px 0 0 3px;
   position: absolute;
   width: 24px;
+}
+
+body.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 * {

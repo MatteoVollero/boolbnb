@@ -1,6 +1,10 @@
 require('./bootstrap');
 require('./mobile-or-tablet');
-require('././Partials/functions.js');
 require('././Partials/map.js');
-require('././Partials/ajax.js');
+require('././Partials/show_UPRA.js');
+require('././Partials/show_UI.js');
+require('././Partials/search.js');
+require('././Partials/functions_event.js');
+require('././Partials/home.js');
+
 const Handlebars = require("handlebars");
