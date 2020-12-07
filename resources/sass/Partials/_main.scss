@@ -456,7 +456,6 @@
 // third main section
 .third_main_section {
     background-color:$footerColor;
-    height: 700px;
     padding: 50px;
     width: 100%;
     // third main wrapper 
@@ -464,16 +463,16 @@
         @include GenericFlex;
         border-radius: 10px;
         padding: 20px;
-        height: 100%;
         margin: auto;
-        width: 70%;
+        height: 80%;
+        width: 100%;
         //element item
-        .elm_item {
+        .elm_item_left {
             border-radius: 10px;
             position: relative;
             margin: 0px 10px;
             height: 100%;
-            width: 50%;
+            width: 60%;
             img {
                 border-radius: 10px;
                 transition: 0.3s;
@@ -484,6 +483,21 @@
                     transform:scale(1.03);
                 }
             }
+            h2 {
+                transform: translate(0%, 150%);
+                font-family: $secondFont;
+                position: absolute;
+                color: #fff;
+                left: 1%;
+                bottom:0
+            }
+        }
+        .elm_item_right {
+            border-radius: 10px;
+            position: relative;
+            margin: 0px 10px;
+            height: 100%;
+            width: 40%;
             // accomodations types 
             .accomodations_types {
                 justify-content: flex-start;
@@ -501,7 +515,7 @@
                     align-items: center;
                     border-radius: 10px;
                     transition: 0.3s;
-                    font-size: 20px;
+                    font-size: 15px;
                     color: #fff;
                     display: flex;
                     margin: 0% 2%;
@@ -521,6 +535,213 @@
                 color: #fff;
                 left: 1%;
                 bottom:0
+            }
+        }
+    }
+}
+
+// media breakpoint mobile
+@media screen and (min-width: 0px) and (max-width:768px) {
+        // third main section
+        .third_main_section {
+        background-color:$footerColor;
+        width: 100%;
+        // third main wrapper 
+        .third_main_wrapper {
+            @include GenericFlex;
+            border-radius: 10px;
+            margin: auto;
+            height: 80%;
+            width: 100%;
+            //element item
+            .elm_item_left {
+                border-radius: 10px;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                img {
+                    border-radius: 10px;
+                    transition: 0.3s;
+                    height: 100%;
+                    width: 100%;
+                    &:hover {
+                        cursor: pointer;
+                        transform:scale(1.03);
+                    }
+                }
+                h2 {
+                    transform: translate(0%, 150%);
+                    font-family: $secondFont;
+                    position: absolute;
+                    color: #fff;
+                    left: 1%;
+                    bottom:0
+                }
+            }
+            .elm_item_right {
+                display: none;
+                // accomodations types 
+                .accomodations_types {
+                    display: none;
+                    // type 
+                    .type {
+                        display: none;
+                       
+                    }  
+                }
+                h2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// media breakpoint tablet
+@media screen and (min-width: 769px) and (max-width:992px) {
+          // third main section
+    .third_main_section {
+        background-color:$footerColor;
+        padding: 50px;
+        width: 100%;
+        // third main wrapper 
+        .third_main_wrapper {
+            @include GenericFlex;
+            border-radius: 10px;
+            padding: 20px;
+            margin: auto;
+            height: 80%;
+            width: 90%;
+            //element item
+            .elm_item_left {
+                border-radius: 10px;
+                position: relative;
+                margin: 0px 10px;
+                height: 100%;
+                width: 100%;
+                img {
+                    border-radius: 10px;
+                    transition: 0.3s;
+                    height: 100%;
+                    width: 100%;
+                    &:hover {
+                        cursor: pointer;
+                        transform:scale(1.03);
+                    }
+                }
+                h2 {
+                    transform: translate(0%, 150%);
+                    font-family: $secondFont;
+                    position: absolute;
+                    color: #fff;
+                    left: 1%;
+                    bottom:0
+                }
+            }
+            .elm_item_right {
+                display: none;
+                // accomodations types 
+                .accomodations_types {
+                    display: none;
+                    // type 
+                    .type {
+                        display: none;
+                       
+                    }  
+                }
+                h2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// media breakpoint desktop
+@media screen and (min-width: 992px) and (max-width:1200px) {
+        // third main section
+    .third_main_section {
+        background-color:$footerColor;
+        padding: 50px;
+        width: 100%;
+        // third main wrapper 
+        .third_main_wrapper {
+            @include GenericFlex;
+            border-radius: 10px;
+            padding: 20px;
+            margin: auto;
+            height: 80%;
+            width: 100%;
+            //element item
+            .elm_item_left {
+                border-radius: 10px;
+                position: relative;
+                margin: 0px 10px;
+                height: 100%;
+                width: 70%;
+                img {
+                    border-radius: 10px;
+                    transition: 0.3s;
+                    height: 100%;
+                    width: 100%;
+                    &:hover {
+                        cursor: pointer;
+                        transform:scale(1.03);
+                    }
+                }
+                h2 {
+                    transform: translate(0%, 150%);
+                    font-family: $secondFont;
+                    position: absolute;
+                    color: #fff;
+                    left: 1%;
+                    bottom:0
+                }
+            }
+            .elm_item_right {
+                border-radius: 10px;
+                position: relative;
+                margin: 0px 10px;
+                height: 100%;
+                width: 30%;
+                // accomodations types 
+                .accomodations_types {
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-wrap:wrap;
+                    display: flex;
+                    height: 100%;
+                    width: 100%;
+                    // type 
+                    .type {
+                        text-transform: capitalize;
+                        background-color: red;
+                        font-family: $secondFont;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 10px;
+                        transition: 0.3s;
+                        font-size: 15px;
+                        color: #fff;
+                        display: flex;
+                        margin: 0% 2%;
+                        height: 30%;
+                        width: 46%;
+                        &:hover {
+                            transform:scale(1.02);
+                            opacity: 0.6;
+                            cursor: pointer;
+                        }
+                    }  
+                }
+                h2 {
+                    transform: translate(0%, 150%);
+                    font-family: $secondFont;
+                    position: absolute;
+                    color: #fff;
+                    left: 1%;
+                    bottom:0
+                }
             }
         }
     }

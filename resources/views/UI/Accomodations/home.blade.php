@@ -191,14 +191,14 @@
     {{-- third main wrapper  --}}
     <div class="third_main_wrapper">
         {{-- elm item  --}}
-        <div class="elm_item">
+        <div class="elm_item_left">
            <a href="{{route('register')}}" target="_blank"><img src="{{asset('images/Become_an_host_air_bnb.jpg')}}" alt="Become an host"></a>
             <h2>
                 Become an Host
             </h2>
         </div>
         {{-- elm item  --}}
-        <div class="elm_item">
+        <div class="elm_item_right">
             <h2>
                 Choose a type
             </h2>
