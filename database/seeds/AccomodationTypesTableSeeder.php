@@ -21,7 +21,7 @@ class AccomodationTypesTableSeeder extends Seeder
             $newType = new AccomodationType;
             // riempiamo il campo name con ogni elemento di $protoType
             $newType->name = $type;
-            $newType->image = $faker->imageUrl(800,600,'type:'.$type);
+            $newType->image = 'http://localhost:8000/storage/type_image/'.$newType->name.'.jpeg';
             // salviamo tutto
             $newType->save();
         }
