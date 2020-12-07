@@ -26,6 +26,18 @@ class AccomodationController extends Controller
         $accomodationServicesFiltered = [];
         // Array Che riempieremo alla fine con tutti i campi del JSON
         $accomodationsFilteredJSON = [];
+
+        // Controlliamo che i parametri per la ricerca non siano nulli 
+        if ($data['beds']==null) {
+          $data['beds']=0;
+        } 
+        if ($data['toilets']==null) {
+          $data['toilets']=0;
+        } 
+        if ($data['rooms']==null) {
+          $data['rooms']=0;
+        }
+
         // Prendiamo tutti gli appartamenti secondo i parametri richiesti dall'utente(cha saranno i requisiti minimi)
         $accomodationsToFilter = Accomodation::where("beds", ">=", $data['beds'])
         ->where("toilets", ">=", $data['toilets'])

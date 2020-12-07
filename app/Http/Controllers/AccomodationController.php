@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 
 class AccomodationController extends Controller
 {
-
+    
     /**
      * Display a listing of the resource.
      *
@@ -23,6 +23,7 @@ class AccomodationController extends Controller
      */
     public function index()
     {
+
         // Size dei tre array($sponsoredAccomodations,$normalAccomodationsScroll1,$normalAccomodationsScroll2 )
         $sponsoredAccomodationNumber = 10;
         $normalAccomodationNumber = 20;
@@ -213,7 +214,19 @@ class AccomodationController extends Controller
        // Array per i services
        $accomodationServicesFiltered = [];
 
-        // Prendiamo tutti gli appartamenti secondo i parametri richiesti dall'utente(cha saranno i requisiti minimi)
+      // Controlliamo che i parametri per la ricerca non siano nulli 
+      if ($data['beds']==null) {
+        $data['beds']=0;
+      } 
+      if ($data['toilets']==null) {
+        $data['toilets']=0;
+      } 
+      if ($data['rooms']==null) {
+        $data['rooms']=0;
+      }
+
+      
+      // Prendiamo tutti gli appartamenti secondo i parametri richiesti dall'utente(cha saranno i requisiti minimi)
        $accomodationsToFilter = Accomodation::where("beds", ">=", $data['beds'])
        ->where("toilets", ">=", $data['toilets'])
        ->where("rooms", ">=", $data['rooms'])
@@ -255,7 +268,7 @@ class AccomodationController extends Controller
           // Calcoliamo la distanza
           $distance = $this->distance($accomodation->latitude, $accomodation->longitude, $data['latitude'], $data['longitude']);
           // La distanza di default la prima volta sarà 20
-          if ($distance<=6000) {
+          if ($distance<=20) {
             $distance = round($distance,1);
               // Inseriamo tutti con distanza opportuna
               $tempAccomodationsFiltered = [
@@ -286,6 +299,39 @@ class AccomodationController extends Controller
 
          return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
      }
+
+
+     public function search_type($type_id)
+     {
+
+        // Prendiamo i dati di Types e Services
+        $types = AccomodationType:: all();
+        $services = Service::all();
+      
+        // Metodo per aprire pagina ricerca dal click nella sezione type della homepage
+        // Prendiamo tutti gli appartamenti di tipo uguale a $type_id
+        $accomodationsFilteredTemp = Accomodation::where("type_id", "=", $type_id)
+        ->get();
+
+        // Array che conterrà i record filtrati dalla ricerca
+        $accomodationsFiltered = [];
+        
+        // Cicliamo su $accomodationFilteredTemp per preparare i dati da inserire nel record
+        foreach ($accomodationsFilteredTemp as $accomodation) {
+        
+          $tempAccomodationsFiltered = [
+                  'accomodation' => $accomodation,
+                  'distance' => -1,
+                  'services' => $accomodation->services,
+                  'type' => $accomodation->accomodation_type
+              ];
+              // Inseriamo nell'array finale
+              $accomodationsFiltered[] = $tempAccomodationsFiltered;
+        }
+
+        return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
+     }
+ 
 
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // METODI PER LA GESTIONE DEI MESSAGE
