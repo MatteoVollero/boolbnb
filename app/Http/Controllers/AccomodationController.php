@@ -296,8 +296,23 @@ class AccomodationController extends Controller
         // Assegnamo l'array ordinato ad $accomodationsFiltered
         $accomodationsFiltered = $accomodationsFilteredAsc;
 
+        // Ricerchiamo Accomodations con ADV attive
+        $sponsoredAccomodations = [];
+        $accomodations = Accomodation::all();
+        // Cicliamo su tutte le $Accomodations per verificare se ci sono ADVS
+        foreach ($accomodations as $accomodation) {
+          // Controlliamo se ci sono record nella tabella pivot accomodation_advs
+          if (count($accomodation->advs)>0 ) {
+            // Controlliamo se l'ultimo record contiene una data di scadenza dell'ADV maggiore della data odierna
+            if($accomodation->advs[count($accomodation->advs)-1]->pivot->end_adv > Carbon::now())
+            {
+              // Inseriamo il record nell'array per passarlo alla view
+              $sponsoredAccomodations[] = $accomodation;
+            }
+          }
+        }
 
-         return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
+         return view('UI.Accomodations.search',compact('types', 'services', 'sponsoredAccomodations', 'accomodationsFiltered'));
      }
 
 
@@ -329,7 +344,23 @@ class AccomodationController extends Controller
               $accomodationsFiltered[] = $tempAccomodationsFiltered;
         }
 
-        return view('UI.Accomodations.search',compact('types', 'services', 'accomodationsFiltered'));
+        // Ricerchiamo Accomodations con ADV attive
+        $sponsoredAccomodations = [];
+        $accomodations = Accomodation::all();
+        // Cicliamo su tutte le $Accomodations per verificare se ci sono ADVS
+        foreach ($accomodations as $accomodation) {
+          // Controlliamo se ci sono record nella tabella pivot accomodation_advs
+          if (count($accomodation->advs)>0 ) {
+            // Controlliamo se l'ultimo record contiene una data di scadenza dell'ADV maggiore della data odierna
+            if($accomodation->advs[count($accomodation->advs)-1]->pivot->end_adv > Carbon::now())
+            {
+              // Inseriamo il record nell'array per passarlo alla view
+              $sponsoredAccomodations[] = $accomodation;
+            }
+          }
+        }
+
+         return view('UI.Accomodations.search',compact('types', 'services', 'sponsoredAccomodations', 'accomodationsFiltered'));
      }
  
 
