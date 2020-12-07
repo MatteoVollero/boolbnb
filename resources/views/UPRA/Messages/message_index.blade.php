@@ -12,7 +12,6 @@
                     <h3 class="nickname_elm_message">NICKNAME</h3>
                 </div>
                 <p class="text_elm_message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi reprehenderit suscipit, labore praesentium commodi libero mollitia quaerat qui sunt eveniet officiis dignissimos atque veritatis voluptate facere cum deserunt, quia a. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, dolorum nemo? Quibusdam tenetur qui nisi quia quasi optio vero iste voluptates laudantium, alias, assumenda asperiores molestias sit. Repellat, libero impedit!</p>
-                <a href="#" class="btn_replay">REPLAY<i class="fas fa-reply icn_message"></i></a>
             </div>
         </div>
     </section>

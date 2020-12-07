@@ -46,13 +46,17 @@
 }
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
-    .header_bnb_logo {
-        min-width: 80px;
-    }
-    .hamburger {
-        display: inline;
-    }
-    .link-header {
-        display: none;
+    .position_flex_header {
+        .wrapper {
+            .links {
+                display: none;
+            }
+            .hamburger_icn {
+                display: inline;
+            }
+            .header_bnb_logo {
+                min-width: 80px;
+            }
+        }
     }
 }

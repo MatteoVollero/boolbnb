@@ -61,7 +61,6 @@ function getSearchData() {
                 var source = $("#ajax_template").html();
                 var template = Handlebars.compile(source);
                 // make a cicle for
-                console.log(data);
                 for (let i = 0; i < data.length; i++) {
                     // take the context to print with handlebars
                     var context = {
@@ -82,7 +81,6 @@ function getSearchData() {
                     // take all the data inside of a variable
                     var html = template(context);
                     var researchResults = $(".research_results");
-                    console.log(context);
                     researchResults.removeClass('none');
                     $(".ajax_handlebar_print").append(html);
                     // append the data
@@ -155,7 +153,6 @@ function longitudeInput() {
     if (isNaN(locationInput) && locationInput != null && locationInput != "") {
         // take the longitude attr
         var longitude = $(".search_input").attr("data-long");
-        console.log(longitude);
     } else {
         // empty the input
         $(".search_input").val("");
@@ -169,7 +166,6 @@ function latitudeInput() {
     if (isNaN(locationInput) && locationInput != null && locationInput != "") {
         // take the longitude attr
         var latitude = $(".search_input").attr("data-lat");
-        console.log(latitude);
     } else {
         // empty the input
         $(".search_input").val("");

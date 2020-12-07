@@ -87,7 +87,7 @@
                 </form>
             @endguest
                 <a href="#" class="cross_icn">
-                    <i class="fas fa-times"></i>
+                    <i class="cross_icn fas fa-times"></i>
                 </a>
             </div>
         </div>

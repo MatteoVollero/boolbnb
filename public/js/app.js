@@ -42429,24 +42429,15 @@ $(document).on("click", ".list_item_tom", function () {
 
 var hamburger = $(".hamburger_icn");
 var cross = $(".cross_icn");
-hamburger.click(function () {
-  $(".hamburger_menu").addClass("active");
+$(document).on("click", hamburger, function () {
+  $(".hamburger_menu").toggle("active");
+  $("footer").toggle("inactive");
+  $("section").toggle("inactive");
 });
-cross.click(function () {
-  $(".hamburger-menu").removeClass("active");
-});
-
-/***/ }),
-
-/***/ "./resources/js/Partials/home.js":
-/*!***************************************!*\
-  !*** ./resources/js/Partials/home.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  if ($(".var_home").val() == "home") {}
+$(document).on("click", cross, function () {
+  $(".hamburger-menu").toggle("active");
+  $("footer").toggle("inactive");
+  $("section").toggle("inactive");
 });
 
 /***/ }),
@@ -42492,7 +42483,6 @@ $(document).ready(function () {
     }); // map.addControl(new tt.FullscreenControl());
 
     map.addControl(new tt.NavigationControl());
-    console.log('LAT: ' + $('#latitude').val() + ' / LGT: ' + $('#longitude').val());
     createMarker('accident.colors-white.svg', [$('#longitude').val(), $('#latitude').val()], '#5327c3', 'SVG icon');
   }
 });
@@ -42568,8 +42558,6 @@ function getSearchData() {
         var source = $("#ajax_template").html();
         var template = Handlebars.compile(source); // make a cicle for
 
-        console.log(data);
-
         for (var i = 0; i < data.length; i++) {
           // take the context to print with handlebars
           var context = {
@@ -42590,7 +42578,6 @@ function getSearchData() {
 
           var html = template(context);
           var researchResults = $(".research_results");
-          console.log(context);
           researchResults.removeClass('none');
           $(".ajax_handlebar_print").append(html); // append the data
         }
@@ -42676,7 +42663,6 @@ function longitudeInput() {
   if (isNaN(locationInput) && locationInput != null && locationInput != "") {
     // take the longitude attr
     var longitude = $(".search_input").attr("data-long");
-    console.log(longitude);
   } else {
     // empty the input
     $(".search_input").val("");
@@ -42694,7 +42680,6 @@ function latitudeInput() {
   if (isNaN(locationInput) && locationInput != null && locationInput != "") {
     // take the longitude attr
     var latitude = $(".search_input").attr("data-lat");
-    console.log(latitude);
   } else {
     // empty the input
     $(".search_input").val("");
@@ -42780,7 +42765,6 @@ $(document).ready(function () {
         },
         "method": "GET",
         "success": function success(data) {
-          console.log(data);
           var ctx = document.getElementById('accomodation_stats_chart').getContext('2d');
           var accomodationChart = new Chart(ctx, {
             type: 'line',
@@ -42840,8 +42824,6 @@ __webpack_require__(/*! ././Partials/show_UI.js */ "./resources/js/Partials/show
 __webpack_require__(/*! ././Partials/search.js */ "./resources/js/Partials/search.js");
 
 __webpack_require__(/*! ././Partials/functions_event.js */ "./resources/js/Partials/functions_event.js");
-
-__webpack_require__(/*! ././Partials/home.js */ "./resources/js/Partials/home.js");
 
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 

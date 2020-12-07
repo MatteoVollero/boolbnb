@@ -26,7 +26,6 @@ $(document).ready(function() {
                     },
                     "method" : "GET",
                     "success" : function (data) {
-                        console.log(data);
                         var ctx = document.getElementById('accomodation_stats_chart').getContext('2d');
                         var accomodationChart = new Chart(ctx, {
                             type: 'line',

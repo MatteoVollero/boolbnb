@@ -5,6 +5,5 @@ require('././Partials/show_UPRA.js');
 require('././Partials/show_UI.js');
 require('././Partials/search.js');
 require('././Partials/functions_event.js');
-require('././Partials/home.js');
 
 const Handlebars = require("handlebars");

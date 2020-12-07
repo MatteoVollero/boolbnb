@@ -34,7 +34,6 @@ $(document).ready(function() {
                 .setPopup(popup)
                 .addTo(map);
         }
-        console.log('LAT: '+$('#latitude').val()+' / LGT: '+$('#longitude').val() );
         createMarker('accident.colors-white.svg', [$('#longitude').val(), $('#latitude').val()], '#5327c3', 'SVG icon');
     } 
 });

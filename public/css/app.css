@@ -1069,6 +1069,14 @@ select {
   outline: none;
 }
 
+.inactive {
+  display: none;
+}
+
+.active {
+  display: inline-block;
+}
+
 .position_flex_header {
   background-color: #E7DFC6;
   font-family: "Montserrat", sans-serif;
@@ -1116,16 +1124,16 @@ select {
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .header_bnb_logo {
-    min-width: 80px;
+  .position_flex_header .wrapper .links {
+    display: none;
   }
 
-  .hamburger {
+  .position_flex_header .wrapper .hamburger_icn {
     display: inline;
   }
 
-  .link-header {
-    display: none;
+  .position_flex_header .wrapper .header_bnb_logo {
+    min-width: 80px;
   }
 }
 
