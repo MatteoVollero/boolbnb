@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\Auth;
   Route::get('/', 'AccomodationController@index')->name('home');
   Route::get('/search', 'AccomodationController@search')->name('search');
   Route::get('/search/{type_id}', 'AccomodationController@search_type')->name('search_type');
-  Route::get('/show/{slug}', 'AccomodationController@show')->name('show');
+  Route::get('/{slug}', 'AccomodationController@show')->name('show');
   // rotte MESSAGE
   Route::post('/accomodations/message_send', 'AccomodationController@message_send')->name('message_send');
 
