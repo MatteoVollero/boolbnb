@@ -509,22 +509,41 @@
                 // type 
                 .type {
                     text-transform: capitalize;
-                    background-color: red;
                     font-family: $secondFont;
                     justify-content: center;
                     align-items: center;
-                    border-radius: 10px;
-                    transition: 0.3s;
+                    position: relative;
                     font-size: 15px;
                     color: #fff;
                     display: flex;
                     margin: 0% 2%;
                     height: 30%;
                     width: 46%;
-                    &:hover {
-                        transform:scale(1.02);
-                        opacity: 0.6;
-                        cursor: pointer;
+                    img {
+                        border-radius: 10px;
+                        transition: 0.3s;
+                        height: 100%;
+                        width: 100%;
+                        &:hover {
+                            transform:scale(1.02);
+                            opacity: 0.2;
+                            cursor: pointer;
+                        }
+                    }
+                    .type_name {
+                        transform: translate(-50%,-50%);
+                        font-family: $fourthFont;
+                        position: absolute;
+                        font-weight: bold;
+                        font-size: 20px;
+                        color: crimson;
+                        display: none;
+                        opacity: 0;
+                        left: 50%;
+                        top: 50%;
+                    }
+                    &:hover .type_name {
+                        opacity: 1;
                     }
                 }  
             }
