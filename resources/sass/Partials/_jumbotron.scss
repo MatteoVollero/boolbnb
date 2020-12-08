@@ -1,29 +1,51 @@
 // jumbotron
 .jumbotron {
-    width: 100%;
-    height: 100%;
     position: relative;
+    height: 100%;
+    width: 100%;
 }
 // text item
 .text_item {
-    position: absolute;
+    transform: translate(-50%, -50%);
     font-family: $secondFont;
+    position: absolute;
     font-weight: bold;
     font-size:60px;
     color:#fff;
-    top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    top: 25%;
 }
 // jumbo item
 .jumbotron_search_item {
     background-color: #fff;
     border-radius: 10px;
     position: absolute;
-    width: 20%;
     padding: 10px;
+    width: 20%;
     right: 3%;
     top: 15%;
+    // btn
+    .btn_search {
+        height: 50px;
+        margin: auto;
+        width: 30%;
+        button {
+            background-color:$firstMainSection;
+            border: 1px solid $btnColor;
+            font-family: $secondFont;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-size: 20px;
+            height: 100%;
+            width: 100%;
+            .fa-search {
+                padding-left: 10px;
+            }
+            &:hover {
+                @include HeroItemHover;
+            }
+        }
+    }
     // search item
     .search_item {
         border: 2px solid lightgoldenrodyellow;
@@ -50,6 +72,19 @@
             right: 100%;
             z-index: 1;
             top: 0;
+            // list item tom
+            .list_item_tom {
+                font-family: $secondFont;
+                transition: 0.3s;
+                font-size: 25px;
+                height: 100%;
+                width: 100%;
+                &:hover {
+                    background-color: $btnColor;
+                    transform:translate(1.05);
+                    border-radius: 20px;
+                }
+            }
         }
         // adding class block with js 
         .block {
@@ -84,13 +119,13 @@
             }
             // list item
             .list_item:last-child {
-                display: flex;
                 justify-content: space-between;
                 align-items: center;
+                display: flex;
                 // service list item
                 .service_list_item {
-                    width: 40%;
                     height: 100%;
+                    width: 40%;
                     i {
                         color: $violaHeroScuroModificato;
                     }
@@ -155,14 +190,14 @@
     }
     .jumbotron_search_item {
         position: relative;
+        padding-left: 60px; 
         margin: auto;
         width: 100%;
-        padding-left: 60px; 
     }
     .search_item {
         .dropleft_menu {
+            left: 0;
         top: 0;
-        left: 0;
         &:hover {
             background-color: $firstMainSection;
             cursor: pointer;
@@ -181,15 +216,15 @@
 // media breakpoint tablet
 @media screen and (min-width: 768px) and (max-width:992px) {
     .jumbotron_text_item {
-        width: 50%;
-        font-size: 30px;
         position: relative;
+        font-size: 30px;
+        width: 50%;
         h2 {
+            transform: translate(-50%, 50%);
             position: absolute;
+            font-size: 30px;
             color: #000;
             z-index: 1;
-            font-size: 30px;
-            transform: translate(-50%, 50%);
         }
     }
     .jumbotron_search_item {
@@ -202,15 +237,15 @@
 // media breakpoint desktop
 @media screen and (min-width: 992px) and (max-width:1200px) {
     .jumbotron_text_item {
-        width: 50%;
-        font-size: 30px;
         position: relative;
+        font-size: 30px;
+        width: 50%;
         h2 {
+            transform: translate(-50%, 50%);
             position: absolute;
+            font-size: 30px;
             color: #000;
             z-index: 1;
-            font-size: 30px;
-            transform: translate(-50%, 50%);
         }
     }
     .jumbotron_search_item {

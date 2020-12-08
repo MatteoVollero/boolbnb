@@ -92,7 +92,7 @@
                         </li>
                         <li>
                             {{-- footer bnb logo  --}}
-                            <img class="footer_bnb_logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb">
+                           <a href="{{route('home')}}"><img class="footer_bnb_logo" src="{{asset('images/air_bnb_logo.png')}}" alt="logo_airbnb"></a>
                         </li>
                     </ul>
                 </div>
@@ -105,22 +105,22 @@
                     {{-- list icons social  --}}
                     <ul class="list_icons_social">
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/AirbnbItalia/" target="_blank">
                                 <i class="fab fa-facebook"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.instagram.com/airbnb/" target="_blank">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://twitter.com/airbnb" target="_blank">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.youtube.com/user/Airbnb" target="_blank">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </li>

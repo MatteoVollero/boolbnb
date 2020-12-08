@@ -89,8 +89,8 @@
             }
             // cover image
             .cover_image {
-                overflow: hidden;
                 @include CoverImage;
+                overflow: hidden;
                 &:hover {
                     transform: translate(1.05);
                     opacity: 0;
@@ -196,7 +196,6 @@
         }
     }
 }
-
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
     // first main section
@@ -212,122 +211,121 @@
         height: 20%;
     }
 }
-
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
-    // first main section
-    .first_main_section {
-        margin-top: 0px;
-    }
-    // aside accomodations
-    .aside_accomodations {
-        background-color:$secondMainSection;
-        overflow-y: auto;
-        min-width: 33%;
-        height: 100%;
-    }
-        // cards section
-    .cards_section {
-        height: 100%;
-        width: 66%;
-        // accomodations cards
-     .accomodation_cards {
-        background-color: none;
-        @include ColumnFlex;
-        border-radius: 10px;
-        margin: auto;
-        height: 100%;
-        width: 100%;
-        // upper cards scroller
-        .upper_cards_scroller {
-            @include YScroller;
-            // card item
-            .card_item {
-                overflow-y: hidden;
-                @include CarditemDesktop;
-                &:hover {
-                    @include HoverCard;
-                }
-                // informations item
-                .informations_item {
-                    @include InformationsInfo;
-                    span {
-                        font-family: $fourthFont;
-                        padding: 10px;
-                        color: #fff;
-                    }
-                }
-                // cover image
-                .cover_image {
-                    overflow-x: hidden;
-                    @include CoverImage;
-                    &:hover {
-                        transform: scale(1.2);
-                        opacity: 0;
-                    }
-                }
-            }
-        }
-        }
-    }
+    // // first main section
+    // .first_main_section {
+    //     margin-top: 0px;
+    // }
+    // // aside accomodations
+    // .aside_accomodations {
+    //     background-color:$secondMainSection;
+    //     overflow-y: auto;
+    //     min-width: 33%;
+    //     height: 100%;
+    // }
+    //     // cards section
+    // .cards_section {
+    //     height: 100%;
+    //     width: 66%;
+    //     // accomodations cards
+    //     .accomodation_cards {
+    //     background-color: none;
+    //     @include ColumnFlex;
+    //     border-radius: 10px;
+    //     margin: auto;
+    //     height: 100%;
+    //     width: 100%;
+    //         // upper cards scroller
+    //         .upper_cards_scroller {
+    //             @include YScroller;
+    //             // card item
+    //             .card_item {
+    //                 overflow-y: hidden;
+    //                 @include CarditemDesktop;
+    //                 &:hover {
+    //                     @include HoverCard;
+    //                 }
+    //             // informations item
+    //             .informations_item {
+    //                 @include InformationsInfo;
+    //                 span {
+    //                     font-family: $fourthFont;
+    //                     padding: 10px;
+    //                     color: #fff;
+    //                 }
+    //             }
+    //             // cover image
+    //             .cover_image {
+    //                 overflow-x: hidden;
+    //                 @include CoverImage;
+    //                 &:hover {
+    //                     transform: scale(1.2);
+    //                     opacity: 0;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     }
+    // }
 }
 
 // media breakpoint desktop
 @media screen and (min-width: 992px) and (max-width:1200px) {
-    .first_main_section {
-        margin-top: 0px;
-        width: 100%;
-    }
-    .aside_accomodations {
-        background-color:$secondMainSection;
-        overflow-y: auto;
-        min-width: 33%;
-        height: 100%;
-    }
-        // cards section
-    .cards_section {
-        height: 100%;
-        width: 66%;
-        // accomodations cards
-     .accomodation_cards {
-        background-color: none;
-        @include ColumnFlex;
-        border-radius: 10px;
-        margin: auto;
-        height: 100%;
-        width: 100%;
-        // upper cards scroller
-        .upper_cards_scroller {
-            @include YScroller;
-            // card item
-            .card_item {
-                overflow-y: hidden;
-                @include CarditemDesktop;
-                &:hover {
-                    @include HoverCard;
-                }
-                // informations item
-                .informations_item {
-                    @include InformationsInfo;
-                    span {
-                        font-family: $fourthFont;
-                        padding: 10px;
-                        color: #fff;
-                    }
-                }
-                // cover image
-                .cover_image {
-                    overflow-x: hidden;
-                    @include CoverImage;
-                    &:hover {
-                        transform: scale(1.2);
-                        opacity: 0;
-                    }
-                }
-            }
-        }
-        }
-    }
+    // .first_main_section {
+    //     margin-top: 0px;
+    //     width: 100%;
+    // }
+    // .aside_accomodations {
+    //     background-color:$secondMainSection;
+    //     overflow-y: auto;
+    //     min-width: 33%;
+    //     height: 100%;
+    // }
+    //     // cards section
+    // .cards_section {
+    //     height: 100%;
+    //     width: 66%;
+    //     // accomodations cards
+    //  .accomodation_cards {
+    //     background-color: none;
+    //     @include ColumnFlex;
+    //     border-radius: 10px;
+    //     margin: auto;
+    //     height: 100%;
+    //     width: 100%;
+    //     // upper cards scroller
+    //     .upper_cards_scroller {
+    //         @include YScroller;
+    //         // card item
+    //         .card_item {
+    //             overflow-y: hidden;
+    //             @include CarditemDesktop;
+    //             &:hover {
+    //                 @include HoverCard;
+    //             }
+    //             // informations item
+    //             .informations_item {
+    //                 @include InformationsInfo;
+    //                 span {
+    //                     font-family: $fourthFont;
+    //                     padding: 10px;
+    //                     color: #fff;
+    //                 }
+    //             }
+    //             // cover image
+    //             .cover_image {
+    //                 overflow-x: hidden;
+    //                 @include CoverImage;
+    //                 &:hover {
+    //                     transform: scale(1.2);
+    //                     opacity: 0;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     }
+    // }
 }
 
 
@@ -352,18 +350,17 @@
         // single accomodation 
         .single_accomodation {
             justify-content: flex-start;
-            align-items: center;
             border-radius: 10px;
+            align-items: center;
+            flex-wrap: wrap;
             display: flex;
-            height: 100%;
+            height: 60%;
             width: 100%;
             // cover image
-            .cover_image {
-                background-color: lightblue;
+            .cover_image { 
                 border-radius: 10px;
-                margin: 20px;
-                height: 97%;
-                width: 50%;
+                height: 100%;
+                width: 100%;
                 img {
                     border-radius: 10px;
                     overflow: hidden;
@@ -377,29 +374,29 @@
                     }
                 }
             }
-            // secondary images
-            .secondary_images {
-                @include SecondaryImagesFlex;
-                height: 100%;
-                width: 50%;
-                // image item 
-                .image_item {
-                    background-color:crimson;
+        }
+        // secondary images
+        .secondary_images {
+            @include SecondaryImagesFlex;
+            margin-top: 20px;
+            height: 40%;
+            width: 100%;
+            // image item 
+            .image_item {
+                border-radius: 10px;
+                min-height: 100%;
+                min-width: 25%;
+                margin: 1%;
+                img {
                     border-radius: 10px;
-                    min-height: 47%;
-                    min-width: 47%;
-                    margin: 1%;
-                    img {
-                        border-radius: 10px;
-                        overflow: hidden;
-                        transition: 0.3s;
-                        height: 47%;
-                        width: 100%;
-                        &:hover {
-                            transform:scale(1.02);
-                            cursor: pointer;
-                            opacity: 0.8;
-                        }
+                    overflow: hidden;
+                    transition: 0.3s;
+                    height: 100%;
+                    width: 100%;
+                    &:hover {
+                        transform:scale(1.02);
+                        cursor: pointer;
+                        opacity: 0.8;
                     }
                 }
             }
@@ -409,55 +406,47 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
-    
-    .single_accomodation{
-        flex-wrap: wrap;
-    }
-    .secondary_images {
-        width: 50%;
-    }
-    .cover_image {
-        margin: auto;
+    // second section
+.second_main_section {
+    background-color: $secondMainSection;
+    width: 100%;
+    // second main wrapper 
+    .second_main_wrapper {
+        position: relative;
+        padding: 40px;
+        height: 100%;
         width: 100%;
-        height: 50%;
+        h2 {
+            text-transform: capitalize;
+            transform: translate(-50%,-50%);
+            font-family: $secondFont;
+            position: absolute;
+            font-size: 18px;
+            color: #fff;
+            left: 50%;
+            top: 4%;
+        }
+        // single accomodation 
+        .single_accomodation {
+            justify-content: flex-start;
+            border-radius: 10px;
+            align-items: center;
+            margin-top: 10px;
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+        // secondary images
+        .secondary_images {
+            display: none;
+        }
     }
+}
 }
 
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
-    // single accomodation 
-    .single_accomodation {
-        justify-content: center;
-        background-color: red;
-        border-radius: 10px;
-        flex-wrap: wrap;
-        display: flex;
-        height: 100%;
-        width: 100%;
-        // cover image
-        .cover_image {
-            background-color: lightblue;
-            border-radius: 10px;
-            margin: 20px;
-            height: 97%;
-            width: 70%;
-        }
-        // secondary images
-        .secondary_images {
-            @include SecondaryImagesFlex;
-            margin: 20px;
-            height: 100%;
-            width: 70%;
-            // image item 
-            .image_item {
-                background-color:crimson;
-                border-radius: 10px;
-                min-height: 47%;
-                min-width: 47%;
-                margin: 1%;
-            }
-        }
-    }   
+     
 }
 
 // media breakpoint desktop
@@ -467,7 +456,6 @@
 // third main section
 .third_main_section {
     background-color:$footerColor;
-    height: 700px;
     padding: 50px;
     width: 100%;
     // third main wrapper 
@@ -475,16 +463,16 @@
         @include GenericFlex;
         border-radius: 10px;
         padding: 20px;
-        height: 100%;
         margin: auto;
-        width: 70%;
+        height: 80%;
+        width: 100%;
         //element item
-        .elm_item {
+        .elm_item_left {
             border-radius: 10px;
             position: relative;
             margin: 0px 10px;
             height: 100%;
-            width: 50%;
+            width: 60%;
             img {
                 border-radius: 10px;
                 transition: 0.3s;
@@ -495,6 +483,21 @@
                     transform:scale(1.03);
                 }
             }
+            h2 {
+                transform: translate(0%, 150%);
+                font-family: $secondFont;
+                position: absolute;
+                color: #fff;
+                left: 1%;
+                bottom:0
+            }
+        }
+        .elm_item_right {
+            border-radius: 10px;
+            position: relative;
+            margin: 0px 10px;
+            height: 100%;
+            width: 40%;
             // accomodations types 
             .accomodations_types {
                 justify-content: flex-start;
@@ -512,7 +515,7 @@
                     align-items: center;
                     border-radius: 10px;
                     transition: 0.3s;
-                    font-size: 20px;
+                    font-size: 15px;
                     color: #fff;
                     display: flex;
                     margin: 0% 2%;
@@ -532,6 +535,213 @@
                 color: #fff;
                 left: 1%;
                 bottom:0
+            }
+        }
+    }
+}
+
+// media breakpoint mobile
+@media screen and (min-width: 0px) and (max-width:768px) {
+        // third main section
+        .third_main_section {
+        background-color:$footerColor;
+        width: 100%;
+        // third main wrapper 
+        .third_main_wrapper {
+            @include GenericFlex;
+            border-radius: 10px;
+            margin: auto;
+            height: 80%;
+            width: 100%;
+            //element item
+            .elm_item_left {
+                border-radius: 10px;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                img {
+                    border-radius: 10px;
+                    transition: 0.3s;
+                    height: 100%;
+                    width: 100%;
+                    &:hover {
+                        cursor: pointer;
+                        transform:scale(1.03);
+                    }
+                }
+                h2 {
+                    transform: translate(0%, 150%);
+                    font-family: $secondFont;
+                    position: absolute;
+                    color: #fff;
+                    left: 1%;
+                    bottom:0
+                }
+            }
+            .elm_item_right {
+                display: none;
+                // accomodations types 
+                .accomodations_types {
+                    display: none;
+                    // type 
+                    .type {
+                        display: none;
+                       
+                    }  
+                }
+                h2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// media breakpoint tablet
+@media screen and (min-width: 769px) and (max-width:992px) {
+          // third main section
+    .third_main_section {
+        background-color:$footerColor;
+        padding: 50px;
+        width: 100%;
+        // third main wrapper 
+        .third_main_wrapper {
+            @include GenericFlex;
+            border-radius: 10px;
+            padding: 20px;
+            margin: auto;
+            height: 80%;
+            width: 90%;
+            //element item
+            .elm_item_left {
+                border-radius: 10px;
+                position: relative;
+                margin: 0px 10px;
+                height: 100%;
+                width: 100%;
+                img {
+                    border-radius: 10px;
+                    transition: 0.3s;
+                    height: 100%;
+                    width: 100%;
+                    &:hover {
+                        cursor: pointer;
+                        transform:scale(1.03);
+                    }
+                }
+                h2 {
+                    transform: translate(0%, 150%);
+                    font-family: $secondFont;
+                    position: absolute;
+                    color: #fff;
+                    left: 1%;
+                    bottom:0
+                }
+            }
+            .elm_item_right {
+                display: none;
+                // accomodations types 
+                .accomodations_types {
+                    display: none;
+                    // type 
+                    .type {
+                        display: none;
+                       
+                    }  
+                }
+                h2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// media breakpoint desktop
+@media screen and (min-width: 992px) and (max-width:1200px) {
+        // third main section
+    .third_main_section {
+        background-color:$footerColor;
+        padding: 50px;
+        width: 100%;
+        // third main wrapper 
+        .third_main_wrapper {
+            @include GenericFlex;
+            border-radius: 10px;
+            padding: 20px;
+            margin: auto;
+            height: 80%;
+            width: 100%;
+            //element item
+            .elm_item_left {
+                border-radius: 10px;
+                position: relative;
+                margin: 0px 10px;
+                height: 100%;
+                width: 70%;
+                img {
+                    border-radius: 10px;
+                    transition: 0.3s;
+                    height: 100%;
+                    width: 100%;
+                    &:hover {
+                        cursor: pointer;
+                        transform:scale(1.03);
+                    }
+                }
+                h2 {
+                    transform: translate(0%, 150%);
+                    font-family: $secondFont;
+                    position: absolute;
+                    color: #fff;
+                    left: 1%;
+                    bottom:0
+                }
+            }
+            .elm_item_right {
+                border-radius: 10px;
+                position: relative;
+                margin: 0px 10px;
+                height: 100%;
+                width: 30%;
+                // accomodations types 
+                .accomodations_types {
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-wrap:wrap;
+                    display: flex;
+                    height: 100%;
+                    width: 100%;
+                    // type 
+                    .type {
+                        text-transform: capitalize;
+                        background-color: red;
+                        font-family: $secondFont;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 10px;
+                        transition: 0.3s;
+                        font-size: 15px;
+                        color: #fff;
+                        display: flex;
+                        margin: 0% 2%;
+                        height: 30%;
+                        width: 46%;
+                        &:hover {
+                            transform:scale(1.02);
+                            opacity: 0.6;
+                            cursor: pointer;
+                        }
+                    }  
+                }
+                h2 {
+                    transform: translate(0%, 150%);
+                    font-family: $secondFont;
+                    position: absolute;
+                    color: #fff;
+                    left: 1%;
+                    bottom:0
+                }
             }
         }
     }

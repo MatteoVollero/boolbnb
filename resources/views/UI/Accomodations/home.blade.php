@@ -160,9 +160,9 @@
             </div>
     </div>
 </section>
-{{-- // second main section --}}
+{{--  second main section --}}
 <section class="second_main_section">
-    {{-- // second main section wrapper  --}}
+    {{-- second main section wrapper  --}}
     <div class="second_main_wrapper">
         <h2>
             The most clicked of the month
@@ -171,19 +171,19 @@
         <div class="single_accomodation">
             {{-- cover image  --}}
             <div class="cover_image">
-                     <img src="{{$mostViewedAccomodation->cover_image}}" alt="cover image">
+                  <a href="{{route('show', $mostViewedAccomodation->slug)}}"><img src="{{$mostViewedAccomodation->cover_image}}" alt="cover image"></a>
             </div>
             {{-- // secondary images  --}}
-            <div class="secondary_images">
-                {{-- image item  --}}
-                @foreach ($mostViewedAccomodation->accomodation_images as $accomodation_image)
-                    @if ($accomodation_image->principal)
-                        <div class="image_item">
-                            <img src="{{$accomodation_image->image}}" alt="Images"> 
-                        </div>
-                    @endif
-                @endforeach
-            </div>
+        </div>
+        <div class="secondary_images">
+            {{-- image item  --}}
+            @foreach ($mostViewedAccomodation->accomodation_images as $accomodation_image)
+                @if ($accomodation_image->principal)
+                    <div class="image_item">
+                        <img src="{{$accomodation_image->image}}" alt="Images"> 
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
 </section>
@@ -192,14 +192,14 @@
     {{-- third main wrapper  --}}
     <div class="third_main_wrapper">
         {{-- elm item  --}}
-        <div class="elm_item">
+        <div class="elm_item_left">
            <a href="{{route('register')}}" target="_blank"><img src="{{asset('images/Become_an_host_air_bnb.jpg')}}" alt="Become an host"></a>
             <h2>
                 Become an Host
             </h2>
         </div>
         {{-- elm item  --}}
-        <div class="elm_item">
+        <div class="elm_item_right">
             <h2>
                 Choose a type
             </h2>
