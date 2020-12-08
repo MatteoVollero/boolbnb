@@ -7,7 +7,7 @@ $(document).ready(function() {
             style: 'tomtom://vector/1/basic-main',
             dragPan: !isMobileOrTablet(),
             center: [$('#longitude').val(), $('#latitude').val()], //longitudine latitudine
-            zoom: 3
+            zoom: 15
         });
         // map.addControl(new tt.FullscreenControl());
         map.addControl(new tt.NavigationControl());
