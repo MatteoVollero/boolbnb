@@ -4,9 +4,54 @@
     Accomodations research
 @endsection
 @section('main_content')
+
     <input type="hidden" class="var_search" value="search">
     {{-- section search  --}}
     <section class="section_search">
+        {{-- SPONSORIZED --}}
+        <h2 class="cards_section_text">
+            Chosen for you
+        </h2>
+        <div class="accomodation_cards_search">
+            {{-- upper cards controller  --}}
+            <div class="upper_cards_scroller">
+                {{-- card item  --}}
+                @foreach ($sponsoredAccomodations as $accomodation)
+                <div class="card_item">
+                    {{-- informations item --}}
+                     <div class="informations_item">
+                         <span>{{$accomodation->title}}</span>
+                         <span>{{$accomodation->country}}</span>
+                         <span>{{$accomodation->region}}</span>
+                         <span>{{$accomodation->city}}</span>
+                         <span>{{$accomodation->price}}&euro;</span>
+                         <ul class="flex_items">
+                            @foreach ($accomodation->services as $service)
+                                @if ($service->service_name == "wi-fi")
+                                <i class="fas fa-wifi"></i>
+                                @elseif ($service->service_name == "parking")
+                                <i class="fas fa-parking"></i>
+                                @elseif ($service->service_name == "pool")
+                                <i class="fas fa-swimmer"></i>
+                                @elseif ($service->service_name == "reception")
+                                <i class="fas fa-concierge-bell"></i>
+                                @elseif ($service->service_name == "sauna")
+                                <i class="fas fa-hot-tub"></i>
+                                @elseif ($service->service_name == "sea_view")
+                                <i class="fas fa-water"></i>
+                                @endif
+                            @endforeach
+                        </ul>
+                     </div>
+                     {{-- cover image --}}
+                     <div class="cover_image">
+                        <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
+                     </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        {{-- SEARCH --}}
         <div class="flex_box_search_section">
             <div class="search_input_section">
                 {{-- search item  --}}

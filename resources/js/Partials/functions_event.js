@@ -70,6 +70,7 @@ $(document).on("click", ".list_item_tom", function() {
     // insert the value in the location input
     $(".location_input").val(autoCompile);
     $(".tom_search").removeClass("block");
+    console.log("funziono");
     // make an attribute for the longitude
     $(".longitude_input").val(longitude);
     // make an attribute for the latitude
