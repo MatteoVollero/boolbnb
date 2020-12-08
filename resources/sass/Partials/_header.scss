@@ -13,6 +13,12 @@
         @include GenericWrapper;
         align-items: center;
         display: flex;
+        .hamburger_icn {
+            display: none;
+        }
+        .hamburger_menu {
+            display: none;
+        }
         .header_bnb_logo {
             width: 100px;
         }
@@ -24,27 +30,33 @@
 }
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
-    .header_bnb_logo {
-        min-width: 80px;
-    }
-    .links {
-        .hamburger {
-            display: inline;
-        }
-        .link-header {
-            display: none;
+    .position_flex_header {
+        .wrapper {
+            .links {
+                display: none;
+            }
+            .hamburger_icn {
+                display: inline;
+            }
+            .header_bnb_logo {
+                width: 100px;
+            }
         }
     }
 }
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
-    .header_bnb_logo {
-        min-width: 80px;
-    }
-    .hamburger {
-        display: inline;
-    }
-    .link-header {
-        display: none;
+    .position_flex_header {
+        .wrapper {
+            .links {
+                display: none;
+            }
+            .hamburger_icn {
+                display: inline;
+            }
+            .header_bnb_logo {
+                min-width: 80px;
+            }
+        }
     }
 }

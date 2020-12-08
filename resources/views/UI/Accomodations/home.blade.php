@@ -5,6 +5,7 @@
 @endsection
 @include('UI.Partials.jumbotron')
 @section('main_content')
+<input type="hidden" class="var_home" value="home">
 {{-- // main section  --}}
 <section class="first_main_section">
     {{-- aside --}}

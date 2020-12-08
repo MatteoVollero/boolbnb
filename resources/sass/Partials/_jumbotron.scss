@@ -24,28 +24,6 @@
     width: 20%;
     right: 3%;
     top: 15%;
-    // btn
-    .btn_search {
-        height: 50px;
-        margin: auto;
-        width: 30%;
-        button {
-            background-color:$firstMainSection;
-            border: 1px solid $btnColor;
-            font-family: $secondFont;
-            border-radius: 10px;
-            transition: 0.3s;
-            font-size: 20px;
-            height: 100%;
-            width: 100%;
-            .fa-search {
-                padding-left: 10px;
-            }
-            &:hover {
-                @include HeroItemHover;
-            }
-        }
-    }
     // search item
     .search_item {
         border: 2px solid lightgoldenrodyellow;
@@ -154,6 +132,28 @@
         }
         select {
             @include HeroInputInfo;
+            &:hover {
+                @include HeroItemHover;
+            }
+        }
+    }
+     // btn
+     .btn_search {
+        margin: auto;
+        width: 30%;
+        height: 50px;
+        button {
+            background-color:$firstMainSection;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $btnColor;
+            font-family: $secondFont;
+            font-size: 20px;
+            transition: 0.3s;
+            .fa-search {
+                padding-left: 10px;
+            }
             &:hover {
                 @include HeroItemHover;
             }

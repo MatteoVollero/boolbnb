@@ -1,11 +1,13 @@
-
+$(document).ready(function() {
+    if ($(".var_map").val() == "map") {
+        
         var map = tt.map({
             key: '5f9vpvhd3dCu5qyQPFDmWnkS1fQQ1Yrg',
             container: 'map',
             style: 'tomtom://vector/1/basic-main',
             dragPan: !isMobileOrTablet(),
             center: [$('#longitude').val(), $('#latitude').val()], //longitudine latitudine
-            zoom: 3
+            zoom: 15
         });
         // map.addControl(new tt.FullscreenControl());
         map.addControl(new tt.NavigationControl());
@@ -32,5 +34,6 @@
                 .setPopup(popup)
                 .addTo(map);
         }
-        console.log('LAT: '+$('#latitude').val()+' / LGT: '+$('#longitude').val() );
         createMarker('accident.colors-white.svg', [$('#longitude').val(), $('#latitude').val()], '#5327c3', 'SVG icon');
+    } 
+});

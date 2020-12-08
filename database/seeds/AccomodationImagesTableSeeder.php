@@ -26,18 +26,22 @@ class AccomodationImagesTableSeeder extends Seeder
 
         // Per ogni elemento presente in accomodations creiamo un record
         foreach ($accomodations as $accomodation) {
+            $countPrincipal = 0;
+            $moduloPrincipal = $faker->numberBetween(1, 3);
             // CARICA IN DB 10 IMMAGINI PER OGNI ACCOMODATION
             for ($i=0; $i < 10; $i++) {
                 // Creiamo un'istanza di accomodationImage
                 $newImage = new AccomodationImage();
                 // Riempiamo tutti i campi
                 $newImage->accomodation_id = $accomodation->id;
-                $newImage->image = $faker->imageUrl(400, 250, 'detail');
+                $newImage->image = 'http://localhost:8000/storage/interior_image/interior'.($i+1).'.jpeg';
                 // PRINCIPAL
-                if ($i<4) {
+                
+                if ($countPrincipal<4 && $i%$moduloPrincipal==0) {
                     // imposta true per le prime 4 immagini caricate,
                     // per tutte le altre prenderà false come default dal DB
                     $newImage->principal = true;
+                    $countPrincipal ++;
                 }
                 // Salviamo il tutto
                 $newImage->save();
