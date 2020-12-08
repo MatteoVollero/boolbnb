@@ -24,28 +24,6 @@
     width: 20%;
     right: 3%;
     top: 15%;
-    // btn
-    .btn_search {
-        height: 50px;
-        margin: auto;
-        width: 30%;
-        button {
-            background-color:$firstMainSection;
-            border: 1px solid $btnColor;
-            font-family: $secondFont;
-            border-radius: 10px;
-            transition: 0.3s;
-            font-size: 20px;
-            height: 100%;
-            width: 100%;
-            .fa-search {
-                padding-left: 10px;
-            }
-            &:hover {
-                @include HeroItemHover;
-            }
-        }
-    }
     // search item
     .search_item {
         border: 2px solid lightgoldenrodyellow;

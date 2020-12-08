@@ -43,6 +43,7 @@
         height: 40%;
         // dropdown menu
         .dropdown_menu {
+            display: flex;
             background-color: #fff;
             justify-content: flex-start;
             flex-direction: column;
@@ -50,20 +51,22 @@
             position: absolute;
             border-radius: 10px;
             cursor: pointer;
-            display: flex;
-            display: none;
+            visibility: hidden;
             bottom: -100%;
             width: 200px;
             height: 100%;
             z-index: 1;
             left: -100%;
-            .list_item {
-                background-color: #fff;
-                height: 30px;
-                width: 200px;
-                padding: 5px;
-                &:hover {
-                    background-color: $btnColor;
+            li {
+                .list_item {
+                    background-color: #fff;
+                    height: 30px;
+                    width: 200px;
+                    padding: 5px;
+                    visibility: hidden;
+                    &:hover {
+                        background-color: $btnColor;
+                    }
                 }
             }
         }
@@ -71,7 +74,10 @@
         &:hover .dropdown_menu {
             background-color: $firstMainSection;
             cursor: pointer;
-            display: block;
+            visibility: visible;
+        }
+        &:hover .list_item {
+            visibility: visible;
         }
         &:hover{
             background-color: $btnColor;
