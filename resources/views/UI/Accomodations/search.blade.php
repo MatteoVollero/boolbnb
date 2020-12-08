@@ -12,7 +12,7 @@
                 {{-- search item  --}}
                 <div class="search_search_item">
                     <label id="location" for="location">Where do you want to go?</label>
-                    <input type="text" class="location_input search_input form_input" id="location" name="location" data-long="" data-lat="" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
+                    <input type="text" class="location_input search_input form_input" autocomplete="off" id="location" name="location" data-long="" data-lat="" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
                     <div class="tom_search dropdown_menu_search">
                         <ul class="flex_items_tom">
                         </ul>
