@@ -1,6 +1,6 @@
 // footer
 footer {
-    background-image: linear-gradient(to right, $headerColor, #316D63);
+    background-color: $footerColor;
     border-top: 2px solid $violaHeroScuroModificato;
     font-family: $secondFont;
     width: 100%;
@@ -24,16 +24,16 @@ footer {
                         font-weight: bold;
                         font-size: 30px;
                         font-size: 25px;
-                        color: #fff;
+                        color:$airBnB;
                     }
                     li {
                         line-height: 30px;
                         a {
-                            color: $airBnB;
                             font-family: $secondFont;
                             font-weight: bold;
                             transition: 0.3s;
                             font-size: small;
+                            color: #000;
                             &:hover {
                                 text-decoration: none;
                                 font-weight: bolder;
@@ -65,7 +65,7 @@ footer {
                     align-items: center;
                     font-weight: bold;
                     display: flex;
-                    color: #fff;
+                    color:$airBnB;
                     width: 50%;
                     // list icons social 
                     .list_icons_social {
@@ -73,7 +73,7 @@ footer {
                             display: inline;
                             a {
                                 font-size: 25px;
-                                color: #fff;
+                                color:$airBnB;
                                 &:hover {
                                     text-decoration: none;
                                 }

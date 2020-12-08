@@ -107,7 +107,7 @@
 }
 // first main
 .first_main_section {
-    background-color:$firstMainSection;
+    background-color:lightblue;
     @include GenericFlex;
     height: 1000px;
     width: 100%;
@@ -456,7 +456,7 @@
 
 // third main section
 .third_main_section {
-    background-color:$footerColor;
+    background-color:lightblue;
     padding: 50px;
     width: 100%;
     // third main wrapper 
@@ -488,7 +488,7 @@
                 transform: translate(0%, 150%);
                 font-family: $secondFont;
                 position: absolute;
-                color: #fff;
+                color:#000;
                 left: 1%;
                 bottom:0
             }
@@ -527,8 +527,8 @@
                         width: 100%;
                         &:hover {
                             transform:scale(1.02);
-                            opacity: 0.2;
                             cursor: pointer;
+                            opacity: 0.2;
                         }
                     }
                     .type_name {
@@ -552,7 +552,7 @@
                 transform: translate(0%, 150%);
                 font-family: $secondFont;
                 position: absolute;
-                color: #fff;
+                color: #000;
                 left: 1%;
                 bottom:0
             }
@@ -621,7 +621,7 @@
 @media screen and (min-width: 769px) and (max-width:992px) {
           // third main section
     .third_main_section {
-        background-color:$footerColor;
+        background-color:$headerColor;
         padding: 50px;
         width: 100%;
         // third main wrapper 
