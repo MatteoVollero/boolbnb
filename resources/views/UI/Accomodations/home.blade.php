@@ -70,7 +70,7 @@
                 </ul>
                 {{-- cover image --}}
                 <div class="cover_image">
-                   <a href="{{route('admin.accomodations.show', $accomodation->id)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
+                   <a href="{{route('show', $accomodation->slug)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
                 </div>
             </div>
             @endforeach
@@ -116,7 +116,7 @@
                          </div>
                          {{-- cover image --}}
                          <div class="cover_image">
-                            <a href="{{route('admin.accomodations.show', $accomodation->id)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
+                            <a href="{{route('show', $accomodation->slug)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
                          </div>
                         </div>
                     @endforeach
@@ -153,7 +153,7 @@
                         </div>
                         {{-- cover image --}}
                         <div class="cover_image">
-                            <a href="{{route('admin.accomodations.show', $accomodation->id)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
+                            <a href="{{route('show', $accomodation->slug)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
                         </div>
                     </div>
                     @endforeach
@@ -208,7 +208,7 @@
                 {{-- higher type --}}
                 @foreach ($types as $type)
                     <div class="type">
-                        <img src="{{$type->image}}" width="100%" height="100%" alt="Image">
+                        <a href="{{route('search_type', $type->id)}}"><img src="{{$type->image}}" width="100%" height="100%" alt="Image"></a>
                         <p class="type_name">{{$type->name}}</p>
                     </div>
                 @endforeach

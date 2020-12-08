@@ -17,18 +17,18 @@
                     </a>
                 @endif
                 @else
-                    <a class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <li class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} 
                         <i class="fas fa-chevron-down icn"></i>
                         <ul class="dropdown_menu">
-                            {{-- <li> --}}
-                              <a class="list_item" href="{{route('admin.accomodations.index')}}">Accomodations Area</a>
-                            {{-- </li> --}}
-                            {{-- <li> --}}
-                                <a class="list_item" href="{{route('admin.accomodations.message_index')}}">Message Area</a>
-                            {{-- </li> --}}
+                            <li>
+                                <a href="http://localhost:8000/admin/accomodations">Accomodations Area</a> 
+                            </li>
+                            <li>
+                               <a href=>Message Area</a>
+                            </li>
                         </ul>
-                    </a>
+                    </li>
                     <a class="link_header" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -55,19 +55,15 @@
             @else
                 <a class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} 
-                    <i class="fas fa-chevron-down icn"></i>
                     <ul class="dropdown_menu">
-                        <li  href="{{asset('admin/accomodations')}}" class="list_item">
-                          Accomodations Area
+                        <li class="list_item">
+                            Accomodations Area
                         </li>
                         <li class="list_item">
                             Advertising Area
                         </li>
                         <li class="list_item">
                             Message Area
-                        </li>
-                        <li class="list_item">
-                           Homepage
                         </li>
                     </ul>
                 </a>

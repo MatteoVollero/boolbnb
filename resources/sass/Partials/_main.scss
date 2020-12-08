@@ -4,6 +4,7 @@
 .aside_accomodations {
     background-color:$secondMainSection;
     overflow-y: auto;
+    padding-bottom: 20px;
     min-width: 20%;
     height: 100%;
     // aside wrapper
@@ -27,7 +28,6 @@
         // aside item
         .aside_item {
             justify-content: flex-start;
-            background-color: #000;
             flex-direction: column;
             border-radius: 10px;
             align-items: center;
@@ -40,6 +40,7 @@
             width: 100%;
             opacity: 1;
             &:hover {
+                border: 4px solid $btnColor;
                 @include HoverCard;
             }
             // informations item 
@@ -92,8 +93,8 @@
                 @include CoverImage;
                 overflow: hidden;
                 &:hover {
-                    transform: translate(1.05);
-                    opacity: 0;
+                    transform: translate(1.2);
+                    opacity: 0.2;
                 }
             }
         }
@@ -158,7 +159,7 @@
                         @include CoverImage;
                         &:hover {
                             transform: scale(1.2);
-                            opacity: 0;
+                            opacity: 0.2;
                         }
                     }
                 }
@@ -188,7 +189,7 @@
                         @include CoverImage;
                         &:hover {
                             transform: scale(1.2);
-                            opacity: 0;
+                            opacity: 0.2;
                         }
                     }
                 }
