@@ -53,24 +53,21 @@
                 </a>
             @endif
             @else
-                <a class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <div class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} 
                     <i class="fas fa-chevron-down icn"></i>
                     <ul class="dropdown_menu">
-                        <li  href="{{asset('admin/accomodations')}}" class="list_item">
-                          Accomodations Area
+                        <li class="list_item">
+                            <a href="{{route('admin.accomodations.index')}}">Accomodations Area</a>
                         </li>
                         <li class="list_item">
-                            Advertising Area
+                            <a href="{{route('admin.accomodations.adv_index')}}">Advertising Area</a>
                         </li>
                         <li class="list_item">
-                            Message Area
-                        </li>
-                        <li class="list_item">
-                           Homepage
+                            <a href="{{route('admin.accomodations.message_index')}}">Message Area</a>
                         </li>
                     </ul>
-                </a>
+                </div>
                 <a class="link_header" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">

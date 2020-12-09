@@ -77,7 +77,7 @@ $(document).on("click", ".list_item_tom", function() {
     $(".latitude_Input").val(latitude);
 });
 
-//HEADER RESPONSIVE HAMBURGER
+// //HEADER RESPONSIVE HAMBURGER
 // var hamburger = $(".hamburger_icn");
 // var cross = $(".cross_icn");
 // $(document).on("click", hamburger, function() {

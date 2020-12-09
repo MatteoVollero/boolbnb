@@ -4,14 +4,11 @@
     Accomodations research
 @endsection
 @section('main_content')
-
     <input type="hidden" class="var_search" value="search">
     {{-- section search  --}}
     <section class="section_search">
         {{-- SPONSORIZED --}}
-        <h2 class="cards_section_text">
-            Chosen for you
-        </h2>
+        <h1 class="research_results">In evidence</h1>
         <div class="accomodation_cards_search">
             {{-- upper cards controller  --}}
             <div class="upper_cards_scroller">
@@ -45,8 +42,10 @@
                      </div>
                      {{-- cover image --}}
                      <div class="cover_image">
-                        <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
-                     </div>
+                        <a href="{{route('show', $accomodation->slug)}}">
+                            <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
+                        </a>
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -125,8 +124,8 @@
                     </li>
                 </div>
                 {{-- btn search  --}}
-                <div class="btn_search button_search">
-                    <button type="submit">Search<i class="fas fa-search"></i></button>
+                <div class="btn_search_search button_search">
+                    <button type="submit"><span>Search</span><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </div>
@@ -155,7 +154,7 @@
                             <h4 class="title_elm_search">{{$accomodation['accomodation']->address}}</h4>
                             <h4 class="info_elm_search">{{$accomodation['type']->name}}</h4>
                             {{-- text elm search  --}}
-                            <p class="text_elm_search">{{$accomodation['accomodation']->description}}</p>
+                            {{-- <p class="text_elm_search">{{$accomodation['accomodation']->description}}</p> --}}
                             {{-- service elm search  --}}
                             <small class="info_elm_search">{{$accomodation['distance']}}Km</small>
                             <div class="service_elm_search">
@@ -227,11 +226,11 @@
                     <h4 class="title_elm_search">@{{address}}</h4>
                     <h4 class="title_elm_search">@{{type}}</h4>
                     {{-- text elm search  --}}
-                    <p class="text_elm_search">@{{description}}</p>
+                    {{-- <p class="text_elm_search">@{{description}}</p> --}}
                     {{-- service elm search  --}}
                     <small class="info_elm_search">@{{distance}}km</small>
                     <div class="service_elm_search">
-                        {{-- info elm search  --}}
+                        {{-- info elm search --}}
                     </div>
                 </div>
                 {{-- text elm search lower  --}}

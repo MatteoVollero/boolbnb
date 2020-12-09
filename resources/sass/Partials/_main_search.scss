@@ -7,17 +7,24 @@
     padding-top: 100px;
     // SPONSORED
     .accomodation_cards_search {
-        background-color: red;
         margin: 50px 0;
-        border-radius: 10px;
         width: 100%;
         height: 55%;
+        overflow: hidden;
         // upper cards scroller
         .upper_cards_scroller {
-            @include XScroller;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 10px;
+            overflow-x: auto;
+            flex-wrap: wrap;
+            display: flex;
+            height: 100%;
+            margin: 20px 0;
+            width: 100%;
             // card item
             .card_item {
-                overflow-y: hidden;
+                overflow: hidden;
                 @include CardItem;
                 &:hover {
                     @include HoverCard;
@@ -33,7 +40,7 @@
                 }
                 // cover image
                 .cover_image {
-                    overflow-x: hidden;
+                    overflow: hidden;
                     @include CoverImage;
                     &:hover {
                         transform: scale(1.2);
@@ -83,7 +90,7 @@
             background-color: #fff;
             border-radius: 10px;
             padding: 10px;
-            width: 80%;
+            width: 40%;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -100,7 +107,7 @@
                 margin: 5px 5px;
                 padding: 5px;
                 height: 15%;
-                width: 95%;
+                width: 90%;
                 // 
                 .tom_search {
                     background-color: $firstMainSection;
@@ -202,7 +209,7 @@
                 }
             }
             // btn
-            .btn_search {
+            .btn_search_search {
                 margin: auto;
                 width: 30%;
                 height: 50px;
@@ -215,7 +222,7 @@
                     font-family: $secondFont;
                     font-size: 20px;
                     transition: 0.3s;
-                    .fa-search {
+                    i {
                         padding-left: 10px;
                     }
                     &:hover {
@@ -239,7 +246,7 @@
             display: flex;
             li {
                 margin-top: 20px;
-                // margin-right: 20px;
+                margin-right: 20px;
             }
         }
         .elm_search_list {
@@ -247,7 +254,7 @@
             border-radius: 15px;
             margin: 30px;
             display: flex;
-            height: 500px;
+            height: 350px;
             padding: 10px;
             width: 80%;
             img {
@@ -328,7 +335,7 @@
 }
 .research_results {
     text-align: center;
-    margin-top: 150px;
+    margin: 50px 0;
     font-size: 40px;
     color: #fff;
 }
@@ -350,6 +357,24 @@
     // section search
     .section_search {
         // elm responsive list
+        //search section
+        .flex_box_search_section { 
+            .search_input_section {
+                .btn_search_search{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    button {
+                        span{
+                            display: none;
+                        }
+                        i {
+                            padding-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
         .elm_responsive_list {
             flex-wrap: wrap;
             display: flex;
@@ -358,7 +383,7 @@
                 width: calc((100% - 40px) / 2);
                 flex-direction: column;
                 margin: 10px;
-                height: 400px;
+                height: 350px;
                 display: flex;
                 // img elm search
                 .img_elm_search {
@@ -381,6 +406,24 @@
     // section search 
     .section_search {
         // elm responsive search 
+        // SEARCH SECTION
+        .flex_box_search_section { 
+            .search_input_section {
+                .btn_search_search{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    button {
+                        span{
+                            display: none;
+                        }
+                        i {
+                            padding-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
         .elm_responsive_search {
             display: flex;
             flex-wrap: wrap;
@@ -390,7 +433,7 @@
                 align-items: center;
                 margin: 10px 0;
                 display: flex;
-                height: 400px;
+                height: 350px;
                 width: 100%;
                 // img elm search 
                 .img_elm_search {
