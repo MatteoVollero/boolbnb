@@ -17,18 +17,21 @@
                     </a>
                 @endif
                 @else
-                    <li class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <span class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} 
                         <i class="fas fa-chevron-down icn"></i>
                         <ul class="dropdown_menu">
-                            <li>
-                                <a href="http://localhost:8000/admin/accomodations">Accomodations Area</a> 
+                            <li class="list_item">
+                                <a href="{{route('admin.accomodations.index')}}">Accomodations Area</a> 
                             </li>
-                            <li>
-                               <a href=>Message Area</a>
+                            <li class="list_item">
+                                <a href="{{route('admin.accomodations.adv_index')}}">Advertising Area</a>
                             </li>
+                            <li class="list_item">
+                                <a href="{{route('admin.accomodations.message_index')}}">Message Area</a>
+                             </li>
                         </ul>
-                    </li>
+                    </span>
                     <a class="link_header" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -57,14 +60,14 @@
                     {{ Auth::user()->name }} 
                     <ul class="dropdown_menu">
                         <li class="list_item">
-                            Accomodations Area
+                            <a href="{{route('admin.accomodations.index')}}">Accomodations Area</a> 
                         </li>
                         <li class="list_item">
-                            Advertising Area
+                            <a href="{{route('admin.accomodations.adv_index')}}">Advertising Area</a>
                         </li>
                         <li class="list_item">
-                            Message Area
-                        </li>
+                            <a href="{{route('admin.accomodations.message_index')}}">Message Area</a>
+                         </li>
                     </ul>
                 </a>
                 <a class="link_header" href="{{ route('logout') }}"

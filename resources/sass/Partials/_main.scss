@@ -107,7 +107,7 @@
 }
 // first main
 .first_main_section {
-    background-color:lightblue;
+    background-color:#f0f8ff;
     @include GenericFlex;
     height: 1000px;
     width: 100%;
@@ -205,130 +205,80 @@
     }
     // aside accomodations
     .aside_accomodations {
-        flex-direction: column;
-        overflow-x: auto;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 20%;
+        display: none;
     }
+        // cards section
+        .cards_section {
+            height: 100%;
+            width: 100%;
+            // accomodations cards
+            .accomodation_cards {
+            background-color: none;
+            @include ColumnFlex;
+            border-radius: 10px;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+                // upper cards scroller
+                .upper_cards_scroller {
+                    @include YScroller;
+                    // card item
+                    .card_item {
+                        overflow-y: hidden;
+                        @include CarditemDesktop;
+                        &:hover {
+                            @include HoverCard;
+                        }
+                    // informations item
+                    .informations_item {
+                        @include InformationsInfo;
+                        span {
+                            font-family: $fourthFont;
+                            padding: 10px;
+                            color: #fff;
+                        }
+                    }
+                    // cover image
+                    .cover_image {
+                        overflow-x: hidden;
+                        @include CoverImage;
+                        &:hover {
+                            transform: scale(1.2);
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+            }
+        }
 }
 // media breakpoint tablet
 @media screen and (min-width: 769px) and (max-width:992px) {
-    // // first main section
-    // .first_main_section {
-    //     margin-top: 0px;
-    // }
-    // // aside accomodations
-    // .aside_accomodations {
-    //     background-color:$secondMainSection;
-    //     overflow-y: auto;
-    //     min-width: 33%;
-    //     height: 100%;
-    // }
-    //     // cards section
-    // .cards_section {
-    //     height: 100%;
-    //     width: 66%;
-    //     // accomodations cards
-    //     .accomodation_cards {
-    //     background-color: none;
-    //     @include ColumnFlex;
-    //     border-radius: 10px;
-    //     margin: auto;
-    //     height: 100%;
-    //     width: 100%;
-    //         // upper cards scroller
-    //         .upper_cards_scroller {
-    //             @include YScroller;
-    //             // card item
-    //             .card_item {
-    //                 overflow-y: hidden;
-    //                 @include CarditemDesktop;
-    //                 &:hover {
-    //                     @include HoverCard;
-    //                 }
-    //             // informations item
-    //             .informations_item {
-    //                 @include InformationsInfo;
-    //                 span {
-    //                     font-family: $fourthFont;
-    //                     padding: 10px;
-    //                     color: #fff;
-    //                 }
-    //             }
-    //             // cover image
-    //             .cover_image {
-    //                 overflow-x: hidden;
-    //                 @include CoverImage;
-    //                 &:hover {
-    //                     transform: scale(1.2);
-    //                     opacity: 0;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     }
-    // }
+    // first main section
+    .first_main_section {
+        margin-top: 0px;
+    }
+    // aside accomodations
+    .aside_accomodations {
+        background-color:$secondMainSection;
+        overflow: auto;
+        min-width: 30%;
+        height: 100%;
+    }
 }
 
 // media breakpoint desktop
 @media screen and (min-width: 992px) and (max-width:1200px) {
-    // .first_main_section {
-    //     margin-top: 0px;
-    //     width: 100%;
-    // }
-    // .aside_accomodations {
-    //     background-color:$secondMainSection;
-    //     overflow-y: auto;
-    //     min-width: 33%;
-    //     height: 100%;
-    // }
-    //     // cards section
-    // .cards_section {
-    //     height: 100%;
-    //     width: 66%;
-    //     // accomodations cards
-    //  .accomodation_cards {
-    //     background-color: none;
-    //     @include ColumnFlex;
-    //     border-radius: 10px;
-    //     margin: auto;
-    //     height: 100%;
-    //     width: 100%;
-    //     // upper cards scroller
-    //     .upper_cards_scroller {
-    //         @include YScroller;
-    //         // card item
-    //         .card_item {
-    //             overflow-y: hidden;
-    //             @include CarditemDesktop;
-    //             &:hover {
-    //                 @include HoverCard;
-    //             }
-    //             // informations item
-    //             .informations_item {
-    //                 @include InformationsInfo;
-    //                 span {
-    //                     font-family: $fourthFont;
-    //                     padding: 10px;
-    //                     color: #fff;
-    //                 }
-    //             }
-    //             // cover image
-    //             .cover_image {
-    //                 overflow-x: hidden;
-    //                 @include CoverImage;
-    //                 &:hover {
-    //                     transform: scale(1.2);
-    //                     opacity: 0;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     }
-    // }
+    .first_main_section {
+        margin-top: 0px;
+    }
+    .aside_accomodations {
+        background-color:$secondMainSection;
+        overflow-y: auto;
+        min-width: 33%;
+        height: 100%;
+    }
 }
-
 
 // second section
 .second_main_section {
@@ -355,8 +305,9 @@
             align-items: center;
             flex-wrap: wrap;
             display: flex;
+            margin: auto;
             height: 60%;
-            width: 100%;
+            width: 70%;
             // cover image
             .cover_image { 
                 border-radius: 10px;
@@ -435,7 +386,7 @@
             margin-top: 10px;
             display: flex;
             height: 100%;
-            width: 100%;
+            width: 90%;
         }
         // secondary images
         .secondary_images {
@@ -456,7 +407,7 @@
 
 // third main section
 .third_main_section {
-    background-color:lightblue;
+    background-color:#f0f8ff;
     padding: 50px;
     width: 100%;
     // third main wrapper 
@@ -533,11 +484,12 @@
                     }
                     .type_name {
                         transform: translate(-50%,-50%);
+                        background-color: red;
                         font-family: $fourthFont;
                         position: absolute;
                         font-weight: bold;
-                        font-size: 20px;
                         color: crimson;
+                        font-size: 20px;
                         display: none;
                         opacity: 0;
                         left: 50%;
@@ -564,7 +516,7 @@
 @media screen and (min-width: 0px) and (max-width:768px) {
         // third main section
         .third_main_section {
-        background-color:$footerColor;
+        background-color:$firstMainSection;
         width: 100%;
         // third main wrapper 
         .third_main_wrapper {
@@ -593,7 +545,7 @@
                     transform: translate(0%, 150%);
                     font-family: $secondFont;
                     position: absolute;
-                    color: #fff;
+                    color: #000;
                     left: 1%;
                     bottom:0
                 }
@@ -621,7 +573,7 @@
 @media screen and (min-width: 769px) and (max-width:992px) {
           // third main section
     .third_main_section {
-        background-color:$headerColor;
+        background-color:$firstMainSection;
         padding: 50px;
         width: 100%;
         // third main wrapper 
@@ -653,7 +605,7 @@
                     transform: translate(0%, 150%);
                     font-family: $secondFont;
                     position: absolute;
-                    color: #fff;
+                    color: #000;
                     left: 1%;
                     bottom:0
                 }
@@ -681,7 +633,7 @@
 @media screen and (min-width: 992px) and (max-width:1200px) {
         // third main section
     .third_main_section {
-        background-color:$footerColor;
+        background-color:$firstMainSection;
         padding: 50px;
         width: 100%;
         // third main wrapper 
@@ -713,7 +665,7 @@
                     transform: translate(0%, 150%);
                     font-family: $secondFont;
                     position: absolute;
-                    color: #fff;
+                    color: #000;
                     left: 1%;
                     bottom:0
                 }
@@ -735,11 +687,11 @@
                     // type 
                     .type {
                         text-transform: capitalize;
-                        background-color: red;
                         font-family: $secondFont;
                         justify-content: center;
                         align-items: center;
                         border-radius: 10px;
+                        position: relative;
                         transition: 0.3s;
                         font-size: 15px;
                         color: #fff;
@@ -752,13 +704,13 @@
                             opacity: 0.6;
                             cursor: pointer;
                         }
-                    }  
+                    }
                 }
                 h2 {
                     transform: translate(0%, 150%);
                     font-family: $secondFont;
                     position: absolute;
-                    color: #fff;
+                    color: #000;
                     left: 1%;
                     bottom:0
                 }

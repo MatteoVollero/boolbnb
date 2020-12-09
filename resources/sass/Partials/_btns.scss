@@ -44,7 +44,7 @@
         // dropdown menu
         .dropdown_menu {
             justify-content: flex-start;
-            background-color: #fff;
+            background-color: #000;
             flex-direction: column;
             align-items: center;
             border-radius: 10px;
@@ -52,20 +52,19 @@
             cursor: pointer;
             display: flex;
             display: none;
-            bottom: -100%;
-            width: 200px;
-            height: 100%;
+            bottom: -280%;
+            padding: 10px;
             z-index: 1;
             left: -100%;
-            li {
-                .list_item {
-                    background-color: #fff;
-                    height: 30px;
-                    width: 200px;
-                    padding: 5px;
-                    &:hover {
-                        background-color: $btnColor;
-                    }
+            .list_item {
+                background-color: $firstMainSection;
+                border-radius: 10px;
+                padding: 10px;
+                height: 30px;
+                width: 200px;
+                padding: 5px;
+                &:hover {
+                    background-color: $btnColor;
                 }
             }
         }
