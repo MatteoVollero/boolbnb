@@ -262,8 +262,8 @@
     .aside_accomodations {
         background-color:$secondMainSection;
         overflow: auto;
-        min-width: 30%;
         height: 100%;
+        width: 30%;
     }
 }
 
@@ -274,9 +274,9 @@
     }
     .aside_accomodations {
         background-color:$secondMainSection;
-        overflow-y: auto;
-        min-width: 33%;
+        overflow: auto;
         height: 100%;
+        width: 30%;
     }
 }
 
