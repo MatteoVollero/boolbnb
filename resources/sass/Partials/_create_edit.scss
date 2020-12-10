@@ -8,7 +8,7 @@
         padding: 240px;
         margin: auto;
         height: 80%;
-        width: 60%;
+        width: 80%;
         .admin_btn_edit_delete {
             justify-content: flex-start;
             display: flex;
@@ -28,7 +28,7 @@
             .cover {
                 padding-bottom: 40px;
             }
-            .principal_flex {
+            .image_flex {
                 justify-content: flex-start;
                 align-items: center;
                 flex-wrap: wrap;
@@ -37,14 +37,23 @@
                     padding-bottom: 40px;
                     width: 40%;
                 }
-            }
-            .secondary_flex {
-                justify-content: flex-start;
-                align-items: center;
-                flex-wrap: wrap;
-                display: flex;
                 .secondary {
                     padding-bottom: 40px;
+                    width: 40%;
+                }
+            }
+            .general_flex {
+                justify-content: flex-start;
+                align-items: center;
+                display: flex;
+                .place {
+                    padding-bottom: 40px;
+                    width: 25%;
+                }
+                .address {
+                    width: 40%;
+                }
+                .service {
                     width: 40%;
                 }
             }

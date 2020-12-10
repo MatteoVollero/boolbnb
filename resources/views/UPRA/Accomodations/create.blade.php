@@ -23,6 +23,11 @@
                 <label for="description">Description</label>
                 <textarea class="form_input description" id="description" name="description" required minlength="1" maxlength="800" placeholder="insert your description" cols="50" rows="10" value="{{old('description')}}"></textarea>
             </div>
+            {{-- slug input  --}}
+            <div class="form_group">
+                <label for="slug">Slug</label>
+                <input type="text" class="form_input" id="slug" name="slug" required minlength="1" maxlength="300" placeholder="Insert the slug" value="{{old("slug")}}">
+            </div>
             {{-- cover image input  --}}
             <div class="form_group">
                 <label for="cover_image">Cover Image</label>
@@ -30,7 +35,8 @@
             </div>
             <div class="form_group">
                 <label for="principal_images">Interior Image Principal</label>
-                <div class="principal_flex">
+                {{-- principal images  --}}
+                <div class="image_flex">
                     <input required type="file" class="form_input principal" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
                     <input required type="file" class="form_input principal" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">    
                     <input required type="file" class="form_input principal" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
@@ -38,79 +44,68 @@
                 </div>
             </div>
             <div class="form_group">
-                <label for="interior_images">Interior Image Secondary</label>
-                <div class="secondary_flex">
-                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                <label for="interior_image">Interior Image Secondary</label>
+                {{-- secondary images  --}}
+                <div class="image_flex">
+                    <input required type="file" class="form_input secondary" id="secondary_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="secondary_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="secondary_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="secondary_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="secondary_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="secondary_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
                 </div>
             </div>
-            {{-- slug input  --}}
             <div class="form_group">
-                <label for="slug">Slug</label>
-                <input type="text" class="form_input" id="slug" name="slug" required minlength="1" maxlength="300" placeholder="Insert the slug" value="{{old("slug")}}">
-            </div>
-            {{-- country input  --}}
-            <div class="form_group">
-                <label for="country">Country</label>
-                <input type="text" class="form_input" id="country" name="country" required minlength="1" maxlength="100" placeholder="Insert the country" value="{{old("country")}}">
-            </div>
-            {{-- region input  --}}
-            <div class="form_group">
-                <label for="region">Region</label>
-                <input type="text" class="form_input" id="region" name="region" required minlength="1" maxlength="100" placeholder="Insert the region" value="{{old("region")}}">
-            </div>
-            {{-- city input  --}}
-            <div class="form_group">
-                <label for="city">City</label>
-                <input type="text" class="form_input" id="city" name="city" required minlength="1" maxlength="100" placeholder="Insert the city" value="{{old("city")}}">
-            </div>
-            {{-- address input  --}}
-            <div class="form_group">
-                <label for="address">Address</label>
-                <input type="text" class="form_input_address" id="address" name="address" required minlength="1" maxlength="100" placeholder="Insert the address" value="{{old("address")}}">
-            </div>
-            {{-- zip code input  --}}
-            <div class="form_group">
-                <label for="zip_code">Zip Code</label>
-                <input type="text" class="form_input_address" id="zip_code" name="zip_code" required minlength="1" maxlength="15" placeholder="Insert the zip code" value="{{old("zip_code")}}">
-            </div>
-            {{-- beds input  --}}
-            <div class="form_group">
-                <label for="beds">Beds</label>
-                <input type="number" class="form_input_service" id="beds" name="beds" min="1" max="100" placeholder="Insert the numbers of beds" value="{{old("beds")}}">
-            </div>
-            {{-- rooms input  --}}
-            <div class="form_group">
-                <label for="rooms">Rooms</label>
-                <input type="number" class="form_input_service" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}">
+                <div class="general_flex">
+                    {{-- country input  --}}
+                    <label for="country">Country</label>
+                    <input type="text" class="form_input address" id="country" name="country" required minlength="1" maxlength="100" placeholder="Insert the country" value="{{old("country")}}">
+                    {{-- region input  --}}
+                    <label for="region">Region</label>
+                    <input type="text" class="form_input address" id="region" name="region" required minlength="1" maxlength="100" placeholder="Insert the region" value="{{old("region")}}">
+                    {{-- city input  --}}
+                    <label for="city">City</label>
+                    <input type="text" class="form_input address" id="city" name="city" required minlength="1" maxlength="100" placeholder="Insert the city" value="{{old("city")}}">
+                </div>
             </div>
             <div class="form_group">
-                <label for="toilets">Toilets</label>
-                <input type="number" class="form_input_service" id="rooms" name="toilets" min="0" max="100" placeholder="Insert the numbers of toiltes" value="{{old("toilets")}}">
+                <div class="general_flex">
+                    {{-- address input  --}}
+                    <label for="address">Address</label>
+                    <input type="text" class="form_input address" id="address" name="address" required minlength="1" maxlength="100" placeholder="Insert the address" value="{{old("address")}}">
+                    {{-- zip code input --}}
+                    <label for="zip_code">Zip Code</label>
+                    <input type="text" class="form_input address" id="zip_code" name="zip_code" required minlength="1" maxlength="15" placeholder="Insert the zip code" value="{{old("zip_code")}}">
+                </div>
             </div>
-            {{-- square meters input  --}}
             <div class="form_group">
-                <label for="square_meters">Square Metres</label>
-                <input type="number" class="form_input_service" id="square_meters" name="square_meters" required min="9" max="1200" placeholder="Insert the square meters" value="{{old("square_meters")}}">
+                <div class="general_flex">
+                    {{-- beds input  --}}
+                    <label for="beds">Beds</label>
+                    <input type="number" class="form_input service" id="beds" name="beds" min="1" max="100" placeholder="Insert the numbers of beds" value="{{old("beds")}}">
+                    {{-- rooms input  --}}
+                    <label for="rooms">Rooms</label>
+                    <input type="number" class="form_input service" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}">
+                    {{-- toilets input  --}}
+                    <label for="toilets">Toilets</label>
+                    <input type="number" class="form_input service" id="rooms" name="toilets" min="0" max="100" placeholder="Insert the numbers of toiltes" value="{{old("toilets")}}">
+                    {{-- square meters input  --}}
+                    <label for="square_meters">Square Metres</label>
+                    <input type="number" class="form_input service" id="square_meters" name="square_meters" required min="9" max="1200" placeholder="Insert the square meters" value="{{old("square_meters")}}">
+                </div>
             </div>
             {{-- price input  --}}
             <div class="form_group">
-                <label for="price">Price</label>
-                <input type="number" step=0.01 class="form_input" id="price" name="price" required min="1" max="9999.99" placeholder="Insert the price" value="{{old("price")}}">
-            </div>
-            {{-- latitude input    --}}
-            <div class="form_group">
-                <label for="latitude">Latitude</label>
-                <input type="number" step=0.00001 class="form_input" id="latitude" name="latitude" required min="-90" max="90" placeholder="Insert the latitude" value="{{old("latitude")}}">
-            </div>
-            {{-- longitude input   --}}
-            <div class="form_group">
-                <label for="longitude">Longitude</label>
-                <input type="number" step=0.00001 class="form_input" id="longitude" name="longitude" required min="-180.00" max="180.00" placeholder="Insert the longitude" value="{{old("longitude")}}">
+                <div class="general_flex">
+                    <label for="price">Price</label>
+                    <input type="number" step=0.01 class="form_input service" id="price" name="price" required min="1" max="9999.99" placeholder="Insert the price" value="{{old("price")}}">
+                    {{-- latitude input    --}}
+                    <label for="latitude">Latitude</label>
+                    <input type="number" step=0.00001 class="form_input service" id="latitude" name="latitude" required min="-90" max="90" placeholder="Insert the latitude" value="{{old("latitude")}}">
+                    {{-- longitude input   --}}
+                    <label for="longitude">Longitude</label>
+                    <input type="number" step=0.00001 class="form_input service" id="longitude" name="longitude" required min="-180.00" max="180.00" placeholder="Insert the longitude" value="{{old("longitude")}}">
+                </div>
             </div>
             {{-- visible input       --}}
             <div class="form_group">
@@ -135,14 +130,16 @@
               </div>
               {{-- services input   --}}
             <div class="form_group">
-                <label for="services"><strong>Services:</strong></label>
+                <label for="services">Services:</label>
+                <div class="general_flex">
                 @foreach ($services as $service)
                   <div class="form_check form_group">
-                      <input class="form_check" name="services[]" type="checkbox" id="service{{$service->id}}" value="{{$service->id}}">
-                      <label class="form_check" for="service-{{$service->id}}">{{$service->service_name}}</label>
+                        <input class="form_check service" name="services[]" type="checkbox" id="service{{$service->id}}" value="{{$service->id}}">
+                        <label class="form_check service" for="service-{{$service->id}}">{{$service->service_name}}</label>
                   </div>
                 @endforeach
-              </div>
+                </div>
+            </div>
             <button type="submit" class="form_btn">Create</button>
         </form>
         @if ($errors->any())
