@@ -5,11 +5,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Accomodation;
 use App\AccomodationType;
+use App\AccomodationImage;
 use App\Service;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AccomodationController extends Controller
 {
@@ -108,9 +110,9 @@ class AccomodationController extends Controller
      */
     public function store(Request $request)
     {
+
         // Trasferiamo in $data tutto i dati che sono stati inseriti all'interno del form
         $data = $request->all();
-
         // Validazione dei dati ricevuti dal form con $request
         $request->validate ([
           'title'=>'required|max:300',
@@ -133,10 +135,11 @@ class AccomodationController extends Controller
           'type_id'=>'required|integer|min:0',
       ]);
 
+
       // Creiamo una nuova istanza di accomodations
       $newAccomodation=new Accomodation;
       // Riempiamo tutti i campi del nuovo record della tabella accomodations
-      $newAccomodation->user_id = $data['user_id'];
+      $newAccomodation->user_id = Auth::id();
       $newAccomodation->title = $data['title'];
       $newAccomodation->description = $data['description'];
       $newAccomodation->cover_image = $data['cover_image'];
@@ -157,8 +160,37 @@ class AccomodationController extends Controller
       $newAccomodation->type_id = $data['type_id'];
       // Salviamo il nuovo record nella tabella accomodations
       $newAccomodation->save();
-      // Prendiamo dalla tabella accomodations l'ultimo record appena inserito per recuperare l'id
-      $newAccomodation = Accomodation::all()->last();
+      // Inseriamo il path e il nome per l'immagine
+      $fileName = 'cover'.$newAccomodation->id.'.jpeg';
+      // Salviamo l'immagine relative alla cover_image in storage
+      $imageUri = Storage::disk('public')->putFileAs( 'accomodation_images', $request->file('cover_image'), $fileName );
+
+      // Inseriamo la url dell'immagine nel DB
+      $newAccomodation->cover_image = asset("storage/".$imageUri);
+      $newAccomodation->save();
+
+      // Inseriamo la immagini di dettaglio
+      for($i = 0; $i < 4; $i ++)
+      {
+        $newAccomodationImage = new AccomodationImage;
+        $fileName = 'principal'.$newAccomodation->id.'-'.$i.'.jpeg';
+        $imageUri = Storage::disk('public')->putFileAs( 'accomodation_images', $request->file('principal_image')[$i], $fileName );
+        $newAccomodationImage->accomodation_id = $newAccomodation->id;
+        $newAccomodationImage->image = asset("storage/".$imageUri);
+        $newAccomodationImage->principal = true;
+        $newAccomodationImage->save();
+      }
+
+      for($i = 0; $i < count($data['interior_image']); $i ++)
+      {
+        $newAccomodationImage = new AccomodationImage;
+        $fileName = 'interior'.$newAccomodation->id.'-'.$i.'.jpeg';
+        $imageUri = Storage::disk('public')->putFileAs( 'accomodation_images', $request->file('interior_image')[$i], $fileName );
+        $newAccomodationImage->accomodation_id = $newAccomodation->id;
+        $newAccomodationImage->image = asset("storage/".$imageUri);
+        $newAccomodationImage->principal = false;
+        $newAccomodationImage->save();
+      }
 
       // Cicliamo su tutti i servizi che ha scelto l'utente
       // foreach ($data['services'] as $service) {
@@ -167,7 +199,7 @@ class AccomodationController extends Controller
         $newAccomodation->services()->attach($service);
       }
       // Reindirizziamo alla route che visualizza la view show dell'accomodation appena inserito
-      return redirect()->route('admin.accomodations.show', $newAccomodation->slug);
+      return redirect()->route('admin.accomodations.show', $data['slug']);
 
     }
     /**
