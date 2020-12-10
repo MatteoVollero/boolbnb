@@ -195,7 +195,7 @@
         <div class="elm_item_left">
            <a href="{{route('register')}}" target="_blank"><img src="{{asset('images/Become_an_host_air_bnb.jpg')}}" alt="Become an host"></a>
             <h2>
-                Become an Host
+                Become a Host
             </h2>
         </div>
         {{-- elm item  --}}

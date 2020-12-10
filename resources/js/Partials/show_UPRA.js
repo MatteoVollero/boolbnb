@@ -16,7 +16,7 @@ $(document).ready(function() {
             $(".modal_stats_button").click(function(){
                 // take the id from the modal button
                 var accomodationId = $(this).attr("data-id"); 
-                var BFixed = $("body").addClass("modal-open");
+                BFixed = $("body").addClass("modal-open");
                 $.ajax
                 ({
                     // take the url from the DB for the views

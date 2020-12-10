@@ -6,7 +6,7 @@ $(document).ready(function() {
             var km = this.value;
             $(".distance").text("");
             $(".distance").text(km + " km");
-            var range = $("#range").attr("data-distance", km);
+            range = $("#range").attr("data-distance", km);
         });
         getSearchData();
     }
@@ -224,8 +224,3 @@ function ClearBlade () {
 function ClearHandlebars () {
     $(".clear_handlebars").remove();
 };
-
-// function rangeKm() {
-//     var range = $("#range").val();
-//     console.log(range);
-// }

@@ -1,0 +1,29 @@
+// index advertising
+// index bg 
+.index_background {
+    background-color: $secondMainSection;
+    width: 100%;    
+    // index wrapper 
+    .index_wrapper {
+        @include GenericWrapper;
+        padding: 100px;
+        .adv_property_item {
+            border: 1px solid $firstMainSection;
+            background-color: none;
+            border-radius: 10px;
+            @include CardsFlex;
+            height: 100px;
+            width: 100%;
+            span {
+                border:2px solid $firstMainSection;
+                text-transform: capitalize;
+                font-family: $secondFont;
+                text-align: center;
+                line-height: 100px;
+                color: #fff;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

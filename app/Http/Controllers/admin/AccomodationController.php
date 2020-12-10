@@ -43,11 +43,11 @@ class AccomodationController extends Controller
     {
       // TO DO: codice per selezionare tutte le sponsorizzate dell'UPRA
 
-      // $userAccomodations = Accomodation::where('id', Auth::id())->get;
-      // $accomodationsSponsored=[];
-      // foreach ($userAccomodations as $userAccomodation) {
-      // }
-      // return view('UPRA.Advs.index', compact('accomodation'));
+      $userAccomodations = Accomodation::where('id', Auth::id())->get();
+      $accomodationsSponsored=[];
+      foreach ($userAccomodations as $userAccomodation) {
+      }
+      return view('UPRA.Advs.index', compact('userAccomodation'));
 
     }
 
