@@ -143,11 +143,20 @@
             height: 90%;
             // upper cards scroller
             .upper_cards_scroller {
-                @include XScroller;
+                flex-direction: column;
+                border-radius: 10px;
+                overflow: hidden;
+                overflow-x: auto;
+                flex-wrap: wrap;
+                display: flex;
+                height: 100%;
+                margin: 20px 0;
+                width: 100%;
+                padding: 0 20px;
                 // card item
                 .card_item {
-                    overflow: hidden;
                     @include CardItem;
+                    overflow: hidden;
                     &:hover {
                         @include HoverCard;
                     }
@@ -173,10 +182,19 @@
             }
             // lower cards scroller
             .lower_cards_scroller {
-                @include XScroller;
+                flex-direction: column;
+                border-radius: 10px;
+                overflow: hidden;
+                overflow-x: auto;
+                flex-wrap: wrap;
+                display: flex;
+                height: 100%;
+                margin: 20px 0;
+                width: 100%;
+                padding: 0 20px;
                 // card item
                 .card_item {
-                    overflow-y: hidden;
+                    overflow: hidden;
                     @include CardItem;
                     &:hover {
                         @include HoverCard;
@@ -192,7 +210,7 @@
                     }
                     // cover image
                     .cover_image {
-                        overflow-x: hidden;
+                        overflow: hidden;
                         @include CoverImage;
                         &:hover {
                             transform: scale(1.2);

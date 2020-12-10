@@ -6,4 +6,5 @@ require('././Partials/show_UI.js');
 require('././Partials/search.js');
 require('././Partials/functions_event.js');
 
+
 const Handlebars = require("handlebars");

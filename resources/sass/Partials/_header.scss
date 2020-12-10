@@ -13,11 +13,29 @@
         @include GenericWrapper;
         align-items: center;
         display: flex;
-        .hamburger_icn {
+        #hamburger_icn {
             display: none;
         }
         .hamburger_menu {
             display: none;
+            background-color: $firstMainSection;
+            position: absolute;
+            border-radius: 5px;
+            padding: 20px;
+            transition: 0.3s;
+            cursor: pointer;
+            width: 45%;
+            right: 30px;
+            z-index: 1;
+            top: 110%;
+            .list_item {
+                background-color: $firstMainSection;
+                border-radius: 10px;
+                padding: 10px;
+                &:hover {
+                    background-color: $btnColor;
+                }
+            }
         }
         .header_bnb_logo {
             width: 100px;
@@ -35,8 +53,9 @@
             .links {
                 display: none;
             }
-            .hamburger_icn {
+            #hamburger_icn {
                 display: inline;
+                cursor: pointer;
             }
             .header_bnb_logo {
                 width: 100px;
@@ -51,8 +70,9 @@
             .links {
                 display: none;
             }
-            .hamburger_icn {
+            #hamburger_icn {
                 display: inline;
+                cursor: pointer;
             }
             .header_bnb_logo {
                 min-width: 80px;

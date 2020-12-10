@@ -79,16 +79,9 @@ $(document).on("click", ".list_item_tom", function() {
     $(".latitude_Input").val(latitude);
 });
 
-// //HEADER RESPONSIVE HAMBURGER
-// var hamburger = $(".hamburger_icn");
-// var cross = $(".cross_icn");
-// $(document).on("click", hamburger, function() {
-//     $(".hamburger_menu").toggle("active");
-//     $("footer").toggle("inactive");
-//     $("section").toggle("inactive");
-// });
-// $(document).on("click", cross, function() {
-//     $(".hamburger-menu").toggle("active");
-//     $("footer").toggle("inactive");
-//     $("section").toggle("inactive");
-// });
+//HEADER RESPONSIVE HAMBURGER
+var hamburger = $("#hamburger_icn");
+var cross = $(".cross_icn");
+hamburger.click(function() {
+    $(".hamburger_menu").toggle();
+});
