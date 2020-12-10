@@ -62,21 +62,20 @@
                         <small class="info_elm_list"><i class="fas fa-door-open icn-space"></i>{{$accomodation->rooms}}</small>
                         <small class="info_elm_list"><i class="fas fa-toilet icn-space"></i>{{$accomodation->toilets}}</small>
                         <small class="info_elm_list">{{$accomodation->square_meters}} m&sup2;</small>
+                        <small class="info_elm_list">{{$accomodation->price}} &euro;</small>
                         @foreach ($accomodation->services as $service)
                             @if ($service->service_name == "wi-fi")
-                            {{-- info elm list  --}}
-                        <small class="info_elm_list"><i class="fas fa-bed icn-space"></i>{{$accomodation->beds}}</small>
-                                <small class="info_elm_list"><i class="fas fa-wifi icn-space"></i></small>
+                                <small class="info_elm_list"><i class="fas fa-wifi icn-space"></i>(wi-fi)</small>
                             @elseif ($service->service_name == "parking")
-                                <small class="info_elm_list"><i class="fas fa-parking icn-space"></i></small>
+                                <small class="info_elm_list"><i class="fas fa-parking icn-space"></i>(parking)</small>
                             @elseif ($service->service_name == "pool")
-                                <small class="info_elm_list"><i class="fas fa-swimmer icn-space"></i></small>
+                                <small class="info_elm_list"><i class="fas fa-swimmer icn-space"></i>(pool)</small>
                             @elseif ($service->service_name == "reception")
-                                <small class="info_elm_list"><i class="fas fa-concierge-bell icn-space"></i></small>
+                                <small class="info_elm_list"><i class="fas fa-concierge-bell icn-space"></i>(reception)</small>
                             @elseif ($service->service_name == "sauna")
-                                <small class="info_elm_list"><i class="fas fa-hot-tub icn-space"></i></small>
+                                <small class="info_elm_list"><i class="fas fa-hot-tub icn-space"></i>(sauna)</small>
                             @elseif ($service->service_name == "sea_view")
-                                <small class="info_elm_list"><i class="fas fa-water icn-space"></i></small>
+                                <small class="info_elm_list"><i class="fas fa-water icn-space"></i>(sea view)</small>
                             @endif
                         @endforeach
                     </div>
@@ -84,9 +83,8 @@
                 {{-- price --}}
                 <div class="title_elm_list_lower">
                     {{-- price elm list  --}}
-                    <a href="{{route('admin.accomodations.adv_create', $accomodation->id)}}" class="btn_message_show none">Make an advertisment</a>
-                    <a href="{{route('admin.accomodations.edit', $accomodation->id)}}" class="btn_message_show none">Edit the accomodation</a>
-                    <small class="price_elm_list">{{$accomodation->price}} &euro;</small>
+                    <a href="{{route('admin.accomodations.adv_create', $accomodation->id)}}" class="btn_message_show">Make an advertisment</a>
+                    <a href="{{route('admin.accomodations.edit', $accomodation->id)}}" class="btn_message_show">Edit the accomodation</a>
                 </div>
             </div>
         </div>
