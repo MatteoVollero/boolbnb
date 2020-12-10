@@ -7,13 +7,16 @@
 {{-- section list  --}}
 <section class="section_list">
     {{-- elm responsive list  --}}
+    <div class="create_index">
+        <a href="{{route('admin.accomodations.create')}}" class="btn_message_show">Insert a new accomodation</a>
+    </div>
     <div class="elm_responsive_list">
         @foreach ($accomodationsUpra as $accomodation)
         {{-- elm search list  --}}
         <div class="elm_search_list">
             {{-- img elm list  --}}
             <div class="img_elm_list">
-                <a href="{{route('show', $accomodation->slug)}}"><img src="{{$accomodation->cover_image}}" alt="{{$accomodation->title}}"></a>
+                <a href="{{route('admin.accomodations.show', $accomodation->slug)}}"><img src="{{$accomodation->cover_image}}" alt="{{$accomodation->title}}"></a>
             </div>
             {{-- title elm list  --}}
             <div class="title_elm_list">
