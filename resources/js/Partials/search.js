@@ -105,7 +105,7 @@ function getSearchData() {
                         "slug" : data[i]['accomodation'].slug,
                         "city" : data[i]['accomodation'].city,
                         "beds" : data[i]['accomodation'].beds,
-                        "distance" : data[i]["distance"],
+                        "address" : data[i]['accomodation'].address,
                         "type" : data[i]['type'].name,
                         "service" : services,
                     }

@@ -232,9 +232,9 @@
                 {{-- title elm searc higher  --}}
                 <div class="title_elm_search_higher">
                     {{-- title elm search  --}}
-                    <h4 class="title_elm_search">@{{title}}</h4>
+                    <h3 class="title_elm_search">@{{title}}</h3>
                     <h4 class="title_elm_search">@{{type}}</h4>
-                    <h4 class="title_elm_search">@{{address}}, @{{city}}, @{{region}}, @{{country}}</h4> 
+                    <h4 class="title_elm_search">@{{address}}, @{{city}}, @{{region}}, @{{country}}</h4>
                     {{-- text elm search  --}}
                     {{-- <p class="text_elm_search">@{{description}}</p> --}}
                     {{-- service elm search  --}}
