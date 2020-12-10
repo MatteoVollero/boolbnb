@@ -3,7 +3,6 @@
     font-family: $secondFont;
     min-height: 100vh;
     padding: 100px 0;
-    height: 700px;
     .wrapper_messages_index {
         @include GenericWrapper;
         .elm_messages_list {

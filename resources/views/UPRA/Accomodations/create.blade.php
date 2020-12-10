@@ -21,72 +21,33 @@
             {{-- description input  --}}
             <div class="form_group">
                 <label for="description">Description</label>
-                <textarea class="form_input" id="description" name="description" required minlength="1" maxlength="800" placeholder="insert your description" cols="50" rows="10" value="{{old('description')}}"></textarea>
+                <textarea class="form_input description" id="description" name="description" required minlength="1" maxlength="800" placeholder="insert your description" cols="50" rows="10" value="{{old('description')}}"></textarea>
             </div>
             {{-- cover image input  --}}
             <div class="form_group">
                 <label for="cover_image">Cover Image</label>
-                <input type="file" class="form_input" id="cover_image" name="cover_image" required accept="image/*" placeholder="choose the image">
+                <input type="file" class="form_input cover" id="cover_image" name="cover_image" required accept="image/*" placeholder="choose the image">
             </div>
             <div class="form_group">
-                <label for="principal_image1">Interior Image 1 - Principal</label>
-                <input required type="file" class="form_input" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
+                <label for="principal_images">Interior Image Principal</label>
+                <div class="principal_flex">
+                    <input required type="file" class="form_input principal" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input principal" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">    
+                    <input required type="file" class="form_input principal" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input principal" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
+                </div>
             </div>
             <div class="form_group">
-                <label for="principal_image2">Interior Image 2 - Principal</label>
-                <input required type="file" class="form_input" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="1">
-                <label class="form_check" for="principal">Priority Image</label> --}}
+                <label for="interior_images">Interior Image Secondary</label>
+                <div class="secondary_flex">
+                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                    <input required type="file" class="form_input secondary" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
+                </div>
             </div>
-            <div class="form_group">
-                <label for="principal_image3">Interior Image 3 - Principal</label>
-                <input required type="file" class="form_input" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="2">
-                <label class="form_check" for="principal">Priority Image</label> --}}
-            </div>
-            <div class="form_group">
-                <label for="principal_image4">Interior Image 4 - Principal</label>
-                <input required type="file" class="form_input" id="cover_image" name="principal_image[]" required accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="3">
-                <label class="form_check" for="principal">Priority Image</label> --}}
-            </div>
-            <div class="form_group">
-                <label for="interior_image5">Interior Image 5</label>
-                <input required type="file" class="form_input" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="4">
-                <label class="form_check" for="principal">Priority Image</label> --}}
-            </div>
-            <div class="form_group">
-                <label for="interior_image6">Interior Image 6</label>
-                <input required type="file" class="form_input" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="5">
-                <label class="form_check" for="principal">Priority Image</label> --}}
-            </div>
-            <div class="form_group">
-                <label for="interior_image7">Interior Image 7</label>
-                <input required type="file" class="form_input" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="6">
-                <label class="form_check" for="principal">Priority Image</label> --}}
-            </div>
-            <div class="form_group">
-                <label for="interior_image8">Interior Image 8</label>
-                <input required type="file" class="form_input" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="7">
-                <label class="form_check" for="principal">Priority Image</label> --}}
-            </div>
-            <div class="form_group">
-                <label for="interior_image9">Interior Image 9</label>
-                <input required type="file" class="form_input" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="8">
-                <label class="form_check" for="principal">Priority Image</label> --}}
-            </div>
-            <div class="form_group">
-                <label for="interior_image10">Interior Image 10</label>
-                <input required type="file" class="form_input" id="cover_image" name="interior_image[]"  accept="image/*" placeholder="choose the image">
-                {{-- <input class="form_check" name="principal[]" type="checkbox" id="principal" value="9">
-                <label class="form_check" for="principal">Priority Image</label> --}
-            </div>
-
             {{-- slug input  --}}
             <div class="form_group">
                 <label for="slug">Slug</label>
@@ -110,31 +71,31 @@
             {{-- address input  --}}
             <div class="form_group">
                 <label for="address">Address</label>
-                <input type="text" class="form_input" id="address" name="address" required minlength="1" maxlength="100" placeholder="Insert the address" value="{{old("address")}}">
+                <input type="text" class="form_input_address" id="address" name="address" required minlength="1" maxlength="100" placeholder="Insert the address" value="{{old("address")}}">
             </div>
             {{-- zip code input  --}}
             <div class="form_group">
                 <label for="zip_code">Zip Code</label>
-                <input type="text" class="form_input" id="zip_code" name="zip_code" required minlength="1" maxlength="15" placeholder="Insert the zip code" value="{{old("zip_code")}}">
+                <input type="text" class="form_input_address" id="zip_code" name="zip_code" required minlength="1" maxlength="15" placeholder="Insert the zip code" value="{{old("zip_code")}}">
             </div>
             {{-- beds input  --}}
             <div class="form_group">
                 <label for="beds">Beds</label>
-                <input type="number" class="form_input" id="beds" name="beds" min="1" max="100" placeholder="Insert the numbers of beds" value="{{old("beds")}}">
+                <input type="number" class="form_input_service" id="beds" name="beds" min="1" max="100" placeholder="Insert the numbers of beds" value="{{old("beds")}}">
             </div>
             {{-- rooms input  --}}
             <div class="form_group">
                 <label for="rooms">Rooms</label>
-                <input type="number" class="form_input" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}">
+                <input type="number" class="form_input_service" id="rooms" name="rooms" min="0" max="100" placeholder="Insert the numbers of rooms" value="{{old("rooms")}}">
             </div>
             <div class="form_group">
                 <label for="toilets">Toilets</label>
-                <input type="number" class="form_input" id="rooms" name="toilets" min="0" max="100" placeholder="Insert the numbers of toiltes" value="{{old("toilets")}}">
+                <input type="number" class="form_input_service" id="rooms" name="toilets" min="0" max="100" placeholder="Insert the numbers of toiltes" value="{{old("toilets")}}">
             </div>
             {{-- square meters input  --}}
             <div class="form_group">
                 <label for="square_meters">Square Metres</label>
-                <input type="number" class="form_input" id="square_meters" name="square_meters" required min="9" max="1200" placeholder="Insert the square meters" value="{{old("square_meters")}}">
+                <input type="number" class="form_input_service" id="square_meters" name="square_meters" required min="9" max="1200" placeholder="Insert the square meters" value="{{old("square_meters")}}">
             </div>
             {{-- price input  --}}
             <div class="form_group">
@@ -164,12 +125,12 @@
                 <label for="type_id">type</label>
                 {{-- selecting type informations  --}}
                 <select class="form_type" name="type_id" id="type">
-                    <option value="1">Accomodation</option>
-                    <option value="2">Room</option>
-                    <option value="3">Mansion</option>
-                    <option value="4">House</option>
-                    <option value="5">Loft</option>
-                    <option value="6">Hostel</option>
+                    <option class="form_type_item" value="1">Accomodation</option>
+                    <option class="form_type_item" value="2">Room</option>
+                    <option class="form_type_item" value="3">Mansion</option>
+                    <option class="form_type_item" value="4">House</option>
+                    <option class="form_type_item" value="5">Loft</option>
+                    <option class="form_type_item" value="6">Hostel</option>
                 </select>
               </div>
               {{-- services input   --}}
@@ -200,12 +161,10 @@
       var limit = 4;
       $('.form_check').on('click', function(evt)
       {
-        // alert('Sono nello script');
         if($("input[name='principal[]']:checked").length > limit)
         {
           this.checked = false;
         }
       });
-
     </script>
 @endsection
