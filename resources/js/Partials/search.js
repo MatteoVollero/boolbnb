@@ -95,6 +95,7 @@ function getSearchData() {
                     var context = {
                         "cover_image" : data[i]['accomodation'].cover_image,
                         "description" : data[i]['accomodation'].description,
+                        "address" : data[i]['accomodation'].address,
                         "toilets" : data[i]['accomodation'].toilets,
                         "country" : data[i]['accomodation'].country,
                         "region" : data[i]['accomodation'].region,
@@ -104,9 +105,9 @@ function getSearchData() {
                         "slug" : data[i]['accomodation'].slug,
                         "city" : data[i]['accomodation'].city,
                         "beds" : data[i]['accomodation'].beds,
-                        "type" : data[i]['type'].name,
                         "distance" : data[i]["distance"],
-                        "service" : services
+                        "type" : data[i]['type'].name,
+                        "service" : services,
                     }
 
                     // take all the data inside of a variable

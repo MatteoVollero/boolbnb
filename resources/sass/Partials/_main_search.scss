@@ -15,13 +15,13 @@
         // upper cards scroller
         .upper_cards_scroller {
             flex-direction: column;
-            overflow: hidden;
             border-radius: 10px;
-            overflow-x: auto;
             flex-wrap: wrap;
+            overflow-x:auto;
+            margin: 10px 0;
             display: flex;
+            padding: 10px;
             height: 100%;
-            margin: 20px 0;
             width: 100%;
             // card item
             .card_item {
