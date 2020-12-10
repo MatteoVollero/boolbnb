@@ -17,18 +17,21 @@
                     </a>
                 @endif
                 @else
-                    <a class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <span class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} 
                         <i class="fas fa-chevron-down icn"></i>
                         <ul class="dropdown_menu">
-                            {{-- <li> --}}
-                              <a class="list_item" href="{{route('admin.accomodations.index')}}">Accomodations Area</a>
-                            {{-- </li> --}}
-                            {{-- <li> --}}
-                                <a class="list_item" href="{{route('admin.accomodations.message_index')}}">Message Area</a>
-                            {{-- </li> --}}
+                            <li class="list_item">
+                                <a href="{{route('admin.accomodations.index')}}">Accomodations Area</a> 
+                            </li>
+                            <li class="list_item">
+                                <a href="{{route('admin.accomodations.adv_index')}}">Advertising Area</a>
+                            </li>
+                            <li class="list_item">
+                                <a href="{{route('admin.accomodations.message_index')}}">Message Area</a>
+                             </li>
                         </ul>
-                    </a>
+                    </span>
                     <a class="link_header" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -55,17 +58,16 @@
             @else
                 <div class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} 
-                    <i class="fas fa-chevron-down icn"></i>
                     <ul class="dropdown_menu">
                         <li class="list_item">
-                            <a href="{{route('admin.accomodations.index')}}">Accomodations Area</a>
+                            <a href="{{route('admin.accomodations.index')}}">Accomodations Area</a> 
                         </li>
                         <li class="list_item">
                             <a href="{{route('admin.accomodations.adv_index')}}">Advertising Area</a>
                         </li>
                         <li class="list_item">
                             <a href="{{route('admin.accomodations.message_index')}}">Message Area</a>
-                        </li>
+                         </li>
                     </ul>
                 </div>
                 <a class="link_header" href="{{ route('logout') }}"

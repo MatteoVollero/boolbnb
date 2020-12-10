@@ -163,6 +163,10 @@
 
 // media breakpoint mobile
 @media screen and (min-width: 0px) and (max-width:768px) {
+    .jumbotron {
+        width: 100%;
+        height: 70%;
+    }
     .jumbotron_text_item {
         display: none;
     }
@@ -170,7 +174,7 @@
         position: relative;
         padding-left: 60px; 
         margin: auto;
-        width: 100%;
+        width: 90%;
     }
     .search_item {
         .dropleft_menu {
@@ -192,7 +196,7 @@
 }
 
 // media breakpoint tablet
-@media screen and (min-width: 768px) and (max-width:992px) {
+@media screen and (min-width: 769px) and (max-width:992px) {
     .jumbotron_text_item {
         position: relative;
         font-size: 30px;
@@ -230,5 +234,8 @@
         position: relative;
         margin-left: auto;
         width: 50%; 
+        .search_item:last-child {
+            height: 50px;
+        }
     }
 }

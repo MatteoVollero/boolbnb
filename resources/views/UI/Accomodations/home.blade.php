@@ -70,7 +70,7 @@
                 </ul>
                 {{-- cover image --}}
                 <div class="cover_image">
-                    <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
+                   <a href="{{route('show', $accomodation->slug)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
                 </div>
             </div>
             @endforeach
@@ -99,24 +99,24 @@
                              <ul class="flex_items">
                                 @foreach ($accomodation->services as $service)
                                     @if ($service->service_name == "wi-fi")
-                                    <i class="fas fa-wifi"></i>
+                                        <i class="fas fa-wifi"></i>
                                     @elseif ($service->service_name == "parking")
-                                    <i class="fas fa-parking"></i>
+                                        <i class="fas fa-parking"></i>
                                     @elseif ($service->service_name == "pool")
-                                    <i class="fas fa-swimmer"></i>
+                                        <i class="fas fa-swimmer"></i>
                                     @elseif ($service->service_name == "reception")
-                                    <i class="fas fa-concierge-bell"></i>
+                                        <i class="fas fa-concierge-bell"></i>
                                     @elseif ($service->service_name == "sauna")
-                                    <i class="fas fa-hot-tub"></i>
+                                        <i class="fas fa-hot-tub"></i>
                                     @elseif ($service->service_name == "sea_view")
-                                    <i class="fas fa-water"></i>
+                                        <i class="fas fa-water"></i>
                                     @endif
                                 @endforeach
                             </ul>
                          </div>
                          {{-- cover image --}}
                          <div class="cover_image">
-                            <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
+                            <a href="{{route('show', $accomodation->slug)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
                          </div>
                         </div>
                     @endforeach
@@ -132,7 +132,7 @@
                             <span>{{$accomodation->country}}</span>
                             <span>{{$accomodation->region}}</span>
                             <span>{{$accomodation->city}}</span>
-                            <span>{{$accomodation->price}}</span>
+                            <span>{{$accomodation->price}}&euro;</span>
                             <ul class="flex_items">
                                 @foreach ($accomodation->services as $service)
                                     @if ($service->service_name == "wi-fi")
@@ -153,7 +153,7 @@
                         </div>
                         {{-- cover image --}}
                         <div class="cover_image">
-                            <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
+                            <a href="{{route('show', $accomodation->slug)}}"><img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image"></a>
                         </div>
                     </div>
                     @endforeach
@@ -207,7 +207,12 @@
             <div class="accomodations_types">
                 {{-- higher type --}}
                 @foreach ($types as $type)
-                    <div class="type">{{$type->name}}</div>
+                    <div class="type">
+                        <a href="{{route('search_type', $type->id)}}"><img src="{{$type->image}}" width="100%" height="100%" alt="Image"></a>         
+                        <div class="type_name">
+                            <span>{{$type->name}}</span>
+                        </div> 
+                    </div>
                 @endforeach
             </div>
         </div>

@@ -46,10 +46,10 @@
 // cards orizzontal scroller
 @mixin XScroller {
     flex-direction: column;
-    overflow-y: hidden;
+    overflow: hidden;
     border-radius: 10px;
     padding:0px 20px;
-    overflow-x: auto;
+    overflow: auto;
     flex-wrap: wrap;
     display: flex;
     height: 100%;
@@ -59,14 +59,13 @@
 // cards vertical scroller
 @mixin YScroller {
     flex-direction: column;
-    overflow-x: hidden;
     border-radius: 10px;
     padding:0px 20px;
-    overflow-y: auto;
+    overflow: auto;
     flex-wrap: wrap;
     display: flex;
-    height: 20%;
     margin: 20px;
+    height: 20%;
     width: 100%;
 }
 // cards specific flex
@@ -82,9 +81,10 @@
     position: relative;
     margin: 15px 15px;
     transition: 0.3s;
+    overflow: auto;
     height: 100%;
     opacity: 1;
-    width: 40%;
+    width: 70%;
 }
 // card item desktop
 @mixin CarditemDesktop {
@@ -97,6 +97,18 @@
     opacity: 1;
     width: 40%;
 }
+// card item mobile 
+@mixin CardItemMobile {
+    background-color: $secondMainSection;
+    border-radius: 10px;
+    position: relative;
+    margin: 15px 15px;
+    transition: 0.3s;
+    overflow: hidden;
+    height: 90%;
+    opacity: 1;
+    width: 70%;
+}
 // Accomodation wrapper
 @mixin AccomodationsWrapper {
     margin: auto;
@@ -105,7 +117,6 @@
 }
 // hover Card
 @mixin HoverCard {
-    border: 4px solid $headerColor;
     transform: scale(1.03);
     overflow: hidden;
     cursor: pointer;
@@ -123,7 +134,7 @@
 }
 // flex Informations item 
 @mixin InformationsFlex {
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     display: flex;
@@ -149,8 +160,8 @@
 // Medal position absolute 
 @mixin MedalAbsolute {
     position: absolute;
-    right: 0;
     bottom: 0;
+    right: 0;
 }
 // flex modal
 @mixin modalFlex {

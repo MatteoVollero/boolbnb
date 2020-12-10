@@ -7,7 +7,6 @@ Accomodation
 {{-- LINK HEAD --}}
 @section('link')
 <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
-<link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
 <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
 </head>
 @endsection
@@ -48,8 +47,9 @@ Accomodation
                         <div class="form_group">
                             <label for="email">Email</label>
                             <input type="email" class="form_input" id="email" name="slug" required minlength="10" maxlength="50" placeholder="Insert your email">
+                            <label for="message">Message</label>
+                            <textarea class="form_input" id="message" name="message" required minlength="50" maxlength="300" placeholder="insert your message" rows="2" cols="200" style="height:300px;"></textarea>
                         </div>
-                        <textarea class="form_input" id="message" name="message" required minlength="50" maxlength="300" placeholder="insert your message"></textarea>
                     </div>
                 </div>
                 {{-- lower messager form  --}}

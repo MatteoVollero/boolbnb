@@ -5,18 +5,46 @@
     font-family: $secondFont;
     padding: 120px 0;
     margin-top: 70px;
+    .create_index {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        .btn_message_show {
+            box-shadow: 1px 2px 10px #888888;
+            background-color:$firstMainSection;
+            border: 1px solid $airBnB;
+            justify-content: center;
+            margin-bottom: 60px;
+            align-items: center;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            padding: 15px;
+            color: #000;
+            width: 250px;
+            height: 60px;
+            &:hover{
+                background-color: $btnColor;
+                color: $secondMainSection;
+                transform: scale(1.08);
+                cursor: pointer;
+            }
+        }
+    }
     // elm responsive list
     .elm_responsive_list {
         flex-wrap: wrap;
         display: flex;
-       @include GenericWrapper;
+        margin: auto;
+        height: 100%;
+        width: 80%;
     //    elm search list
         .elm_search_list {
             background-color: $secondMainSection;
             width: calc((100% - 40px) / 2);
             flex-direction: column;
             border-radius: 15px;
-            height: 800px;
             display: flex;
             padding: 10px;
             margin: 10px;
@@ -24,7 +52,7 @@
             .img_elm_list {
                 background-color: gray;
                 border-radius: 15px;
-                height: 60%;
+                height: 50%;
                 width: 100%;
                 img {
                     border-radius: 15px;
@@ -32,6 +60,7 @@
                     height: 100%;
                     width: 100%;
                     &:hover {
+                        transform: translate(1.2);
                         cursor: pointer;
                         opacity: 0.4;
                     }
@@ -92,6 +121,7 @@
                         color: $textColorSearch;
                         margin-bottom: 15px;
                         font-weight: bold;
+                        font-size: 10px;
                     }
                     // info elm list
                     .info_elm_list {
@@ -121,6 +151,8 @@
                         display: flex;
                         padding: 15px;
                         color: #000;
+                        width: 150px;
+                        height: 40px;
                         &:hover{
                             background-color: $btnColor;
                             color: $secondMainSection;
@@ -143,22 +175,19 @@
 /* media  query */
 
 // media breakpoint desktop
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-    //
-}
-
-// media breakpoint tablet
-@media screen and (min-width: 769px) and (max-width: 992px) {
+@media screen and (min-width: 992px) and (max-width: 1320px) {
     .section_list {
         .elm_responsive_list {
             flex-wrap: wrap;
             display: flex;
+            margin: auto;
+            height: 100%;
+            width: 90%;
             .elm_list_list {
                 flex-direction: column;
                 align-items: center;
                 margin: 10px 0;
                 display: flex;
-                height: 700px;
                 width: 100%;
                 .img_elm_list {
                     max-width: 350px;
@@ -181,6 +210,80 @@
             }
         }
     }
+    .text_elm_list {
+        display: none;
+    }
+    .btn_message_show {
+        box-shadow: 1px 2px 10px #888888;
+        background-color:$firstMainSection;
+        border: 1px solid $airBnB;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+        display: flex;
+        padding: 15px;
+        color: #000;
+        width: 100px;
+        height: 40px;
+    }
+}
+
+// media breakpoint tablet
+@media screen and (min-width: 769px) and (max-width: 991px) {
+    .section_list {
+        .elm_responsive_list {
+            flex-wrap: wrap;
+            display: flex;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            .elm_list_list {
+                flex-direction: column;
+                align-items: center;
+                margin: 10px 0;
+                display: flex;
+                width: 100%;
+                .img_elm_list {
+                    max-width: 350px;
+                    height: 50%;
+                    width: 100%;
+                }
+                .testo_elm_list {
+                    display: block;
+                    width: 100%;
+                    height: 50%;
+                    .testo_elm_list_higher {
+                        .row_title_elm_list {
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            flex-direction: column;
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .text_elm_list {
+        display: none;
+    }
+    .btn_message_show {
+        box-shadow: 1px 2px 10px #888888;
+        background-color:$firstMainSection;
+        border: 1px solid $airBnB;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+        display: flex;
+        padding: 15px;
+        color: #000;
+        width: 100px;
+        height: 40px;
+    }
 }
 
 // media breakpoint mobile
@@ -191,13 +294,15 @@
         .elm_responsive_list {
             flex-wrap: wrap;
             display: flex;
+            margin: auto;
+            height: 100%;
+            width: 100%;
             // elm search list 
             .elm_search_list {
                 flex-direction: column;
                 align-items: center;
                 margin: 10px 0;
                 display: flex;
-                height: 700px;
                 width: 100%;
                 // img elm list 
                 .img_elm_list {
@@ -221,5 +326,23 @@
                 }
             }
         }
+    }
+    .text_elm_list {
+        display: none;
+    }
+    .btn_message_show {
+        box-shadow: 1px 2px 10px #888888;
+        background-color:$firstMainSection;
+        border: 1px solid $airBnB;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+        display: flex;
+        padding: 15px;
+        color: #000;
+        width: 100px;
+        height: 40px;
     }
 }
