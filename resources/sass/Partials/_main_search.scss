@@ -5,6 +5,7 @@
     font-family: $secondFont;
     overflow-y: inherit;
     padding-top: 100px;
+    
     // SPONSORED
     .accomodation_cards_search {
         margin: 50px 0;
@@ -44,7 +45,7 @@
                     @include CoverImage;
                     &:hover {
                         transform: scale(1.2);
-                        opacity: 0;
+                        opacity: 0.2;
                     }
                 }
             }
@@ -232,13 +233,27 @@
             }
         }
     }
+.research_results {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 40px;
+    color: #fff;
+    // display: none;
+}
+.none {
+    display: none;
+}
     //search results
+
     .elm_responsive_search {
         width: 100%;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         display: flex;
+        &:first-child #research_title {
+            display: block;
+        }
         // elm search list 
         .flex_items_services {
             justify-content: flex-start;
@@ -247,6 +262,13 @@
             li {
                 margin-top: 20px;
                 margin-right: 20px;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                display: flex;
+                .icn_services {
+                    margin: 5px;
+                }
             }
         }
         .elm_search_list {
@@ -324,23 +346,6 @@
             }
         }
     }
-}
-// handlebar class for printing
-.ajax_handlebar_print {
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    padding: 20px;
-}
-.research_results {
-    text-align: center;
-    margin: 50px 0;
-    font-size: 40px;
-    color: #fff;
-}
-.none {
-    display: none;
 }
 .block {
     display: block;

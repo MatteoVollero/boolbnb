@@ -100,28 +100,57 @@ Accomodation
                 </div>
                 {{-- DESCRIPTION --}}
                 <p class="description_elm_show">{{$accomodation->description}}</p>
-                {{-- Services elm show  --}}
-                <div class="services_elm_show">
-                    <small class="small_info_elm_show"><i class="fas fa-bed icn_space_show"></i>{{$accomodation->beds}}</small>
-                    <small class="small_info_elm_show"><i class="fas fa-door-open icn_space_show"></i>{{$accomodation->rooms}}</small>
-                    <small class="small_info_elm_show"><i class="fas fa-toilet icn_space_show"></i>{{$accomodation->toilets}}</small>
-                    <small class="small_info_elm_show">{{$accomodation->square_meters}} m&sup2;</small>
+                {{-- Services standard elm show  --}}
+                <div class="services_standard_elm_show">
+                    <small class="small_standard_info_elm_show">
+                        <i class="fas fa-bed icn_space_show"></i>
+                        Beds: {{$accomodation->beds}}
+                    </small>
+                    <small class="small_standard_info_elm_show">
+                        <i class="fas fa-door-open icn_space_show"></i>
+                        Rooms: {{$accomodation->rooms}}
+                    </small>
+                    <small class="small_standard_info_elm_show">
+                        <i class="fas fa-toilet icn_space_show"></i>
+                        Toilets: {{$accomodation->toilets}}
+                    </small>
+                    <small class="small_standard_info_elm_show">
+                        Square Meters: {{$accomodation->square_meters}} m&sup2;
+                    </small>
                 </div>
                 {{-- SERVICES --}}
                 <div class="services_elm_show">
                     @foreach ($accomodation->services as $service)
                         @if ($service->service_name == "wi-fi")
-                            <small class="small_info_elm_show"><i class="fas fa-wifi icn_space_show"></i></small>
+                            <small class="small_info_elm_show">
+                                <span>Wi-Fi</span>
+                                <i class="fas fa-wifi icn_space_show"></i>
+                            </small>
                         @elseif ($service->service_name == "parking")
-                            <small class="small_info_elm_show"><i class="fas fa-parking icn_space_show"></i></small>
+                            <small class="small_info_elm_show">
+                                <span>Parking</span>
+                                <i class="fas fa-parking icn_space_show"></i>
+                            </small>
                         @elseif ($service->service_name == "pool")
-                            <small class="small_info_elm_show"><i class="fas fa-swimmer icn_space_show"></i></small>
+                            <small class="small_info_elm_show">
+                                <span>Pool</span>
+                                <i class="fas fa-swimmer icn_space_show"></i>
+                            </small>
                         @elseif ($service->service_name == "reception")
-                            <small class="small_info_elm_show"><i class="fas fa-concierge-bell icn_space_show"></i></small>
+                            <small class="small_info_elm_show">
+                                <span>Reception</span>
+                                <i class="fas fa-concierge-bell icn_space_show"></i>
+                            </small>
                         @elseif ($service->service_name == "sauna")
-                            <small class="small_info_elm_show"><i class="fas fa-hot-tub icn_space_show"></i></small>
+                            <small class="small_info_elm_show">
+                                <span>Sauna</span>
+                                <i class="fas fa-hot-tub icn_space_show"></i>
+                            </small>
                         @elseif ($service->service_name == "sea_view")
-                            <small class="small_info_elm_show"><i class="fas fa-water icn_space_show"></i></small>
+                            <small class="small_info_elm_show">
+                                <span>Sea View</span>
+                                <i class="fas fa-water icn_space_show"></i>
+                            </small>
                         @endif
                     @endforeach
                 </div>

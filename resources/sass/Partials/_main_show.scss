@@ -183,6 +183,25 @@
                     padding: 0 30px;
                     margin: 2.5% 0;
                 }
+                // services standard elm show
+                .services_standard_elm_show {
+                    justify-content: flex-start;
+                    color: $textColorSearch;
+                    font-weight: bolder;
+                    align-items: center;
+                    margin: 2.5% 0;
+                    display: flex;
+                    .small_standard_info_elm_show {
+                        padding-right: 30px;
+                        font-size: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .icn_space_show {
+                            margin: 10px;
+                        }
+                    }
+                }
                 // services elm show
                 .services_elm_show {
                     justify-content: flex-start;
@@ -194,8 +213,12 @@
                     .small_info_elm_show {
                         padding-right: 30px;
                         font-size: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
                         .icn_space_show {
-                            margin: 0 10px;
+                            margin: 10px;
                         }
                     }
                 }

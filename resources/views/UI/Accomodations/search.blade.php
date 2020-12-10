@@ -64,6 +64,11 @@
                 </div>
                 {{-- search item  --}}
                 <div class="search_search_item">
+                    <input type="range" id="range" max="100" min="0" value="20" data-distance="20">
+                    <div class="distance">20 km</div>
+                </div>
+                {{-- search item  --}}
+                <div class="search_search_item">
                     {{-- list menu  --}}
                     <li class="list_menu">
                         <label id="Services" for="Services">Services</label>
@@ -131,10 +136,14 @@
         </div>
         {{-- print handlebars informations  --}}
         <div class="ajax_handlebar_print">
-            <h1 class="research_results none">Here the results of your research</h1>
+            
         </div>
         {{-- clear blade div  --}}
         <div class="elm_responsive_search clear_blade">
+            @foreach ($accomodationsFiltered as $accomodation)
+                <h1 class="research_results block">Here the results of your research for {{$accomodation['accomodation']->city}}</h1>
+                @break
+            @endforeach
             @foreach ($accomodationsFiltered as $accomodation)
             {{-- elm search list  --}}
                 <div class="elm_search_list">
@@ -163,27 +172,33 @@
                                     @foreach ($accomodation['services'] as $service)
                                         @if ($service->service_name == "wi-fi")
                                             <li class="service_list">
-                                                <i class="fas fa-wifi"></i>
+                                                <span>Wi-Fi</span>
+                                                <i class="icn_services fas fa-wifi"></i>
                                             </li>
                                         @elseif ($service->service_name == "parking")
                                             <li class="service_list">
-                                                <i class="fas fa-parking"></i>
+                                                <span>Parking</span>
+                                                <i class="icn_services fas fa-parking"></i>
                                             </li>
                                         @elseif ($service->service_name == "pool")
                                             <li class="service_list">
-                                                <i class="fas fa-swimmer"></i>
+                                                <span>Pool</span>
+                                                <i class="icn_services fas fa-swimmer"></i>
                                             </li>
                                         @elseif ($service->service_name == "reception")
                                             <li class="service_list">
-                                                <i class="fas fa-bell"></i>
+                                                <span>Reception</span>
+                                                <i class="icn_services fas fa-bell"></i>
                                             </li>
                                         @elseif ($service->service_name == "sauna")
                                             <li class="service_list">
-                                                <i class="fas fa-hot-tub"></i>
+                                                <span>Sauna</span>
+                                                <i class="icn_services fas fa-hot-tub"></i>
                                             </li>
                                         @elseif ($service->service_name == "sea_view")
                                             <li class="service_list">
-                                                <i class="fas fa-water"></i>
+                                                <span>Sea View</span>
+                                                <i class="icn_services fas fa-water"></i>
                                             </li>
                                         @endif
                                     @endforeach
@@ -209,10 +224,11 @@
 <script id="ajax_template" type="text/x-handlebars-template">
         {{-- elm search list  --}}
     <div class="elm_responsive_search clear_handlebars">
+        <h1 class="research_results none" id="research_title">Here the results of your research for @{{city}}</h1>
         <div class="elm_search_list">
             {{-- img elm search  --}}
             <div class="img_elm_search">
-                <a href="http://localhost:8000/show/@{{slug}}"><img src="@{{cover_image}}" alt="@{{title}}"></a>
+                <a href="http://localhost:8000/@{{slug}}"><img src="@{{cover_image}}" alt="@{{title}}"></a>
             </div>
             {{-- title elm search  --}}
             <div class="title_elm_search">
@@ -230,6 +246,9 @@
                     {{-- service elm search  --}}
                     <small class="info_elm_search">@{{distance}}km</small>
                     <div class="service_elm_search">
+                        <ul class="flex_items_services">
+                            @{{{service}}}
+                        </ul>
                         {{-- info elm search --}}
                     </div>
                 </div>
@@ -242,3 +261,8 @@
         </div>
     </div>
  </script>
+<script id="ajax_template_services" type="text/x-handlebars-template">
+    <li class='service_list'>
+        <i class='fas fa-water'></i>
+    </li>
+</script>
