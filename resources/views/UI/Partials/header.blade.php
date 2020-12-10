@@ -56,7 +56,7 @@
                 </a>
             @endif
             @else
-                <a class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <div class="link_header" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} 
                     <ul class="dropdown_menu">
                         <li class="list_item">
@@ -69,7 +69,7 @@
                             <a href="{{route('admin.accomodations.message_index')}}">Message Area</a>
                          </li>
                     </ul>
-                </a>
+                </div>
                 <a class="link_header" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">

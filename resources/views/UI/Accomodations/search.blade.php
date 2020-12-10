@@ -7,12 +7,56 @@
     <input type="hidden" class="var_search" value="search">
     {{-- section search  --}}
     <section class="section_search">
+        {{-- SPONSORIZED --}}
+        <h1 class="research_results">In evidence</h1>
+        <div class="accomodation_cards_search">
+            {{-- upper cards controller  --}}
+            <div class="upper_cards_scroller">
+                {{-- card item  --}}
+                @foreach ($sponsoredAccomodations as $accomodation)
+                <div class="card_item">
+                    {{-- informations item --}}
+                     <div class="informations_item">
+                         <span>{{$accomodation->title}}</span>
+                         <span>{{$accomodation->country}}</span>
+                         <span>{{$accomodation->region}}</span>
+                         <span>{{$accomodation->city}}</span>
+                         <span>{{$accomodation->price}}&euro;</span>
+                         <ul class="flex_items">
+                            @foreach ($accomodation->services as $service)
+                                @if ($service->service_name == "wi-fi")
+                                <i class="fas fa-wifi"></i>
+                                @elseif ($service->service_name == "parking")
+                                <i class="fas fa-parking"></i>
+                                @elseif ($service->service_name == "pool")
+                                <i class="fas fa-swimmer"></i>
+                                @elseif ($service->service_name == "reception")
+                                <i class="fas fa-concierge-bell"></i>
+                                @elseif ($service->service_name == "sauna")
+                                <i class="fas fa-hot-tub"></i>
+                                @elseif ($service->service_name == "sea_view")
+                                <i class="fas fa-water"></i>
+                                @endif
+                            @endforeach
+                        </ul>
+                     </div>
+                     {{-- cover image --}}
+                     <div class="cover_image">
+                        <a href="{{route('show', $accomodation->slug)}}">
+                            <img src="{{$accomodation->cover_image}}" width="100%" height="100%" alt="Image">
+                        </a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        {{-- SEARCH --}}
         <div class="flex_box_search_section">
             <div class="search_input_section">
                 {{-- search item  --}}
                 <div class="search_search_item">
                     <label id="location" for="location">Where do you want to go?</label>
-                    <input type="text" class="location_input search_input form_input" id="location" name="location" data-long="" data-lat="" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
+                    <input type="text" class="location_input search_input form_input" autocomplete="off" id="location" name="location" data-long="" data-lat="" required minlength="5" maxlength="100" placeholder="Insert the place please" value="{{old("location")}}">
                     <div class="tom_search dropdown_menu_search">
                         <ul class="flex_items_tom">
                         </ul>
@@ -20,11 +64,16 @@
                 </div>
                 {{-- search item  --}}
                 <div class="search_search_item">
+                    <input type="range" id="range" max="100" min="0" value="20" data-distance="20">
+                    <div class="distance">20 km</div>
+                </div>
+                {{-- search item  --}}
+                <div class="search_search_item">
                     {{-- list menu  --}}
                     <li class="list_menu">
                         <label id="Services" for="Services">Services</label>
                         {{-- dropleft_menu  --}}
-                        <div class="dropdown_menu_search">
+                        <div class="dropdown_menu_search dropdown_menu_search_search">
                             {{-- flex items  --}}
                             <ul class="flex_items">
                                 {{-- list item  --}}
@@ -80,17 +129,21 @@
                     </li>
                 </div>
                 {{-- btn search  --}}
-                <div class="btn_search button_search">
-                    <button type="submit">Search<i class="fas fa-search"></i></button>
+                <div class="btn_search_search button_search">
+                    <button type="submit"><span>Search</span><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </div>
         {{-- print handlebars informations  --}}
         <div class="ajax_handlebar_print">
-            <h1 class="research_results none">Here the results of your research</h1>
+            
         </div>
         {{-- clear blade div  --}}
         <div class="elm_responsive_search clear_blade">
+            @foreach ($accomodationsFiltered as $accomodation)
+                <h1 class="research_results block">Here the results of your research for {{$accomodation['accomodation']->city}}</h1>
+                @break
+            @endforeach
             @foreach ($accomodationsFiltered as $accomodation)
             {{-- elm search list  --}}
                 <div class="elm_search_list">
@@ -104,13 +157,10 @@
                         <div class="title_elm_search_higher">
                             {{-- title elm search  --}}
                             <h3 class="title_elm_search">{{$accomodation['accomodation']->title}}</h3>
-                            <h4 class="title_elm_search">{{$accomodation['accomodation']->country}}</h4>
-                            <h4 class="title_elm_search">{{$accomodation['accomodation']->region}}</h4>
-                            <h4 class="title_elm_search">{{$accomodation['accomodation']->city}}</h4>
-                            <h4 class="title_elm_search">{{$accomodation['accomodation']->address}}</h4>
                             <h4 class="info_elm_search">{{$accomodation['type']->name}}</h4>
+                            <h4 class="title_elm_search">{{$accomodation['accomodation']->address}}, {{$accomodation['accomodation']->city}}, {{$accomodation['accomodation']->region}}, {{$accomodation['accomodation']->country}}</h4>
                             {{-- text elm search  --}}
-                            <p class="text_elm_search">{{$accomodation['accomodation']->description}}</p>
+                            {{-- <p class="text_elm_search">{{$accomodation['accomodation']->description}}</p> --}}
                             {{-- service elm search  --}}
                             <small class="info_elm_search">{{$accomodation['distance']}}Km</small>
                             <div class="service_elm_search">
@@ -119,27 +169,33 @@
                                     @foreach ($accomodation['services'] as $service)
                                         @if ($service->service_name == "wi-fi")
                                             <li class="service_list">
-                                                <i class="fas fa-wifi"></i>
+                                                <span>Wi-Fi</span>
+                                                <i class="icn_services fas fa-wifi"></i>
                                             </li>
                                         @elseif ($service->service_name == "parking")
                                             <li class="service_list">
-                                                <i class="fas fa-parking"></i>
+                                                <span>Parking</span>
+                                                <i class="icn_services fas fa-parking"></i>
                                             </li>
                                         @elseif ($service->service_name == "pool")
                                             <li class="service_list">
-                                                <i class="fas fa-swimmer"></i>
+                                                <span>Pool</span>
+                                                <i class="icn_services fas fa-swimmer"></i>
                                             </li>
                                         @elseif ($service->service_name == "reception")
                                             <li class="service_list">
-                                                <i class="fas fa-bell"></i>
+                                                <span>Reception</span>
+                                                <i class="icn_services fas fa-bell"></i>
                                             </li>
                                         @elseif ($service->service_name == "sauna")
                                             <li class="service_list">
-                                                <i class="fas fa-hot-tub"></i>
+                                                <span>Sauna</span>
+                                                <i class="icn_services fas fa-hot-tub"></i>
                                             </li>
                                         @elseif ($service->service_name == "sea_view")
                                             <li class="service_list">
-                                                <i class="fas fa-water"></i>
+                                                <span>Sea View</span>
+                                                <i class="icn_services fas fa-water"></i>
                                             </li>
                                         @endif
                                     @endforeach
@@ -165,10 +221,11 @@
 <script id="ajax_template" type="text/x-handlebars-template">
         {{-- elm search list  --}}
     <div class="elm_responsive_search clear_handlebars">
+        <h1 class="research_results none" id="research_title">Here the results of your research for @{{city}}</h1>
         <div class="elm_search_list">
             {{-- img elm search  --}}
             <div class="img_elm_search">
-                <a href="http://localhost:8000/show/@{{slug}}"><img src="@{{cover_image}}" alt="@{{title}}"></a>
+                <a href="http://localhost:8000/@{{slug}}"><img src="@{{cover_image}}" alt="@{{title}}"></a>
             </div>
             {{-- title elm search  --}}
             <div class="title_elm_search">
@@ -182,11 +239,14 @@
                     <h4 class="title_elm_search">@{{address}}</h4>
                     <h4 class="title_elm_search">@{{type}}</h4>
                     {{-- text elm search  --}}
-                    <p class="text_elm_search">@{{description}}</p>
+                    {{-- <p class="text_elm_search">@{{description}}</p> --}}
                     {{-- service elm search  --}}
                     <small class="info_elm_search">@{{distance}}km</small>
                     <div class="service_elm_search">
-                        {{-- info elm search  --}}
+                        <ul class="flex_items_services">
+                            @{{{service}}}
+                        </ul>
+                        {{-- info elm search --}}
                     </div>
                 </div>
                 {{-- text elm search lower  --}}
@@ -198,3 +258,8 @@
         </div>
     </div>
  </script>
+<script id="ajax_template_services" type="text/x-handlebars-template">
+    <li class='service_list'>
+        <i class='fas fa-water'></i>
+    </li>
+</script>

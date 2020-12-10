@@ -5,14 +5,17 @@
 @section('main_content')
     <section class="section_messages">
         <div class="wrapper_messages_index">
-            <div class="elm_messages_list">
-                <h2 class="title_elm_message">Title</h2>
-                <div class="accomodation_nickname_elm">
-                    <h4 class="accomodation_elm_message">Accomodation</h4>
-                    <h3 class="nickname_elm_message">Nickname</h3>
+            @foreach ($userMessages as $message)
+                <div class="elm_messages_list">
+                    <h2 class="title_elm_message">{{$message->title}}</h2>
+                    <h4 class="accomodation_elm_message">{{$message->address}}</h4>
+                    <div class="accomodation_nickname_elm">
+                        <h3 class="nickname_elm_message">{{$message->nickname}}</h3>
+                        <h4 class="accomodation_elm_message">{{$message->email}}</h4>
+                    </div>
+                    <p class="text_elm_message">{{$message->text_message}}</p>
                 </div>
-                <p class="text_elm_message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi reprehenderit suscipit, labore praesentium commodi libero mollitia quaerat qui sunt eveniet officiis dignissimos atque veritatis voluptate facere cum deserunt, quia a. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, dolorum nemo? Quibusdam tenetur qui nisi quia quasi optio vero iste voluptates laudantium, alias, assumenda asperiores molestias sit. Repellat, libero impedit!</p>
-            </div>
+            @endforeach
         </div>
     </section>
 @endsection

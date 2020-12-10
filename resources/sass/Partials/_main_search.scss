@@ -5,6 +5,85 @@
     font-family: $secondFont;
     overflow-y: inherit;
     padding-top: 100px;
+    
+    // SPONSORED
+    .accomodation_cards_search {
+        margin: 50px 0;
+        width: 100%;
+        height: 55%;
+        overflow: hidden;
+        // upper cards scroller
+        .upper_cards_scroller {
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 10px;
+            overflow-x: auto;
+            flex-wrap: wrap;
+            display: flex;
+            height: 100%;
+            margin: 20px 0;
+            width: 100%;
+            // card item
+            .card_item {
+                overflow: hidden;
+                @include CardItem;
+                &:hover {
+                    @include HoverCard;
+                }
+                // informations item
+                .informations_item {
+                    @include InformationsInfo;
+                    span {
+                        font-family: $secondFont;
+                        padding: 10px;
+                        color: #fff;
+                    }
+                    i {
+                        margin: 0 5px;
+                    }
+                }
+                // cover image
+                .cover_image {
+                    overflow: hidden;
+                    @include CoverImage;
+                    &:hover {
+                        transform: scale(1.2);
+                        opacity: 0.2;
+                    }
+                }
+            }
+        }
+        // lower cards scroller
+        .lower_cards_scroller {
+            @include XScroller;
+            // card item
+            .card_item {
+                overflow-y: hidden;
+                @include CardItem;
+                &:hover {
+                    @include HoverCard;
+                }
+                // informations item
+                .informations_item {
+                    @include InformationsInfo;
+                    span {
+                        font-family: $secondFont;
+                        color: #fff;
+                        padding: 10px;
+                    }
+                }
+                // cover image
+                .cover_image {
+                    overflow-x: hidden;
+                    @include CoverImage;
+                    &:hover {
+                        transform: scale(1.2);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
     //search input section
     .flex_box_search_section {
         display: flex;
@@ -15,7 +94,7 @@
             background-color: #fff;
             border-radius: 10px;
             padding: 10px;
-            width: 80%;
+            width: 40%;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -32,7 +111,7 @@
                 margin: 5px 5px;
                 padding: 5px;
                 height: 15%;
-                width: 95%;
+                width: 90%;
                 // 
                 .tom_search {
                     background-color: $firstMainSection;
@@ -61,11 +140,6 @@
                     }
                 }
                 // adding class block with js 
-                .block {
-                    background-color: $firstMainSection;
-                    cursor: pointer;
-                    display: block;   
-                }
                 .dropdown_menu_search {
                     background-color: $firstMainSection;
                     position: absolute;
@@ -106,8 +180,13 @@
                         } 
                     }
                 }
+                .block {
+                    background-color: $firstMainSection;
+                    cursor: pointer;
+                    display: block;   
+                }
                 // hover dropleft menu
-                &:hover .dropdown_menu_search {
+                &:hover .dropdown_menu_search_search {
                     background-color: $firstMainSection;
                     cursor: pointer;
                     display: block;
@@ -134,7 +213,7 @@
                 }
             }
             // btn
-            .btn_search {
+            .btn_search_search {
                 margin: auto;
                 width: 30%;
                 height: 50px;
@@ -147,7 +226,7 @@
                     font-family: $secondFont;
                     font-size: 20px;
                     transition: 0.3s;
-                    .fa-search {
+                    i {
                         padding-left: 10px;
                     }
                     &:hover {
@@ -157,21 +236,43 @@
             }
         }
     }
+.research_results {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 40px;
+    color: #fff;
+    // display: none;
+}
+.none {
+    display: none;
+}
     //search results
+
     .elm_responsive_search {
         width: 100%;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         display: flex;
+        &:first-child #research_title {
+            display: block;
+        }
         // elm search list 
         .flex_items_services {
             justify-content: flex-start;
             align-items: center;
             display: flex;
+            flex-wrap: wrap;
             li {
                 margin-top: 20px;
-                // margin-right: 20px;
+                margin-right: 20px;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                display: flex;
+                .icn_services {
+                    margin: 5px;
+                }
             }
         }
         .elm_search_list {
@@ -179,7 +280,7 @@
             border-radius: 15px;
             margin: 30px;
             display: flex;
-            height: 500px;
+            height: 380px;
             padding: 10px;
             width: 80%;
             img {
@@ -250,23 +351,6 @@
         }
     }
 }
-// handlebar class for printing
-.ajax_handlebar_print {
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    padding: 20px;
-}
-.research_results {
-    text-align: center;
-    margin-top: 150px;
-    font-size: 40px;
-    color: #fff;
-}
-.none {
-    display: none;
-}
 .block {
     display: block;
 }
@@ -282,6 +366,24 @@
     // section search
     .section_search {
         // elm responsive list
+        //search section
+        .flex_box_search_section { 
+            .search_input_section {
+                .btn_search_search{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    button {
+                        span{
+                            display: none;
+                        }
+                        i {
+                            padding-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
         .elm_responsive_list {
             flex-wrap: wrap;
             display: flex;
@@ -290,7 +392,7 @@
                 width: calc((100% - 40px) / 2);
                 flex-direction: column;
                 margin: 10px;
-                height: 400px;
+                height: 380px;
                 display: flex;
                 // img elm search
                 .img_elm_search {
@@ -313,6 +415,24 @@
     // section search 
     .section_search {
         // elm responsive search 
+        // SEARCH SECTION
+        .flex_box_search_section { 
+            .search_input_section {
+                .btn_search_search{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    button {
+                        span{
+                            display: none;
+                        }
+                        i {
+                            padding-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
         .elm_responsive_search {
             display: flex;
             flex-wrap: wrap;
@@ -322,7 +442,7 @@
                 align-items: center;
                 margin: 10px 0;
                 display: flex;
-                height: 400px;
+                height: 380px;
                 width: 100%;
                 // img elm search 
                 .img_elm_search {

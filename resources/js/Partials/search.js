@@ -2,6 +2,12 @@
 $(document).ready(function() {
     if ($(".var_search").val() == "search") {
         // invoke the getSearchdata function
+        $(document).on("input", "#range", function () {
+            var km = this.value;
+            $(".distance").text("");
+            $(".distance").text(km + " km");
+            var range = $("#range").attr("data-distance", km);
+        });
         getSearchData();
     }
 });
@@ -28,7 +34,7 @@ function getSearchData() {
         // make a services variable and invoke the relative function
         var getServices = servicesInput();
         // variable get radius 
-        var getRadius = 6000;
+        var getRadius = radiusInput();
         // make an empty array for the search input
         var arrayData = []; 
         // make a data variable for the JSON
@@ -62,6 +68,29 @@ function getSearchData() {
                 var template = Handlebars.compile(source);
                 // make a cicle for
                 for (let i = 0; i < data.length; i++) {
+                    var tempService = [];
+                    var services = "";
+                    for (let j = 0; j < data[i]['services'].length; j++) {
+                        if(data[i]['services'][j].service_name == "wi-fi"){
+                            tempService.push("<li class='service_list'><span>Wi-Fi</span><i class='icn_services fas fa-wifi'></i></li>");
+                        }
+                        else if (data[i]['services'][j].service_name == "parking"){
+                            tempService.push("<li class='service_list'><span>Parking</span><i class='icn_services fas fa-parking'></i></li>");
+                        }
+                        else if (data[i]['services'][j].service_name == "pool"){
+                            tempService.push("<li class='service_list'><span>Pool</span><i class='icn_services fas fa-swimmer'></i></li>");
+                        }
+                        else if (data[i]['services'][j].service_name == "reception"){
+                            tempService.push("<li class='service_list'><span>Reception</span><i class='icn_services fas fa-bell'></i></li>");
+                        }
+                        else if (data[i]['services'][j].service_name == "sauna"){
+                            tempService.push("<li class='service_list'><span>Sauna</span><i class='icn_services fas fa-hot-tub'></i></li>");
+                        }
+                        else if (data[i]['services'][j].service_name == "sea_view"){
+                            tempService.push("<li class='service_list'><span>Sea View</span><i class='icn_services fas fa-water'></i></li>");
+                        }
+                        services += tempService[j];
+                    }
                     // take the context to print with handlebars
                     var context = {
                         "cover_image" : data[i]['accomodation'].cover_image,
@@ -75,22 +104,36 @@ function getSearchData() {
                         "slug" : data[i]['accomodation'].slug,
                         "city" : data[i]['accomodation'].city,
                         "beds" : data[i]['accomodation'].beds,
-                        "service" : data[i]['services'],
-                        "type" : data[i]['type'].name
+                        "type" : data[i]['type'].name,
+                        "distance" : data[i]["distance"],
+                        "service" : services
                     }
+
                     // take all the data inside of a variable
                     var html = template(context);
-                    var researchResults = $(".research_results");
-                    researchResults.removeClass('none');
+                    // var researchResults = $(".research_results");
+                    // researchResults.removeClass('none');
                     $(".ajax_handlebar_print").append(html);
                     // append the data
                 }
+                // for (let index = 0; index < array.length; index++) {
+                //     const element = array[index];
+                    
+                // }
+
             },
             "error" : function (err) {
                 //
             }
         });
     });
+}
+
+// make a radius input function
+function radiusInput() {
+    // taking the beds input value
+    var radiusInput = $("#range").attr("data-distance");
+    return radiusInput;
 }
 
 // make a beds input function 
@@ -180,3 +223,8 @@ function ClearBlade () {
 function ClearHandlebars () {
     $(".clear_handlebars").remove();
 };
+
+// function rangeKm() {
+//     var range = $("#range").val();
+//     console.log(range);
+// }

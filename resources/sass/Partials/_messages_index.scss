@@ -1,6 +1,7 @@
 .section_messages {
     background-color: $secondMainSection;
     font-family: $secondFont;
+    min-height: 100vh;
     padding: 100px 0;
     height: 700px;
     .wrapper_messages_index {
@@ -55,6 +56,24 @@
                     background-color: $btnColor;
                     color: $secondMainSection;
                     transform: scale(1.03);
+                }
+            }
+        }
+    }
+}
+
+// media breakpoint mobile
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    .section_messages {
+        .wrapper_messages_index {
+            margin: auto;
+            width: 95%;
+            .elm_messages_list {
+                .accomodation_nickname_elm {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    width: 100%;
                 }
             }
         }
