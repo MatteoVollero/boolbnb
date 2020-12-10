@@ -99,17 +99,17 @@
                              <ul class="flex_items">
                                 @foreach ($accomodation->services as $service)
                                     @if ($service->service_name == "wi-fi")
-                                    <i class="fas fa-wifi"></i>
+                                        <i class="fas fa-wifi"></i>
                                     @elseif ($service->service_name == "parking")
-                                    <i class="fas fa-parking"></i>
+                                        <i class="fas fa-parking"></i>
                                     @elseif ($service->service_name == "pool")
-                                    <i class="fas fa-swimmer"></i>
+                                        <i class="fas fa-swimmer"></i>
                                     @elseif ($service->service_name == "reception")
-                                    <i class="fas fa-concierge-bell"></i>
+                                        <i class="fas fa-concierge-bell"></i>
                                     @elseif ($service->service_name == "sauna")
-                                    <i class="fas fa-hot-tub"></i>
+                                        <i class="fas fa-hot-tub"></i>
                                     @elseif ($service->service_name == "sea_view")
-                                    <i class="fas fa-water"></i>
+                                        <i class="fas fa-water"></i>
                                     @endif
                                 @endforeach
                             </ul>

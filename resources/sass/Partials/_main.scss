@@ -3,9 +3,9 @@
 // aside
 .aside_accomodations {
     background-color:$secondMainSection;
-    overflow-y: auto;
     padding-bottom: 20px;
     min-width: 20%;
+    overflow: scroll;
     height: 100%;
     // aside wrapper
     .aside_wrapper {
@@ -51,11 +51,16 @@
                 border-radius: 10px;
                 position: relative;
                 padding:0px 15px;
-                overflow-y: auto;
+                overflow: hidden;
                 font-size: 15px;
                 color: #fff;
                 height: 70%;
                 width: 100%;
+                .flex_items {
+                    i {
+                        margin: 220px;
+                    }
+                }
             }
             // service list 
             .services_list {
@@ -102,6 +107,7 @@
 }
 // cards section
 .cards_section {
+    overflow: hidden;
     min-width: 80%;
     height: 100%;
 }
@@ -131,6 +137,7 @@
             background-color: none;
             @include ColumnFlex;
             border-radius: 10px;
+            overflow: hidden;
             margin: auto;
             width: 100%;
             height: 90%;
@@ -603,21 +610,18 @@
           // third main section
     .third_main_section {
         background-color:$firstMainSection;
-        padding: 50px;
         width: 100%;
         // third main wrapper 
         .third_main_wrapper {
             @include GenericFlex;
             border-radius: 10px;
-            padding: 20px;
             margin: auto;
-            height: 80%;
-            width: 90%;
+            height: 90%;
+            width: 100%;
             //element item
             .elm_item_left {
                 border-radius: 10px;
                 position: relative;
-                margin: 0px 10px;
                 height: 100%;
                 width: 100%;
                 img {

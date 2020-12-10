@@ -49,7 +49,7 @@
     overflow: hidden;
     border-radius: 10px;
     padding:0px 20px;
-    overflow-x: auto;
+    overflow: auto;
     flex-wrap: wrap;
     display: flex;
     height: 100%;
@@ -60,9 +60,8 @@
 @mixin YScroller {
     flex-direction: column;
     border-radius: 10px;
-    overflow: hidden;
     padding:0px 20px;
-    overflow-y: auto;
+    overflow: auto;
     flex-wrap: wrap;
     display: flex;
     margin: 20px;
@@ -82,10 +81,10 @@
     position: relative;
     margin: 15px 15px;
     transition: 0.3s;
-    overflow: hidden;
-    height: 80%;
+    overflow: auto;
+    height: 100%;
     opacity: 1;
-    width: 60%;
+    width: 70%;
 }
 // card item desktop
 @mixin CarditemDesktop {
@@ -161,8 +160,8 @@
 // Medal position absolute 
 @mixin MedalAbsolute {
     position: absolute;
-    right: 0;
     bottom: 0;
+    right: 0;
 }
 // flex modal
 @mixin modalFlex {
