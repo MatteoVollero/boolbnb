@@ -73,7 +73,7 @@
                     <li class="list_menu">
                         <label id="Services" for="Services">Services</label>
                         {{-- dropleft_menu  --}}
-                        <div class="dropdown_menu_search">
+                        <div class="dropdown_menu_search dropdown_menu_search_search">
                             {{-- flex items  --}}
                             <ul class="flex_items">
                                 {{-- list item  --}}
@@ -157,11 +157,8 @@
                         <div class="title_elm_search_higher">
                             {{-- title elm search  --}}
                             <h3 class="title_elm_search">{{$accomodation['accomodation']->title}}</h3>
-                            <h4 class="title_elm_search">{{$accomodation['accomodation']->country}}</h4>
-                            <h4 class="title_elm_search">{{$accomodation['accomodation']->region}}</h4>
-                            <h4 class="title_elm_search">{{$accomodation['accomodation']->city}}</h4>
-                            <h4 class="title_elm_search">{{$accomodation['accomodation']->address}}</h4>
                             <h4 class="info_elm_search">{{$accomodation['type']->name}}</h4>
+                            <h4 class="title_elm_search">{{$accomodation['accomodation']->address}}, {{$accomodation['accomodation']->city}}, {{$accomodation['accomodation']->region}}, {{$accomodation['accomodation']->country}}</h4>
                             {{-- text elm search  --}}
                             {{-- <p class="text_elm_search">{{$accomodation['accomodation']->description}}</p> --}}
                             {{-- service elm search  --}}

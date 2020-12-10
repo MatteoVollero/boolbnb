@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Accomodation;
 use App\AccomodationType;
 use App\Service;
+use App\UserMessage;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -76,7 +77,7 @@ class AccomodationController extends Controller
                         ->join('user_messages','user_messages.accomodation_id','=','accomodations.id')
                         ->where('accomodations.user_id','=', Auth::id())
                         ->get();
-
+                        
       return view('UPRA.Messages.message_index',compact('userMessages'));
     }
 

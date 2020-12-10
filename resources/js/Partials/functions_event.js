@@ -1,7 +1,9 @@
 // make a keyup function event
 $(".location_input").keyup(function() {
     // at the keyup event show the tom search dropleft menu
-    $(".tom_search").addClass("block");
+    if ($(".location_input").val().length > 1) {
+        $(".tom_search").addClass("block");
+    }
     // at every keyup delete the precedent character
     $(".list_item_tom").text("");
     // make a location variable for the tom tom api

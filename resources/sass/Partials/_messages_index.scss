@@ -1,6 +1,7 @@
 .section_messages {
     background-color: $secondMainSection;
     font-family: $secondFont;
+    min-height: 100vh;
     padding: 100px 0;
     .wrapper_messages_index {
         @include GenericWrapper;
@@ -20,7 +21,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 15px;
+                margin: 15px 0;
                 .accomodation_elm_message {
                     color: $violaHeroScuroModificato;
                     font-weight: bolder;
@@ -54,6 +55,24 @@
                     background-color: $btnColor;
                     color: $secondMainSection;
                     transform: scale(1.03);
+                }
+            }
+        }
+    }
+}
+
+// media breakpoint mobile
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    .section_messages {
+        .wrapper_messages_index {
+            margin: auto;
+            width: 95%;
+            .elm_messages_list {
+                .accomodation_nickname_elm {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    width: 100%;
                 }
             }
         }

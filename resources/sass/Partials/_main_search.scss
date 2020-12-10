@@ -137,11 +137,6 @@
                     }
                 }
                 // adding class block with js 
-                .block {
-                    background-color: $firstMainSection;
-                    cursor: pointer;
-                    display: block;   
-                }
                 .dropdown_menu_search {
                     background-color: $firstMainSection;
                     position: absolute;
@@ -182,8 +177,13 @@
                         } 
                     }
                 }
+                .block {
+                    background-color: $firstMainSection;
+                    cursor: pointer;
+                    display: block;   
+                }
                 // hover dropleft menu
-                &:hover .dropdown_menu_search {
+                &:hover .dropdown_menu_search_search {
                     background-color: $firstMainSection;
                     cursor: pointer;
                     display: block;
@@ -259,6 +259,7 @@
             justify-content: flex-start;
             align-items: center;
             display: flex;
+            flex-wrap: wrap;
             li {
                 margin-top: 20px;
                 margin-right: 20px;
@@ -276,7 +277,7 @@
             border-radius: 15px;
             margin: 30px;
             display: flex;
-            height: 350px;
+            height: 380px;
             padding: 10px;
             width: 80%;
             img {
@@ -388,7 +389,7 @@
                 width: calc((100% - 40px) / 2);
                 flex-direction: column;
                 margin: 10px;
-                height: 350px;
+                height: 380px;
                 display: flex;
                 // img elm search
                 .img_elm_search {
@@ -438,7 +439,7 @@
                 align-items: center;
                 margin: 10px 0;
                 display: flex;
-                height: 350px;
+                height: 380px;
                 width: 100%;
                 // img elm search 
                 .img_elm_search {
