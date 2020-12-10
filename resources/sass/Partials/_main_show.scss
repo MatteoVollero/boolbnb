@@ -255,6 +255,7 @@
         background-color:$firstMainSection;
         border: 2px solid $btnColor;
         font-family: $secondFont;
+        @include modalStats;
         padding: 10px 30px;
         position: relative;
         line-height: 35px;
@@ -264,7 +265,6 @@
         width: 100vh;
         padding: 0;
         margin: 0;
-        @include modalStats;
         // close stats modal 
          .close_stats_modal {
              transform:translate(-50%,-50%);
@@ -295,6 +295,7 @@
         padding: 10px 30px;
         position: relative;
         line-height: 35px;
+        z-index: 9999;
         opacity: 0.9;
         height: 70vh;
         width: 80vh;
@@ -562,14 +563,14 @@
 .marker-icon {
     background-position: center;
     background-size: 22px 22px;
-    border-radius: 50%;
-    height: 22px;
-    left: 4px;
+    transform: rotate(45deg);
     position: absolute;
     text-align: center;
-    top: 3px;
-    transform: rotate(45deg);
+    border-radius: 50%;
+    height: 22px;
     width: 22px;
+    left: 4px;
+    top: 3px;
 }
 .marker {
     height: 30px;
@@ -577,27 +578,27 @@
 }
 // marker content 
 .marker-content {
-    background: #c30b82;
     border-radius: 50% 50% 50% 0;
-    height: 30px;
-    left: 50%;
-    margin: -15px 0 0 -15px;
-    position: absolute;
-    top: 50%;
     transform: rotate(-45deg);
+    margin: -15px 0 0 -15px;
+    background: #c30b82;
+    position: absolute;
+    height: 30px;
     width: 30px;
+    left: 50%;
+    top: 50%;
 }
 // marker content
 .marker-content::before {
     background: #ffffff;
-    border-radius: 50%;
-    content: "";
-    height: 24px;
     margin: 3px 0 0 3px;
+    border-radius: 50%;
     position: absolute;
+    height: 24px;
     width: 24px;
+    content: "";
 }
 body.modal-open {
+    overflow: hidden;
     height: 100vh;
-    overflow-y: hidden;
   }

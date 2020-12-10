@@ -9,11 +9,13 @@ $(document).ready(function() {
 
         // make a stats button event click function to add the class active
         modalMessagesBtn.addEventListener('click', function() {
+            var BFixed = $("body").addClass("modal-open");
             modalMessagesBg.classList.add('bg_active');
         });
 
         // make an event click function to remove the class active
         closeMessages.addEventListener('click', function() {
+            BFixed = $("body").removeClass("modal-open");
             modalMessagesBg.classList.remove('bg_active'); 
         });
     }
