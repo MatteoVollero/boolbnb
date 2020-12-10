@@ -202,6 +202,21 @@
     // first main section
     .first_main_section {
         margin-top: 0px;
+        .first_main_wrapper {
+            @include AccomodationsWrapper;
+            @include GenericFlex;
+            position: relative;
+            h2 {
+                transform: translateX(-50%);
+                text-transform: capitalize;
+                font-family: $secondFont;
+                position: absolute;
+                font-size: 20px;
+                color: #000;
+                left: 50%;
+                top: 2%;
+            }
+        }
     }
     // aside accomodations
     .aside_accomodations {
@@ -211,6 +226,11 @@
         .cards_section {
             height: 100%;
             width: 100%;
+            .cards_section_text {
+                h2 {
+                    font-size: 5px;
+                }
+            }
             // accomodations cards
             .accomodation_cards {
             background-color: none;
@@ -224,8 +244,8 @@
                     @include YScroller;
                     // card item
                     .card_item {
-                        overflow-y: hidden;
-                        @include CarditemDesktop;
+                        overflow: hidden;
+                        @include CardItemMobile;
                         &:hover {
                             @include HoverCard;
                         }
@@ -240,7 +260,7 @@
                     }
                     // cover image
                     .cover_image {
-                        overflow-x: hidden;
+                        overflow: hidden;
                         @include CoverImage;
                         &:hover {
                             transform: scale(1.2);
@@ -253,7 +273,7 @@
         }
 }
 // media breakpoint tablet
-@media screen and (min-width: 769px) and (max-width:992px) {
+@media screen and (min-width: 769px) and (max-width:991px) {
     // first main section
     .first_main_section {
         margin-top: 0px;
@@ -263,7 +283,15 @@
         background-color:$secondMainSection;
         overflow: auto;
         height: 100%;
-        width: 30%;
+        min-width: 30%;
+    }
+    .cards_section {
+        min-width: 70%;
+        .first_main_wrapper {
+            .cards_section_text {
+                font-size: 25px;
+            }
+        }
     }
 }
 
@@ -276,7 +304,10 @@
         background-color:$secondMainSection;
         overflow: auto;
         height: 100%;
-        width: 30%;
+        min-width: 30%;
+    }
+    .cards_section {
+        min-width: 70%;
     }
 }
 
@@ -364,8 +395,10 @@
     width: 100%;
     // second main wrapper 
     .second_main_wrapper {
+        padding-right: 15px;
+        padding-left: 15px;
         position: relative;
-        padding: 40px;
+        padding-top: 100px;
         height: 100%;
         width: 100%;
         h2 {
@@ -373,7 +406,7 @@
             transform: translate(-50%,-50%);
             font-family: $secondFont;
             position: absolute;
-            font-size: 18px;
+            font-size: 20px;
             color: #fff;
             left: 50%;
             top: 4%;
@@ -385,8 +418,8 @@
             align-items: center;
             margin-top: 10px;
             display: flex;
-            height: 100%;
-            width: 90%;
+            height: 90%;
+            width: 100%;
         }
         // secondary images
         .secondary_images {
@@ -397,7 +430,7 @@
 }
 
 // media breakpoint tablet
-@media screen and (min-width: 769px) and (max-width:992px) {
+@media screen and (min-width: 769px) and (max-width:991px) {
      
 }
 
@@ -516,15 +549,11 @@
 @media screen and (min-width: 0px) and (max-width:768px) {
         // third main section
         .third_main_section {
-        background-color:$firstMainSection;
-        width: 100%;
+            background-color:$firstMainSection;
+            width: 100%;
         // third main wrapper 
         .third_main_wrapper {
-            @include GenericFlex;
-            border-radius: 10px;
-            margin: auto;
-            height: 80%;
-            width: 100%;
+            padding: 0;
             //element item
             .elm_item_left {
                 border-radius: 10px;
@@ -547,7 +576,7 @@
                     position: absolute;
                     color: #000;
                     left: 1%;
-                    bottom:0
+                    bottom:1%;
                 }
             }
             .elm_item_right {
@@ -570,7 +599,7 @@
 }
 
 // media breakpoint tablet
-@media screen and (min-width: 769px) and (max-width:992px) {
+@media screen and (min-width: 769px) and (max-width:991px) {
           // third main section
     .third_main_section {
         background-color:$firstMainSection;
