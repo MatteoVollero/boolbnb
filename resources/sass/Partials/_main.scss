@@ -146,7 +146,7 @@
                 @include XScroller;
                 // card item
                 .card_item {
-                    overflow-y: hidden;
+                    overflow: hidden;
                     @include CardItem;
                     &:hover {
                         @include HoverCard;
@@ -162,7 +162,7 @@
                     }
                     // cover image
                     .cover_image {
-                        overflow-x: hidden;
+                        overflow: hidden;
                         @include CoverImage;
                         &:hover {
                             transform: scale(1.2);
