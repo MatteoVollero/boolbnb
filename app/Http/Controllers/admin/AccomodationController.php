@@ -226,10 +226,21 @@ class AccomodationController extends Controller
     public function edit($id)
     {
       $accomodation = Accomodation::find($id);
+      $accomodationImages = AccomodationImage::where('accomodation_id', '=', $id)->get();
       $services = Service::all();
       $serviceChecked ='';
+      $principals = [];
+      $interiors = [];
 
-      return view('UPRA.Accomodations.edit', compact('accomodation', 'services', 'serviceChecked'));
+      foreach($accomodationImages as $image)
+      {
+        if($image->principal == true)
+          $principals[] = $image;
+        else
+          $interiors[] = $image;
+      }
+
+      return view('UPRA.Accomodations.edit', compact('accomodation', 'services', 'serviceChecked', 'principals', 'interiors'));
     }
 
     /**
@@ -239,17 +250,15 @@ class AccomodationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-
       // Trasferiamo in $data tutto i dati che sono stati inseriti all'interno del form
       $data = $request->all();
-
       // Validazione dei dati ricevuti dal form con $request
       $request->validate ([
         'title'=>'required|max:300',
         'description'=>'required|max:800',
-        'cover_image'=>'required|image',
+        // 'cover_image'=>'required|image',
         'slug'=>[
           'required',
           'max:300',
@@ -270,14 +279,16 @@ class AccomodationController extends Controller
         'visible'=>'required|between:0,1',
         'type_id'=>'required|integer|min:0',
     ]);
-
       $editAccomodation = Accomodation::find($id);
 
       // Riempiamo tutti i campi del nuovo record della tabella accomodations
-      $editAccomodation->user_id = $data['user_id'];
       $editAccomodation->title = $data['title'];
       $editAccomodation->description = $data['description'];
-      $editAccomodation->cover_image = $data['cover_image'];
+      if (array_key_exists('cover_image', $data)) {
+        $fileName = 'cover'.$editAccomodation->id.'.jpeg';
+        $imageUri = Storage::disk('public')->putFileAs( 'accomodation_images', $request->file('cover_image'), $fileName );
+        $editAccomodation->cover_image = asset("storage/".$imageUri);
+      }
       $editAccomodation->slug = $data['slug'];
       $editAccomodation->country = $data['country'];
       $editAccomodation->region = $data['region'];
@@ -297,16 +308,48 @@ class AccomodationController extends Controller
       // Salviamo il nuovo record nella tabella accomodations
       $editAccomodation->save();
 
-      // Cicliamo su tutti i servizi dell'accomodation e li cancelliamo
-      foreach ($editAccomodation->services as $service) {
-        $editAccomodation->services()->detach($service);
-      }
+
 
       // Cicliamo su tutti i servizi che ha scelto l'utente
-      foreach ($request->services as $service) {
-        // salva con attach nella tabella pivot accomodation_service gli id di services scelti dell'utente
-        $editAccomodation->services()->attach($service);
+      if (array_key_exists('services', $data)) {
+
+        // Cicliamo su tutti i servizi dell'accomodation e li cancelliamo
+        foreach ($editAccomodation->services as $service) {
+          $editAccomodation->services()->detach($service);
+        }
+
+        foreach ($request->services as $service) {
+          // salva con attach nella tabella pivot accomodation_service gli id di services scelti dell'utente
+          $editAccomodation->services()->attach($service);
+        }
       }
+
+
+      $accomodationImages = AccomodationImage::where('accomodation_id','=',$editAccomodation->id)->where('principal','=','1')->get();
+
+      if (array_key_exists('principal_image', $data)) {
+
+        foreach ($data['principal_image'] as $index => $image) {
+          $fileName = 'principal'.$editAccomodation->id.'-'.$index.'.jpeg';
+          $imageUri = Storage::disk('public')->putFileAs( 'accomodation_images', $request->file('principal_image')[$index], $fileName );
+          $accomodationImages[$index]->image = asset("storage/".$imageUri);
+          $accomodationImages[$index]->save();
+        }
+      }
+
+      $accomodationImages = AccomodationImage::where('accomodation_id','=',$editAccomodation->id)->where('principal','=','0')->get();
+
+      if (array_key_exists('interior_image', $data)) {
+
+        foreach ($data['interior_image'] as $index => $image) {
+          $fileName = 'interior'.$editAccomodation->id.'-'.$index.'.jpeg';
+          $imageUri = Storage::disk('public')->putFileAs( 'accomodation_images', $request->file('interior_image')[$index], $fileName );
+          $accomodationImages[$index]->image = asset("storage/".$imageUri);
+          $accomodationImages[$index]->save();
+        }
+      }
+
+
 
       // Reindirizziamo alla route che visualizza la view show dell'accomodation appena inserito
       return redirect()->route('admin.accomodations.show', $editAccomodation->slug);
