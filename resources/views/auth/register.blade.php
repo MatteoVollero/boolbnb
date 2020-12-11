@@ -24,21 +24,16 @@
             </div>
             <div class="form_group">
                 <label for="password">{{ __('Password') }}</label>
-                <input id="password" type="password" class="form_input @error('password') is-invalid @enderror" name="password" autocomplete="new_password" required minlength="8" maxlength="16" placeholder="Insert your password">
+                 <input id="password" type="password" class="form_input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Insert your password">
                 @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                @enderror
-            </div>
+                @enderror   
+            </div>  
             <div class="form_group">
-                <label for="password_confirm">{{ __('Confirm Password') }}</label>
-                <input id="password_confirm" type="password" class="form_input @error('password_confirm') is-invalid @enderror" name="password_confirm" required minlength="8" maxlength="16" autocomplete="new-password" placeholder="Insert your password confirmation">
-                @error('password_confirm')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                <input id="password-confirm" type="password" class="form_input" name="password_confirmation" required autocomplete="new-password" placeholder="Insert your password confirmation">
             </div>
             <div class="form_group">
                 <button type="submit" class="form_btn">

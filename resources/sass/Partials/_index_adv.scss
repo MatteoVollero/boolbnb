@@ -13,6 +13,7 @@
             border-radius: 10px;
             @include CardsFlex;
             height: 100px;
+            margin: 10px;
             width: 100%;
             span {
                 border-right:1px solid $firstMainSection;
@@ -26,6 +27,20 @@
             }
             .last_span {
                 border: none;
+            }
+        }
+        .total_paid {
+            border:1px solid $firstMainSection;
+            font-family: $secondFont;
+            justify-content: center;
+            align-items: center;
+            border-radius:10px;
+            display: flex;
+            height: 200px;
+            width: 200px;
+            margin: 10px;
+            span {
+                color: #fff;
             }
         }
     }

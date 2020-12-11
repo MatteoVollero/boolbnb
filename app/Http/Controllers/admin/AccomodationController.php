@@ -40,15 +40,51 @@ class AccomodationController extends Controller
     // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     public function adv_index()
-    {
-      // TO DO: codice per selezionare tutte le sponsorizzate dell'UPRA
+    { 
 
-      $userAccomodations = Accomodation::where('id', Auth::id())->get();
-      $accomodationsSponsored=[];
+      //---------------------------------------------------------------------------
+      // Crea elenco di tutte le ADVDS di tutte le Accomodations dell'Upra loggato
+      //---------------------------------------------------------------------------
+
+      // Prendiamo tutte le accomodations dello user loggato
+      $userAccomodations = Accomodation::where('user_id', Auth::id())->get();
+      // Array che conterrà la lista delle Advs
+      $advs=[];
+      $total_paid = 0;
+      // Cicliamo tutte le Accomodations dello user loggato
       foreach ($userAccomodations as $userAccomodation) {
-      }
-      return view('UPRA.Advs.index', compact('userAccomodation'));
+       
+        // Controlliamo se l'accomodation iterata ha delle Advs, ovvero dei record nella tabella accomodation_advs
+        if(count($userAccomodation->advs) > 0) {
+          
+          // Cicliamo sui record delle Advs
+          foreach ($userAccomodation->advs as $adv) {
 
+            // Inseriamo i dati dell'Adv in un record temp dell'array associativo tempAdv
+            $tempAdv = [
+              'accomodation' => $userAccomodation,
+              'start_adv' => $adv->pivot->start_adv,
+              'end_adv' => $adv->pivot->end_adv,
+              'price' => $adv->pivot->price_paid,
+              // 'sub_total' => '',
+            ];
+            // Pushiamo il record tempAdv nell'array finale che conterrà tutte le Advs
+            $advs[] = $tempAdv;
+            // Aggiungiamo al totale speso il costo della ADV iterata
+            $total_paid += $adv->pivot->price_paid;
+          }
+          
+        }
+        
+      }
+
+      // Ordiniamo le Advs per data di inizio ADV (start_adv) DISCENDENTE
+      usort($advs, function($a, $b) {
+        return $b['start_adv'] <=> $a['start_adv'];
+      });
+
+      // Chiamiamo la view e gli passiamo l'array advs con la lista delle sponsorizzate per lo user loggato
+      return view('UPRA.Advs.index', compact('advs', 'total_paid'));
     }
 
     public function adv_create($id)

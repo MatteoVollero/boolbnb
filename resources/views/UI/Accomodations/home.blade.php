@@ -208,10 +208,8 @@
                 {{-- higher type --}}
                 @foreach ($types as $type)
                     <div class="type">
-                        <a href="{{route('search_type', $type->id)}}"><img src="{{$type->image}}" width="100%" height="100%" alt="Image"></a>         
-                        <div class="type_name">
-                            <span>{{$type->name}}</span>
-                        </div> 
+                        <a href="{{route('search_type', $type->id)}}"><img class="type_img" src="{{$type->image}}" width="100%" height="100%" alt="Image"></a>         
+                        <div class="type_name">{{$type->name}}</div>
                     </div>
                 @endforeach
             </div>

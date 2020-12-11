@@ -7,24 +7,22 @@
     <section class="index_background">
         <div class="index_wrapper">
             <div class="adv_property_item">
-                <span>advertising</span>
+                <span>Advertising price</span>
                 <span>accomodation name</span>
-                <span>price</span>
                 <span>starting date</span>
                 <span>ending date</span>
-                <span class="last_span">Remaining hours</span>
             </div>
-            @foreach ($userAccomodation->advs as $accomodation)
-            <div class="adv_property_item">
-                @dd($accomodation);
-                <span>{{$accomodation->label}}</span>
-                <span>{{$accomodation->hours}}</span>
-                <span>{{$accomodation->start_adv}}</span>
-                <span>{{$accomodation->end_adv}}</span>
-                <span>{{$accomodation->title}}</span>
-                <span>{{$accomodation->price_paid}}</span>
-            </div>
+            @foreach ($advs as $adv)
+                <div class="adv_property_item">
+                    <span>{{$adv['price']}} &euro;</span>
+                    <span>{{$adv['accomodation']->title}}</span>
+                    <span>{{$adv['start_adv']}}</span>
+                    <span>{{$adv['end_adv']}}</span>
+                </div>
             @endforeach
+            <div class="total_paid">
+                <span>Sub Total: {{$total_paid}} &euro;</span>
+            </div>
         </div>
     </section>
 @endsection

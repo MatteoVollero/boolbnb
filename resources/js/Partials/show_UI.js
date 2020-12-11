@@ -11,6 +11,9 @@ $(document).ready(function() {
         modalMessagesBtn.addEventListener('click', function() {
             BFixed = $("body").addClass("modal-open");
             modalMessagesBg.classList.add('bg_active');
+            $('.nickname_input').val("");
+            $('.email_input').val("");
+            $('.message_input').val("");
         });
 
         // make an event click function to remove the class active
@@ -24,13 +27,9 @@ $(document).ready(function() {
 
         //make a click event to send the messages using the form
         sendMessage.addEventListener('click', function() {
-            $('.nickname_input').val("");
-            $('.email_input').val("");
-            $('.message_input').val("");
+            $('.toast_message').addClass('toast_active');
             BFixed = $("body").removeClass("modal-open");
             modalMessagesBg.classList.remove('bg_active'); 
-            $('.toast_message').addClass('toast_active');
         });
-
     }
 });

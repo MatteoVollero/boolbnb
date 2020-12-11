@@ -46,16 +46,16 @@ Accomodation
                             {{-- nickname  --}}
                             <input type="hidden" name="accomodation_id" value="{{$accomodation->id}}">
                             <label id="nickname" for="">NickName</label>
-                            <input type="text" class="form_input nickname_input" id="nickname" name="nickname" placeholder="insert your nickname">
+                            <input type="text" class="form_input nickname_input" id="nickname" name="nickname" required maxlength="50"  placeholder="insert your nickname">
                         </div>
                         <div class="form_group">
                             {{-- email  --}}
                             <label for="email">Email</label>
                             <input type="hidden" name="slug" value="{{$accomodation->slug}}">
-                            <input type="email" class="form_input email_input" id="email" name="email" placeholder="Insert your email">
+                            <input type="email" class="form_input email_input" id="email" name="email" required maxlength="100" placeholder="Insert your email">
                             {{-- message  --}}
                             <label for="text_message">Message</label>
-                            <textarea class="form_input message_input" id="text_message" name="text_message" placeholder="insert your message" rows="2" cols="200" style="height:150px;"></textarea>
+                            <textarea class="form_input message_input" id="text_message" name="text_message" required maxlength="500" placeholder="insert your message" rows="2" cols="200" style="height:150px;"></textarea>
                         </div>
                     </div>
                 </div>

@@ -727,15 +727,29 @@
                         position: relative;
                         transition: 0.3s;
                         font-size: 15px;
-                        color: #fff;
-                        display: flex;
-                        margin: 0% 2%;
-                        height: 30%;
-                        width: 46%;
-                        &:hover {
-                            transform:scale(1.02);
-                            opacity: 0.6;
-                            cursor: pointer;
+                        .type_name {
+                            transform: translate(-50%,-50%);
+                            background-color: none;
+                            position: absolute;
+                            color: crimson;
+                            height: 100%;
+                            width: 100%;
+                            opacity: 1;
+                            left: 50%;
+                            top: 50%;
+                            span {
+                                color: crimson;
+                            }
+                        }
+                        .type_img {
+                            margin: 0% 2%;
+                            height: 30%;
+                            width: 46%;
+                            &:hover {
+                                transform:scale(1.02);
+                                opacity: 0.6;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
