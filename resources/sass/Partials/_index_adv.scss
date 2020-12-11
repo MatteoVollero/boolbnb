@@ -15,7 +15,7 @@
             height: 100px;
             width: 100%;
             span {
-                border:2px solid $firstMainSection;
+                border-right:1px solid $firstMainSection;
                 text-transform: capitalize;
                 font-family: $secondFont;
                 text-align: center;
@@ -23,6 +23,9 @@
                 color: #fff;
                 height: 100%;
                 width: 100%;
+            }
+            .last_span {
+                border: none;
             }
         }
     }

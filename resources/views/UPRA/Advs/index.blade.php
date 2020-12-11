@@ -8,11 +8,11 @@
         <div class="index_wrapper">
             <div class="adv_property_item">
                 <span>advertising</span>
-                <span>Remaining hours</span>
-                <span>starting date</span>
-                <span>ending date</span>
                 <span>accomodation name</span>
                 <span>price</span>
+                <span>starting date</span>
+                <span>ending date</span>
+                <span class="last_span">Remaining hours</span>
             </div>
             @foreach ($userAccomodation->advs as $accomodation)
             <div class="adv_property_item">

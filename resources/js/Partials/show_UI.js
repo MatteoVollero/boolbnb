@@ -7,7 +7,7 @@ $(document).ready(function() {
         // close modal messages button
         var closeMessages = document.querySelector('.close_messages_modal');
 
-        // make a stats button event click function to add the class active
+        // make a messages button event click function to add the class active
         modalMessagesBtn.addEventListener('click', function() {
             BFixed = $("body").addClass("modal-open");
             modalMessagesBg.classList.add('bg_active');
@@ -15,6 +15,19 @@ $(document).ready(function() {
 
         // make an event click function to remove the class active
         closeMessages.addEventListener('click', function() {
+            BFixed = $("body").removeClass("modal-open");
+            modalMessagesBg.classList.remove('bg_active'); 
+        });
+
+
+        // send message
+        var sendMessage = document.querySelector('.send_message');
+
+        //make a click event to send the messages with the form
+        sendMessage.addEventListener('click', function() {
+            $('.nickname_input').val("");
+            $('.email_input').val("");
+            $('.message_input').val("");
             BFixed = $("body").removeClass("modal-open");
             modalMessagesBg.classList.remove('bg_active'); 
         });
