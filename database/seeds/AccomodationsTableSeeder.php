@@ -22,52 +22,52 @@ class AccomodationsTableSeeder extends Seeder
 
         // stringe per Title accomodations a Roma
         $typeTitleRoma = [
-            "Appartamento in centro a Roma",
-            "Stanza in appartamento a Roma",
-            "Villa a Roma",
-            "Casa indipendenete a Roma",
-            "Loft a Roma",
-            "Posto letto in ostello a Roma"
+            "Appartment in Rome",
+            "Room in Rome",
+            "Mansion in Rome",
+            "House in Rome",
+            "Loft in Rome",
+            "Hostel in Rome"
         ];
 
         // stringe per Description accomodations a ROMA
         $typeDescriptionRoma = [
-            "Appartamento accogliente posto al terzo piano con ascensore in un palazzo d'epoca in zona storica e centralissima. Si tratta di una delle più belle e conosciute via dello shopping, raggiungibile in pochi minuti tramite le fermate della metro A - Flaminio e Spagna. Da qui sono raggiungibili a piedi tantissimi luoghi d'interesse storico-culturali. L'appartamento presenta un arredamento classico, è composto da un soggiorno, sala da pranzo con angolo cottura, una camera da letto e un bagno.",
+            "Cozy apartment on the third floor with lift in a period building in a historic and central area. It is one of the most beautiful and well-known shopping streets, reachable in a few minutes via the metro stops A - Flaminio and Spagna. From here, many places of historical and cultural interest can be reached on foot. The apartment has a classic décor, consists of a living room, dining room with kitchenette, a bedroom and a bathroom.",
             
-            "Bellissimo appartamento con tre ampie camere, ottima base di partenza per viaggiare a Roma e visitare la città con gli amici. Situtato nel centro di Roma, a cinque minuti a piedi dal Colosseo, la metropolitana è a 100 metri di distanza, a piedi dalla stazione ferroviaria per 10 minuti. Comodo supermercato nei dintorni. Un ristorante centenario chiamato Vecchia Roma è proprio dietro l'angolo. Stiamo aspettando il tuo arrivo nell'appartamento, buon viaggio.",
+            "Beautiful apartment with three large bedrooms, excellent base for traveling to Rome and visiting the city with friends. Located in the center of Rome, five minutes walk from the Colosseum, the metro is 100 meters away, walk from the train station for 10 minutes. Convenient supermarket nearby. A centenary restaurant called Vecchia Roma is just around the corner. We are waiting for your arrival at the apartment, have a nice trip.",
             
-            "Dopo anni di affitti attraverso canali privati, debutta su Boolbnb l'elegante villino liberty a pochi passi da Villa Borghese, nel cuore dei Parioli, considerata la zona residenziale piú esclusiva di Roma. Situato in una strada silenziosa e circondato da un ampio e curato giardino, il villino si sviluppa su quattro piani. Al piano terra si trovano l'ingresso, un ampio e luminoso salone con zona pranzo, salottino TV nonché una zona verandata che costituisce un'ulteriore area living e dining, collegata al giardino.",
+            "After years of renting through private channels, the elegant liberty villa a few steps from Villa Borghese, in the heart of the Parioli, considered the most exclusive residential area in Rome, debuts on Boolbnb. Located in a quiet street and surrounded by a large and well-kept garden, the villa is spread over four floors. On the ground floor there is the entrance, a large and bright living room with dining area, TV lounge as well as a veranda area which constitutes an additional living and dining area, connected to the garden.",
 
-            "Immagina di avere una bella casa indipendente tutta per te. Camera da letto, cucina, soggiorno, bagno. Immagina di uscire e ritrovarti in un ambiente rurale... e sei a solo una corsa in autobus a pochi minuti dal centro della città. La casa ha il suo ingresso privato, all'interno di un ampio giardino. È completamente arredata, con bagno privato completo di doccia e bidet alla francese. C'è una nuova cucina completamente attrezzata e un salone dove si può gustare la cena o un pranzo al sole in giardino. È una zona di Roma ricca di ville in stile 'liberty'.",
+            "Imagine having a beautiful detached house all to yourself. Bedroom, kitchen, living room, bathroom. Imagine going out and finding yourself in a rural setting ... and you are just a bus ride away from the city center. The house has its own private entrance, inside a large garden. It is fully furnished, with a private bathroom complete with shower and French bidet. There is a new fully equipped kitchen and lounge where you can enjoy dinner or lunch in the sun in the garden. It is an area of ​​Rome full of 'liberty' style villas.",
 
-            "Il Loft è perfetto per un soggiorno Romantico e divertente, gode dei caratteristici soffitti in legno del quartiere, schermo piatto, un bagno confortevole e completo di tutto, la cucina è ben attrezzata. L'appartamento è situato nel cuore del centro storico di Roma, a Trastevere. Oltre all'atmosfera culturale e folcloristica dell'area, puoi goderti molti bei negozi, ristoranti, pub, club, lounge bar, panetterie, supermercati e lavanderie.",
+            "The Loft is perfect for a romantic and fun stay, it enjoys the characteristic wooden ceilings of the neighborhood, flat screen, a comfortable bathroom complete with everything, the kitchen is well equipped. The apartment is located in the heart of the historic center of Rome, in Trastevere. Besides the cultural and folkloric atmosphere of the area, you can enjoy many nice shops, restaurants, pubs, clubs, lounge bars, bakeries, supermarkets and laundries.",
 
-            "L'ostello è dotato di un bar, un salone in comune, un giardino e la connessione Wi-Fi gratuita. La struttura dista circa 3 km dal Foro Romano, 4 km dal Colle Palatino e 3 km da Palazzo Venezia. La struttura si trova nel quartiere di Trastevere, a 4 km da Largo di Torre Argentina. Le camere dell'ostello sono dotate di scrivania, aria condizionata e bagno privato. Presso la struttura potrete giocare a ping pong e a freccette. L'aeroporto più vicino è quello di Roma Ciampino."
+            "The hostel has a bar, a shared lounge, a garden and free Wi-Fi. The property is about 3 km from the Roman Forum, 4 km from the Palatine Hill and 3 km from Palazzo Venezia. The property is located in the Trastevere district, 4 km from Largo di Torre Argentina. Rooms at the hostel are equipped with a desk, air conditioning and a private bathroom. You can play table tennis and darts at the property. The nearest airport is Rome Ciampino."
         ];
 
         // stringe per Title accomodations a MILANO
         $typeTitleMilano = [
-            "Appartamento in centro a Milano",
-            "Stanza in appartamento a MIlano",
-            "Villa a Milano",
-            "Casa indipendenete a Milano",
-            "Loft luminoso a Milano",
-            "Posto letto in ostello a Milano"
+            "Appartment in Milan",
+            "Room in Milan",
+            "Mansion in Milan",
+            "House in Milan",
+            "Loft in Milan",
+            "Hostel in Milan"
         ];
 
         // stringe per Description accomodations a MILANO
         $typeDescriptionMilano = [
-            "Appartamento accogliente posto al terzo piano con ascensore in un palazzo d'epoca in zona storica e centralissima. Si tratta di una delle più belle e conosciute via dello shopping, raggiungibile in pochi minuti tramite le fermate della metro Gialla. Da qui sono raggiungibili a piedi tantissimi luoghi d'interesse storico-culturali. L'appartamento presenta un arredamento classico è composto da un soggiorno, sala da pranzo con angolo cottura, una camera da letto e un bagno.",
+            "Cozy apartment on the third floor with lift in a period building in a historic and central area. It is one of the most beautiful and well-known shopping streets, reachable in a few minutes via the metro stops A - Flaminio and Spagna. From here, many places of historical and cultural interest can be reached on foot. The apartment has a classic décor, consists of a living room, dining room with kitchenette, a bedroom and a bathroom.",
             
-            "Bellissimo appartamento con tre ampie camere, ottima base di partenza per viaggiare a Milano, visitare la città con gli amici. Appartamento nel centro di Milano, a cinque minuti a piedi dal Duomo, la metropolitana è a 100 metri di distanza, la stazione ferroviaria a 10 minuti a piedi. Comodo supermercato nei dintorni. Un ristorante centenario chiamato Vecchio Mulino è proprio dietro l'angolo. Stiamo aspettando il tuo arrivo nell'appartamento, buon viaggio.",
+            "Beautiful apartment with three large bedrooms, excellent base for traveling to Rome and visiting the city with friends. Located in the center of Rome, five minutes walk from the Colosseum, the metro is 100 meters away, walk from the train station for 10 minutes. Convenient supermarket nearby. A centenary restaurant called Vecchia Roma is just around the corner. We are waiting for your arrival at the apartment, have a nice trip.",
             
-            "Dopo anni di affitti attraverso canali privati, debutta su Boolbnb l'elegante villino liberty a pochi passi da Villa Litta, considerata la zona residenziale piú esclusiva di MIlano. Situato in una strada silenziosa e circondato da un ampio e curato giardino, il villino si sviluppa su tre piani. Al piano terra si trovano l'ingresso, un ampio e luminoso salone con zona pranzo, salottino TV nonché una zona verandata che costituisce un'ulteriore area living e dining, collegata al giardino.",
+            "After years of renting through private channels, the elegant liberty villa a few steps from Villa Borghese, in the heart of the Parioli, considered the most exclusive residential area in Rome, debuts on Boolbnb. Located in a quiet street and surrounded by a large and well-kept garden, the villa is spread over four floors. On the ground floor there is the entrance, a large and bright living room with dining area, TV lounge as well as a veranda area which constitutes an additional living and dining area, connected to the garden.",
 
-            "Immagina di avere una bella casa indipendente tutta per te. Camera da letto, cucina, soggiorno, bagno. Immagina di uscire e ritrovarti in un ambiente rurale... e sei a solo una corsa in autobus a pochi minuti dal centro della città. La casa ha il suo ingresso privato, è all'interno di un ampio giardino. È completamente arredata, con bagno privato completo di doccia e bidet alla francese. C'è una nuova cucina completamente attrezzata e un salone dove si può gustare la cena o un pranzo al sole in giardino. È una zona di Milano ricca di ville in stile 'liberty'.",
+            "Imagine having a beautiful detached house all to yourself. Bedroom, kitchen, living room, bathroom. Imagine going out and finding yourself in a rural setting ... and you are just a bus ride away from the city center. The house has its own private entrance, inside a large garden. It is fully furnished, with a private bathroom complete with shower and French bidet. There is a new fully equipped kitchen and lounge where you can enjoy dinner or lunch in the sun in the garden. It is an area of ​​Rome full of 'liberty' style villas.",
 
-            "Il Loft è perfetto per un soggiorno romantico e divertente, gode dei caratteristici soffitti in legno del quartiere, schermo piatto, un bagno confortevole e completo di tutto. La cucina è ben attrezzata. L'appartamento è situato nel cuore dei Navigli a Milano. Oltre all'atmosfera culturale e folcloristica dell'area, puoi goderti molti bei negozi, ristoranti, pub, club, lounge bar, panetterie, supermercati e lavanderie.",
+            "The Loft is perfect for a romantic and fun stay, it enjoys the characteristic wooden ceilings of the neighborhood, flat screen, a comfortable bathroom complete with everything, the kitchen is well equipped. The apartment is located in the heart of the historic center of Rome, in Trastevere. Besides the cultural and folkloric atmosphere of the area, you can enjoy many nice shops, restaurants, pubs, clubs, lounge bars, bakeries, supermarkets and laundries.",
 
-            "L'ostello offre un bar, un salone in comune, un giardino e la connessione Wi-Fi gratuita. La struttura dista circa 3 km da Piazza Duomo. La struttura si trova nel quartiere di Lambrate, a 4 km dalla Stazione FS di Prota Garibaldi. Le camere dell'ostello sono dotate di scrivania, aria condizionata e bagno privato. Presso la struttura potrete giocare a ping pong e a freccette. L'aeroporto più vicino è quello di Milano Malpensa."
+            "The hostel has a bar, a shared lounge, a garden and free Wi-Fi. The property is about 3 km from the Roman Forum, 4 km from the Palatine Hill and 3 km from Palazzo Venezia. The property is located in the Trastevere district, 4 km from Largo di Torre Argentina. Rooms at the hostel are equipped with a desk, air conditioning and a private bathroom. You can play table tennis and darts at the property. The nearest airport is Rome Ciampino."
         ];        
 
 
@@ -91,10 +91,10 @@ class AccomodationsTableSeeder extends Seeder
             $newAccomodation->title = $typeTitleRoma [$newAccomodation->type_id - 1];
             $newAccomodation->description = $typeDescriptionRoma [$newAccomodation->type_id - 1];
             $newAccomodation->cover_image = 'http://localhost:8000/storage/cover_image/cover'.($i+1).'.jpeg';
-            $newAccomodation->country = "Italia";
+            $newAccomodation->country = "Italy";
             $newAccomodation->region = "Lazio";
-            $newAccomodation->city = "Roma";
-            $newAccomodation->address = "Via dei Ciclamini, ".$i;
+            $newAccomodation->city = "Rome";
+            $newAccomodation->address = "Street of the Ciclamini, ".$i;
             $newAccomodation->zip_code = "00100";
             // Riempiamo i campi a seconda del type dell'accomodation                
             switch ($newAccomodation->type_id) {
@@ -187,10 +187,10 @@ class AccomodationsTableSeeder extends Seeder
             $newAccomodation->title = $typeTitleMilano [$newAccomodation->type_id - 1];
             $newAccomodation->description = $typeDescriptionMilano [$newAccomodation->type_id - 1];
             $newAccomodation->cover_image = 'http://localhost:8000/storage/cover_image/cover'.($i+1).'.jpeg';
-            $newAccomodation->country = "Italia";
+            $newAccomodation->country = "Italy";
             $newAccomodation->region = "Lombardia";
-            $newAccomodation->city = "Milano";
-            $newAccomodation->address = "Via Libertà, ".$i;
+            $newAccomodation->city = "Milan";
+            $newAccomodation->address = "Street Liberty, ".$i;
             $newAccomodation->zip_code = "20122";
             // Riempiamo i campi a seconda del type dell'accomodation                
             switch ($newAccomodation->type_id) {

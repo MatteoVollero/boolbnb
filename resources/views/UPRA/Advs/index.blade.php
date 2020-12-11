@@ -7,61 +7,24 @@
     <section class="index_background">
         <div class="index_wrapper">
             <div class="adv_property_item">
-                <span>adv</span>
-                <span>hours</span>
+                <span>advertising</span>
+                <span>Remaining hours</span>
                 <span>starting date</span>
                 <span>ending date</span>
-                <span>accomodation</span>
+                <span>accomodation name</span>
                 <span>price</span>
             </div>
+            @foreach ($userAccomodation->advs as $accomodation)
             <div class="adv_property_item">
-                <span>adv</span>
-                <span>hours</span>
-                <span>starting date</span>
-                <span>ending date</span>
-                <span>accomodation</span>
-                <span>price</span>
+                @dd($accomodation);
+                <span>{{$accomodation->label}}</span>
+                <span>{{$accomodation->hours}}</span>
+                <span>{{$accomodation->start_adv}}</span>
+                <span>{{$accomodation->end_adv}}</span>
+                <span>{{$accomodation->title}}</span>
+                <span>{{$accomodation->price_paid}}</span>
             </div>
-            <div class="adv_property_item">
-                <span>adv</span>
-                <span>hours</span>
-                <span>starting date</span>
-                <span>ending date</span>
-                <span>accomodation</span>
-                <span>price</span>
-            </div>
-            <div class="adv_property_item">
-                <span>adv</span>
-                <span>hours</span>
-                <span>starting date</span>
-                <span>ending date</span>
-                <span>accomodation</span>
-                <span>price</span>
-            </div>
-            <div class="adv_property_item">
-                <span>adv</span>
-                <span>hours</span>
-                <span>starting date</span>
-                <span>ending date</span>
-                <span>accomodation</span>
-                <span>price</span>
-            </div>
-            <div class="adv_property_item">
-                <span>adv</span>
-                <span>hours</span>
-                <span>starting date</span>
-                <span>ending date</span>
-                <span>accomodation</span>
-                <span>price</span>
-            </div>
-            <div class="adv_property_item">
-                <span>adv</span>
-                <span>hours</span>
-                <span>starting date</span>
-                <span>ending date</span>
-                <span>accomodation</span>
-                <span>price</span>
-            </div>
+            @endforeach
         </div>
     </section>
 @endsection
