@@ -8,6 +8,7 @@ use App\Adv;
 use App\Service;
 use App\AccomodationType;
 use App\AccomodationView;
+use App\UserMessage;
 use Carbon\Carbon;
 
 use Illuminate\Support\Facades\DB;
@@ -370,12 +371,20 @@ class AccomodationController extends Controller
 
     public function message_send(Request $request)
     {
-      // TO DO: codice per salvare dati del messaggio nella tabella user_messages
-    }
+      // Recuperiamo tutti i dati in arrivo dal form
+      $data=$request->all();
+      // Allochiamo memoria con una nuova istanza di UserMessage
+      $newMessage = new UserMessage();
+      // Riempiamo tutti i dati del record
+      $newMessage->accomodation_id = $data['accomodation_id'];
+      $newMessage->email = $data['email'];
+      $newMessage->nickname = $data['nickname'];
+      $newMessage->text_message = $data['text_message'];
+      // Salviamo il nuovo record nella tabella user_messages
+      $newMessage->save();
 
-    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // METODI PER LA GESTIONE DEI MESSAGE / end
-    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      return redirect()->route('show', $data['slug']);
+    }
 
      public function map(Request $request)
      {

@@ -19,17 +19,18 @@ $(document).ready(function() {
             modalMessagesBg.classList.remove('bg_active'); 
         });
 
-
         // send message
         var sendMessage = document.querySelector('.send_message');
 
-        //make a click event to send the messages with the form
+        //make a click event to send the messages using the form
         sendMessage.addEventListener('click', function() {
             $('.nickname_input').val("");
             $('.email_input').val("");
             $('.message_input').val("");
             BFixed = $("body").removeClass("modal-open");
             modalMessagesBg.classList.remove('bg_active'); 
+            $('.toast_message').addClass('toast_active');
         });
+
     }
 });

@@ -34,7 +34,7 @@ Accomodation
             {{-- modal messages data  --}}
             <div class="modal_messages_data">
                 {{-- modal messages wrapper  --}}
-              <form action="{{route('show', $accomodation->slug)}}" method="POST" enctype="multipart/form-data">
+              <form action="{{route('message_send')}}" method="POST" enctype="multipart/form-data">
                   @csrf
                   @method('POST')
                 <div class="modal_messages_wrapper">
@@ -44,27 +44,33 @@ Accomodation
                         {{-- form input  --}}
                         <div class="form_group">
                             {{-- nickname  --}}
+                            <input type="hidden" name="accomodation_id" value="{{$accomodation->id}}">
                             <label id="nickname" for="">NickName</label>
-                            <input type="text" class="form_input nickname_input" id="nickname" name="nickname" required minlenght="8" maxlength="50" placeholder="insert your nickname">
+                            <input type="text" class="form_input nickname_input" id="nickname" name="nickname" placeholder="insert your nickname">
                         </div>
                         <div class="form_group">
                             {{-- email  --}}
                             <label for="email">Email</label>
-                            <input type="email" class="form_input email_input" id="email" name="email" required minlength="10" maxlength="50" placeholder="Insert your email">
+                            <input type="hidden" name="slug" value="{{$accomodation->slug}}">
+                            <input type="email" class="form_input email_input" id="email" name="email" placeholder="Insert your email">
                             {{-- message  --}}
-                            <label for="message">Message</label>
-                            <textarea class="form_input message_input" id="message" name="message" required minlength="50" maxlength="300" placeholder="insert your message" rows="2" cols="200" style="height:150px;"></textarea>
+                            <label for="text_message">Message</label>
+                            <textarea class="form_input message_input" id="text_message" name="text_message" placeholder="insert your message" rows="2" cols="200" style="height:150px;"></textarea>
                         </div>
                     </div>
                 </div>
                 {{-- lower messager form  --}}
                 <div class="lower_messages_form">
-                    <span class="send_message"><i class="fab fa-telegram-plane"></i></span>
+                    <button type="submit"><i class="send_message fab fa-telegram-plane"></i></button> 
                     {{-- close messages modal  --}}
                     <span class="close_messages_modal">X</span>
                 </div>
               </form>
             </div>
+        </div>
+        {{-- toast message  --}}
+        <div class="toast_message">
+            <span>The message has been sent</span>
         </div>
         {{-- Images  --}}
         <div class="images_show">

@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Auth;
   // rotte GUESTS
   // Route::resource('/', 'AccomodationController');
   // rotte UI
+  Route::post('/accomodations/message_send', 'AccomodationController@message_send')->name('message_send');
   Route::get('/', 'AccomodationController@index')->name('home');
   Route::get('/search', 'AccomodationController@search')->name('search');
   Route::get('/search/{type_id}', 'AccomodationController@search_type')->name('search_type');

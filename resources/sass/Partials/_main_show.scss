@@ -5,11 +5,25 @@
     font-family: $secondFont;
     overflow-x: hidden;
     padding-top: 100px;
-    height: 1800px;
     // show wrapper 
     .show_wrapper {
         @include GenericWrapper;
         //MESSAGE BUTTON AND TITLE ACCOMODATION
+        .toast_message {
+            background-color:$secondMainSection;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            text-align: center;
+            position: fixed;
+            display: flex;
+            padding: 10px;
+            bottom: 0;
+            left: 0;
+            span {
+                color: $firstMainSection;
+            }
+        }
         // button section show 
         .button_section_show {
             justify-content: space-between;
@@ -66,10 +80,9 @@
                 width: 50%;
                 // cover image 
                 .cover_image_show {
-                    // background-color:rgb(59, 59, 59);
-                    overflow: hidden;
                     border-radius: 10px;
                     transition: 0.3s;
+                    overflow: hidden;
                     margin: 2.5%;
                     height: 95%;
                     width: 95%;
@@ -598,7 +611,12 @@
     width: 24px;
     content: "";
 }
+// prevent modals from scrolling
 body.modal-open {
     overflow: hidden;
     height: 100vh;
   }
+// toast
+.toast_active {
+    visibility: visible;
+}
